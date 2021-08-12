@@ -75,7 +75,6 @@ namespace Presentation
             this.BtnBuscar = new FontAwesome.Sharp.IconButton();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.DgvProductos = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PnlMenu.SuspendLayout();
             this.PnlDatos.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -190,6 +189,7 @@ namespace Presentation
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // BtnNuevo
             // 
@@ -228,7 +228,6 @@ namespace Presentation
             this.PnlDatos.Name = "PnlDatos";
             this.PnlDatos.Size = new System.Drawing.Size(1022, 248);
             this.PnlDatos.TabIndex = 115;
-            this.PnlDatos.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlDatos_Paint);
             // 
             // tableLayoutPanel3
             // 
@@ -555,6 +554,7 @@ namespace Presentation
             this.TxtCoste.Name = "TxtCoste";
             this.TxtCoste.Size = new System.Drawing.Size(199, 20);
             this.TxtCoste.TabIndex = 11;
+            this.TxtCoste.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCoste_KeyPress);
             // 
             // label3
             // 
@@ -730,6 +730,7 @@ namespace Presentation
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // TxtBuscar
             // 
@@ -742,6 +743,7 @@ namespace Presentation
             this.TxtBuscar.Name = "TxtBuscar";
             this.TxtBuscar.Size = new System.Drawing.Size(843, 29);
             this.TxtBuscar.TabIndex = 103;
+            this.TxtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBuscar_KeyPress);
             // 
             // DgvProductos
             // 
@@ -750,17 +752,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvProductos.BackgroundColor = System.Drawing.SystemColors.MenuText;
             this.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
             this.DgvProductos.Location = new System.Drawing.Point(32, 74);
             this.DgvProductos.Name = "DgvProductos";
             this.DgvProductos.Size = new System.Drawing.Size(958, 189);
             this.DgvProductos.TabIndex = 102;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
             // 
             // Productos
             // 
@@ -773,6 +768,7 @@ namespace Presentation
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Productos";
             this.Text = "Productos";
+            this.Load += new System.EventHandler(this.Productos_Load);
             this.PnlMenu.ResumeLayout(false);
             this.PnlDatos.ResumeLayout(false);
             this.PnlDatos.PerformLayout();
@@ -837,6 +833,5 @@ namespace Presentation
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RichTextBox RtbCaracteristicas;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
