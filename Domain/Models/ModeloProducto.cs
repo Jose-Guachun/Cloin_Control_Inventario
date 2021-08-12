@@ -26,9 +26,9 @@ namespace Domain.Models
         private string modelo;
         private string categoria;
         private string codigo;
-        private int cantidad;
         private byte[] img;
         private string titulo;
+        private int cantidad;
         private string caracteristicas;
         private decimal precio;
         private decimal coste;
@@ -57,9 +57,9 @@ namespace Domain.Models
         [RegularExpression("([0-9]+)", ErrorMessage = "El campo Codigo solo debe estar conformado por numeros")]
         [StringLength(maximumLength: 20, MinimumLength = 20, ErrorMessage = "El codigo debe de contener 20 digitos")]
         public string Codigo { get => codigo; set => codigo = value; }
-        public int Cantidad { get => cantidad; set => cantidad = value; }
         public byte[] Img { get => img; set => img = value; }
         public string Titulo { get => titulo; set => titulo = value; }
+        public int Cantidad { get => cantidad; set => cantidad = value; }
         public string Caracteristicas { get => caracteristicas; set => caracteristicas = value; }
         public decimal Precio { get => precio; set => precio = value; }
         public decimal Coste { get => coste; set => coste = value; }
@@ -82,12 +82,13 @@ namespace Domain.Models
                 var ModeloDatosProducto = new TB_PRODUCTO();
                 ModeloDatosProducto.IdProducto = idProducto;
                 ModeloDatosProducto.IdCompra = idCompra;
+                ModeloDatosProducto.IdModelo = idModelo;
                 ModeloDatosProducto.IdMarca = idMarca;
                 ModeloDatosProducto.IdCategoria = idCategoria;
                 ModeloDatosProducto.Codigo = codigo;
-                ModeloDatosProducto.Cantidad = Cantidad;
                 ModeloDatosProducto.Img = img;
                 ModeloDatosProducto.Titulo = titulo;
+                ModeloDatosProducto.Cantidad = Cantidad;
                 ModeloDatosProducto.Caracteristicas = caracteristicas;
                 ModeloDatosProducto.Precio = precio;
                 ModeloDatosProducto.Coste = coste;
@@ -141,9 +142,9 @@ namespace Domain.Models
                     modelo=item.Modelo,
                     categoria=item.Categoria,
                     codigo=item.Codigo,
-                    cantidad=item.Cantidad,
                     titulo=item.Titulo,
-                    caracteristicas=item.Caracteristicas,
+                    cantidad = item.Cantidad,
+                    caracteristicas =item.Caracteristicas,
                     precio=item.Precio,
                     coste=item.Coste,
                     margen =item.Margen,

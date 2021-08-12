@@ -22,7 +22,7 @@ namespace DataAccess.Repositories
         public RepositorioProducto()
         {
             selectAll = "select * from TB_PRODUCTO ";
-            insert = "insert into TB_PRODUCTO values(@IdCompra, @IdMarca, @IdModelo, @IdCategoria, @Codigo, @Cantidad, @Img, @Titulo, @Caracteristicas, @Precio, @Coste, @Margen, @PVP, @IVA, @Descuento, @Total)";
+            insert = "insert into TB_PRODUCTO values(@IdCompra, @IdMarca, @IdModelo, @IdCategoria, @Codigo, @Img, @Titulo, @Cantidad, @Caracteristicas, @Precio, @Coste, @Margen, @PVP, @IVA, @Descuento, @Total)";
             update = "update TB_PRODUCTO set IdCompra=@IdCompra, IdMarca=@IdMarca, IdModelo=@IdModelo,IdCategoria=@IdCategoria, Codigo=@Codigo, Cantidad=@Cantidad, Img=@Img, Titulo=@Titulo, Caracteristicas=@Caracteristicas, Precio=@Precio, Coste=@Coste, Margen=@Margen, PVP=@PVP, IVA=@IVA, Descuento=@Descuento, Total=@Total  where IdProducto=@IdProducto";
             delete = "delete from TB_PRODUCTO WHERE IdProducto=@IdProducto";
         }
@@ -37,9 +37,9 @@ namespace DataAccess.Repositories
             parameters.Add(new SqlParameter("@IdModelo", entity.IdModelo));
             parameters.Add(new SqlParameter("@IdCategoria", entity.IdCategoria));
             parameters.Add(new SqlParameter("@Codigo", entity.Codigo));
-            parameters.Add(new SqlParameter("@Cantidad", entity.Cantidad));
             parameters.Add(new SqlParameter("@Img", entity.Img));
             parameters.Add(new SqlParameter("@Titulo", entity.Titulo));
+            parameters.Add(new SqlParameter("@Cantidad", entity.Cantidad));
             parameters.Add(new SqlParameter("@Caracteristicas", entity.Caracteristicas));
             parameters.Add(new SqlParameter("@Precio", entity.Precio));
             parameters.Add(new SqlParameter("@Coste", entity.Coste));
@@ -61,9 +61,9 @@ namespace DataAccess.Repositories
             parameters.Add(new SqlParameter("@IdModelo", entity.IdModelo));
             parameters.Add(new SqlParameter("@IdCategoria", entity.IdCategoria));
             parameters.Add(new SqlParameter("@Codigo", entity.Codigo));
-            parameters.Add(new SqlParameter("@Cantidad", entity.Cantidad));
             parameters.Add(new SqlParameter("@Img", entity.Img));
             parameters.Add(new SqlParameter("@Titulo", entity.Titulo));
+            parameters.Add(new SqlParameter("@Cantidad", entity.Cantidad));
             parameters.Add(new SqlParameter("@Caracteristicas", entity.Caracteristicas));
             parameters.Add(new SqlParameter("@Precio", entity.Precio));
             parameters.Add(new SqlParameter("@Coste", entity.Coste));
@@ -89,8 +89,8 @@ namespace DataAccess.Repositories
                     Modelo = item[3].ToString(),
                     Categoria = item[4].ToString(),
                     Codigo = item[5].ToString(),
-                    Cantidad = Convert.ToInt32(item[6]),
-                    Titulo = item[8].ToString(),
+                    Titulo = item[7].ToString(),
+                    Cantidad = Convert.ToInt32(item[8]),
                     Caracteristicas = item[9].ToString(),
                     Precio = decimal.Parse(item[10].ToString()),
                     Coste = decimal.Parse(item[11].ToString()),

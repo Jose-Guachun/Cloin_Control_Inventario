@@ -306,7 +306,6 @@ namespace Presentation
             this.TxtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtTotal.Enabled = false;
             this.TxtTotal.Location = new System.Drawing.Point(48, 3);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(221, 20);
@@ -416,7 +415,6 @@ namespace Presentation
             // 
             this.TxtIVA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtIVA.Enabled = false;
             this.TxtIVA.Location = new System.Drawing.Point(315, 158);
             this.TxtIVA.Name = "TxtIVA";
             this.TxtIVA.Size = new System.Drawing.Size(199, 20);
@@ -452,7 +450,6 @@ namespace Presentation
             // 
             this.TxtPVP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtPVP.Enabled = false;
             this.TxtPVP.Location = new System.Drawing.Point(315, 127);
             this.TxtPVP.Name = "TxtPVP";
             this.TxtPVP.Size = new System.Drawing.Size(199, 20);
@@ -549,12 +546,10 @@ namespace Presentation
             // 
             this.TxtCoste.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtCoste.Enabled = false;
             this.TxtCoste.Location = new System.Drawing.Point(315, 65);
             this.TxtCoste.Name = "TxtCoste";
             this.TxtCoste.Size = new System.Drawing.Size(199, 20);
             this.TxtCoste.TabIndex = 11;
-            this.TxtCoste.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCoste_KeyPress);
             // 
             // label3
             // 

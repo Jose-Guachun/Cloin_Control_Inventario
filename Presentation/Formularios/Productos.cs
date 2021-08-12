@@ -110,20 +110,20 @@ namespace Presentation
         {
             try
             {
-                producto.IdModelo = 1;
-                producto.IdMarca = 1;
-                producto.IdCompra = 1;
-                producto.IdCategoria = 1;
-                producto.Codigo = "01234567890123456789";
-                producto.Titulo = "jisdsd";
-                producto.Cantidad = 12;
-                producto.Precio = 21;
-                producto.Coste = 12;
-                producto.Margen = 21;
-                producto.Pvp = 12;
-                producto.Iva = 12;
-                producto.Total = 12;
-                producto.Caracteristicas = "jsoidjdhbsdf";
+                producto.IdModelo = Convert.ToInt32(CboModelo.SelectedValue);
+                producto.IdMarca = Convert.ToInt32(CboMarca.SelectedValue);
+                producto.IdCompra = Convert.ToInt32(CboCompra.SelectedValue);
+                producto.IdCategoria = Convert.ToInt32(CboCategoria.SelectedValue);
+                producto.Codigo = TxtCodigo.Text;
+                producto.Titulo = TxtTitulo.Text;
+                producto.Cantidad = Convert.ToInt32(TxtCantidad.Text);
+                producto.Precio = Convert.ToDecimal(TxtPrecio.Text);
+                producto.Coste = Convert.ToDecimal(TxtCoste.Text);
+                producto.Margen = Convert.ToDecimal(TxtMargen.Text);
+                producto.Pvp = Convert.ToDecimal(TxtPVP.Text);
+                producto.Iva = Convert.ToDecimal(TxtIVA.Text);
+                producto.Total = Convert.ToDecimal(TxtTotal.Text);
+                producto.Caracteristicas = RtbCaracteristicas.Text;
                 producto.Img = ConvertirImg();
                 bool valid = new Helps.ValidacionDatos(producto).Validar();
 
@@ -132,6 +132,7 @@ namespace Presentation
                     string result = producto.Guardar();
                     MessageBox.Show(result);
                     ListaProducto();
+                    DgvProductos.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -147,13 +148,5 @@ namespace Presentation
             return ms.GetBuffer();
         }
 
-
-        private void TxtCoste_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            double a;
-            a = Convert.ToDouble(TxtPrecio.Text) * 0.12;
-            a = Convert.ToDouble(TxtPrecio.Text) + a;
-            TxtCoste.Text = a.ToString();
-        }
     }
 }
