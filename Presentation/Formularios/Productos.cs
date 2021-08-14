@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 //referencias
 using Domain.Models;
 using Domain.ValueObjects;
-
+using System.IO;
 
 namespace Presentation
 {
@@ -25,6 +25,12 @@ namespace Presentation
         private void Productos_Load(object sender, EventArgs e)
         {
             ListaProducto();
+            DgvProductos.Columns[1].Visible = false;
+            DgvProductos.Columns[2].Visible = false;
+            DgvProductos.Columns[3].Visible = false;
+            DgvProductos.Columns[4].Visible = false;
+            DgvProductos.Columns[10].Visible = false;
+
         }
         private void ListaProducto()
         {
@@ -110,7 +116,7 @@ namespace Presentation
         {
             try
             {
-                producto.IdModelo = Convert.ToInt32(CboModelo.SelectedValue);
+                producto.IdModelo = Convert.ToInt32(CboModelo.Text);
                 producto.IdMarca = Convert.ToInt32(CboMarca.SelectedValue);
                 producto.IdCompra = Convert.ToInt32(CboCompra.SelectedValue);
                 producto.IdCategoria = Convert.ToInt32(CboCategoria.SelectedValue);
@@ -138,7 +144,7 @@ namespace Presentation
             catch (Exception ex)
             {
 
-                MessageBox.Show("Llene todos los campos");
+                MessageBox.Show(ex +"Llene todos los campos");
             }
         }
         private byte[] ConvertirImg()
@@ -148,5 +154,37 @@ namespace Presentation
             return ms.GetBuffer();
         }
 
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            if (DgvProductos.SelectedRows.Count > 0)
+            {
+                TlpDatos.Enabled = true;
+                producto.estado = EntityState.Modificar;
+                producto.IdProducto = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
+                CboCompra.Text = DgvProductos.CurrentRow.Cells[5].Value.ToString().Trim();
+                CboMarca.Text = DgvProductos.CurrentRow.Cells[6].Value.ToString().Trim();
+                CboModelo.Text = DgvProductos.CurrentRow.Cells[7].Value.ToString().Trim();
+                CboCategoria.Text = DgvProductos.CurrentRow.Cells[8].Value.ToString().Trim();
+                TxtCodigo.Text=DgvProductos.CurrentRow.Cells[9].Value.ToString().Trim();
+                TxtTitulo.Text = DgvProductos.CurrentRow.Cells[11].Value.ToString().Trim();
+                TxtCantidad.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
+                RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
+                TxtPrecio.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
+                TxtCoste.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
+                TxtMargen.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
+                TxtPVP.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
+                TxtIVA.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
+                TxtTotal.Text = DgvProductos.CurrentRow.Cells[20].Value.ToString().Trim();
+                ImgProducto.Image = Image.FromStream(ByteImage());
+                BtnNuevo.Enabled = false;
+            }
+            else MessageBox.Show("Selecciones la fila a editar");
+        }
+        private MemoryStream ByteImage()
+        {
+            byte[] im = (byte[])DgvProductos.CurrentRow.Cells[10].Value;
+            MemoryStream ms = new MemoryStream(im);
+            return ms;
+        }
     }
 }

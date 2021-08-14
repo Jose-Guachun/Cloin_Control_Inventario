@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 
 //Importacion
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 using DataAccess.Contracts;
 using DataAccess.Entities;
 using System.Data;
@@ -78,7 +81,8 @@ namespace DataAccess.Repositories
         public IEnumerable<TB_PRODUCTO> GetAll()
         {
             var tableResult = ExecuteReader(selectAll);
-            var listProducto = new List<TB_PRODUCTO>(); 
+            var listProducto = new List<TB_PRODUCTO>();
+           
             foreach (DataRow item in tableResult.Rows)
             {
                 listProducto.Add(new TB_PRODUCTO
@@ -89,6 +93,7 @@ namespace DataAccess.Repositories
                     Modelo = item[3].ToString(),
                     Categoria = item[4].ToString(),
                     Codigo = item[5].ToString(),
+                    Img =  (byte[])item[6],
                     Titulo = item[7].ToString(),
                     Cantidad = Convert.ToInt32(item[8]),
                     Caracteristicas = item[9].ToString(),

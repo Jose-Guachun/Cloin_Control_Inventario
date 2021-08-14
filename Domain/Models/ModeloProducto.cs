@@ -11,6 +11,7 @@ using DataAccess.Contracts;
 using DataAccess.Entities;
 using DataAccess.Repositories;
 using Domain.ValueObjects;
+using System.Data;
 
 namespace Domain.Models
 {
@@ -136,12 +137,14 @@ namespace Domain.Models
             {
                 listaProducto.Add(new ModeloProducto
                 {
+                    
                     idProducto = item.IdProducto,
                     numCompra=item.NumCompra,
                     marca=item.Marca,
                     modelo=item.Modelo,
                     categoria=item.Categoria,
                     codigo=item.Codigo,
+                    img=item.Img,
                     titulo=item.Titulo,
                     cantidad = item.Cantidad,
                     caracteristicas =item.Caracteristicas,
@@ -156,6 +159,7 @@ namespace Domain.Models
             }
             return listaProducto;
         }
+
         public IEnumerable<ModeloProducto> FindById(string filter)
         {
             return GetAll().FindAll(p => p.codigo.Contains(filter) || p.titulo.Contains(filter));
