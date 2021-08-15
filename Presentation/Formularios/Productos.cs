@@ -79,13 +79,14 @@ namespace Presentation
         {
             if (MessageBox.Show("¿Está seguro de cancelar, se perdera todos los datos ingresados?", "Alerta¡¡", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+
                 TlpDatos.Enabled = false;
                 BtnNuevo.Enabled = true;
                 BtnGuardar.Enabled = false;
                 BtnCancelar.Enabled = false;
                 BtnEditar.Enabled = true;
                 BtnEliminar.Enabled = true;
-                DgvProductos.Enabled = false;
+                DgvProductos.Enabled = true;
                 limpiar();
             }
         }
@@ -100,6 +101,13 @@ namespace Presentation
             TxtMargen.Clear();
             TxtPVP.Clear();
             TxtTotal.Clear();
+            RtbCaracteristicas.Clear();
+            if (ImgProducto.Image !=null)
+            {
+                ImgProducto.Image.Dispose();
+                ImgProducto.Image = null;
+            }
+
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -139,6 +147,9 @@ namespace Presentation
                     MessageBox.Show(result);
                     ListaProducto();
                     DgvProductos.Enabled = true;
+                    TlpDatos.Enabled = false;
+                    limpiar(); 
+
                 }
             }
             catch (Exception ex)
@@ -158,7 +169,10 @@ namespace Presentation
         {
             if (DgvProductos.SelectedRows.Count > 0)
             {
+                BtnCancelar.Enabled = true;
                 TlpDatos.Enabled = true;
+                DgvProductos.Enabled = false;
+
                 producto.estado = EntityState.Modificar;
                 producto.IdProducto = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
                 CboCompra.Text = DgvProductos.CurrentRow.Cells[5].Value.ToString().Trim();
