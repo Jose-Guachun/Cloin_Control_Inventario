@@ -79,8 +79,9 @@ namespace Presentation
         {
             if (MessageBox.Show("¿Está seguro de cancelar, se perdera todos los datos ingresados?", "Alerta¡¡", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-
+                TxtTotal.Enabled = false;   
                 TlpDatos.Enabled = false;
+                RtbCaracteristicas.Enabled = false;
                 BtnNuevo.Enabled = true;
                 BtnGuardar.Enabled = false;
                 BtnCancelar.Enabled = false;
@@ -129,7 +130,7 @@ namespace Presentation
                 producto.IdCompra = Convert.ToInt32(CboCompra.SelectedValue);
                 producto.IdCategoria = Convert.ToInt32(CboCategoria.SelectedValue);
                 producto.Codigo = TxtCodigo.Text;
-                producto.Titulo = TxtTitulo.Text;
+                producto.Titulo = TxtTitulo.Text.ToLower();
                 producto.Cantidad = Convert.ToInt32(TxtCantidad.Text);
                 producto.Precio = Convert.ToDecimal(TxtPrecio.Text);
                 producto.Coste = Convert.ToDecimal(TxtCoste.Text);
@@ -169,9 +170,12 @@ namespace Presentation
         {
             if (DgvProductos.SelectedRows.Count > 0)
             {
+                RtbCaracteristicas.Enabled = true;
                 BtnCancelar.Enabled = true;
                 TlpDatos.Enabled = true;
                 DgvProductos.Enabled = false;
+                BtnGuardar.Enabled = true;
+                BtnExaminar.Enabled = true;
 
                 producto.estado = EntityState.Modificar;
                 producto.IdProducto = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
