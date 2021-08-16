@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Threading.Tasks;
 
 //referencias
+using System.Globalization;
 using Domain.Models;
 using Domain.ValueObjects;
 using System.IO;
@@ -71,16 +72,18 @@ namespace Presentation
             BtnEliminar.Enabled = false;
             BtnCancelar.Enabled = true;
             producto.estado = EntityState.Agregar;
-
-
+            limpiar();
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro de cancelar, se perdera todos los datos ingresados?", "Alerta¡¡", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                BtnExaminar.Enabled = false;
                 TxtTotal.Enabled = false;   
                 TlpDatos.Enabled = false;
+                TlpCaracteristicas.Enabled = false;
+                TlpIvaTotal.Enabled = false;
                 RtbCaracteristicas.Enabled = false;
                 BtnNuevo.Enabled = true;
                 BtnGuardar.Enabled = false;
@@ -176,33 +179,66 @@ namespace Presentation
                 DgvProductos.Enabled = false;
                 BtnGuardar.Enabled = true;
                 BtnExaminar.Enabled = true;
-
-                producto.estado = EntityState.Modificar;
-                producto.IdProducto = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
-                CboCompra.Text = DgvProductos.CurrentRow.Cells[5].Value.ToString().Trim();
-                CboMarca.Text = DgvProductos.CurrentRow.Cells[6].Value.ToString().Trim();
-                CboModelo.Text = DgvProductos.CurrentRow.Cells[7].Value.ToString().Trim();
-                CboCategoria.Text = DgvProductos.CurrentRow.Cells[8].Value.ToString().Trim();
-                TxtCodigo.Text=DgvProductos.CurrentRow.Cells[9].Value.ToString().Trim();
-                TxtTitulo.Text = DgvProductos.CurrentRow.Cells[11].Value.ToString().Trim();
-                TxtCantidad.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
-                RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
-                TxtPrecio.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
-                TxtCoste.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
-                TxtMargen.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
-                TxtPVP.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
-                TxtIVA.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
-                TxtTotal.Text = DgvProductos.CurrentRow.Cells[20].Value.ToString().Trim();
-                ImgProducto.Image = Image.FromStream(ByteImage());
+                BtnEditar.Enabled = false;
                 BtnNuevo.Enabled = false;
+                producto.estado = EntityState.Modificar;
+                Datos();
             }
             else MessageBox.Show("Selecciones la fila a editar");
         }
+        private void Datos() {
+            producto.IdProducto = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
+            CboCompra.Text = DgvProductos.CurrentRow.Cells[5].Value.ToString().Trim();
+            CboMarca.Text = DgvProductos.CurrentRow.Cells[6].Value.ToString().Trim();
+            CboModelo.Text = DgvProductos.CurrentRow.Cells[7].Value.ToString().Trim();
+            CboCategoria.Text = DgvProductos.CurrentRow.Cells[8].Value.ToString().Trim();
+            TxtCodigo.Text = DgvProductos.CurrentRow.Cells[9].Value.ToString().Trim();
+            TxtTitulo.Text = DgvProductos.CurrentRow.Cells[11].Value.ToString().Trim();
+            TxtCantidad.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
+            RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
+            TxtPrecio.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
+            TxtCoste.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
+            TxtMargen.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
+            TxtPVP.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
+            TxtIVA.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
+            TxtTotal.Text = DgvProductos.CurrentRow.Cells[20].Value.ToString().Trim();
+            ImgProducto.Image = Image.FromStream(ByteImage());
+        }
+
         private MemoryStream ByteImage()
         {
             byte[] im = (byte[])DgvProductos.CurrentRow.Cells[10].Value;
             MemoryStream ms = new MemoryStream(im);
             return ms;
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro que desea eliminar el registro?", "Alerta¡¡", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (DgvProductos.SelectedRows.Count > 0)
+                {
+                    producto.estado = EntityState.Eliminar;
+                    producto.IdProducto = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
+                    string result = producto.Guardar();
+                    MessageBox.Show(result);
+                    ListaProducto();
+                }
+                else MessageBox.Show("Selecciones la fila a editar");
+            }
+        }
+
+        private void DgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Datos();
+        }
+
+        private void TxtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            decimal precio = Convert.ToDecimal(TxtPrecio.Text);
+            decimal coste = precio * decimal.Parse("0,12");
+
+            TxtCoste.Text = (coste).ToString();
         }
     }
 }
