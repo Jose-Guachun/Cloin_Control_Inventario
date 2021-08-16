@@ -177,6 +177,7 @@ namespace Presentation
         {
             if (DgvProductos.SelectedRows.Count > 0)
             {
+                BtnEditar.Enabled = true;
                 RtbCaracteristicas.Enabled = true;
                 BtnCancelar.Enabled = true;
                 TlpDatos.Enabled = true;
@@ -253,6 +254,13 @@ namespace Presentation
             decimal coste = Convert.ToDecimal(TxtCoste.Text);
 
             TxtPVP.Text = (coste / (1 - (margen/100))).ToString();
+        }
+
+        private void TxtDescuento_Leave(object sender, EventArgs e)
+        {
+            decimal pvp = Convert.ToDecimal(TxtPVP.Text);
+            TxtIVA.Text = (pvp * decimal.Parse("0,12")).ToString();
+            TxtTotal.Text = (decimal.Parse(TxtIVA.Text) + pvp).ToString();
         }
     }
 }
