@@ -18,7 +18,7 @@ namespace Presentation
 {
     public partial class Productos : Form
     {
-        private  ModeloProducto producto = new ModeloProducto();
+        private ModeloProducto producto = new ModeloProducto();
         public Productos()
         {
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace Presentation
             {
                 MessageBox.Show(ex.ToString());
             }
-                
+
         }
 
         private void BtnExaminar_Click_1(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace Presentation
             if (MessageBox.Show("¿Está seguro de cancelar, se perdera todos los datos ingresados?", "Alerta¡¡", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 BtnExaminar.Enabled = false;
-                TxtTotal.Enabled = false;   
+                TxtTotal.Enabled = false;
                 TlpDatos.Enabled = false;
                 TlpCaracteristicas.Enabled = false;
                 TlpIvaTotal.Enabled = false;
@@ -106,7 +106,7 @@ namespace Presentation
             TxtPVP.Clear();
             TxtTotal.Clear();
             RtbCaracteristicas.Clear();
-            if (ImgProducto.Image !=null)
+            if (ImgProducto.Image != null)
             {
                 ImgProducto.Image.Dispose();
                 ImgProducto.Image = null;
@@ -116,7 +116,10 @@ namespace Presentation
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            DgvProductos.DataSource = producto.FindById(TxtBuscar.Text);
+            decimal precio = Convert.ToDecimal(TxtPrecio.Text);
+            decimal coste = precio * decimal.Parse("0,12");
+
+            TxtCoste.Text = (coste).ToString();
         }
 
         private void TxtBuscar_KeyPress(object sender, KeyPressEventArgs e)
@@ -139,6 +142,7 @@ namespace Presentation
                 producto.Coste = Convert.ToDecimal(TxtCoste.Text);
                 producto.Margen = Convert.ToDecimal(TxtMargen.Text);
                 producto.Pvp = Convert.ToDecimal(TxtPVP.Text);
+                producto.Descuento= Convert.ToDecimal(TxtDescuento.Text);
                 producto.Iva = Convert.ToDecimal(TxtIVA.Text);
                 producto.Total = Convert.ToDecimal(TxtTotal.Text);
                 producto.Caracteristicas = RtbCaracteristicas.Text;
@@ -152,14 +156,14 @@ namespace Presentation
                     ListaProducto();
                     DgvProductos.Enabled = true;
                     TlpDatos.Enabled = false;
-                    limpiar(); 
+                    limpiar();
 
                 }
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex +"Llene todos los campos");
+                MessageBox.Show(ex + "Llene todos los campos");
             }
         }
         private byte[] ConvertirImg()
@@ -186,7 +190,8 @@ namespace Presentation
             }
             else MessageBox.Show("Selecciones la fila a editar");
         }
-        private void Datos() {
+        private void Datos()
+        {
             producto.IdProducto = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
             CboCompra.Text = DgvProductos.CurrentRow.Cells[5].Value.ToString().Trim();
             CboMarca.Text = DgvProductos.CurrentRow.Cells[6].Value.ToString().Trim();
@@ -233,12 +238,21 @@ namespace Presentation
             Datos();
         }
 
-        private void TxtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtPrecio_Leave(object sender, EventArgs e)
         {
             decimal precio = Convert.ToDecimal(TxtPrecio.Text);
             decimal coste = precio * decimal.Parse("0,12");
 
-            TxtCoste.Text = (coste).ToString();
+            TxtCoste.Text = (precio+coste).ToString();
+        }
+
+        private void TxtMargen_Leave(object sender, EventArgs e)
+        {
+
+            decimal margen = Convert.ToDecimal(TxtMargen.Text);
+            decimal coste = Convert.ToDecimal(TxtCoste.Text);
+
+            TxtPVP.Text = (coste / (1 - (margen/100))).ToString();
         }
     }
 }
