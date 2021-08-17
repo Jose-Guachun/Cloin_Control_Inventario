@@ -243,8 +243,16 @@ namespace Presentation
         {
             decimal precio = Convert.ToDecimal(TxtPrecio.Text);
             decimal coste = precio * decimal.Parse("0,12");
-
             TxtCoste.Text = (precio+coste).ToString();
+            if (TxtMargen.Text != null)
+            {
+                TxtMargen_Leave(sender, e);
+                
+                if (TxtDescuento.Text != null)
+                {
+                    TxtDescuento_Leave(sender, e);
+                }
+            }
         }
 
         private void TxtMargen_Leave(object sender, EventArgs e)
