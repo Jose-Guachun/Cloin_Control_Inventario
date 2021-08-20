@@ -65,9 +65,10 @@ namespace Domain.Models
         public decimal Precio { get => precio; set => precio = value; }
         public decimal Coste { get => coste; set => coste = value; }
         public decimal Margen { get => margen; set => margen = value; }
+        [Required(ErrorMessage = "El campo Descuento es requerido")]
+        public decimal Descuento { get => descuento; set => descuento = value; }
         public decimal Pvp { get => pvp; set => pvp = value; }
         public decimal Iva { get => iva; set => iva = value; }
-        public decimal Descuento { get => descuento; set => descuento = value; }
         public decimal Total { get => total; set => total = value; }
 
 
@@ -94,9 +95,9 @@ namespace Domain.Models
                 ModeloDatosProducto.Precio = precio;
                 ModeloDatosProducto.Coste = coste;
                 ModeloDatosProducto.Margen = margen;
+                ModeloDatosProducto.Descuento = descuento;
                 ModeloDatosProducto.PVP = pvp;
                 ModeloDatosProducto.IVA = iva;
-                ModeloDatosProducto.Descuento = descuento;
                 ModeloDatosProducto.Total = total;
                 switch (estado)
                 {
@@ -151,9 +152,9 @@ namespace Domain.Models
                     precio=item.Precio,
                     coste=item.Coste,
                     margen =item.Margen,
-                    pvp= item.PVP,
+                    descuento = item.Descuento,
+                    pvp = item.PVP,
                     iva = item.IVA,
-                    descuento=item.Descuento,
                     total = item.Total
                 });
             }

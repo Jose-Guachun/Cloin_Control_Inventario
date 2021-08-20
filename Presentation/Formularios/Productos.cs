@@ -30,7 +30,9 @@ namespace Presentation
             DgvProductos.Columns[2].Visible = false;
             DgvProductos.Columns[3].Visible = false;
             DgvProductos.Columns[4].Visible = false;
+            DgvProductos.Columns[5].Visible = false;
             DgvProductos.Columns[10].Visible = false;
+            DgvProductos.Columns[13].Visible = false;
 
         }
         private void ListaProducto()
@@ -45,7 +47,66 @@ namespace Presentation
             }
 
         }
+        public void botones()
+        {
+            BtnExaminar.Enabled = false;
+            TxtTotal.Enabled = false;
+            TlpDatos.Enabled = false;
+            TlpCaracteristicas.Enabled = false;
+            TlpIvaTotal.Enabled = false;
+            BtnNuevo.Enabled = true;
+            BtnGuardar.Enabled = false;
+            BtnCancelar.Enabled = false;
+            BtnEditar.Enabled = true;
+            BtnEliminar.Enabled = true;
+            DgvProductos.Enabled = true;
+        }
+        public void limpiar()
+        {
+            TxtCodigo.Clear();
+            TxtCantidad.Clear();
+            TxtTitulo.Clear();
+            TxtPrecio.Clear();
+            TxtCoste.Clear();
+            TxtIVA.Clear();
+            TxtMargen.Clear();
+            TxtPVP.Clear();
+            TxtTotal.Clear();
+            RtbCaracteristicas.Clear();
+            if (ImgProducto.Image != null)
+            {
+                
+                ImgProducto.Image = PtbImg.Image;
+            }
+                
+        }
+        private void Datos()
+        {
+            producto.IdProducto = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
+            CboCompra.Text = DgvProductos.CurrentRow.Cells[5].Value.ToString().Trim();
+            CboMarca.Text = DgvProductos.CurrentRow.Cells[6].Value.ToString().Trim();
+            CboModelo.Text = DgvProductos.CurrentRow.Cells[7].Value.ToString().Trim();
+            CboCategoria.Text = DgvProductos.CurrentRow.Cells[8].Value.ToString().Trim();
+            TxtCodigo.Text = DgvProductos.CurrentRow.Cells[9].Value.ToString().Trim();
+            TxtTitulo.Text = DgvProductos.CurrentRow.Cells[11].Value.ToString().Trim();
+            TxtCantidad.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
+            RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
+            TxtPrecio.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
+            TxtCoste.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
+            TxtMargen.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
+            TxtDescuento.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
+            TxtPVP.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
+            TxtIVA.Text = DgvProductos.CurrentRow.Cells[19].Value.ToString().Trim();
+            TxtTotal.Text = DgvProductos.CurrentRow.Cells[20].Value.ToString().Trim();
+            ImgProducto.Image = Image.FromStream(ByteImage());
+        }
 
+        private MemoryStream ByteImage()
+        {
+            byte[] im = (byte[])DgvProductos.CurrentRow.Cells[10].Value;
+            MemoryStream ms = new MemoryStream(im);
+            return ms;
+        }
         private void BtnExaminar_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog getImage = new OpenFileDialog();
@@ -64,6 +125,7 @@ namespace Presentation
         {
             TlpDatos.Enabled = true;
             RtbCaracteristicas.Enabled = true;
+            TlpCaracteristicas.Enabled = true;
             BtnExaminar.Enabled = true;
             BtnGuardar.Enabled = true;
             DgvProductos.Enabled = false;
@@ -79,47 +141,13 @@ namespace Presentation
         {
             if (MessageBox.Show("¿Está seguro de cancelar, se perdera todos los datos ingresados?", "Alerta¡¡", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                BtnExaminar.Enabled = false;
-                TxtTotal.Enabled = false;
-                TlpDatos.Enabled = false;
-                TlpCaracteristicas.Enabled = false;
-                TlpIvaTotal.Enabled = false;
-                RtbCaracteristicas.Enabled = false;
-                BtnNuevo.Enabled = true;
-                BtnGuardar.Enabled = false;
-                BtnCancelar.Enabled = false;
-                BtnEditar.Enabled = true;
-                BtnEliminar.Enabled = true;
-                DgvProductos.Enabled = true;
+                botones();
                 limpiar();
             }
         }
-        public void limpiar()
-        {
-            TxtCodigo.Clear();
-            TxtCantidad.Clear();
-            TxtTitulo.Clear();
-            TxtPrecio.Clear();
-            TxtCoste.Clear();
-            TxtIVA.Clear();
-            TxtMargen.Clear();
-            TxtPVP.Clear();
-            TxtTotal.Clear();
-            RtbCaracteristicas.Clear();
-            if (ImgProducto.Image != null)
-            {
-                ImgProducto.Image.Dispose();
-                ImgProducto.Image = null;
-            }
-
-        }
-
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            decimal precio = Convert.ToDecimal(TxtPrecio.Text);
-            decimal coste = precio * decimal.Parse("0,12");
 
-            TxtCoste.Text = (coste).ToString();
         }
 
         private void TxtBuscar_KeyPress(object sender, KeyPressEventArgs e)
@@ -153,17 +181,17 @@ namespace Presentation
                 {
                     string result = producto.Guardar();
                     MessageBox.Show(result);
+                    producto.estado = EntityState.Vizualisar;
                     ListaProducto();
-                    DgvProductos.Enabled = true;
-                    TlpDatos.Enabled = false;
                     limpiar();
-
+                    botones();
+    
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                MessageBox.Show(ex + "Llene todos los campos");
+                MessageBox.Show("Llene todos los campos");
             }
         }
         private byte[] ConvertirImg()
@@ -178,7 +206,7 @@ namespace Presentation
             if (DgvProductos.SelectedRows.Count > 0)
             {
                 BtnEditar.Enabled = true;
-                RtbCaracteristicas.Enabled = true;
+                TlpCaracteristicas.Enabled = true;
                 BtnCancelar.Enabled = true;
                 TlpDatos.Enabled = true;
                 DgvProductos.Enabled = false;
@@ -189,34 +217,9 @@ namespace Presentation
                 producto.estado = EntityState.Modificar;
                 Datos();
             }
-            else MessageBox.Show("Selecciones la fila a editar");
-        }
-        private void Datos()
-        {
-            producto.IdProducto = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
-            CboCompra.Text = DgvProductos.CurrentRow.Cells[5].Value.ToString().Trim();
-            CboMarca.Text = DgvProductos.CurrentRow.Cells[6].Value.ToString().Trim();
-            CboModelo.Text = DgvProductos.CurrentRow.Cells[7].Value.ToString().Trim();
-            CboCategoria.Text = DgvProductos.CurrentRow.Cells[8].Value.ToString().Trim();
-            TxtCodigo.Text = DgvProductos.CurrentRow.Cells[9].Value.ToString().Trim();
-            TxtTitulo.Text = DgvProductos.CurrentRow.Cells[11].Value.ToString().Trim();
-            TxtCantidad.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
-            RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
-            TxtPrecio.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
-            TxtCoste.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
-            TxtMargen.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
-            TxtPVP.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
-            TxtIVA.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
-            TxtTotal.Text = DgvProductos.CurrentRow.Cells[20].Value.ToString().Trim();
-            ImgProducto.Image = Image.FromStream(ByteImage());
+            else MessageBox.Show("Seleccione la fila a editar");
         }
 
-        private MemoryStream ByteImage()
-        {
-            byte[] im = (byte[])DgvProductos.CurrentRow.Cells[10].Value;
-            MemoryStream ms = new MemoryStream(im);
-            return ms;
-        }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
@@ -241,34 +244,46 @@ namespace Presentation
 
         private void TxtPrecio_Leave(object sender, EventArgs e)
         {
-            decimal precio = Convert.ToDecimal(TxtPrecio.Text);
-            decimal coste = precio * decimal.Parse("0,12");
-            TxtCoste.Text = (precio+coste).ToString();
-            if (TxtMargen.Text != null)
+            if (TxtPrecio.Text != "")
             {
-                TxtMargen_Leave(sender, e);
-                
-                if (TxtDescuento.Text != null)
+                decimal precio = Convert.ToDecimal(TxtPrecio.Text);
+                decimal coste = precio * decimal.Parse("0,12");
+                TxtCoste.Text = (precio + coste).ToString();
+                if (TxtMargen.Text != "")
+                {
+                    TxtMargen_Leave(sender, e);
+
+                    if (TxtDescuento.Text != "")
+                    {
+                        TxtDescuento_Leave(sender, e);
+                    }
+                }
+            }
+
+        }
+
+        private void TxtMargen_Leave(object sender, EventArgs e)
+        {
+            if (TxtMargen.Text != "")
+            {
+                decimal margen = Convert.ToDecimal(TxtMargen.Text);
+                decimal coste = Convert.ToDecimal(TxtCoste.Text);
+                TxtPVP.Text = (coste / (1 - (margen / 100))).ToString();
+                if (TxtDescuento.Text != "")
                 {
                     TxtDescuento_Leave(sender, e);
                 }
             }
         }
 
-        private void TxtMargen_Leave(object sender, EventArgs e)
-        {
-
-            decimal margen = Convert.ToDecimal(TxtMargen.Text);
-            decimal coste = Convert.ToDecimal(TxtCoste.Text);
-
-            TxtPVP.Text = (coste / (1 - (margen/100))).ToString();
-        }
-
         private void TxtDescuento_Leave(object sender, EventArgs e)
         {
-            decimal pvp = Convert.ToDecimal(TxtPVP.Text);
-            TxtIVA.Text = (pvp * decimal.Parse("0,12")).ToString();
-            TxtTotal.Text = (decimal.Parse(TxtIVA.Text) + pvp).ToString();
+            if (TxtDescuento.Text!="")
+            {
+                decimal pvp = Convert.ToDecimal(TxtPVP.Text);
+                TxtIVA.Text = (pvp * decimal.Parse("0,12")).ToString();
+                TxtTotal.Text = (decimal.Parse(TxtIVA.Text) + pvp).ToString();
+            }
         }
     }
 }

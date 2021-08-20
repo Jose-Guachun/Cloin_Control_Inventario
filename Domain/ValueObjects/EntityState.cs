@@ -7,8 +7,10 @@ namespace Domain.ValueObjects
 {
     public enum EntityState
     {
+        Vizualisar,
         Agregar,
         Eliminar,
         Modificar
+        
     }
 }
