@@ -63,6 +63,7 @@ namespace Presentation
         }
         public void limpiar()
         {
+            TxtDescuento.Text="0";
             TxtCodigo.Clear();
             TxtCantidad.Clear();
             TxtTitulo.Clear();
@@ -247,7 +248,7 @@ namespace Presentation
             if (TxtPrecio.Text != "")
             {
                 decimal precio = Convert.ToDecimal(TxtPrecio.Text);
-                decimal coste = precio * decimal.Parse("0,12");
+                decimal coste = decimal.Round(precio * decimal.Parse("0,12"), 2);
                 TxtCoste.Text = (precio + coste).ToString();
                 if (TxtMargen.Text != "")
                 {
@@ -268,7 +269,7 @@ namespace Presentation
             {
                 decimal margen = Convert.ToDecimal(TxtMargen.Text);
                 decimal coste = Convert.ToDecimal(TxtCoste.Text);
-                TxtPVP.Text = (coste / (1 - (margen / 100))).ToString();
+                TxtPVP.Text = decimal.Round((coste / (1 - (margen / 100))), 2).ToString();
                 if (TxtDescuento.Text != "")
                 {
                     TxtDescuento_Leave(sender, e);
@@ -281,8 +282,8 @@ namespace Presentation
             if (TxtDescuento.Text!="")
             {
                 decimal pvp = Convert.ToDecimal(TxtPVP.Text);
-                TxtIVA.Text = (pvp * decimal.Parse("0,12")).ToString();
-                TxtTotal.Text = (decimal.Parse(TxtIVA.Text) + pvp).ToString();
+                TxtIVA.Text = decimal.Round((pvp * decimal.Parse("0,12")),2).ToString();
+                TxtTotal.Text =decimal.Round((decimal.Parse(TxtIVA.Text) + pvp), 2).ToString();
             }
         }
     }
