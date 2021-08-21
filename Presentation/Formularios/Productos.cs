@@ -291,7 +291,7 @@ namespace Presentation
                 TxtPVP.Text = decimal.Round(pvp, 2).ToString(); 
                 TxtIVA.Text = decimal.Round((pvp * decimal.Parse("0,12")),2).ToString();
                 TxtTotal.Text =decimal.Round((decimal.Parse(TxtIVA.Text) + pvp), 2).ToString();
-                
+                //rama funcional
             }
         }
     }
