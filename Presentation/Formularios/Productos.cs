@@ -69,10 +69,10 @@ namespace Presentation
             TxtTitulo.Clear();
             TxtPrecio.Clear();
             TxtCoste.Clear();
-            TxtIVA.Clear();
-            TxtMargen.Clear();
-            TxtPVP.Clear();
-            TxtTotal.Clear();
+            TxtIVA.Text = "0";
+            TxtMargen.Text="20";
+            TxtPVP.Text = "0";
+            TxtTotal.Text = "0";
             RtbCaracteristicas.Clear();
             if (ImgProducto.Image != null)
             {
@@ -266,24 +266,32 @@ namespace Presentation
         private void TxtMargen_Leave(object sender, EventArgs e)
         {
             if (TxtMargen.Text != "")
-            {
-                decimal margen = Convert.ToDecimal(TxtMargen.Text);
-                decimal coste = Convert.ToDecimal(TxtCoste.Text);
-                TxtPVP.Text = decimal.Round((coste / (1 - (margen / 100))), 2).ToString();
+            { 
                 if (TxtDescuento.Text != "")
                 {
                     TxtDescuento_Leave(sender, e);
                 }
             }
+            else
+            {
+                TxtMargen.Text = "20";
+            }
+
         }
 
         private void TxtDescuento_Leave(object sender, EventArgs e)
         {
             if (TxtDescuento.Text!="")
             {
-                decimal pvp = Convert.ToDecimal(TxtPVP.Text);
+                decimal margen = Convert.ToDecimal(TxtMargen.Text);
+                decimal coste = Convert.ToDecimal(TxtCoste.Text);
+                decimal pvp = decimal.Round((coste / (1 - (margen / 100))), 2);
+                decimal descuento = pvp * (Convert.ToDecimal(TxtDescuento.Text)/100);
+                pvp = pvp - descuento;
+                TxtPVP.Text = decimal.Round(pvp, 2).ToString(); 
                 TxtIVA.Text = decimal.Round((pvp * decimal.Parse("0,12")),2).ToString();
                 TxtTotal.Text =decimal.Round((decimal.Parse(TxtIVA.Text) + pvp), 2).ToString();
+                
             }
         }
     }
