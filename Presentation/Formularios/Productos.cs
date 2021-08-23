@@ -19,6 +19,7 @@ namespace Presentation
     public partial class Productos : Form
     {
         private ModeloProducto producto = new ModeloProducto();
+        private ClsCalculoDatos calculo = new ClsCalculoDatos();
         public Productos()
         {
             InitializeComponent();
@@ -63,12 +64,12 @@ namespace Presentation
         }
         public void limpiar()
         {
-            TxtDescuento.Text="0";
             TxtCodigo.Clear();
             TxtCantidad.Clear();
             TxtTitulo.Clear();
-            TxtPrecio.Clear();
-            TxtCoste.Clear();
+            TxtDescuento.Text="0";
+            TxtPrecio.Text = "0";
+            TxtCoste.Text = "0";
             TxtIVA.Text = "0";
             TxtMargen.Text="20";
             TxtPVP.Text = "0";
@@ -248,12 +249,10 @@ namespace Presentation
             if (TxtPrecio.Text != "")
             {
                 decimal precio = Convert.ToDecimal(TxtPrecio.Text);
-                decimal coste = decimal.Round(precio * decimal.Parse("0,12"), 2);
-                TxtCoste.Text = (precio + coste).ToString();
+                TxtCoste.Text = calculo.Coste(precio).ToString();
                 if (TxtMargen.Text != "")
                 {
                     TxtMargen_Leave(sender, e);
-
                     if (TxtDescuento.Text != "")
                     {
                         TxtDescuento_Leave(sender, e);
@@ -265,12 +264,10 @@ namespace Presentation
 
         private void TxtMargen_Leave(object sender, EventArgs e)
         {
-            if (TxtMargen.Text != "")
+            if (TxtMargen.Text != "" && TxtDescuento.Text != "")
             { 
-                if (TxtDescuento.Text != "")
-                {
-                    TxtDescuento_Leave(sender, e);
-                }
+               TxtDescuento_Leave(sender, e);
+
             }
             else
             {
@@ -281,18 +278,29 @@ namespace Presentation
 
         private void TxtDescuento_Leave(object sender, EventArgs e)
         {
-            if (TxtDescuento.Text!="")
+
+            if (TxtDescuento.Text!="" && TxtMargen.Text !="" )
             {
                 decimal margen = Convert.ToDecimal(TxtMargen.Text);
-                decimal coste = Convert.ToDecimal(TxtCoste.Text);
-                decimal pvp = decimal.Round((coste / (1 - (margen / 100))), 2);
-                decimal descuento = pvp * (Convert.ToDecimal(TxtDescuento.Text)/100);
-                pvp = pvp - descuento;
-                TxtPVP.Text = decimal.Round(pvp, 2).ToString(); 
-                TxtIVA.Text = decimal.Round((pvp * decimal.Parse("0,12")),2).ToString();
-                TxtTotal.Text =decimal.Round((decimal.Parse(TxtIVA.Text) + pvp), 2).ToString();
-                //rama funcional
+                decimal descuento = Convert.ToDecimal(TxtDescuento.Text);
+                string pvp = calculo.PVP(margen, descuento).ToString();
+                if (pvp != "0")
+                {
+                    TxtPVP.Text = pvp;
+                    TxtIVA.Text = calculo.IVA(Convert.ToDecimal(TxtPVP.Text)).ToString();
+                    TxtTotal.Text = calculo.TOTAL().ToString();
+                }
+                else
+                {
+                    TxtDescuento.Text = "0";
+                    TxtDescuento_Leave(sender, e);
+                }
             }
+        }
+
+        private void TxtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloNumerosDecimales(sender, e);
         }
     }
 }

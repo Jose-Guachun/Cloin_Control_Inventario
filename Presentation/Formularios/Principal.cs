@@ -65,7 +65,7 @@ namespace Presentation
             public static Color color8 = Color.FromArgb(149, 204, 202);
         }
         //METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO  TIEMPO DE EJECUCION ----------------------------------------------------------
-        private int tolerance = 15;
+        //private int tolerance = 15;
         private const int WM_NCHITTEST = 132;
         private const int HTBOTTOMRIGHT = 17;
         private Rectangle sizeGripRectangle;

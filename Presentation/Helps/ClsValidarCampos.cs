@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace Presentation
 {
-    class ClsValidarCampos
+    public class ClsValidarCampos
     {
         public static void SoloNumeros(KeyPressEventArgs e)
         {
@@ -25,6 +25,19 @@ namespace Presentation
                 e.Handled = true;
             }
             if (char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        public static void SoloNumerosDecimales(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
             {
                 e.Handled = true;
             }

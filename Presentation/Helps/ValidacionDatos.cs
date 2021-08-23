@@ -12,7 +12,7 @@ namespace Presentation.Helps
         private List<ValidationResult> results;
         private bool valid;
         private string mensaje;
-        private IDictionary<object, object> v;
+        private IDictionary<object, object> v ;
         IServiceProvider d = null;
         public ValidacionDatos(object instance)
         {
