@@ -26,7 +26,7 @@ namespace DataAccess.Entities
         public decimal Margen { get; set; }
         public decimal Descuento { get; set; }
         public decimal PVP { get; set; }
-        public decimal IVA { get; set; }
+        public float IVA { get; set; }
         public decimal Total { get; set; }
 
     }

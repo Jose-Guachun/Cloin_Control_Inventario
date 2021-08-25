@@ -102,7 +102,7 @@ namespace DataAccess.Repositories
                     Margen = decimal.Parse(item[12].ToString()),
                     Descuento = decimal.Parse(item[13].ToString()),
                     PVP = decimal.Parse(item[14].ToString()),
-                    IVA = decimal.Parse(item[15].ToString()),
+                    IVA = float.Parse(item[15].ToString()),
                     Total = decimal.Parse(item[16].ToString()),
                 }) ; 
             }

@@ -173,7 +173,7 @@ namespace Presentation
                 producto.Margen = Convert.ToDecimal(TxtMargen.Text);
                 producto.Pvp = Convert.ToDecimal(TxtPVP.Text);
                 producto.Descuento= Convert.ToDecimal(TxtDescuento.Text);
-                producto.Iva = Convert.ToDecimal(TxtIVA.Text);
+                producto.Iva = float.Parse(TxtIVA.Text);
                 producto.Total = Convert.ToDecimal(TxtTotal.Text);
                 producto.Caracteristicas = RtbCaracteristicas.Text;
                 producto.Img = ConvertirImg();

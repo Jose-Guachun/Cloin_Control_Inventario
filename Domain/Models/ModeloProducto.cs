@@ -34,9 +34,9 @@ namespace Domain.Models
         private decimal precio;
         private decimal coste;
         private decimal margen;
-        private decimal pvp;
-        private decimal iva;
         private decimal descuento;
+        private decimal pvp;
+        private float iva;
         private decimal total;
 
         private IRepositorioProducto repositorioProducto;
@@ -68,7 +68,7 @@ namespace Domain.Models
         [Required(ErrorMessage = "El campo Descuento es requerido")]
         public decimal Descuento { get => descuento; set => descuento = value; }
         public decimal Pvp { get => pvp; set => pvp = value; }
-        public decimal Iva { get => iva; set => iva = value; }
+        public float Iva { get => iva; set => iva = value; }
         public decimal Total { get => total; set => total = value; }
 
 
