@@ -84,8 +84,29 @@ namespace Presentation
             {
                 e.Handled = true;
             }
+
         }
-        public static bool ComprobarFormatoEmail(string sEmailAComprobar)
+        public static void SoloLetrasNumeroEspacio(KeyPressEventArgs e)
+        {
+            if (char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+            public static bool ComprobarFormatoEmail(string sEmailAComprobar)
         {
             String sFormato;
             sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";

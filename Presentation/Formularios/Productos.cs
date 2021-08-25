@@ -168,13 +168,13 @@ namespace Presentation
                 producto.Codigo = TxtCodigo.Text;
                 producto.Titulo = TxtTitulo.Text.ToLower();
                 producto.Cantidad = Convert.ToInt32(TxtCantidad.Text);
-                producto.Precio = Convert.ToDecimal(TxtPrecio.Text);
-                producto.Coste = Convert.ToDecimal(TxtCoste.Text);
-                producto.Margen = Convert.ToDecimal(TxtMargen.Text);
-                producto.Pvp = Convert.ToDecimal(TxtPVP.Text);
-                producto.Descuento= Convert.ToDecimal(TxtDescuento.Text);
+                producto.Precio = float.Parse(TxtPrecio.Text);
+                producto.Coste = float.Parse(TxtCoste.Text);
+                producto.Margen = float.Parse(TxtMargen.Text);
+                producto.Pvp = float.Parse(TxtPVP.Text);
+                producto.Descuento= float.Parse(TxtDescuento.Text);
                 producto.Iva = float.Parse(TxtIVA.Text);
-                producto.Total = Convert.ToDecimal(TxtTotal.Text);
+                producto.Total = float.Parse(TxtTotal.Text);
                 producto.Caracteristicas = RtbCaracteristicas.Text;
                 producto.Img = ConvertirImg();
                 bool valid = new Helps.ValidacionDatos(producto).Validar();
@@ -279,7 +279,7 @@ namespace Presentation
         private void TxtDescuento_Leave(object sender, EventArgs e)
         {
 
-            if (TxtDescuento.Text!="" && TxtMargen.Text !="" )
+            if (TxtDescuento.Text!="" && TxtMargen.Text !="" && TxtPrecio.Text!="0")
             {
                 decimal margen = Convert.ToDecimal(TxtMargen.Text);
                 decimal descuento = Convert.ToDecimal(TxtDescuento.Text);
@@ -301,6 +301,46 @@ namespace Presentation
         private void TxtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
             ClsValidarCampos.SoloNumerosDecimales(sender, e);
+        }
+
+        private void TxtCoste_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloNumerosDecimales(sender, e);
+        }
+
+        private void TxtMargen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloNumeros(e);
+        }
+
+        private void TxtDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloNumeros(e);
+        }
+
+        private void TxtPVP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloNumerosDecimales(sender, e);
+        }
+
+        private void TxtIVA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloNumerosDecimales(sender, e);
+        }
+
+        private void TxtTotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloNumerosDecimales(sender, e);
+        }
+
+        private void TxtTitulo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloLetrasNumeroEspacio(e);
+        }
+
+        private void TxtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloNumeros(e);
         }
     }
 }

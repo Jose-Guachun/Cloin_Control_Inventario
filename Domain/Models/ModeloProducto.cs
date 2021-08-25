@@ -31,13 +31,13 @@ namespace Domain.Models
         private string titulo;
         private int cantidad;
         private string caracteristicas;
-        private decimal precio;
-        private decimal coste;
-        private decimal margen;
-        private decimal descuento;
-        private decimal pvp;
+        private float  precio;
+        private float  coste;
+        private float  margen;
+        private float descuento;
+        private float  pvp;
         private float iva;
-        private decimal total;
+        private float  total;
 
         private IRepositorioProducto repositorioProducto;
         public EntityState estado { private get; set; }
@@ -62,14 +62,14 @@ namespace Domain.Models
         public string Titulo { get => titulo; set => titulo = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
         public string Caracteristicas { get => caracteristicas; set => caracteristicas = value; }
-        public decimal Precio { get => precio; set => precio = value; }
-        public decimal Coste { get => coste; set => coste = value; }
-        public decimal Margen { get => margen; set => margen = value; }
+        public float Precio { get => precio; set => precio = value; }
+        public float Coste { get => coste; set => coste = value; }
+        public float Margen { get => margen; set => margen = value; }
         [Required(ErrorMessage = "El campo Descuento es requerido")]
-        public decimal Descuento { get => descuento; set => descuento = value; }
-        public decimal Pvp { get => pvp; set => pvp = value; }
+        public float Descuento { get => descuento; set => descuento = value; }
+        public float Pvp { get => pvp; set => pvp = value; }
         public float Iva { get => iva; set => iva = value; }
-        public decimal Total { get => total; set => total = value; }
+        public float Total { get => total; set => total = value; }
 
 
         public ModeloProducto()

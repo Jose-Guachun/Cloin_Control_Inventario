@@ -97,13 +97,13 @@ namespace DataAccess.Repositories
                     Titulo = item[7].ToString(),
                     Cantidad = Convert.ToInt32(item[8]),
                     Caracteristicas = item[9].ToString(),
-                    Precio = decimal.Parse(item[10].ToString()),
-                    Coste = decimal.Parse(item[11].ToString()),
-                    Margen = decimal.Parse(item[12].ToString()),
-                    Descuento = decimal.Parse(item[13].ToString()),
-                    PVP = decimal.Parse(item[14].ToString()),
+                    Precio = float.Parse(item[10].ToString()),
+                    Coste = float.Parse(item[11].ToString()),
+                    Margen = float.Parse(item[12].ToString()),
+                    Descuento = float.Parse(item[13].ToString()),
+                    PVP = float.Parse(item[14].ToString()),
                     IVA = float.Parse(item[15].ToString()),
-                    Total = decimal.Parse(item[16].ToString()),
+                    Total = float.Parse(item[16].ToString()),
                 }) ; 
             }
             return listProducto;
