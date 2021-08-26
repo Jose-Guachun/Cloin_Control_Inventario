@@ -29,8 +29,8 @@ namespace Presentation
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnlMenu = new System.Windows.Forms.Panel();
             this.BtnCancelar = new FontAwesome.Sharp.IconButton();
             this.BtnEliminar = new FontAwesome.Sharp.IconButton();
@@ -300,6 +300,7 @@ namespace Presentation
             this.TxtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtTotal.Location = new System.Drawing.Point(331, 5);
             this.TxtTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtTotal.MaxLength = 8;
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(64, 26);
             this.TxtTotal.TabIndex = 34;
@@ -344,6 +345,7 @@ namespace Presentation
             this.TxtPVP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPVP.Location = new System.Drawing.Point(60, 5);
             this.TxtPVP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtPVP.MaxLength = 8;
             this.TxtPVP.Name = "TxtPVP";
             this.TxtPVP.Size = new System.Drawing.Size(61, 26);
             this.TxtPVP.TabIndex = 19;
@@ -372,6 +374,7 @@ namespace Presentation
             this.TxtIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtIVA.Location = new System.Drawing.Point(183, 5);
             this.TxtIVA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtIVA.MaxLength = 8;
             this.TxtIVA.Name = "TxtIVA";
             this.TxtIVA.Size = new System.Drawing.Size(56, 26);
             this.TxtIVA.TabIndex = 20;
@@ -404,10 +407,12 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RtbCaracteristicas.Location = new System.Drawing.Point(4, 34);
             this.RtbCaracteristicas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.RtbCaracteristicas.MaxLength = 400;
             this.RtbCaracteristicas.Name = "RtbCaracteristicas";
             this.RtbCaracteristicas.Size = new System.Drawing.Size(400, 207);
             this.RtbCaracteristicas.TabIndex = 26;
             this.RtbCaracteristicas.Text = "";
+            this.RtbCaracteristicas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RtbCaracteristicas_KeyPress);
             // 
             // label10
             // 
@@ -505,9 +510,11 @@ namespace Presentation
             this.TxtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCodigo.Location = new System.Drawing.Point(90, 5);
             this.TxtCodigo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtCodigo.MaxLength = 20;
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.Size = new System.Drawing.Size(252, 26);
             this.TxtCodigo.TabIndex = 7;
+            this.TxtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigo_KeyPress);
             // 
             // label5
             // 
@@ -530,6 +537,7 @@ namespace Presentation
             this.TxtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtTitulo.Location = new System.Drawing.Point(90, 53);
             this.TxtTitulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtTitulo.MaxLength = 200;
             this.TxtTitulo.Name = "TxtTitulo";
             this.TxtTitulo.Size = new System.Drawing.Size(252, 26);
             this.TxtTitulo.TabIndex = 8;
@@ -594,6 +602,7 @@ namespace Presentation
             this.TxtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCantidad.Location = new System.Drawing.Point(90, 101);
             this.TxtCantidad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtCantidad.MaxLength = 4;
             this.TxtCantidad.Name = "TxtCantidad";
             this.TxtCantidad.Size = new System.Drawing.Size(252, 26);
             this.TxtCantidad.TabIndex = 9;
@@ -606,6 +615,7 @@ namespace Presentation
             this.TxtMargen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMargen.Location = new System.Drawing.Point(445, 149);
             this.TxtMargen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtMargen.MaxLength = 2;
             this.TxtMargen.Name = "TxtMargen";
             this.TxtMargen.Size = new System.Drawing.Size(253, 26);
             this.TxtMargen.TabIndex = 12;
@@ -658,6 +668,7 @@ namespace Presentation
             this.TxtCoste.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCoste.Location = new System.Drawing.Point(445, 101);
             this.TxtCoste.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtCoste.MaxLength = 8;
             this.TxtCoste.Name = "TxtCoste";
             this.TxtCoste.Size = new System.Drawing.Size(253, 26);
             this.TxtCoste.TabIndex = 11;
@@ -684,6 +695,7 @@ namespace Presentation
             this.TxtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPrecio.Location = new System.Drawing.Point(445, 53);
             this.TxtPrecio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtPrecio.MaxLength = 8;
             this.TxtPrecio.Name = "TxtPrecio";
             this.TxtPrecio.Size = new System.Drawing.Size(253, 26);
             this.TxtPrecio.TabIndex = 10;
@@ -753,6 +765,7 @@ namespace Presentation
             this.TxtDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDescuento.Location = new System.Drawing.Point(445, 197);
             this.TxtDescuento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtDescuento.MaxLength = 2;
             this.TxtDescuento.Name = "TxtDescuento";
             this.TxtDescuento.Size = new System.Drawing.Size(253, 26);
             this.TxtDescuento.TabIndex = 120;
@@ -879,6 +892,7 @@ namespace Presentation
             this.TxtBuscar.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBuscar.Location = new System.Drawing.Point(48, 60);
             this.TxtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtBuscar.MaxLength = 200;
             this.TxtBuscar.Name = "TxtBuscar";
             this.TxtBuscar.Size = new System.Drawing.Size(1190, 40);
             this.TxtBuscar.TabIndex = 103;
@@ -895,23 +909,23 @@ namespace Presentation
             this.DgvProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvProductos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvProductos.EnableHeadersVisualStyles = false;
             this.DgvProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvProductos.Location = new System.Drawing.Point(48, 131);

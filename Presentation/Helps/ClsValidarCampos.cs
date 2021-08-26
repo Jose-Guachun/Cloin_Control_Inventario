@@ -105,8 +105,19 @@ namespace Presentation
                 e.Handled = true;
             }
         }
+        public static void SoloLetrasNumero(KeyPressEventArgs e)
+        {
+            if (char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+        }
 
-            public static bool ComprobarFormatoEmail(string sEmailAComprobar)
+        public static bool ComprobarFormatoEmail(string sEmailAComprobar)
         {
             String sFormato;
             sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";

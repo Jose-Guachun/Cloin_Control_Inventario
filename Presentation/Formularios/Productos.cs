@@ -342,5 +342,15 @@ namespace Presentation
         {
             ClsValidarCampos.SoloNumeros(e);
         }
+
+        private void TxtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloLetrasNumero(e);
+        }
+
+        private void RtbCaracteristicas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloLetrasNumeroEspacio(e);        
+        }
     }
 }
