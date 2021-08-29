@@ -283,12 +283,26 @@ namespace Presentation
             {
                 decimal margen = Convert.ToDecimal(TxtMargen.Text);
                 decimal descuento = Convert.ToDecimal(TxtDescuento.Text);
-                string pvp = calculo.PVP(margen, descuento).ToString();
-                if (pvp != "0")
-                {
-                    TxtPVP.Text = pvp;
-                    TxtIVA.Text = calculo.IVA(Convert.ToDecimal(TxtPVP.Text)).ToString();
-                    TxtTotal.Text = calculo.TOTAL().ToString();
+                decimal pvp = calculo.PVP(margen, descuento);
+                int cont=0;
+                if (pvp != 0)
+                {       
+                    foreach (var item in calculo.ListaCalculo(pvp, margen, descuento))
+                    {
+                        if (cont == 0)
+                        {
+                            TxtPVP.Text = item;
+                        }
+                        if (cont==1)
+                        {
+                            TxtIVA.Text = item;
+                        }
+                        if (cont==2)
+                        {
+                            TxtTotal.Text = item;
+                        }
+                        cont++;     
+                    }
                 }
                 else
                 {

@@ -40,7 +40,7 @@ namespace Presentation
                 MessageBox.Show("El descuento debe de ser menor que el Margen de ganancia");
                 return 0;
             }
-            
+
 
         }
         public decimal IVA(decimal pvp)
@@ -51,7 +51,19 @@ namespace Presentation
         public decimal TOTAL()
         {
             total = pvp + iva;
+
             return decimal.Round(total, 2);
+        }
+        public List<string> ListaCalculo(decimal pvp, decimal margen, decimal descuento){
+
+            List<string> listOfNames = new List<string>()
+        {
+            PVP(margen, descuento).ToString(),
+            IVA(pvp).ToString(),
+            TOTAL().ToString(),
+            
+         };
+            return listOfNames;
         }
     }
 }
