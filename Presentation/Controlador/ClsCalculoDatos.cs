@@ -12,6 +12,7 @@ namespace Presentation
         decimal pvp;
         decimal iva;
         decimal total;
+        decimal desc;
 
         public decimal Coste(decimal precio)
         {
@@ -26,44 +27,48 @@ namespace Presentation
                 return 0;
             }
         }
-        public decimal PVP(decimal margen, decimal descuento)
+        public void PVP(decimal margen, decimal descuento)
         {
+            pvp = coste / (1 - (margen / 100));
+            desc = pvp * (descuento / 100);
+            pvp = decimal.Round(pvp - desc, 2);
+            if (descuento == 0)
+            {
+                total = decimal.Round(pvp + iva);
+                pvp = decimal.Round(total / decimal.Parse("1,12"), 2);
+                IVA();
+            }
+            else
+            {
+                IVA();
+                total = decimal.Round(pvp + iva, 2);
+            }
+        }
+        public void IVA()
+        {
+            iva = (pvp * decimal.Parse("0,12"));
+            iva = decimal.Round(iva, 2);
+        }
+        public List<string> ListaCalculo(decimal margen, decimal descuento){
             if (descuento < margen)
             {
-                pvp = coste / (1 - (margen / 100));
-                descuento = pvp * (descuento / 100);
-                pvp = pvp - descuento;
-                return decimal.Round(pvp, 2);
+                PVP(margen, descuento);
             }
             else
             {
                 MessageBox.Show("El descuento debe de ser menor que el Margen de ganancia");
-                return 0;
+                descuento = 0;
+                PVP(margen, descuento);
             }
-
-
-        }
-        public decimal IVA(decimal pvp)
+            List<string> listCalculo = new List<string>()
         {
-            iva = (pvp * decimal.Parse("0,12"));
-            return decimal.Round(iva, 2);
-        }
-        public decimal TOTAL()
-        {
-            total = pvp + iva;
-
-            return decimal.Round(total, 2);
-        }
-        public List<string> ListaCalculo(decimal pvp, decimal margen, decimal descuento){
-
-            List<string> listOfNames = new List<string>()
-        {
-            PVP(margen, descuento).ToString(),
-            IVA(pvp).ToString(),
-            TOTAL().ToString(),
+            descuento.ToString(),
+            pvp.ToString(),
+            iva.ToString(),
+            total.ToString(),
             
          };
-            return listOfNames;
+            return listCalculo;
         }
     }
 }

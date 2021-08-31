@@ -253,10 +253,6 @@ namespace Presentation
                 if (TxtMargen.Text != "")
                 {
                     TxtMargen_Leave(sender, e);
-                    if (TxtDescuento.Text != "")
-                    {
-                        TxtDescuento_Leave(sender, e);
-                    }
                 }
             }
 
@@ -272,6 +268,7 @@ namespace Presentation
             else
             {
                 TxtMargen.Text = "20";
+                TxtMargen_Leave(sender, e);
             }
 
         }
@@ -283,32 +280,32 @@ namespace Presentation
             {
                 decimal margen = Convert.ToDecimal(TxtMargen.Text);
                 decimal descuento = Convert.ToDecimal(TxtDescuento.Text);
-                decimal pvp = calculo.PVP(margen, descuento);
-                int cont=0;
-                if (pvp != 0)
-                {       
-                    foreach (var item in calculo.ListaCalculo(pvp, margen, descuento))
+                int cont=0;    
+                    foreach (var item in calculo.ListaCalculo(margen, descuento))
                     {
                         if (cont == 0)
                         {
+                        TxtDescuento.Text = item;
+                        }
+                        if (cont == 1)
+                        {
                             TxtPVP.Text = item;
                         }
-                        if (cont==1)
+                        if (cont==2)
                         {
                             TxtIVA.Text = item;
                         }
-                        if (cont==2)
+                        if (cont==3)
                         {
                             TxtTotal.Text = item;
                         }
                         cont++;     
                     }
-                }
-                else
-                {
-                    TxtDescuento.Text = "0";
-                    TxtDescuento_Leave(sender, e);
-                }
+            }
+            else if (TxtDescuento.Text == "")
+            {
+                TxtDescuento.Text = "0";
+                TxtDescuento_Leave(sender, e);
             }
         }
 
