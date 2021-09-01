@@ -32,6 +32,7 @@ namespace Presentation
             pvp = coste / (1 - (margen / 100));
             desc = pvp * (descuento / 100);
             pvp = decimal.Round(pvp - desc, 2);
+            IVA();
             if (descuento == 0)
             {
                 total = decimal.Round(pvp + iva);
@@ -40,7 +41,6 @@ namespace Presentation
             }
             else
             {
-                IVA();
                 total = decimal.Round(pvp + iva, 2);
             }
         }

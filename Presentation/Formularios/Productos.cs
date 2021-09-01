@@ -64,7 +64,8 @@ namespace Presentation
         }
         public void limpiar()
         {
-            TxtCodigo.Clear();
+            TxtCodigoSku.Clear();
+            TxtCodigoUpc.Clear();
             TxtCantidad.Clear();
             TxtTitulo.Clear();
             TxtDescuento.Text="0";
@@ -89,7 +90,7 @@ namespace Presentation
             CboMarca.Text = DgvProductos.CurrentRow.Cells[6].Value.ToString().Trim();
             CboModelo.Text = DgvProductos.CurrentRow.Cells[7].Value.ToString().Trim();
             CboCategoria.Text = DgvProductos.CurrentRow.Cells[8].Value.ToString().Trim();
-            TxtCodigo.Text = DgvProductos.CurrentRow.Cells[9].Value.ToString().Trim();
+            TxtCodigoSku.Text = DgvProductos.CurrentRow.Cells[9].Value.ToString().Trim();
             TxtTitulo.Text = DgvProductos.CurrentRow.Cells[11].Value.ToString().Trim();
             TxtCantidad.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
             RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
@@ -165,7 +166,7 @@ namespace Presentation
                 producto.IdMarca = Convert.ToInt32(CboMarca.SelectedValue);
                 producto.IdCompra = Convert.ToInt32(CboCompra.SelectedValue);
                 producto.IdCategoria = Convert.ToInt32(CboCategoria.SelectedValue);
-                producto.Codigo = TxtCodigo.Text;
+                producto.Codigo = TxtCodigoSku.Text;
                 producto.Titulo = TxtTitulo.Text.ToLower();
                 producto.Cantidad = Convert.ToInt32(TxtCantidad.Text);
                 producto.Precio = float.Parse(TxtPrecio.Text);
@@ -255,6 +256,10 @@ namespace Presentation
                     TxtMargen_Leave(sender, e);
                 }
             }
+            else
+            {
+                TxtPrecio.Text = "0";
+            }
 
         }
 
@@ -276,7 +281,7 @@ namespace Presentation
         private void TxtDescuento_Leave(object sender, EventArgs e)
         {
 
-            if (TxtDescuento.Text!="" && TxtMargen.Text !="" && TxtPrecio.Text!="0")
+            if (TxtDescuento.Text!="" && TxtMargen.Text !="" && TxtPrecio.Text!="")
             {
                 decimal margen = Convert.ToDecimal(TxtMargen.Text);
                 decimal descuento = Convert.ToDecimal(TxtDescuento.Text);
