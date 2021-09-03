@@ -25,8 +25,8 @@ namespace DataAccess.Repositories
         public RepositorioProducto()
         {
             selectAll = "select * from TB_PRODUCTO ";
-            insert = "insert into TB_PRODUCTO values(@IdCompra, @IdMarca, @IdModelo, @IdCategoria, @Codigo, @Img, @Titulo, @Cantidad, @Caracteristicas, @Precio, @Coste, @Margen, @Descuento, @PVP, @IVA, @Total)";
-            update = "update TB_PRODUCTO set IdCompra=@IdCompra, IdMarca=@IdMarca, IdModelo=@IdModelo,IdCategoria=@IdCategoria, Codigo=@Codigo, Cantidad=@Cantidad, Img=@Img, Titulo=@Titulo, Caracteristicas=@Caracteristicas, Precio=@Precio, Coste=@Coste, Margen=@Margen, Descuento=@Descuento, PVP=@PVP, IVA=@IVA, Total=@Total  where IdProducto=@IdProducto";
+            insert = "insert into TB_PRODUCTO values(@IdCompra, @IdMarca, @IdModelo, @IdCategoria, @Codigo_SKU, @Codigo_UPC, @Img, @Titulo, @Cantidad, @Caracteristicas, @Precio, @Coste, @Margen, @Descuento, @PVP, @IVA, @Total)";
+            update = "update TB_PRODUCTO set IdCompra=@IdCompra, IdMarca=@IdMarca, IdModelo=@IdModelo,IdCategoria=@IdCategoria, Codigo_SKU=@Codigo_SKU,Codigo_UPC=@Codigo_UPC, Img=@Img, Titulo=@Titulo, Cantidad=@Cantidad, Caracteristicas=@Caracteristicas, Precio=@Precio, Coste=@Coste, Margen=@Margen, Descuento=@Descuento, PVP=@PVP, IVA=@IVA, Total=@Total  where IdProducto=@IdProducto";
             delete = "delete from TB_PRODUCTO WHERE IdProducto=@IdProducto";
         }
         //este metodo recive como parametro un metodo que es la entidad TB_PRODUCTO
@@ -39,7 +39,8 @@ namespace DataAccess.Repositories
             parameters.Add(new SqlParameter("@IdMarca", entity.IdMarca));
             parameters.Add(new SqlParameter("@IdModelo", entity.IdModelo));
             parameters.Add(new SqlParameter("@IdCategoria", entity.IdCategoria));
-            parameters.Add(new SqlParameter("@Codigo", entity.Codigo));
+            parameters.Add(new SqlParameter("@Codigo_SKU", entity.Codigo_SKU));
+            parameters.Add(new SqlParameter("@Codigo_UPC", entity.Codigo_UPC));
             parameters.Add(new SqlParameter("@Img", entity.Img));
             parameters.Add(new SqlParameter("@Titulo", entity.Titulo));
             parameters.Add(new SqlParameter("@Cantidad", entity.Cantidad));
@@ -63,7 +64,8 @@ namespace DataAccess.Repositories
             parameters.Add(new SqlParameter("@IdMarca", entity.IdMarca));
             parameters.Add(new SqlParameter("@IdModelo", entity.IdModelo));
             parameters.Add(new SqlParameter("@IdCategoria", entity.IdCategoria));
-            parameters.Add(new SqlParameter("@Codigo", entity.Codigo));
+            parameters.Add(new SqlParameter("@Codigo_SKU", entity.Codigo_SKU));
+            parameters.Add(new SqlParameter("@Codigo_UPC", entity.Codigo_UPC));
             parameters.Add(new SqlParameter("@Img", entity.Img));
             parameters.Add(new SqlParameter("@Titulo", entity.Titulo));
             parameters.Add(new SqlParameter("@Cantidad", entity.Cantidad));
@@ -92,18 +94,19 @@ namespace DataAccess.Repositories
                     Marca = item[2].ToString(),
                     Modelo = item[3].ToString(),
                     Categoria = item[4].ToString(),
-                    Codigo = item[5].ToString(),
-                    Img =  (byte[])item[6],
-                    Titulo = item[7].ToString(),
-                    Cantidad = Convert.ToInt32(item[8]),
-                    Caracteristicas = item[9].ToString(),
-                    Precio = float.Parse(item[10].ToString()),
-                    Coste = float.Parse(item[11].ToString()),
-                    Margen = float.Parse(item[12].ToString()),
-                    Descuento = float.Parse(item[13].ToString()),
-                    PVP = float.Parse(item[14].ToString()),
-                    IVA = float.Parse(item[15].ToString()),
-                    Total = float.Parse(item[16].ToString()),
+                    Codigo_SKU = item[5].ToString(),
+                    Codigo_UPC = item[6].ToString(),
+                    Img =  (byte[])item[7],
+                    Titulo = item[8].ToString(),
+                    Cantidad = Convert.ToInt32(item[9]),
+                    Caracteristicas = item[10].ToString(),
+                    Precio = float.Parse(item[11].ToString()),
+                    Coste = float.Parse(item[12].ToString()),
+                    Margen = float.Parse(item[13].ToString()),
+                    Descuento = float.Parse(item[14].ToString()),
+                    PVP = float.Parse(item[15].ToString()),
+                    IVA = float.Parse(item[16].ToString()),
+                    Total = float.Parse(item[17].ToString()),
                 }) ; 
             }
             return listProducto;

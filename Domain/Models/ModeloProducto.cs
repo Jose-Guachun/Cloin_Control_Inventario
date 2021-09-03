@@ -26,7 +26,8 @@ namespace Domain.Models
         private string marca;
         private string modelo;
         private string categoria;
-        private string codigo;
+        private string codigo_SKU;
+        private string codigo_UPC;
         private byte[] img;
         private string titulo;
         private int cantidad;
@@ -54,10 +55,14 @@ namespace Domain.Models
         public string Marca { get => marca; set => marca = value; }
         public string Modelo { get => modelo; set => modelo = value; }
         public string Categoria { get => categoria; set => categoria = value; }
-        [Required(ErrorMessage = "El campo codigo del emepleado es requerido")]
+        [Required(ErrorMessage = "El campo codigo SKU del producto es requerido")]
         [RegularExpression("([0-9]+)", ErrorMessage = "El campo Codigo solo debe estar conformado por numeros")]
-        [StringLength(maximumLength: 20, MinimumLength = 20, ErrorMessage = "El codigo debe de contener 20 digitos")]
-        public string Codigo { get => codigo; set => codigo = value; }
+        [StringLength(maximumLength: 8, MinimumLength = 8, ErrorMessage = "El codigo SKU debe de contener 8 digitos")]
+        public string Codigo_SKU { get => codigo_SKU; set => codigo_SKU = value; }
+        [Required(ErrorMessage = "El campo codigo UPC del producto es requerido")]
+        [RegularExpression("([0-9]+)", ErrorMessage = "El campo Codigo solo debe estar conformado por numeros")]
+        [StringLength(maximumLength: 12, MinimumLength = 12, ErrorMessage = "El codigo SKU debe de contener 12 digitos")]
+        public string Codigo_UPC { get => codigo_UPC; set => codigo_UPC = value; }
         public byte[] Img { get => img; set => img = value; }
         public string Titulo { get => titulo; set => titulo = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
@@ -87,8 +92,9 @@ namespace Domain.Models
                 ModeloDatosProducto.IdModelo = idModelo;
                 ModeloDatosProducto.IdMarca = idMarca;
                 ModeloDatosProducto.IdCategoria = idCategoria;
-                ModeloDatosProducto.Codigo = codigo;
-                ModeloDatosProducto.Img = img;
+                ModeloDatosProducto.Codigo_SKU = codigo_SKU;
+                ModeloDatosProducto.Codigo_UPC = codigo_UPC;
+                ModeloDatosProducto.Img = Img;
                 ModeloDatosProducto.Titulo = titulo;
                 ModeloDatosProducto.Cantidad = Cantidad;
                 ModeloDatosProducto.Caracteristicas = caracteristicas;
@@ -144,8 +150,9 @@ namespace Domain.Models
                     marca=item.Marca,
                     modelo=item.Modelo,
                     categoria=item.Categoria,
-                    codigo=item.Codigo,
-                    img=item.Img,
+                    codigo_SKU=item.Codigo_SKU,
+                    codigo_UPC = item.Codigo_UPC,
+                    img =item.Img,
                     titulo=item.Titulo,
                     cantidad = item.Cantidad,
                     caracteristicas =item.Caracteristicas,
@@ -163,7 +170,7 @@ namespace Domain.Models
 
         public IEnumerable<ModeloProducto> FindById(string filter)
         {
-            return GetAll().FindAll(p => p.codigo.Contains(filter) || p.titulo.Contains(filter));
+            return GetAll().FindAll(p => p.codigo_SKU.Contains(filter) || p.titulo.Contains(filter));
         }
 
     }

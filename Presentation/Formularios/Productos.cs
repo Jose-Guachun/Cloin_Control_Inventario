@@ -32,7 +32,7 @@ namespace Presentation
             DgvProductos.Columns[3].Visible = false;
             DgvProductos.Columns[4].Visible = false;
             DgvProductos.Columns[5].Visible = false;
-            DgvProductos.Columns[10].Visible = false;
+            DgvProductos.Columns[11].Visible = false;
             DgvProductos.Columns[13].Visible = false;
 
         }
@@ -91,16 +91,17 @@ namespace Presentation
             CboModelo.Text = DgvProductos.CurrentRow.Cells[7].Value.ToString().Trim();
             CboCategoria.Text = DgvProductos.CurrentRow.Cells[8].Value.ToString().Trim();
             TxtCodigoSku.Text = DgvProductos.CurrentRow.Cells[9].Value.ToString().Trim();
-            TxtTitulo.Text = DgvProductos.CurrentRow.Cells[11].Value.ToString().Trim();
-            TxtCantidad.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
-            RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
-            TxtPrecio.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
-            TxtCoste.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
-            TxtMargen.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
-            TxtDescuento.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
-            TxtPVP.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
-            TxtIVA.Text = DgvProductos.CurrentRow.Cells[19].Value.ToString().Trim();
-            TxtTotal.Text = DgvProductos.CurrentRow.Cells[20].Value.ToString().Trim();
+            TxtCodigoUpc.Text = DgvProductos.CurrentRow.Cells[10].Value.ToString().Trim();
+            TxtTitulo.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
+            TxtCantidad.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
+            RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
+            TxtPrecio.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
+            TxtCoste.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
+            TxtMargen.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
+            TxtDescuento.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
+            TxtPVP.Text = DgvProductos.CurrentRow.Cells[19].Value.ToString().Trim();
+            TxtIVA.Text = DgvProductos.CurrentRow.Cells[20].Value.ToString().Trim();
+            TxtTotal.Text = DgvProductos.CurrentRow.Cells[21].Value.ToString().Trim();
             ImgProducto.Image = Image.FromStream(ByteImage());
         }
 
@@ -166,7 +167,8 @@ namespace Presentation
                 producto.IdMarca = Convert.ToInt32(CboMarca.SelectedValue);
                 producto.IdCompra = Convert.ToInt32(CboCompra.SelectedValue);
                 producto.IdCategoria = Convert.ToInt32(CboCategoria.SelectedValue);
-                producto.Codigo = TxtCodigoSku.Text;
+                producto.Codigo_SKU = TxtCodigoSku.Text;
+                producto.Codigo_UPC = TxtCodigoUpc.Text;
                 producto.Titulo = TxtTitulo.Text.ToLower();
                 producto.Cantidad = Convert.ToInt32(TxtCantidad.Text);
                 producto.Precio = float.Parse(TxtPrecio.Text);
