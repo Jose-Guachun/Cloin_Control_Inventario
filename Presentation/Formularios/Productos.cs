@@ -32,6 +32,7 @@ namespace Presentation
             DgvProductos.Columns[3].Visible = false;
             DgvProductos.Columns[4].Visible = false;
             DgvProductos.Columns[5].Visible = false;
+            DgvProductos.Columns[10].Visible = false;
             DgvProductos.Columns[11].Visible = false;
             DgvProductos.Columns[13].Visible = false;
 
@@ -369,6 +370,11 @@ namespace Presentation
         private void RtbCaracteristicas_KeyPress(object sender, KeyPressEventArgs e)
         {
             ClsValidarCampos.SoloLetrasNumeroEspacio(e);        
+        }
+
+        private void TxtCodigoUpc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloNumeros(e);
         }
     }
 }
