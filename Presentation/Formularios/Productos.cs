@@ -53,7 +53,7 @@ namespace Presentation
         {
             BtnExaminar.Enabled = false;
             TxtTotal.Enabled = false;
-            tableLayoutPanel3.Enabled = false;
+            TplDatos.Enabled = false;
             TlpCaracteristicas.Enabled = false;
             TlpIvaTotal.Enabled = false;
             BtnNuevo.Enabled = true;
@@ -128,7 +128,7 @@ namespace Presentation
         }
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
-            tableLayoutPanel3.Enabled = true;
+            TplDatos.Enabled = true;
             RtbCaracteristicas.Enabled = true;
             TlpCaracteristicas.Enabled = true;
             BtnExaminar.Enabled = true;
@@ -214,7 +214,7 @@ namespace Presentation
                 BtnEditar.Enabled = true;
                 TlpCaracteristicas.Enabled = true;
                 BtnCancelar.Enabled = true;
-                tableLayoutPanel3.Enabled = true;
+                TplDatos.Enabled = true;
                 DgvProductos.Enabled = false;
                 BtnGuardar.Enabled = true;
                 BtnExaminar.Enabled = true;
