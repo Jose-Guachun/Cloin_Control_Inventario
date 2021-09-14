@@ -32,7 +32,6 @@ namespace Presentation
             DgvProductos.Columns[3].Visible = false;
             DgvProductos.Columns[4].Visible = false;
             DgvProductos.Columns[5].Visible = false;
-            DgvProductos.Columns[10].Visible = false;
             DgvProductos.Columns[11].Visible = false;
             DgvProductos.Columns[13].Visible = false;
 
@@ -51,9 +50,10 @@ namespace Presentation
         }
         public void botones()
         {
+            TplTitulo.Enabled = false;
             BtnExaminar.Enabled = false;
             TxtTotal.Enabled = false;
-            TplDatos.Enabled = false;
+            TlpDatos.Enabled = false;
             TlpCaracteristicas.Enabled = false;
             TlpIvaTotal.Enabled = false;
             BtnNuevo.Enabled = true;
@@ -128,7 +128,8 @@ namespace Presentation
         }
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
-            TplDatos.Enabled = true;
+            TlpDatos.Enabled = true;
+            TplTitulo.Enabled = true;
             RtbCaracteristicas.Enabled = true;
             TlpCaracteristicas.Enabled = true;
             BtnExaminar.Enabled = true;
@@ -214,7 +215,7 @@ namespace Presentation
                 BtnEditar.Enabled = true;
                 TlpCaracteristicas.Enabled = true;
                 BtnCancelar.Enabled = true;
-                TplDatos.Enabled = true;
+                TlpDatos.Enabled = true;
                 DgvProductos.Enabled = false;
                 BtnGuardar.Enabled = true;
                 BtnExaminar.Enabled = true;
@@ -370,11 +371,6 @@ namespace Presentation
         private void RtbCaracteristicas_KeyPress(object sender, KeyPressEventArgs e)
         {
             ClsValidarCampos.SoloLetrasNumeroEspacio(e);        
-        }
-
-        private void TxtCodigoUpc_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ClsValidarCampos.SoloNumeros(e);
         }
     }
 }
