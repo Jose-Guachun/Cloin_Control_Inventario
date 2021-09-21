@@ -13,6 +13,9 @@ namespace Presentation
         decimal iva;
         decimal total;
         decimal desc;
+        string categoria;
+        string marca;
+        string modelo;
 
         public decimal Coste(decimal precio)
         {
@@ -69,6 +72,50 @@ namespace Presentation
             
          };
             return listCalculo;
+        }
+        public string SKU(string sku, int ide)
+        {
+            if (ide == 0)
+            {
+                categoria = sku.Substring(0, 1);
+                if (sku.Substring(sku.Length - 2, 1) == " ")
+                {
+                    categoria = categoria + sku.Substring(sku.Length - 3, 1);
+                }
+                else
+                {
+                    categoria = sku.Substring(0, 1) + sku.Substring(sku.Length - 2, 1);
+                }
+                
+            }
+            if (ide == 1)
+            {
+                marca = sku.Substring(0, 1);
+                if (sku.Substring((sku.Length / 2) - 1, 1)==" ")
+                {
+                    marca += sku.Substring((sku.Length / 2) - 2, 1);
+                }
+                else
+                {
+                    marca += sku.Substring((sku.Length / 2) - 1, 1) + sku.Substring(sku.Length - 2, 1);
+                }
+                
+            }
+            if (ide == 2)
+            {
+                modelo = sku.Substring(0, 1);
+                if (sku.Substring((sku.Length / 2) - 1, 1)==" ")
+                {
+                    modelo += sku.Substring((sku.Length / 2) - 2, 1) + sku.Substring(sku.Length - 2, 1);
+
+                }
+                else
+                {
+                    modelo += sku.Substring((sku.Length / 2) - 1, 1) + sku.Substring(sku.Length - 2, 1);
+                }
+                
+            }
+            return (categoria + marca + modelo).ToUpper();
         }
     }
 }

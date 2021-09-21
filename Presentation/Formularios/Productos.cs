@@ -108,7 +108,7 @@ namespace Presentation
 
         private MemoryStream ByteImage()
         {
-            byte[] im = (byte[])DgvProductos.CurrentRow.Cells[10].Value;
+            byte[] im = (byte[])DgvProductos.CurrentRow.Cells[11].Value;
             MemoryStream ms = new MemoryStream(im);
             return ms;
         }
@@ -371,6 +371,22 @@ namespace Presentation
         private void RtbCaracteristicas_KeyPress(object sender, KeyPressEventArgs e)
         {
             ClsValidarCampos.SoloLetrasNumeroEspacio(e);        
+        }
+
+        private void CboCategoria_Leave(object sender, EventArgs e)
+        {
+
+            TxtCodigoSku.Text=calculo.SKU(CboCategoria.Text, 0);
+        }
+
+        private void CboMarca_Leave(object sender, EventArgs e)
+        {
+            TxtCodigoSku.Text = calculo.SKU(CboMarca.Text, 1);
+        }
+
+        private void CboModelo_Leave(object sender, EventArgs e)
+        {
+            TxtCodigoSku.Text = calculo.SKU(CboModelo.Text, 2);
         }
     }
 }

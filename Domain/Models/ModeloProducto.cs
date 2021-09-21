@@ -56,12 +56,11 @@ namespace Domain.Models
         public string Modelo { get => modelo; set => modelo = value; }
         public string Categoria { get => categoria; set => categoria = value; }
         [Required(ErrorMessage = "El campo codigo SKU del producto es requerido")]
-        [RegularExpression("([0-9]+)", ErrorMessage = "El campo Codigo solo debe estar conformado por numeros")]
         [StringLength(maximumLength: 8, MinimumLength = 8, ErrorMessage = "El codigo SKU debe de contener 8 digitos")]
         public string Codigo_SKU { get => codigo_SKU; set => codigo_SKU = value; }
         [Required(ErrorMessage = "El campo codigo UPC del producto es requerido")]
-        [RegularExpression("([0-9]+)", ErrorMessage = "El campo Codigo solo debe estar conformado por numeros")]
-        [StringLength(maximumLength: 12, MinimumLength = 12, ErrorMessage = "El codigo SKU debe de contener 12 digitos")]
+        [RegularExpression("([0-9]+)", ErrorMessage = "El campo Codigo UPC solo debe estar conformado por numeros")]
+        [StringLength(maximumLength: 12, MinimumLength = 12, ErrorMessage = "El codigo UPC debe de contener 12 digitos")]
         public string Codigo_UPC { get => codigo_UPC; set => codigo_UPC = value; }
         public byte[] Img { get => img; set => img = value; }
         public string Titulo { get => titulo; set => titulo = value; }
