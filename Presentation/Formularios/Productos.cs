@@ -36,6 +36,13 @@ namespace Presentation
             DgvProductos.Columns[13].Visible = false;
 
         }
+        private void ListarCategorias()
+        {
+            ClsProductos objProd = new ClsProductos();
+            CmbCategoria.DataSource = objProd.ListarCategorias();
+            CmbCategoria.DisplayMember = "CATEGORIA";
+            CmbCategoria.ValueMember = "IdCategoria";
+        }
         private void ListaProducto()
         {
             try
