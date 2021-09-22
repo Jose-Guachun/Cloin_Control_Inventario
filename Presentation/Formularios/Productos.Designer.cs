@@ -29,8 +29,8 @@ namespace Presentation
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnlMenu = new System.Windows.Forms.Panel();
             this.BtnCancelar = new FontAwesome.Sharp.IconButton();
             this.BtnEliminar = new FontAwesome.Sharp.IconButton();
@@ -50,11 +50,12 @@ namespace Presentation
             this.label8 = new System.Windows.Forms.Label();
             this.TxtIVA = new System.Windows.Forms.TextBox();
             this.TlpCaracteristicas = new System.Windows.Forms.TableLayoutPanel();
-            this.RtbCaracteristicas = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.RtbCaracteristicas = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtCodigoSku = new System.Windows.Forms.TextBox();
             this.TlpDatos = new System.Windows.Forms.TableLayoutPanel();
+            this.TxtCoste = new System.Windows.Forms.TextBox();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.TxtCodigoUpc = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -64,20 +65,21 @@ namespace Presentation
             this.label15 = new System.Windows.Forms.Label();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.CboMarca = new System.Windows.Forms.ComboBox();
-            this.TxtCoste = new System.Windows.Forms.TextBox();
-            this.TxtMargen = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TxtDescuento = new System.Windows.Forms.TextBox();
-            this.Descuento = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.label14 = new System.Windows.Forms.Label();
             this.CboCategoria = new System.Windows.Forms.ComboBox();
+            this.Descuento = new System.Windows.Forms.Label();
+            this.TxtDescuento = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtMargen = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.LblTitleChildForm = new System.Windows.Forms.Label();
             this.BtnExaminar = new FontAwesome.Sharp.IconButton();
             this.ImgProducto = new FontAwesome.Sharp.IconPictureBox();
@@ -86,8 +88,6 @@ namespace Presentation
             this.BtnBuscar = new FontAwesome.Sharp.IconButton();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.DgvProductos = new System.Windows.Forms.DataGridView();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.label4 = new System.Windows.Forms.Label();
             this.PnlMenu.SuspendLayout();
             this.PnlDatos.SuspendLayout();
             this.TplTitulo.SuspendLayout();
@@ -439,19 +439,6 @@ namespace Presentation
             this.TlpCaracteristicas.Size = new System.Drawing.Size(272, 160);
             this.TlpCaracteristicas.TabIndex = 104;
             // 
-            // RtbCaracteristicas
-            // 
-            this.RtbCaracteristicas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RtbCaracteristicas.Location = new System.Drawing.Point(3, 21);
-            this.RtbCaracteristicas.MaxLength = 400;
-            this.RtbCaracteristicas.Name = "RtbCaracteristicas";
-            this.RtbCaracteristicas.Size = new System.Drawing.Size(266, 136);
-            this.RtbCaracteristicas.TabIndex = 20;
-            this.RtbCaracteristicas.Text = "";
-            this.RtbCaracteristicas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RtbCaracteristicas_KeyPress);
-            // 
             // label10
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -464,6 +451,19 @@ namespace Presentation
             this.label10.TabIndex = 16;
             this.label10.Text = "Caracteristicas";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // RtbCaracteristicas
+            // 
+            this.RtbCaracteristicas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RtbCaracteristicas.Location = new System.Drawing.Point(3, 21);
+            this.RtbCaracteristicas.MaxLength = 400;
+            this.RtbCaracteristicas.Name = "RtbCaracteristicas";
+            this.RtbCaracteristicas.Size = new System.Drawing.Size(266, 136);
+            this.RtbCaracteristicas.TabIndex = 20;
+            this.RtbCaracteristicas.Text = "";
+            this.RtbCaracteristicas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RtbCaracteristicas_KeyPress);
             // 
             // label1
             // 
@@ -535,6 +535,20 @@ namespace Presentation
             this.TlpDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.TlpDatos.Size = new System.Drawing.Size(468, 160);
             this.TlpDatos.TabIndex = 102;
+            // 
+            // TxtCoste
+            // 
+            this.TxtCoste.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtCoste.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCoste.Location = new System.Drawing.Point(313, 67);
+            this.TxtCoste.MaxLength = 8;
+            this.TxtCoste.Name = "TxtCoste";
+            this.TxtCoste.Size = new System.Drawing.Size(152, 20);
+            this.TxtCoste.TabIndex = 19;
+            this.TxtCoste.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCoste_KeyPress);
+            this.TxtCoste.Leave += new System.EventHandler(this.TxtCoste_Leave);
             // 
             // iconButton2
             // 
@@ -657,6 +671,19 @@ namespace Presentation
             this.label2.Text = "Cantidad";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(248, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 32);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Coste";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label13
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -681,85 +708,6 @@ namespace Presentation
             this.CboMarca.Size = new System.Drawing.Size(151, 21);
             this.CboMarca.TabIndex = 13;
             this.CboMarca.Leave += new System.EventHandler(this.CboMarca_Leave);
-            // 
-            // TxtCoste
-            // 
-            this.TxtCoste.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtCoste.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCoste.Location = new System.Drawing.Point(313, 67);
-            this.TxtCoste.MaxLength = 8;
-            this.TxtCoste.Name = "TxtCoste";
-            this.TxtCoste.Size = new System.Drawing.Size(152, 20);
-            this.TxtCoste.TabIndex = 19;
-            this.TxtCoste.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCoste_KeyPress);
-            this.TxtCoste.Leave += new System.EventHandler(this.TxtCoste_Leave);
-            // 
-            // TxtMargen
-            // 
-            this.TxtMargen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtMargen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMargen.Location = new System.Drawing.Point(313, 99);
-            this.TxtMargen.MaxLength = 2;
-            this.TxtMargen.Name = "TxtMargen";
-            this.TxtMargen.Size = new System.Drawing.Size(152, 20);
-            this.TxtMargen.TabIndex = 20;
-            this.TxtMargen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtMargen_KeyPress);
-            this.TxtMargen.Leave += new System.EventHandler(this.TxtMargen_Leave);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(248, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 32);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Coste";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(248, 96);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 32);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Margen";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // TxtDescuento
-            // 
-            this.TxtDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDescuento.Location = new System.Drawing.Point(313, 131);
-            this.TxtDescuento.MaxLength = 2;
-            this.TxtDescuento.Name = "TxtDescuento";
-            this.TxtDescuento.Size = new System.Drawing.Size(152, 20);
-            this.TxtDescuento.TabIndex = 21;
-            this.TxtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDescuento_KeyPress);
-            this.TxtDescuento.Leave += new System.EventHandler(this.TxtDescuento_Leave);
-            // 
-            // Descuento
-            // 
-            this.Descuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.Descuento.AutoSize = true;
-            this.Descuento.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Descuento.Location = new System.Drawing.Point(248, 128);
-            this.Descuento.Name = "Descuento";
-            this.Descuento.Size = new System.Drawing.Size(59, 32);
-            this.Descuento.TabIndex = 120;
-            this.Descuento.Text = "Descuento";
-            this.Descuento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iconButton1
             // 
@@ -872,6 +820,95 @@ namespace Presentation
             this.CboCategoria.Size = new System.Drawing.Size(151, 21);
             this.CboCategoria.TabIndex = 11;
             this.CboCategoria.Leave += new System.EventHandler(this.CboCategoria_Leave);
+            // 
+            // Descuento
+            // 
+            this.Descuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Descuento.AutoSize = true;
+            this.Descuento.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Descuento.Location = new System.Drawing.Point(248, 128);
+            this.Descuento.Name = "Descuento";
+            this.Descuento.Size = new System.Drawing.Size(59, 32);
+            this.Descuento.TabIndex = 120;
+            this.Descuento.Text = "Descuento";
+            this.Descuento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TxtDescuento
+            // 
+            this.TxtDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDescuento.Location = new System.Drawing.Point(313, 131);
+            this.TxtDescuento.MaxLength = 2;
+            this.TxtDescuento.Name = "TxtDescuento";
+            this.TxtDescuento.Size = new System.Drawing.Size(152, 20);
+            this.TxtDescuento.TabIndex = 21;
+            this.TxtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDescuento_KeyPress);
+            this.TxtDescuento.Leave += new System.EventHandler(this.TxtDescuento_Leave);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(248, 96);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 32);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Margen";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TxtMargen
+            // 
+            this.TxtMargen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtMargen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtMargen.Location = new System.Drawing.Point(313, 99);
+            this.TxtMargen.MaxLength = 2;
+            this.TxtMargen.Name = "TxtMargen";
+            this.TxtMargen.Size = new System.Drawing.Size(152, 20);
+            this.TxtMargen.TabIndex = 20;
+            this.TxtMargen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtMargen_KeyPress);
+            this.TxtMargen.Leave += new System.EventHandler(this.TxtMargen_Leave);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(248, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 32);
+            this.label4.TabIndex = 122;
+            this.label4.Text = "Calcular";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // iconButton6
+            // 
+            this.iconButton6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton6.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.iconButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iconButton6.FlatAppearance.BorderSize = 0;
+            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton6.ForeColor = System.Drawing.Color.White;
+            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Calculator;
+            this.iconButton6.IconColor = System.Drawing.Color.White;
+            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton6.IconSize = 18;
+            this.iconButton6.Location = new System.Drawing.Point(313, 35);
+            this.iconButton6.Name = "iconButton6";
+            this.iconButton6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.iconButton6.Size = new System.Drawing.Size(152, 26);
+            this.iconButton6.TabIndex = 18;
+            this.iconButton6.Text = "CALCULAR COSTE";
+            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton6.UseVisualStyleBackColor = false;
             // 
             // LblTitleChildForm
             // 
@@ -1003,23 +1040,23 @@ namespace Presentation
             this.DgvProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvProductos.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvProductos.EnableHeadersVisualStyles = false;
             this.DgvProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvProductos.Location = new System.Drawing.Point(32, 85);
@@ -1032,43 +1069,6 @@ namespace Presentation
             this.DgvProductos.Size = new System.Drawing.Size(909, 189);
             this.DgvProductos.TabIndex = 25;
             this.DgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductos_CellDoubleClick);
-            // 
-            // iconButton6
-            // 
-            this.iconButton6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton6.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.iconButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton6.FlatAppearance.BorderSize = 0;
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton6.ForeColor = System.Drawing.Color.White;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Calculator;
-            this.iconButton6.IconColor = System.Drawing.Color.White;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 18;
-            this.iconButton6.Location = new System.Drawing.Point(313, 35);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.iconButton6.Size = new System.Drawing.Size(152, 26);
-            this.iconButton6.TabIndex = 18;
-            this.iconButton6.Text = "CALCULAR COSTE";
-            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton6.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(248, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 32);
-            this.label4.TabIndex = 122;
-            this.label4.Text = "Calcular";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Productos
             // 
