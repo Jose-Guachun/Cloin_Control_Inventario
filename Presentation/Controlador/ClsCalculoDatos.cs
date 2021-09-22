@@ -30,7 +30,7 @@ namespace Presentation
                 return 0;
             }
         }
-        public void PVP(decimal margen, decimal descuento)
+        public void PVP(decimal margen, decimal descuento, decimal coste)
         {
             pvp = coste / (1 - (margen / 100));
             desc = pvp * (descuento / 100);
@@ -52,16 +52,16 @@ namespace Presentation
             iva = (pvp * decimal.Parse("0,12"));
             iva = decimal.Round(iva, 2);
         }
-        public List<string> ListaCalculo(decimal margen, decimal descuento){
+        public List<string> ListaCalculo(decimal margen, decimal descuento, decimal coste){
             if (descuento < margen)
             {
-                PVP(margen, descuento);
+                PVP(margen, descuento, coste);
             }
             else
             {
                 MessageBox.Show("El descuento debe de ser menor que el Margen de ganancia");
                 descuento = 0;
-                PVP(margen, descuento);
+                PVP(margen, descuento, coste);
             }
             List<string> listCalculo = new List<string>()
         {

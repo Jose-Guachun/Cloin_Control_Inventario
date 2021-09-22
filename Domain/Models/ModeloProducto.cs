@@ -32,7 +32,6 @@ namespace Domain.Models
         private string titulo;
         private int cantidad;
         private string caracteristicas;
-        private float  precio;
         private float  coste;
         private float  margen;
         private float descuento;
@@ -66,7 +65,6 @@ namespace Domain.Models
         public string Titulo { get => titulo; set => titulo = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
         public string Caracteristicas { get => caracteristicas; set => caracteristicas = value; }
-        public float Precio { get => precio; set => precio = value; }
         public float Coste { get => coste; set => coste = value; }
         public float Margen { get => margen; set => margen = value; }
         [Required(ErrorMessage = "El campo Descuento es requerido")]
@@ -97,7 +95,6 @@ namespace Domain.Models
                 ModeloDatosProducto.Titulo = titulo;
                 ModeloDatosProducto.Cantidad = Cantidad;
                 ModeloDatosProducto.Caracteristicas = caracteristicas;
-                ModeloDatosProducto.Precio = precio;
                 ModeloDatosProducto.Coste = coste;
                 ModeloDatosProducto.Margen = margen;
                 ModeloDatosProducto.Descuento = descuento;
@@ -155,7 +152,6 @@ namespace Domain.Models
                     titulo=item.Titulo,
                     cantidad = item.Cantidad,
                     caracteristicas =item.Caracteristicas,
-                    precio=item.Precio,
                     coste=item.Coste,
                     margen =item.Margen,
                     descuento = item.Descuento,

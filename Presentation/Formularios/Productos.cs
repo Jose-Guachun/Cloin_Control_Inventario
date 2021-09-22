@@ -70,7 +70,6 @@ namespace Presentation
             TxtCantidad.Clear();
             TxtTitulo.Clear();
             TxtDescuento.Text="0";
-            TxtPrecio.Text = "0";
             TxtCoste.Text = "0";
             TxtIVA.Text = "0";
             TxtMargen.Text="20";
@@ -96,13 +95,12 @@ namespace Presentation
             TxtTitulo.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
             TxtCantidad.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
             RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
-            TxtPrecio.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
-            TxtCoste.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
-            TxtMargen.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
-            TxtDescuento.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
-            TxtPVP.Text = DgvProductos.CurrentRow.Cells[19].Value.ToString().Trim();
-            TxtIVA.Text = DgvProductos.CurrentRow.Cells[20].Value.ToString().Trim();
-            TxtTotal.Text = DgvProductos.CurrentRow.Cells[21].Value.ToString().Trim();
+            TxtCoste.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
+            TxtMargen.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
+            TxtDescuento.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
+            TxtPVP.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
+            TxtIVA.Text = DgvProductos.CurrentRow.Cells[19].Value.ToString().Trim();
+            TxtTotal.Text = DgvProductos.CurrentRow.Cells[20].Value.ToString().Trim();
             ImgProducto.Image = Image.FromStream(ByteImage());
         }
 
@@ -173,7 +171,6 @@ namespace Presentation
                 producto.Codigo_UPC = TxtCodigoUpc.Text;
                 producto.Titulo = TxtTitulo.Text.ToLower();
                 producto.Cantidad = Convert.ToInt32(TxtCantidad.Text);
-                producto.Precio = float.Parse(TxtPrecio.Text);
                 producto.Coste = float.Parse(TxtCoste.Text);
                 producto.Margen = float.Parse(TxtMargen.Text);
                 producto.Pvp = float.Parse(TxtPVP.Text);
@@ -251,7 +248,7 @@ namespace Presentation
 
         private void TxtPrecio_Leave(object sender, EventArgs e)
         {
-            if (TxtPrecio.Text != "")
+            /*if (TxtPrecio.Text != "")
             {
                 decimal precio = Convert.ToDecimal(TxtPrecio.Text);
                 TxtCoste.Text = calculo.Coste(precio).ToString();
@@ -263,8 +260,19 @@ namespace Presentation
             else
             {
                 TxtPrecio.Text = "0";
-            }
+            }*/
 
+        }
+        private void TxtCoste_Leave(object sender, EventArgs e)
+        {
+            if (TxtCoste.Text!= "" && TxtMargen.Text != "")
+            {
+                    TxtMargen_Leave(sender, e);
+            }
+            else
+            {
+                TxtCoste.Text = "0";
+            }
         }
 
         private void TxtMargen_Leave(object sender, EventArgs e)
@@ -285,12 +293,14 @@ namespace Presentation
         private void TxtDescuento_Leave(object sender, EventArgs e)
         {
 
-            if (TxtDescuento.Text!="" && TxtMargen.Text !="" && TxtPrecio.Text!="")
+            if (TxtDescuento.Text!="" && TxtMargen.Text !="")
             {
+                decimal coste = Convert.ToDecimal(TxtCoste.Text);
                 decimal margen = Convert.ToDecimal(TxtMargen.Text);
                 decimal descuento = Convert.ToDecimal(TxtDescuento.Text);
+                
                 int cont=0;    
-                    foreach (var item in calculo.ListaCalculo(margen, descuento))
+                    foreach (var item in calculo.ListaCalculo(margen, descuento,coste))
                     {
                         if (cont == 0)
                         {
@@ -376,17 +386,19 @@ namespace Presentation
         private void CboCategoria_Leave(object sender, EventArgs e)
         {
 
-            TxtCodigoSku.Text=calculo.SKU(CboCategoria.Text, 0);
+            //TxtCodigoSku.Text=calculo.SKU(CboCategoria.Text, 0);
         }
 
         private void CboMarca_Leave(object sender, EventArgs e)
         {
-            TxtCodigoSku.Text = calculo.SKU(CboMarca.Text, 1);
+            //TxtCodigoSku.Text = calculo.SKU(CboMarca.Text, 1);
         }
 
         private void CboModelo_Leave(object sender, EventArgs e)
         {
-            TxtCodigoSku.Text = calculo.SKU(CboModelo.Text, 2);
+           // TxtCodigoSku.Text = calculo.SKU(CboModelo.Text, 2);
         }
+
+
     }
 }

@@ -22,7 +22,6 @@ namespace DataAccess.Entities
         public string Titulo { get; set; }
         public int Cantidad { get; set; }
         public string Caracteristicas { get; set; }
-        public float Precio { get; set; }
         public float Coste { get; set; }
         public float Margen { get; set; }
         public float Descuento { get; set; }
