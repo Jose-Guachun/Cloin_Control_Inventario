@@ -20,6 +20,10 @@ namespace DataAccess.Repositories
         private string insert;
         private string update;
         private string delete;
+        private string categoria;
+        private string marca;
+        private string modelo;
+        private string compra;
 
         //constructor
         public RepositorioProducto()
@@ -28,6 +32,17 @@ namespace DataAccess.Repositories
             insert = "insert into TB_PRODUCTO values(@IdCompra, @IdMarca, @IdModelo, @IdCategoria, @Codigo_SKU, @Codigo_UPC, @Img, @Titulo, @Cantidad, @Caracteristicas, @Coste, @Margen, @Descuento, @PVP, @IVA, @Total)";
             update = "update TB_PRODUCTO set IdCompra=@IdCompra, IdMarca=@IdMarca, IdModelo=@IdModelo,IdCategoria=@IdCategoria, Codigo_SKU=@Codigo_SKU,Codigo_UPC=@Codigo_UPC, Img=@Img, Titulo=@Titulo, Cantidad=@Cantidad, Caracteristicas=@Caracteristicas, Coste=@Coste, Margen=@Margen, Descuento=@Descuento, PVP=@PVP, IVA=@IVA, Total=@Total  where IdProducto=@IdProducto";
             delete = "delete from TB_PRODUCTO WHERE IdProducto=@IdProducto";
+            categoria = "select * from TB_PRODUCTO ";
+        }
+        public DataTable ListarCategorias()
+        {
+            return ExecuteReader(categoria);
+        }
+        public DataTable ListarMarcas()
+        {
+            DataTable Tabla = new DataTable();
+            Tabla = ExecuteReader(categoria);
+            return Tabla;
         }
         //este metodo recive como parametro un metodo que es la entidad TB_PRODUCTO
         public int Add(TB_PRODUCTO entity)
@@ -77,7 +92,7 @@ namespace DataAccess.Repositories
             parameters.Add(new SqlParameter("@Total", entity.Total));
             return ExecuteNonQuery(update);
         }
-
+        
         public IEnumerable<TB_PRODUCTO> GetAll()
         {
             var tableResult = ExecuteReader(selectAll);
