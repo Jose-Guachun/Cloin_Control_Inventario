@@ -208,6 +208,10 @@
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{35690A01-D46C-42CF-ABCC-B19D45463D66}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{97a4eda1-be26-4281-bf4c-f4834585d73e}</Project>
       <Name>Domain</Name>

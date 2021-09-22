@@ -15,7 +15,7 @@ using System.Data;
 
 namespace Domain.Models
 {
-    public class ModeloProducto
+    public class ModeloProducto : RepositorioMaestro
     {
         private int idProducto;
         private int idCompra;
@@ -73,7 +73,22 @@ namespace Domain.Models
         public float Iva { get => iva; set => iva = value; }
         public float Total { get => total; set => total = value; }
 
-
+        public DataTable ListarCompra()
+        {
+            return ExecuteReader("ListarCompra");
+        }
+        public DataTable ListarCategorias()
+        {
+            return ExecuteReader("ListarCategorias");
+        }
+        public DataTable ListarMarca()
+        {
+            return ExecuteReader("ListarMarca");
+        }
+        public DataTable ListarModelo()
+        {
+            return ExecuteReader("ListarModelo");
+        }
         public ModeloProducto()
         {
             repositorioProducto = new RepositorioProducto();

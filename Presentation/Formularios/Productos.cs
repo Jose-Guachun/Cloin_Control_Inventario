@@ -26,7 +26,13 @@ namespace Presentation
         }
         private void Productos_Load(object sender, EventArgs e)
         {
+
+            ListarCompra();
+            ListarCategorias();
+            ListarMarca();
+            ListarModelo();
             ListaProducto();
+
             DgvProductos.Columns[1].Visible = false;
             DgvProductos.Columns[2].Visible = false;
             DgvProductos.Columns[3].Visible = false;
@@ -36,12 +42,30 @@ namespace Presentation
             DgvProductos.Columns[13].Visible = false;
 
         }
+        private void ListarCompra()
+        {
+            CboCompra.DataSource = producto.ListarCompra();
+            CboCompra.DisplayMember = "Fecha";
+            CboCompra.ValueMember = "IdCompra";
+        }
         private void ListarCategorias()
         {
-            ClsProductos objProd = new ClsProductos();
-            CmbCategoria.DataSource = objProd.ListarCategorias();
-            CmbCategoria.DisplayMember = "CATEGORIA";
-            CmbCategoria.ValueMember = "IdCategoria";
+            CboCategoria.DataSource = producto.ListarCategorias();
+            CboCategoria.DisplayMember = "Categoria";
+            CboCategoria.ValueMember = "IdCategoria";
+        }
+
+        private void ListarMarca()
+        {
+            CboMarca.DataSource = producto.ListarMarca();
+            CboMarca.DisplayMember = "Marca";
+            CboMarca.ValueMember = "IdMarca";
+        }
+        private void ListarModelo()
+        {
+            CboModelo.DataSource = producto.ListarModelo();
+            CboModelo.DisplayMember = "Modelo";
+            CboModelo.ValueMember = "IdModelo";
         }
         private void ListaProducto()
         {
@@ -170,7 +194,7 @@ namespace Presentation
         {
             try
             {
-                producto.IdModelo = Convert.ToInt32(CboModelo.Text);
+                producto.IdModelo = Convert.ToInt32(CboModelo.SelectedValue);
                 producto.IdMarca = Convert.ToInt32(CboMarca.SelectedValue);
                 producto.IdCompra = Convert.ToInt32(CboCompra.SelectedValue);
                 producto.IdCategoria = Convert.ToInt32(CboCategoria.SelectedValue);
