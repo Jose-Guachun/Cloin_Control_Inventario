@@ -42,6 +42,7 @@ namespace Presentation
             DgvProductos.Columns[13].Visible = false;
 
         }
+
         private void ListarCompra()
         {
             CboCompra.DataSource = producto.ListarCompra();
@@ -417,19 +418,22 @@ namespace Presentation
         private void CboCategoria_Leave(object sender, EventArgs e)
         {
 
-            //TxtCodigoSku.Text=calculo.SKU(CboCategoria.Text, 0);
+            TxtCodigoSku.Text=calculo.SKU(CboCategoria.Text, 0);
         }
 
         private void CboMarca_Leave(object sender, EventArgs e)
         {
-            //TxtCodigoSku.Text = calculo.SKU(CboMarca.Text, 1);
+            TxtCodigoSku.Text = calculo.SKU(CboMarca.Text, 1);
         }
 
         private void CboModelo_Leave(object sender, EventArgs e)
         {
-           // TxtCodigoSku.Text = calculo.SKU(CboModelo.Text, 2);
+           TxtCodigoSku.Text = calculo.SKU(CboModelo.Text, 2);
         }
 
-
+        private void TxtCodigoUpc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloLetrasNumero(e);
+        }
     }
 }
