@@ -44,42 +44,38 @@ namespace Presentation
             this.PtbImg = new FontAwesome.Sharp.IconPictureBox();
             this.TlpIvaTotal = new System.Windows.Forms.TableLayoutPanel();
             this.TxtTotal = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.TxtPVP = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.TxtIVA = new System.Windows.Forms.TextBox();
             this.TlpCaracteristicas = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.RtbCaracteristicas = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtCodigoSku = new System.Windows.Forms.TextBox();
             this.TlpDatos = new System.Windows.Forms.TableLayoutPanel();
-            this.TxtCoste = new System.Windows.Forms.TextBox();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.TxtIVA = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TxtPVP = new System.Windows.Forms.TextBox();
             this.TxtCodigoUpc = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.CboModelo = new System.Windows.Forms.ComboBox();
-            this.CboCompra = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.CboMarca = new System.Windows.Forms.ComboBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.label14 = new System.Windows.Forms.Label();
             this.CboCategoria = new System.Windows.Forms.ComboBox();
-            this.Descuento = new System.Windows.Forms.Label();
-            this.TxtDescuento = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.CboMarca = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.CboModelo = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtCoste = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.TxtMargen = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.Descuento = new System.Windows.Forms.Label();
+            this.TxtDescuento = new System.Windows.Forms.TextBox();
             this.LblTitleChildForm = new System.Windows.Forms.Label();
             this.BtnExaminar = new FontAwesome.Sharp.IconButton();
             this.ImgProducto = new FontAwesome.Sharp.IconPictureBox();
@@ -324,20 +320,12 @@ namespace Presentation
             // TlpIvaTotal
             // 
             this.TlpIvaTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TlpIvaTotal.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.TlpIvaTotal.ColumnCount = 6;
-            this.TlpIvaTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.33823F));
-            this.TlpIvaTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.64706F));
-            this.TlpIvaTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.97059F));
-            this.TlpIvaTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.54412F));
-            this.TlpIvaTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.42857F));
-            this.TlpIvaTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.66917F));
-            this.TlpIvaTotal.Controls.Add(this.TxtTotal, 5, 0);
-            this.TlpIvaTotal.Controls.Add(this.label12, 0, 0);
-            this.TlpIvaTotal.Controls.Add(this.label9, 4, 0);
-            this.TlpIvaTotal.Controls.Add(this.TxtPVP, 1, 0);
-            this.TlpIvaTotal.Controls.Add(this.label8, 2, 0);
-            this.TlpIvaTotal.Controls.Add(this.TxtIVA, 3, 0);
+            this.TlpIvaTotal.BackColor = System.Drawing.Color.SteelBlue;
+            this.TlpIvaTotal.ColumnCount = 2;
+            this.TlpIvaTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.5589F));
+            this.TlpIvaTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.4411F));
+            this.TlpIvaTotal.Controls.Add(this.TxtTotal, 1, 0);
+            this.TlpIvaTotal.Controls.Add(this.label9, 0, 0);
             this.TlpIvaTotal.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.TlpIvaTotal.Location = new System.Drawing.Point(762, 78);
             this.TlpIvaTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -345,7 +333,7 @@ namespace Presentation
             this.TlpIvaTotal.RowCount = 1;
             this.TlpIvaTotal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TlpIvaTotal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.TlpIvaTotal.Size = new System.Drawing.Size(399, 43);
+            this.TlpIvaTotal.Size = new System.Drawing.Size(404, 43);
             this.TlpIvaTotal.TabIndex = 103;
             // 
             // TxtTotal
@@ -354,29 +342,14 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(331, 5);
+            this.TxtTotal.Location = new System.Drawing.Point(99, 5);
             this.TxtTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtTotal.MaxLength = 8;
             this.TxtTotal.Name = "TxtTotal";
-            this.TxtTotal.Size = new System.Drawing.Size(64, 26);
-            this.TxtTotal.TabIndex = 19;
+            this.TxtTotal.Size = new System.Drawing.Size(301, 26);
+            this.TxtTotal.TabIndex = 22;
             this.TxtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTotal_KeyPress);
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label12.Location = new System.Drawing.Point(4, 0);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 43);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "PVP";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label9
             // 
@@ -385,58 +358,13 @@ namespace Presentation
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(247, 0);
+            this.label9.Location = new System.Drawing.Point(4, 0);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 43);
             this.label9.TabIndex = 17;
             this.label9.Text = "TOTAL";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // TxtPVP
-            // 
-            this.TxtPVP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtPVP.Enabled = false;
-            this.TxtPVP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPVP.Location = new System.Drawing.Point(60, 5);
-            this.TxtPVP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TxtPVP.MaxLength = 8;
-            this.TxtPVP.Name = "TxtPVP";
-            this.TxtPVP.Size = new System.Drawing.Size(61, 26);
-            this.TxtPVP.TabIndex = 17;
-            this.TxtPVP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TxtPVP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPVP_KeyPress);
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(129, 0);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 43);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "IVA";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // TxtIVA
-            // 
-            this.TxtIVA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtIVA.Enabled = false;
-            this.TxtIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIVA.Location = new System.Drawing.Point(183, 5);
-            this.TxtIVA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TxtIVA.MaxLength = 8;
-            this.TxtIVA.Name = "TxtIVA";
-            this.TxtIVA.Size = new System.Drawing.Size(56, 26);
-            this.TxtIVA.TabIndex = 18;
-            this.TxtIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TxtIVA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIVA_KeyPress);
             // 
             // TlpCaracteristicas
             // 
@@ -521,31 +449,31 @@ namespace Presentation
             this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.TlpDatos.Controls.Add(this.TxtCoste, 4, 2);
             this.TlpDatos.Controls.Add(this.iconButton2, 2, 4);
+            this.TlpDatos.Controls.Add(this.label12, 3, 3);
+            this.TlpDatos.Controls.Add(this.TxtIVA, 4, 4);
+            this.TlpDatos.Controls.Add(this.label8, 3, 4);
+            this.TlpDatos.Controls.Add(this.TxtPVP, 4, 3);
             this.TlpDatos.Controls.Add(this.TxtCodigoUpc, 1, 0);
             this.TlpDatos.Controls.Add(this.label16, 0, 0);
-            this.TlpDatos.Controls.Add(this.label7, 0, 4);
-            this.TlpDatos.Controls.Add(this.CboModelo, 1, 4);
-            this.TlpDatos.Controls.Add(this.CboCompra, 1, 1);
-            this.TlpDatos.Controls.Add(this.label15, 0, 1);
             this.TlpDatos.Controls.Add(this.TxtCantidad, 4, 0);
             this.TlpDatos.Controls.Add(this.label2, 3, 0);
-            this.TlpDatos.Controls.Add(this.label3, 3, 2);
-            this.TlpDatos.Controls.Add(this.label13, 0, 3);
-            this.TlpDatos.Controls.Add(this.CboMarca, 1, 3);
             this.TlpDatos.Controls.Add(this.iconButton1, 2, 0);
             this.TlpDatos.Controls.Add(this.iconButton3, 2, 3);
             this.TlpDatos.Controls.Add(this.iconButton4, 2, 1);
             this.TlpDatos.Controls.Add(this.iconButton5, 2, 2);
-            this.TlpDatos.Controls.Add(this.label14, 0, 2);
-            this.TlpDatos.Controls.Add(this.CboCategoria, 1, 2);
-            this.TlpDatos.Controls.Add(this.Descuento, 3, 4);
-            this.TlpDatos.Controls.Add(this.TxtDescuento, 4, 4);
-            this.TlpDatos.Controls.Add(this.label6, 3, 3);
-            this.TlpDatos.Controls.Add(this.TxtMargen, 4, 3);
-            this.TlpDatos.Controls.Add(this.label4, 3, 1);
-            this.TlpDatos.Controls.Add(this.iconButton6, 4, 1);
+            this.TlpDatos.Controls.Add(this.label14, 0, 1);
+            this.TlpDatos.Controls.Add(this.CboCategoria, 1, 1);
+            this.TlpDatos.Controls.Add(this.label13, 0, 2);
+            this.TlpDatos.Controls.Add(this.CboMarca, 1, 2);
+            this.TlpDatos.Controls.Add(this.label7, 0, 3);
+            this.TlpDatos.Controls.Add(this.CboModelo, 1, 3);
+            this.TlpDatos.Controls.Add(this.label3, 0, 4);
+            this.TlpDatos.Controls.Add(this.TxtCoste, 1, 4);
+            this.TlpDatos.Controls.Add(this.label6, 3, 1);
+            this.TlpDatos.Controls.Add(this.TxtMargen, 4, 1);
+            this.TlpDatos.Controls.Add(this.Descuento, 3, 2);
+            this.TlpDatos.Controls.Add(this.TxtDescuento, 4, 2);
             this.TlpDatos.Enabled = false;
             this.TlpDatos.Location = new System.Drawing.Point(51, 122);
             this.TlpDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -560,21 +488,6 @@ namespace Presentation
             this.TlpDatos.Size = new System.Drawing.Size(702, 246);
             this.TlpDatos.TabIndex = 102;
             // 
-            // TxtCoste
-            // 
-            this.TxtCoste.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtCoste.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCoste.Location = new System.Drawing.Point(468, 103);
-            this.TxtCoste.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TxtCoste.MaxLength = 8;
-            this.TxtCoste.Name = "TxtCoste";
-            this.TxtCoste.Size = new System.Drawing.Size(230, 26);
-            this.TxtCoste.TabIndex = 19;
-            this.TxtCoste.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCoste_KeyPress);
-            this.TxtCoste.Leave += new System.EventHandler(this.TxtCoste_Leave);
-            // 
             // iconButton2
             // 
             this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -585,10 +498,10 @@ namespace Presentation
             this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton2.ForeColor = System.Drawing.Color.White;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Calculator;
             this.iconButton2.IconColor = System.Drawing.Color.White;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 15;
+            this.iconButton2.IconSize = 20;
             this.iconButton2.Location = new System.Drawing.Point(328, 201);
             this.iconButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iconButton2.Name = "iconButton2";
@@ -597,6 +510,66 @@ namespace Presentation
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButton2.UseVisualStyleBackColor = false;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label12.Location = new System.Drawing.Point(373, 147);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 49);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "PVP";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TxtIVA
+            // 
+            this.TxtIVA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtIVA.Enabled = false;
+            this.TxtIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtIVA.Location = new System.Drawing.Point(468, 201);
+            this.TxtIVA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtIVA.MaxLength = 8;
+            this.TxtIVA.Name = "TxtIVA";
+            this.TxtIVA.Size = new System.Drawing.Size(230, 26);
+            this.TxtIVA.TabIndex = 21;
+            this.TxtIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtIVA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIVA_KeyPress);
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label8.Location = new System.Drawing.Point(373, 196);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(36, 50);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "IVA";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TxtPVP
+            // 
+            this.TxtPVP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtPVP.Enabled = false;
+            this.TxtPVP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPVP.Location = new System.Drawing.Point(468, 152);
+            this.TxtPVP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtPVP.MaxLength = 8;
+            this.TxtPVP.Name = "TxtPVP";
+            this.TxtPVP.Size = new System.Drawing.Size(230, 26);
+            this.TxtPVP.TabIndex = 20;
+            this.TxtPVP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtPVP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPVP_KeyPress);
             // 
             // TxtCodigoUpc
             // 
@@ -626,62 +599,6 @@ namespace Presentation
             this.label16.Text = "UPC";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(4, 196);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 50);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "Modelo";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // CboModelo
-            // 
-            this.CboModelo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CboModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CboModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CboModelo.FormattingEnabled = true;
-            this.CboModelo.Location = new System.Drawing.Point(90, 201);
-            this.CboModelo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.CboModelo.Name = "CboModelo";
-            this.CboModelo.Size = new System.Drawing.Size(230, 28);
-            this.CboModelo.TabIndex = 15;
-            this.CboModelo.Leave += new System.EventHandler(this.CboModelo_Leave);
-            // 
-            // CboCompra
-            // 
-            this.CboCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CboCompra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CboCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CboCompra.FormattingEnabled = true;
-            this.CboCompra.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CboCompra.Location = new System.Drawing.Point(90, 54);
-            this.CboCompra.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.CboCompra.Name = "CboCompra";
-            this.CboCompra.Size = new System.Drawing.Size(230, 28);
-            this.CboCompra.TabIndex = 9;
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label15.Location = new System.Drawing.Point(4, 49);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(65, 49);
-            this.label15.TabIndex = 30;
-            this.label15.Text = "Compra";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // TxtCantidad
             // 
             this.TxtCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -708,48 +625,6 @@ namespace Presentation
             this.label2.TabIndex = 2;
             this.label2.Text = "Cantidad";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(373, 98);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 49);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Coste";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label13.Location = new System.Drawing.Point(4, 147);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 49);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "Marca";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // CboMarca
-            // 
-            this.CboMarca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CboMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CboMarca.FormattingEnabled = true;
-            this.CboMarca.Location = new System.Drawing.Point(90, 152);
-            this.CboMarca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.CboMarca.Name = "CboMarca";
-            this.CboMarca.Size = new System.Drawing.Size(230, 28);
-            this.CboMarca.TabIndex = 13;
-            this.CboMarca.Leave += new System.EventHandler(this.CboMarca_Leave);
             // 
             // iconButton1
             // 
@@ -848,7 +723,7 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label14.Location = new System.Drawing.Point(4, 98);
+            this.label14.Location = new System.Drawing.Point(4, 49);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(78, 49);
@@ -863,40 +738,95 @@ namespace Presentation
             this.CboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CboCategoria.FormattingEnabled = true;
-            this.CboCategoria.Location = new System.Drawing.Point(90, 103);
+            this.CboCategoria.Location = new System.Drawing.Point(90, 54);
             this.CboCategoria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CboCategoria.Name = "CboCategoria";
             this.CboCategoria.Size = new System.Drawing.Size(230, 28);
-            this.CboCategoria.TabIndex = 11;
-            this.CboCategoria.Leave += new System.EventHandler(this.CboCategoria_Leave);
+            this.CboCategoria.TabIndex = 9;
             // 
-            // Descuento
+            // label13
             // 
-            this.Descuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.Descuento.AutoSize = true;
-            this.Descuento.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Descuento.Location = new System.Drawing.Point(373, 196);
-            this.Descuento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Descuento.Name = "Descuento";
-            this.Descuento.Size = new System.Drawing.Size(87, 50);
-            this.Descuento.TabIndex = 120;
-            this.Descuento.Text = "Descuento";
-            this.Descuento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label13.Location = new System.Drawing.Point(4, 98);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 49);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Marca";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // TxtDescuento
+            // CboMarca
             // 
-            this.TxtDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.CboMarca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDescuento.Location = new System.Drawing.Point(468, 201);
-            this.TxtDescuento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TxtDescuento.MaxLength = 2;
-            this.TxtDescuento.Name = "TxtDescuento";
-            this.TxtDescuento.Size = new System.Drawing.Size(230, 26);
-            this.TxtDescuento.TabIndex = 21;
-            this.TxtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDescuento_KeyPress);
-            this.TxtDescuento.Leave += new System.EventHandler(this.TxtDescuento_Leave);
+            this.CboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CboMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CboMarca.FormattingEnabled = true;
+            this.CboMarca.Location = new System.Drawing.Point(90, 103);
+            this.CboMarca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CboMarca.Name = "CboMarca";
+            this.CboMarca.Size = new System.Drawing.Size(230, 28);
+            this.CboMarca.TabIndex = 11;
+            this.CboMarca.SelectedValueChanged += new System.EventHandler(this.CboMarca_SelectedValueChanged);
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label7.Location = new System.Drawing.Point(4, 147);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 49);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Modelo";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CboModelo
+            // 
+            this.CboModelo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CboModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CboModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CboModelo.FormattingEnabled = true;
+            this.CboModelo.Location = new System.Drawing.Point(90, 152);
+            this.CboModelo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CboModelo.Name = "CboModelo";
+            this.CboModelo.Size = new System.Drawing.Size(230, 28);
+            this.CboModelo.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(4, 196);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 50);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Coste";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TxtCoste
+            // 
+            this.TxtCoste.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtCoste.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCoste.Location = new System.Drawing.Point(90, 201);
+            this.TxtCoste.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtCoste.MaxLength = 8;
+            this.TxtCoste.Name = "TxtCoste";
+            this.TxtCoste.Size = new System.Drawing.Size(230, 26);
+            this.TxtCoste.TabIndex = 15;
+            this.TxtCoste.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCoste_KeyPress);
+            this.TxtCoste.Leave += new System.EventHandler(this.TxtCoste_Leave);
             // 
             // label6
             // 
@@ -904,7 +834,7 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(373, 147);
+            this.label6.Location = new System.Drawing.Point(373, 49);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 49);
@@ -917,53 +847,42 @@ namespace Presentation
             this.TxtMargen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtMargen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMargen.Location = new System.Drawing.Point(468, 152);
+            this.TxtMargen.Location = new System.Drawing.Point(468, 54);
             this.TxtMargen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtMargen.MaxLength = 2;
             this.TxtMargen.Name = "TxtMargen";
             this.TxtMargen.Size = new System.Drawing.Size(230, 26);
-            this.TxtMargen.TabIndex = 20;
+            this.TxtMargen.TabIndex = 18;
             this.TxtMargen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtMargen_KeyPress);
             this.TxtMargen.Leave += new System.EventHandler(this.TxtMargen_Leave);
             // 
-            // label4
+            // Descuento
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Descuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(373, 49);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 49);
-            this.label4.TabIndex = 122;
-            this.label4.Text = "Calcular";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Descuento.AutoSize = true;
+            this.Descuento.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Descuento.Location = new System.Drawing.Point(373, 98);
+            this.Descuento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Descuento.Name = "Descuento";
+            this.Descuento.Size = new System.Drawing.Size(87, 49);
+            this.Descuento.TabIndex = 120;
+            this.Descuento.Text = "Descuento";
+            this.Descuento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // iconButton6
+            // TxtDescuento
             // 
-            this.iconButton6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TxtDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton6.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.iconButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton6.FlatAppearance.BorderSize = 0;
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton6.ForeColor = System.Drawing.Color.White;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Calculator;
-            this.iconButton6.IconColor = System.Drawing.Color.White;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 18;
-            this.iconButton6.Location = new System.Drawing.Point(468, 54);
-            this.iconButton6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.iconButton6.Size = new System.Drawing.Size(230, 38);
-            this.iconButton6.TabIndex = 18;
-            this.iconButton6.Text = "CALCULAR COSTE";
-            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton6.UseVisualStyleBackColor = false;
+            this.TxtDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDescuento.Location = new System.Drawing.Point(468, 103);
+            this.TxtDescuento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtDescuento.MaxLength = 2;
+            this.TxtDescuento.Name = "TxtDescuento";
+            this.TxtDescuento.Size = new System.Drawing.Size(230, 26);
+            this.TxtDescuento.TabIndex = 19;
+            this.TxtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDescuento_KeyPress);
+            this.TxtDescuento.Leave += new System.EventHandler(this.TxtDescuento_Leave);
             // 
             // LblTitleChildForm
             // 
@@ -1175,10 +1094,8 @@ namespace Presentation
         private FontAwesome.Sharp.IconButton BtnCancelar;
         private System.Windows.Forms.Panel PnlDatos;
         private FontAwesome.Sharp.IconButton BtnExaminar;
-        private System.Windows.Forms.ComboBox CboCompra;
         private System.Windows.Forms.ComboBox CboCategoria;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox CboModelo;
         private System.Windows.Forms.ComboBox CboMarca;
         private System.Windows.Forms.Label label13;
@@ -1222,7 +1139,5 @@ namespace Presentation
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton5;
         private System.Windows.Forms.TableLayoutPanel TplTitulo;
-        private FontAwesome.Sharp.IconButton iconButton6;
-        private System.Windows.Forms.Label label4;
     }
 }

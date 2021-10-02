@@ -18,11 +18,9 @@ namespace Domain.Models
     public class ModeloProducto : RepositorioMaestro
     {
         private int idProducto;
-        private int idCompra;
         private int idMarca;
         private int idModelo;
         private int idCategoria;
-        private string numCompra;
         private string marca;
         private string modelo;
         private string categoria;
@@ -45,12 +43,11 @@ namespace Domain.Models
 
         //propiedades/modelo de vista /validar datos
         public int IdProducto { get => idProducto; set => idProducto = value; }
-        [Required(ErrorMessage = "El campo Numero de Compra es requerido")]
-        public int IdCompra { get => idCompra; set => idCompra = value; }
         public int IdMarca { get => idMarca; set => idMarca = value; }
+        [Required(ErrorMessage = "El campo Modelo es requerido")]
         public int IdModelo { get => idModelo; set => idModelo = value; }
+        [Required(ErrorMessage = "El campo Categoria es requerido")]
         public int IdCategoria { get => idCategoria; set => idCategoria = value; }
-        public string NumCompra { get => numCompra; set => numCompra = value; }
         public string Marca { get => marca; set => marca = value; }
         public string Modelo { get => modelo; set => modelo = value; }
         public string Categoria { get => categoria; set => categoria = value; }
@@ -63,20 +60,25 @@ namespace Domain.Models
         public string Codigo_UPC { get => codigo_UPC; set => codigo_UPC = value; }
         public byte[] Img { get => img; set => img = value; }
         public string Titulo { get => titulo; set => titulo = value; }
+        [Required(ErrorMessage = "El campo Cantidad es requerido")]
+        [RegularExpression("([0-9]+)", ErrorMessage = "El campo Cantidad solo debe estar conformado por numeros")]
         public int Cantidad { get => cantidad; set => cantidad = value; }
+        [Required(ErrorMessage = "El campo Caracteristicas es requerido")]
         public string Caracteristicas { get => caracteristicas; set => caracteristicas = value; }
+        [Required(ErrorMessage = "El campo Coste es requerido")]
         public float Coste { get => coste; set => coste = value; }
+        [Required(ErrorMessage = "El campo Margen es requerido")]
         public float Margen { get => margen; set => margen = value; }
         [Required(ErrorMessage = "El campo Descuento es requerido")]
         public float Descuento { get => descuento; set => descuento = value; }
+        [Required(ErrorMessage = "El campo PVO es requerido")]
         public float Pvp { get => pvp; set => pvp = value; }
+        [Required(ErrorMessage = "El campo IVA es requerido")]
         public float Iva { get => iva; set => iva = value; }
+        [Required(ErrorMessage = "El campo TOTAL es requerido")]
         public float Total { get => total; set => total = value; }
 
-        public DataTable ListarCompra()
-        {
-            return ExecuteReader("ListarCompra");
-        }
+
         public DataTable ListarCategorias()
         {
             return ExecuteReader("ListarCategorias");
@@ -85,9 +87,47 @@ namespace Domain.Models
         {
             return ExecuteReader("ListarMarca");
         }
-        public DataTable ListarModelo()
+        public DataTable ListarModelo(string idMarca)
         {
-            return ExecuteReader("ListarModelo");
+            return ExecuteReader("SELECT IdModelo,Modelo FROM TB_MARCA JOIN TB_MODELO ON TB_MARCA.IdMarca = TB_MODELO.IdMarca where TB_MARCA.IdMarca="+idMarca);
+        }
+        public string Marcas(string idMarca)
+        {
+            var tableResult = ExecuteReader("SELECT Marca FROM TB_MARCA WHERE TB_MARCA.IdMarca=" + idMarca);
+            string marca = "0";
+            foreach (DataRow item in tableResult.Rows)
+            {
+                marca= item[0].ToString();
+            }
+            return marca;
+        }
+        public string Modelos(string idModelo, bool code)
+        {
+            var tableResult = ExecuteReader("SELECT IdMarca, Modelo FROM TB_MODELO WHERE TB_MODELO.IdModelo=" + idModelo);
+            string modelo="0";
+            foreach (DataRow item in tableResult.Rows)
+            {
+                if (code)
+                {
+                    modelo = item[0].ToString();
+                }
+                else
+                {
+                    modelo = item[1].ToString();
+                }
+                
+            }
+            return modelo;
+        }
+        public string Categorias(string idCategoria)
+        {
+            var tableResult = ExecuteReader("SELECT Categoria FROM TB_CATEGORIA WHERE TB_CATEGORIA.IdCategoria=" + idCategoria);
+            string categoria = "0";
+            foreach (DataRow item in tableResult.Rows)
+            {
+                categoria = item[0].ToString();
+            }
+            return categoria;
         }
         public ModeloProducto()
         {
@@ -100,15 +140,13 @@ namespace Domain.Models
             {
                 var ModeloDatosProducto = new TB_PRODUCTO();
                 ModeloDatosProducto.IdProducto = idProducto;
-                ModeloDatosProducto.IdCompra = idCompra;
                 ModeloDatosProducto.IdModelo = idModelo;
-                ModeloDatosProducto.IdMarca = idMarca;
                 ModeloDatosProducto.IdCategoria = idCategoria;
                 ModeloDatosProducto.Codigo_SKU = codigo_SKU;
                 ModeloDatosProducto.Codigo_UPC = codigo_UPC;
-                ModeloDatosProducto.Img = Img;
+                ModeloDatosProducto.Img = img;
                 ModeloDatosProducto.Titulo = titulo;
-                ModeloDatosProducto.Cantidad = Cantidad;
+                ModeloDatosProducto.Cantidad = cantidad;
                 ModeloDatosProducto.Caracteristicas = caracteristicas;
                 ModeloDatosProducto.Coste = coste;
                 ModeloDatosProducto.Margen = margen;
@@ -156,12 +194,14 @@ namespace Domain.Models
             {
                 listaProducto.Add(new ModeloProducto
                 {
-                    
+
                     idProducto = item.IdProducto,
-                    numCompra=item.NumCompra,
-                    marca=item.Marca,
-                    modelo=item.Modelo,
-                    categoria=item.Categoria,
+                    idMarca = Convert.ToInt32(Modelos(item.Modelo,true)),
+                    idModelo = Convert.ToInt32(item.Modelo),
+                    idCategoria= Convert.ToInt32(item.Categoria),
+                    marca=Marcas(Modelos(item.Modelo, true)).ToString(),
+                    modelo = Modelos(item.Modelo,false).ToString(), 
+                    categoria=Categorias(item.Categoria).ToString(),
                     codigo_SKU=item.Codigo_SKU,
                     codigo_UPC = item.Codigo_UPC,
                     img =item.Img,
@@ -176,12 +216,13 @@ namespace Domain.Models
                     total = item.Total
                 });
             }
+            
             return listaProducto;
         }
 
         public IEnumerable<ModeloProducto> FindById(string filter)
         {
-            return GetAll().FindAll(p => p.codigo_SKU.Contains(filter) || p.titulo.Contains(filter));
+            return GetAll().FindAll(p => p.Marca.Contains(filter.ToUpper()) || p.codigo_SKU.Contains(filter.ToUpper()) || p.titulo.Contains(filter.ToLower()));
         }
 
     }

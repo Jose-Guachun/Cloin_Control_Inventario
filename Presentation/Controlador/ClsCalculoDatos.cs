@@ -73,54 +73,45 @@ namespace Presentation
          };
             return listCalculo;
         }
-        public string SKU(string sku, int ide)
+        public string SKU(string skuC, string skuM, string skuMo)
         {
 
             try
             {
-                if (ide == 0)
-                {
-                    categoria = sku.Substring(0, 1);
-                    if (sku.Substring(sku.Length - 2, 1) == " ")
+                    categoria = skuC.Substring(0, 1);
+                    if (skuC.Substring(skuC.Length - 2, 1) == " ")
                     {
-                        categoria = categoria + sku.Substring(sku.Length - 3, 1);
+                        categoria = categoria + skuC.Substring(skuC.Length - 3, 1);
                     }
                     else
                     {
-                        categoria = sku.Substring(0, 1) + sku.Substring(sku.Length - 2, 1);
+                        categoria = skuC.Substring(0, 1) + skuC.Substring(skuC.Length - 2, 1);
                     }
 
-                }
-                if (ide == 1)
-                {
-                    marca = sku.Substring(0, 1);
-                    if (sku.Substring((sku.Length / 2) - 1, 1) == " ")
+                    marca = skuM.Substring(0, 1);
+                    if (skuM.Substring((skuM.Length / 2) - 1, 1) == " ")
                     {
-                        marca += sku.Substring((sku.Length / 2) - 2, 1);
+                        marca += skuM.Substring((skuM.Length / 2) - 2, 1);
                     }
                     else
                     {
-                        marca += sku.Substring((sku.Length / 2) - 1, 1) + sku.Substring(sku.Length - 2, 1);
+                        marca += skuM.Substring((skuM.Length / 2) - 1, 1) + skuM.Substring(skuM.Length - 2, 1);
                     }
 
-                }
-                if (ide == 2)
-                {
-                    modelo = sku.Substring(0, 1);
-                    if (sku.Substring((sku.Length / 2) - 1, 1) == " ")
+                    modelo = skuMo.Substring(0, 1);
+                    if (skuMo.Substring((skuMo.Length / 2) - 1, 1) == " ")
                     {
-                        modelo += sku.Substring((sku.Length / 2) - 2, 1) + sku.Substring(sku.Length - 2, 1);
+                        modelo += skuMo.Substring((skuMo.Length / 2) - 2, 1) + skuMo.Substring(skuMo.Length - 2, 1);
 
                     }
                     else
                     {
-                        modelo += sku.Substring((sku.Length / 2) - 1, 1) + sku.Substring(sku.Length - 2, 1);
+                        modelo += skuMo.Substring((skuMo.Length / 2) - 1, 1) + skuMo.Substring(skuMo.Length - 2, 1);
                     }
-
-                }
             }
             catch (Exception)
             {
+                MessageBox.Show("Llene todos los campos");
             }
 
             return (categoria + marca + modelo).ToUpper();

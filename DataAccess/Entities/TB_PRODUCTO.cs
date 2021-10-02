@@ -8,11 +8,9 @@ namespace DataAccess.Entities
     public class TB_PRODUCTO
     {
         public int IdProducto { get; set; }
-        public int IdCompra { get; set; }
         public int IdMarca { get; set; }
         public int IdModelo { get; set; }
         public int IdCategoria { get; set; }
-        public string NumCompra { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Categoria{ get; set; }
