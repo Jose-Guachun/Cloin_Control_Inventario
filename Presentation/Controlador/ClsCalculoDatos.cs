@@ -52,16 +52,37 @@ namespace Presentation
             iva = (pvp * decimal.Parse("0,12"));
             iva = decimal.Round(iva, 2);
         }
-        public List<string> ListaCalculo(decimal margen, decimal descuento, decimal coste){
-            if (descuento < margen)
+        public List<string> ListaCalculo(decimal margen, decimal descuento, decimal coste, decimal Total, bool idDato)
+        {
+            if (idDato)
             {
-                PVP(margen, descuento, coste);
+                if (descuento < margen)
+                {
+                    PVP(margen, descuento, coste);
+                }
+                else
+                {
+                    MessageBox.Show("El descuento debe de ser menor que el Margen de ganancia");
+                    descuento = 0;
+                    PVP(margen, descuento, coste);
+                }
             }
             else
             {
-                MessageBox.Show("El descuento debe de ser menor que el Margen de ganancia");
-                descuento = 0;
-                PVP(margen, descuento, coste);
+                pvp = decimal.Round(Total / decimal.Parse("1,12"), 2);
+                if (pvp>coste)
+                {
+                    IVA();
+                    total = Total;
+                }
+                else
+                {
+                    pvp = 0;
+                    iva = 0;
+                    total = 0;
+                    MessageBox.Show("El precio de venta al publico tiene que ser mayor que el coste de compra por favor introdusca un Total de venta mayor ");
+                }
+                
             }
             List<string> listCalculo = new List<string>()
         {
@@ -69,7 +90,7 @@ namespace Presentation
             pvp.ToString(),
             iva.ToString(),
             total.ToString(),
-            
+
          };
             return listCalculo;
         }

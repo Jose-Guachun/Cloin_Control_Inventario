@@ -42,7 +42,8 @@ namespace Presentation
             this.label5 = new System.Windows.Forms.Label();
             this.TxtTitulo = new System.Windows.Forms.TextBox();
             this.PtbImg = new FontAwesome.Sharp.IconPictureBox();
-            this.TlpIvaTotal = new System.Windows.Forms.TableLayoutPanel();
+            this.TlpTotal = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnCheck = new FontAwesome.Sharp.IconButton();
             this.TxtTotal = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.TlpCaracteristicas = new System.Windows.Forms.TableLayoutPanel();
@@ -88,7 +89,7 @@ namespace Presentation
             this.PnlDatos.SuspendLayout();
             this.TplTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PtbImg)).BeginInit();
-            this.TlpIvaTotal.SuspendLayout();
+            this.TlpTotal.SuspendLayout();
             this.TlpCaracteristicas.SuspendLayout();
             this.TlpDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImgProducto)).BeginInit();
@@ -238,7 +239,7 @@ namespace Presentation
             this.PnlDatos.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.PnlDatos.Controls.Add(this.TplTitulo);
             this.PnlDatos.Controls.Add(this.PtbImg);
-            this.PnlDatos.Controls.Add(this.TlpIvaTotal);
+            this.PnlDatos.Controls.Add(this.TlpTotal);
             this.PnlDatos.Controls.Add(this.TlpCaracteristicas);
             this.PnlDatos.Controls.Add(this.label1);
             this.PnlDatos.Controls.Add(this.TxtCodigoSku);
@@ -317,51 +318,79 @@ namespace Presentation
             this.PtbImg.UseIconCache = true;
             this.PtbImg.Visible = false;
             // 
-            // TlpIvaTotal
+            // TlpTotal
             // 
-            this.TlpIvaTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TlpIvaTotal.BackColor = System.Drawing.Color.SteelBlue;
-            this.TlpIvaTotal.ColumnCount = 2;
-            this.TlpIvaTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.5589F));
-            this.TlpIvaTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.4411F));
-            this.TlpIvaTotal.Controls.Add(this.TxtTotal, 1, 0);
-            this.TlpIvaTotal.Controls.Add(this.label9, 0, 0);
-            this.TlpIvaTotal.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.TlpIvaTotal.Location = new System.Drawing.Point(762, 78);
-            this.TlpIvaTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TlpIvaTotal.Name = "TlpIvaTotal";
-            this.TlpIvaTotal.RowCount = 1;
-            this.TlpIvaTotal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TlpIvaTotal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.TlpIvaTotal.Size = new System.Drawing.Size(404, 43);
-            this.TlpIvaTotal.TabIndex = 103;
+            this.TlpTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TlpTotal.BackColor = System.Drawing.Color.Transparent;
+            this.TlpTotal.ColumnCount = 3;
+            this.TlpTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.TlpTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TlpTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.TlpTotal.Controls.Add(this.BtnCheck, 2, 0);
+            this.TlpTotal.Controls.Add(this.TxtTotal, 1, 0);
+            this.TlpTotal.Controls.Add(this.label9, 0, 0);
+            this.TlpTotal.Enabled = false;
+            this.TlpTotal.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.TlpTotal.Location = new System.Drawing.Point(762, 78);
+            this.TlpTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TlpTotal.Name = "TlpTotal";
+            this.TlpTotal.RowCount = 1;
+            this.TlpTotal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TlpTotal.Size = new System.Drawing.Size(404, 43);
+            this.TlpTotal.TabIndex = 103;
+            // 
+            // BtnCheck
+            // 
+            this.BtnCheck.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCheck.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.BtnCheck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnCheck.FlatAppearance.BorderSize = 0;
+            this.BtnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCheck.ForeColor = System.Drawing.Color.White;
+            this.BtnCheck.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
+            this.BtnCheck.IconColor = System.Drawing.Color.White;
+            this.BtnCheck.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnCheck.IconSize = 25;
+            this.BtnCheck.Location = new System.Drawing.Point(363, 5);
+            this.BtnCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnCheck.Name = "BtnCheck";
+            this.BtnCheck.Size = new System.Drawing.Size(37, 31);
+            this.BtnCheck.TabIndex = 116;
+            this.BtnCheck.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnCheck.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnCheck.UseVisualStyleBackColor = false;
+            this.BtnCheck.Click += new System.EventHandler(this.BtnCheck_Click);
             // 
             // TxtTotal
             // 
             this.TxtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtTotal.Enabled = false;
             this.TxtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(99, 5);
+            this.TxtTotal.Location = new System.Drawing.Point(76, 5);
             this.TxtTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtTotal.MaxLength = 8;
             this.TxtTotal.Name = "TxtTotal";
-            this.TxtTotal.Size = new System.Drawing.Size(301, 26);
+            this.TxtTotal.Size = new System.Drawing.Size(279, 26);
             this.TxtTotal.TabIndex = 22;
             this.TxtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTotal_KeyPress);
+            this.TxtTotal.Leave += new System.EventHandler(this.TxtTotal_Leave);
             // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.Location = new System.Drawing.Point(4, 0);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 43);
+            this.label9.Size = new System.Drawing.Size(64, 43);
             this.label9.TabIndex = 17;
             this.label9.Text = "TOTAL";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -639,7 +668,7 @@ namespace Presentation
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Barcode;
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 20;
+            this.iconButton1.IconSize = 25;
             this.iconButton1.Location = new System.Drawing.Point(328, 5);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iconButton1.Name = "iconButton1";
@@ -662,7 +691,7 @@ namespace Presentation
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.iconButton3.IconColor = System.Drawing.Color.White;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 15;
+            this.iconButton3.IconSize = 20;
             this.iconButton3.Location = new System.Drawing.Point(328, 152);
             this.iconButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iconButton3.Name = "iconButton3";
@@ -684,7 +713,7 @@ namespace Presentation
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.iconButton4.IconColor = System.Drawing.Color.White;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 15;
+            this.iconButton4.IconSize = 20;
             this.iconButton4.Location = new System.Drawing.Point(328, 54);
             this.iconButton4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iconButton4.Name = "iconButton4";
@@ -707,7 +736,7 @@ namespace Presentation
             this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.iconButton5.IconColor = System.Drawing.Color.White;
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 15;
+            this.iconButton5.IconSize = 20;
             this.iconButton5.Location = new System.Drawing.Point(328, 103);
             this.iconButton5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iconButton5.Name = "iconButton5";
@@ -1071,8 +1100,8 @@ namespace Presentation
             this.TplTitulo.ResumeLayout(false);
             this.TplTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PtbImg)).EndInit();
-            this.TlpIvaTotal.ResumeLayout(false);
-            this.TlpIvaTotal.PerformLayout();
+            this.TlpTotal.ResumeLayout(false);
+            this.TlpTotal.PerformLayout();
             this.TlpCaracteristicas.ResumeLayout(false);
             this.TlpCaracteristicas.PerformLayout();
             this.TlpDatos.ResumeLayout(false);
@@ -1129,7 +1158,7 @@ namespace Presentation
         private System.Windows.Forms.TableLayoutPanel TlpCaracteristicas;
         private System.Windows.Forms.TextBox TxtDescuento;
         private System.Windows.Forms.Label Descuento;
-        private System.Windows.Forms.TableLayoutPanel TlpIvaTotal;
+        private System.Windows.Forms.TableLayoutPanel TlpTotal;
         private FontAwesome.Sharp.IconPictureBox PtbImg;
         private System.Windows.Forms.TextBox TxtCodigoUpc;
         private System.Windows.Forms.Label label16;
@@ -1139,5 +1168,6 @@ namespace Presentation
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton5;
         private System.Windows.Forms.TableLayoutPanel TplTitulo;
+        private FontAwesome.Sharp.IconButton BtnCheck;
     }
 }

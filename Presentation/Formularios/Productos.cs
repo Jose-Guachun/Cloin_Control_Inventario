@@ -20,6 +20,7 @@ namespace Presentation
     {
         private ModeloProducto producto = new ModeloProducto();
         private ClsCalculoDatos calculo = new ClsCalculoDatos();
+        private bool idDato= true;
         public Productos()
         {
             InitializeComponent();
@@ -77,7 +78,7 @@ namespace Presentation
             TxtTotal.Enabled = false;
             TlpDatos.Enabled = false;
             TlpCaracteristicas.Enabled = false;
-            TlpIvaTotal.Enabled = false;
+            TlpTotal.Enabled = false;
             BtnNuevo.Enabled = true;
             BtnGuardar.Enabled = false;
             BtnCancelar.Enabled = false;
@@ -91,12 +92,8 @@ namespace Presentation
             TxtCodigoUpc.Clear();
             TxtCantidad.Clear();
             TxtTitulo.Clear();
-            TxtDescuento.Text="0";
             TxtCoste.Text = "0";
-            TxtIVA.Text = "0";
-            TxtMargen.Text="20";
-            TxtPVP.Text = "0";
-            TxtTotal.Text = "0";
+            limpiarContable();
             RtbCaracteristicas.Clear();
             if (ImgProducto.Image != null)
             {
@@ -105,7 +102,15 @@ namespace Presentation
             }
                 
         }
-        private void Datos()
+        public void limpiarContable()
+        {
+            TxtDescuento.Text = "0";
+            TxtIVA.Text = "0";
+            TxtMargen.Text = "20";
+            TxtPVP.Text = "0";
+            TxtTotal.Text = "0";
+        }
+            private void Datos()
         {
             producto.IdProducto = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
             CboMarca.SelectedValue= DgvProductos.CurrentRow.Cells[1].Value;
@@ -147,6 +152,7 @@ namespace Presentation
         }
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
+            TlpTotal.Enabled = true;
             TlpDatos.Enabled = true;
             TplTitulo.Enabled = true;
             RtbCaracteristicas.Enabled = true;
@@ -230,6 +236,7 @@ namespace Presentation
         {
             if (DgvProductos.SelectedRows.Count > 0)
             {
+                TlpTotal.Enabled = true;
                 TplTitulo.Enabled = true;
                 BtnEditar.Enabled = true;
                 TlpCaracteristicas.Enabled = true;
@@ -320,13 +327,14 @@ namespace Presentation
                 decimal coste = Convert.ToDecimal(TxtCoste.Text);
                 decimal margen = Convert.ToDecimal(TxtMargen.Text);
                 decimal descuento = Convert.ToDecimal(TxtDescuento.Text);
+                decimal total = Convert.ToDecimal(TxtTotal.Text);
                 
                 int cont=0;    
-                    foreach (var item in calculo.ListaCalculo(margen, descuento,coste))
+                    foreach (var item in calculo.ListaCalculo(margen, descuento,coste,total,idDato))
                     {
                         if (cont == 0)
                         {
-                        TxtDescuento.Text = item;
+                            TxtDescuento.Text = item;
                         }
                         if (cont == 1)
                         {
@@ -420,6 +428,41 @@ namespace Presentation
             {
 
             }
+        }
+
+        private void TxtTotal_Leave(object sender, EventArgs e)
+        { 
+            TxtDescuento_Leave(sender,e);
+        }
+
+        private void BtnCheck_Click(object sender, EventArgs e)
+        {
+            if (idDato)
+            {
+                idDato = false;
+                limpiarContable();
+                TxtTotal.Enabled = true;
+                TxtMargen.Enabled = false;
+                BtnCheck.IconChar = FontAwesome.Sharp.IconChar.UndoAlt;
+                BtnCheck.BackColor = System.Drawing.Color.Firebrick;
+            }
+            else
+            {
+                idDato = true;
+                TxtTotal.Text = "0";
+                TxtMargen.Enabled = true;
+                TxtDescuento_Leave(sender, e);
+                TxtTotal.Enabled = false;
+                
+                BtnCheck.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
+                BtnCheck.BackColor = System.Drawing.Color.MediumSeaGreen;
+            }
+
+        }
+
+        private void BtnX_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
