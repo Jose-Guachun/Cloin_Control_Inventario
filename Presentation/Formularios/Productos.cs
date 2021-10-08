@@ -52,11 +52,19 @@ namespace Presentation
             CboMarca.DisplayMember = "Marca";
             CboMarca.ValueMember = "IdMarca";
         }
-        private void ListarModelo()
+        private void ListarModelo(string marca)
         {
-            CboModelo.DataSource = producto.ListarModelo(CboMarca.SelectedValue.ToString());
-            CboModelo.DisplayMember = "Modelo";
-            CboModelo.ValueMember = "IdModelo";
+            try
+            {
+                CboModelo.DataSource = producto.ListarModelo(marca);
+                CboModelo.DisplayMember = "Modelo";
+                CboModelo.ValueMember = "IdModelo";
+            }
+            catch (Exception)
+            {
+
+            }
+
 
         }
         private void ListaProducto()
@@ -420,14 +428,10 @@ namespace Presentation
 
         private void CboMarca_SelectedValueChanged(object sender, EventArgs e)
         {
-            try
+            if (CboMarca.SelectedValue.ToString()!= "System.Data.DataRowView")
             {
-                ListarModelo();
-            }
-            catch (Exception)
-            {
-
-            }
+                ListarModelo(CboMarca.SelectedValue.ToString());
+            }   
         }
 
         private void TxtTotal_Leave(object sender, EventArgs e)
