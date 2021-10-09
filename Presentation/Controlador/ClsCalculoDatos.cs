@@ -96,43 +96,51 @@ namespace Presentation
         }
         public string SKU(string skuC, string skuM, string skuMo)
         {
-
+            bool a=true;
+            bool b=true;
             try
             {
-                    categoria = skuC.Substring(0, 1);
+
+                categoria = skuC.Substring(0, 1);
                     if (skuC.Substring(skuC.Length - 2, 1) == " ")
                     {
-                        categoria = categoria + skuC.Substring(skuC.Length - 3, 1);
+                        categoria += skuC.Substring(skuC.Length - 3, 1);
                     }
                     else
                     {
-                        categoria = skuC.Substring(0, 1) + skuC.Substring(skuC.Length - 2, 1);
+                        categoria += skuC.Substring(skuC.Length - 2, 1);
                     }
 
-                    marca = skuM.Substring(0, 1);
+               marca = skuM.Substring(0, 1);
+               
                     if (skuM.Substring((skuM.Length / 2) - 1, 1) == " ")
                     {
-                        marca += skuM.Substring((skuM.Length / 2) - 2, 1);
+                        marca += skuM.Substring((skuM.Length / 2) - 2, 1) + skuM.Substring(skuM.Length - 2, 1);
                     }
                     else
                     {
                         marca += skuM.Substring((skuM.Length / 2) - 1, 1) + skuM.Substring(skuM.Length - 2, 1);
                     }
 
-                    modelo = skuMo.Substring(0, 1);
-                    if (skuMo.Substring((skuMo.Length / 2) - 1, 1) == " ")
+                modelo = skuMo.Substring(0, 1);
+                for (int i = 1; i < skuMo.Length; i++)
+                {
+                    if (a && skuMo.Substring((skuMo.Length / 2)-i, 1) != " " )
                     {
-                        modelo += skuMo.Substring((skuMo.Length / 2) - 2, 1) + skuMo.Substring(skuMo.Length - 2, 1);
-
+                        modelo += skuMo.Substring((skuMo.Length / 2)-i , 1);
+                        a = false;
                     }
-                    else
+                    if (b && skuMo.Substring(skuMo.Length - i-1, 1)!= " ")
                     {
-                        modelo += skuMo.Substring((skuMo.Length / 2) - 1, 1) + skuMo.Substring(skuMo.Length - 2, 1);
+                        modelo += skuMo.Substring(skuMo.Length - i-1, 1);
+                        b = false;
                     }
+                }
+                    
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Llene todos los campos");
+                MessageBox.Show(ex+"Codigo sku llenado incorrectamente..");
             }
 
             return (categoria + marca + modelo).ToUpper();
