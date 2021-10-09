@@ -177,7 +177,7 @@ namespace Domain.Models
                 System.Data.SqlClient.SqlException sqlEx = ex as System.Data.SqlClient.SqlException;
                 if (sqlEx != null && sqlEx.Number == 2627)
                 {
-                    mensaje = "Registro Duplicado";
+                    mensaje = "Registro Duplicado no se creo o edito dicho producto";
                 }
                 else
                     mensaje = ex.ToString();

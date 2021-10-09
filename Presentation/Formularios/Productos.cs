@@ -54,18 +54,9 @@ namespace Presentation
         }
         private void ListarModelo(string marca)
         {
-            try
-            {
-                CboModelo.DataSource = producto.ListarModelo(marca);
-                CboModelo.DisplayMember = "Modelo";
-                CboModelo.ValueMember = "IdModelo";
-            }
-            catch (Exception)
-            {
-
-            }
-
-
+             CboModelo.DataSource = producto.ListarModelo(marca);
+             CboModelo.DisplayMember = "Modelo";
+             CboModelo.ValueMember = "IdModelo";
         }
         private void ListaProducto()
         {
@@ -93,6 +84,9 @@ namespace Presentation
             BtnEditar.Enabled = true;
             BtnEliminar.Enabled = true;
             DgvProductos.Enabled = true;
+            BtnCheck.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
+            BtnCheck.BackColor = System.Drawing.Color.MediumSeaGreen;
+            idDato = true;
         }
         public void limpiar()
         {
@@ -282,24 +276,6 @@ namespace Presentation
         {
             Datos();
         }
-
-        private void TxtPrecio_Leave(object sender, EventArgs e)
-        {
-            /*if (TxtPrecio.Text != "")
-            {
-                decimal precio = Convert.ToDecimal(TxtPrecio.Text);
-                TxtCoste.Text = calculo.Coste(precio).ToString();
-                if (TxtMargen.Text != "")
-                {
-                    TxtMargen_Leave(sender, e);
-                }
-            }
-            else
-            {
-                TxtPrecio.Text = "0";
-            }*/
-
-        }
         private void TxtCoste_Leave(object sender, EventArgs e)
         {
             if (TxtCoste.Text!= "" && TxtMargen.Text != "")
@@ -461,11 +437,6 @@ namespace Presentation
                 BtnCheck.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
                 BtnCheck.BackColor = System.Drawing.Color.MediumSeaGreen;
             }
-
-        }
-
-        private void BtnX_Click(object sender, EventArgs e)
-        {
 
         }
     }
