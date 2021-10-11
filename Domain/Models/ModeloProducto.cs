@@ -42,7 +42,7 @@ namespace Domain.Models
         private List<ModeloProducto> ListaProducto;
 
         //propiedades/modelo de vista /validar datos
-        public int IdProducto { get => idProducto; set => idProducto = value; }
+        public int Id { get => idProducto; set => idProducto = value; }
         public int IdMarca { get => idMarca; set => idMarca = value; }
         [Required(ErrorMessage = "El campo Modelo es requerido")]
         public int IdModelo { get => idModelo; set => idModelo = value; }
@@ -52,8 +52,8 @@ namespace Domain.Models
         public string Modelo { get => modelo; set => modelo = value; }
         public string Categoria { get => categoria; set => categoria = value; }
         [Required(ErrorMessage = "El campo codigo SKU del producto es requerido")]
-        [StringLength(maximumLength: 8, MinimumLength = 8, ErrorMessage = "El codigo SKU debe de contener 8 digitos")]
-        public string Codigo_SKU { get => codigo_SKU; set => codigo_SKU = value; }
+        [StringLength(maximumLength: 8, MinimumLength = 8, ErrorMessage = "El codigo SKU no puede formarce si no selecciona una Categoria, Marca y Modelo para completar los 8 digitos")]
+        public string SKU { get => codigo_SKU; set => codigo_SKU = value; }
         [Required(ErrorMessage = "El campo codigo UPC del producto es requerido")]
         [RegularExpression("([0-9]+)", ErrorMessage = "El campo Codigo UPC solo debe estar conformado por numeros")]
         [StringLength(maximumLength: 12, MinimumLength = 12, ErrorMessage = "El codigo UPC debe de contener 12 digitos")]
@@ -177,7 +177,7 @@ namespace Domain.Models
                 System.Data.SqlClient.SqlException sqlEx = ex as System.Data.SqlClient.SqlException;
                 if (sqlEx != null && sqlEx.Number == 2627)
                 {
-                    mensaje = "Registro Duplicado no se creo o edito dicho producto";
+                    mensaje = "Modelo o Codigo UPC ya esta registrado en otro producto";
                 }
                 else
                     mensaje = ex.ToString();

@@ -352,7 +352,7 @@ namespace Presentation
             this.BtnCheck.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
             this.BtnCheck.IconColor = System.Drawing.Color.White;
             this.BtnCheck.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnCheck.IconSize = 25;
+            this.BtnCheck.IconSize = 20;
             this.BtnCheck.Location = new System.Drawing.Point(363, 5);
             this.BtnCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnCheck.Name = "BtnCheck";
@@ -668,7 +668,7 @@ namespace Presentation
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Barcode;
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
+            this.iconButton1.IconSize = 20;
             this.iconButton1.Location = new System.Drawing.Point(328, 5);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iconButton1.Name = "iconButton1";
@@ -691,7 +691,7 @@ namespace Presentation
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.iconButton3.IconColor = System.Drawing.Color.White;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 20;
+            this.iconButton3.IconSize = 15;
             this.iconButton3.Location = new System.Drawing.Point(328, 152);
             this.iconButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iconButton3.Name = "iconButton3";
@@ -713,7 +713,7 @@ namespace Presentation
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.iconButton4.IconColor = System.Drawing.Color.White;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 20;
+            this.iconButton4.IconSize = 15;
             this.iconButton4.Location = new System.Drawing.Point(328, 54);
             this.iconButton4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iconButton4.Name = "iconButton4";
@@ -736,7 +736,7 @@ namespace Presentation
             this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.iconButton5.IconColor = System.Drawing.Color.White;
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 20;
+            this.iconButton5.IconSize = 15;
             this.iconButton5.Location = new System.Drawing.Point(328, 103);
             this.iconButton5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iconButton5.Name = "iconButton5";

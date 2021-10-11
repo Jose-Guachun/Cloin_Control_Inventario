@@ -138,9 +138,9 @@ namespace Presentation
                 }
                     
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex+"Codigo sku llenado incorrectamente..");
+                
             }
 
             return (categoria + marca + modelo).ToUpper();

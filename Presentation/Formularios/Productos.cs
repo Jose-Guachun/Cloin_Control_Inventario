@@ -114,7 +114,7 @@ namespace Presentation
         }
             private void Datos()
         {
-            producto.IdProducto = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
+            producto.Id = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
             CboMarca.SelectedValue= DgvProductos.CurrentRow.Cells[1].Value;
             CboModelo.SelectedValue= DgvProductos.CurrentRow.Cells[2].Value;
             CboCategoria.SelectedValue = DgvProductos.CurrentRow.Cells[3].Value;
@@ -194,7 +194,7 @@ namespace Presentation
             {
                 producto.IdModelo = Convert.ToInt32(CboModelo.SelectedValue);
                 producto.IdCategoria = Convert.ToInt32(CboCategoria.SelectedValue);
-                producto.Codigo_SKU = calculo.SKU(CboCategoria.Text,CboMarca.Text,CboModelo.Text);
+                producto.SKU = calculo.SKU(CboCategoria.Text,CboMarca.Text,CboModelo.Text);
                 producto.Codigo_UPC = TxtCodigoUpc.Text;
                 producto.Titulo = TxtTitulo.Text.ToLower();
                 producto.Cantidad = Convert.ToInt32(TxtCantidad.Text);
@@ -263,7 +263,7 @@ namespace Presentation
                 if (DgvProductos.SelectedRows.Count > 0)
                 {
                     producto.estado = EntityState.Eliminar;
-                    producto.IdProducto = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
+                    producto.Id = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
                     string result = producto.Guardar();
                     MessageBox.Show(result);
                     ListaProducto();
@@ -404,7 +404,7 @@ namespace Presentation
 
         private void CboMarca_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (CboMarca.SelectedValue.ToString()!= "System.Data.DataRowView")
+            if ( CboMarca.SelectedValue.ToString()!= "System.Data.DataRowView" && CboMarca.SelectedValue!=null)
             {
                 ListarModelo(CboMarca.SelectedValue.ToString());
             }   
