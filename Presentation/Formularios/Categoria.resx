@@ -117,4 +117,733 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TplTitulo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TplTitulo.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TxtCategoria.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="TxtCategoria.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="TxtCategoria.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 5</value>
+  </data>
+  <data name="TxtCategoria.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="TxtCategoria.MaxLength" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
+  <data name="TxtCategoria.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 26</value>
+  </data>
+  <data name="TxtCategoria.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;TxtCategoria.Name" xml:space="preserve">
+    <value>TxtCategoria</value>
+  </data>
+  <data name="&gt;&gt;TxtCategoria.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TxtCategoria.Parent" xml:space="preserve">
+    <value>TplTitulo</value>
+  </data>
+  <data name="&gt;&gt;TxtCategoria.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 0</value>
+  </data>
+  <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 38</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="label5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>TplTitulo</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TplTitulo.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="TplTitulo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 67</value>
+  </data>
+  <data name="TplTitulo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="TplTitulo.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TplTitulo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>332, 38</value>
+  </data>
+  <data name="TplTitulo.TabIndex" type="System.Int32, mscorlib">
+    <value>103</value>
+  </data>
+  <data name="&gt;&gt;TplTitulo.Name" xml:space="preserve">
+    <value>TplTitulo</value>
+  </data>
+  <data name="&gt;&gt;TplTitulo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TplTitulo.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;TplTitulo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TplTitulo.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="TxtCategoria" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,113,Percent,100" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="LblTitleChildForm.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="LblTitleChildForm.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblTitleChildForm.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Tai Le, 12.75pt, style=Bold</value>
+  </data>
+  <data name="LblTitleChildForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>172, 16</value>
+  </data>
+  <data name="LblTitleChildForm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="LblTitleChildForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 33</value>
+  </data>
+  <data name="LblTitleChildForm.TabIndex" type="System.Int32, mscorlib">
+    <value>116</value>
+  </data>
+  <data name="LblTitleChildForm.Text" xml:space="preserve">
+    <value>CATEGORIA</value>
+  </data>
+  <data name="&gt;&gt;LblTitleChildForm.Name" xml:space="preserve">
+    <value>LblTitleChildForm</value>
+  </data>
+  <data name="&gt;&gt;LblTitleChildForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblTitleChildForm.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;LblTitleChildForm.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 52</value>
+  </data>
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>440, 122</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PnlBarraTop.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="&gt;&gt;BtnMinimizar.Name" xml:space="preserve">
+    <value>BtnMinimizar</value>
+  </data>
+  <data name="&gt;&gt;BtnMinimizar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnMinimizar.Parent" xml:space="preserve">
+    <value>PnlBarraTop</value>
+  </data>
+  <data name="&gt;&gt;BtnMinimizar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;BtnCerrar.Name" xml:space="preserve">
+    <value>BtnCerrar</value>
+  </data>
+  <data name="&gt;&gt;BtnCerrar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnCerrar.Parent" xml:space="preserve">
+    <value>PnlBarraTop</value>
+  </data>
+  <data name="&gt;&gt;BtnCerrar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="PnlBarraTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="PnlBarraTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="PnlBarraTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>576, 51</value>
+  </data>
+  <data name="PnlBarraTop.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;PnlBarraTop.Name" xml:space="preserve">
+    <value>PnlBarraTop</value>
+  </data>
+  <data name="&gt;&gt;PnlBarraTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PnlBarraTop.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PnlBarraTop.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="BtnMinimizar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="BtnMinimizar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="BtnMinimizar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnMinimizar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>488, 0</value>
+  </data>
+  <data name="BtnMinimizar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 51</value>
+  </data>
+  <data name="BtnMinimizar.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;BtnMinimizar.Name" xml:space="preserve">
+    <value>BtnMinimizar</value>
+  </data>
+  <data name="&gt;&gt;BtnMinimizar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnMinimizar.Parent" xml:space="preserve">
+    <value>PnlBarraTop</value>
+  </data>
+  <data name="&gt;&gt;BtnMinimizar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BtnCerrar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="BtnCerrar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="BtnCerrar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnCerrar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>532, 0</value>
+  </data>
+  <data name="BtnCerrar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 51</value>
+  </data>
+  <data name="BtnCerrar.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;BtnCerrar.Name" xml:space="preserve">
+    <value>BtnCerrar</value>
+  </data>
+  <data name="&gt;&gt;BtnCerrar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnCerrar.Parent" xml:space="preserve">
+    <value>PnlBarraTop</value>
+  </data>
+  <data name="&gt;&gt;BtnCerrar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="PnlMenu.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <data name="BtnCancelar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="BtnCancelar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="BtnCancelar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BtnCancelar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnCancelar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="BtnCancelar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 545</value>
+  </data>
+  <data name="BtnCancelar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="BtnCancelar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 105</value>
+  </data>
+  <data name="BtnCancelar.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="BtnCancelar.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="BtnCancelar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="BtnCancelar.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
+  <data name="&gt;&gt;BtnCancelar.Name" xml:space="preserve">
+    <value>BtnCancelar</value>
+  </data>
+  <data name="&gt;&gt;BtnCancelar.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BtnCancelar.Parent" xml:space="preserve">
+    <value>PnlMenu</value>
+  </data>
+  <data name="&gt;&gt;BtnCancelar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BtnEliminar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="BtnEliminar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="BtnEliminar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnEliminar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="BtnEliminar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 442</value>
+  </data>
+  <data name="BtnEliminar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="BtnEliminar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 105</value>
+  </data>
+  <data name="BtnEliminar.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="BtnEliminar.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="BtnEliminar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="BtnEliminar.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
+  <data name="&gt;&gt;BtnEliminar.Name" xml:space="preserve">
+    <value>BtnEliminar</value>
+  </data>
+  <data name="&gt;&gt;BtnEliminar.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BtnEliminar.Parent" xml:space="preserve">
+    <value>PnlMenu</value>
+  </data>
+  <data name="&gt;&gt;BtnEliminar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="BtnEditar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="BtnEditar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="BtnEditar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnEditar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="BtnEditar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 336</value>
+  </data>
+  <data name="BtnEditar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="BtnEditar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 105</value>
+  </data>
+  <data name="BtnEditar.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="BtnEditar.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="BtnEditar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="BtnEditar.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
+  <data name="&gt;&gt;BtnEditar.Name" xml:space="preserve">
+    <value>BtnEditar</value>
+  </data>
+  <data name="&gt;&gt;BtnEditar.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BtnEditar.Parent" xml:space="preserve">
+    <value>PnlMenu</value>
+  </data>
+  <data name="&gt;&gt;BtnEditar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="BtnGuardar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="BtnGuardar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="BtnGuardar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BtnGuardar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnGuardar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="BtnGuardar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 232</value>
+  </data>
+  <data name="BtnGuardar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="BtnGuardar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 105</value>
+  </data>
+  <data name="BtnGuardar.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="BtnGuardar.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="BtnGuardar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="BtnGuardar.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
+  <data name="&gt;&gt;BtnGuardar.Name" xml:space="preserve">
+    <value>BtnGuardar</value>
+  </data>
+  <data name="&gt;&gt;BtnGuardar.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BtnGuardar.Parent" xml:space="preserve">
+    <value>PnlMenu</value>
+  </data>
+  <data name="&gt;&gt;BtnGuardar.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="BtnNuevo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="BtnNuevo.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="BtnNuevo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnNuevo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="BtnNuevo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 127</value>
+  </data>
+  <data name="BtnNuevo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="BtnNuevo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 105</value>
+  </data>
+  <data name="BtnNuevo.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="BtnNuevo.Text" xml:space="preserve">
+    <value>Nuevo</value>
+  </data>
+  <data name="BtnNuevo.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="BtnNuevo.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
+  <data name="&gt;&gt;BtnNuevo.Name" xml:space="preserve">
+    <value>BtnNuevo</value>
+  </data>
+  <data name="&gt;&gt;BtnNuevo.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BtnNuevo.Parent" xml:space="preserve">
+    <value>PnlMenu</value>
+  </data>
+  <data name="&gt;&gt;BtnNuevo.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="PnlMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>446, 52</value>
+  </data>
+  <data name="PnlMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="PnlMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 767</value>
+  </data>
+  <data name="PnlMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;PnlMenu.Name" xml:space="preserve">
+    <value>PnlMenu</value>
+  </data>
+  <data name="&gt;&gt;PnlMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PnlMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PnlMenu.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="PnlLista.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>PnlLista</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TxtBuscar.Name" xml:space="preserve">
+    <value>TxtBuscar</value>
+  </data>
+  <data name="&gt;&gt;TxtBuscar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TxtBuscar.Parent" xml:space="preserve">
+    <value>PnlLista</value>
+  </data>
+  <data name="&gt;&gt;TxtBuscar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;DgvCategoria.Name" xml:space="preserve">
+    <value>DgvCategoria</value>
+  </data>
+  <data name="&gt;&gt;DgvCategoria.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DgvCategoria.Parent" xml:space="preserve">
+    <value>PnlLista</value>
+  </data>
+  <data name="&gt;&gt;DgvCategoria.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="PnlLista.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 175</value>
+  </data>
+  <data name="PnlLista.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="PnlLista.Size" type="System.Drawing.Size, System.Drawing">
+    <value>435, 644</value>
+  </data>
+  <data name="PnlLista.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PnlLista.Name" xml:space="preserve">
+    <value>PnlLista</value>
+  </data>
+  <data name="&gt;&gt;PnlLista.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PnlLista.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PnlLista.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Tai Le, 12.75pt, style=Bold</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 4</value>
+  </data>
+  <data name="label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 33</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>116</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Lista de Categorias</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>PnlLista</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TxtBuscar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="TxtBuscar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Ebrima, 9pt</value>
+  </data>
+  <data name="TxtBuscar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 42</value>
+  </data>
+  <data name="TxtBuscar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="TxtBuscar.MaxLength" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
+  <data name="TxtBuscar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>332, 32</value>
+  </data>
+  <data name="TxtBuscar.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;TxtBuscar.Name" xml:space="preserve">
+    <value>TxtBuscar</value>
+  </data>
+  <data name="&gt;&gt;TxtBuscar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TxtBuscar.Parent" xml:space="preserve">
+    <value>PnlLista</value>
+  </data>
+  <data name="&gt;&gt;TxtBuscar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="DgvCategoria.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="DgvCategoria.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 87</value>
+  </data>
+  <data name="DgvCategoria.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="DgvCategoria.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="DgvCategoria.Size" type="System.Drawing.Size, System.Drawing">
+    <value>332, 529</value>
+  </data>
+  <data name="DgvCategoria.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;DgvCategoria.Name" xml:space="preserve">
+    <value>DgvCategoria</value>
+  </data>
+  <data name="&gt;&gt;DgvCategoria.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DgvCategoria.Parent" xml:space="preserve">
+    <value>PnlLista</value>
+  </data>
+  <data name="&gt;&gt;DgvCategoria.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>576, 827</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

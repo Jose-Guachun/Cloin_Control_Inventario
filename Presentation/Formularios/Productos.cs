@@ -439,5 +439,11 @@ namespace Presentation
             }
 
         }
+
+        private void BtnCategoria_Click(object sender, EventArgs e)
+        {
+            Categoria cat= new Categoria();
+            cat.ShowDialog();
+        }
     }
 }
