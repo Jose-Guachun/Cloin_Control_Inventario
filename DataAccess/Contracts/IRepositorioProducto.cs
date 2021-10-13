@@ -10,4 +10,16 @@ namespace DataAccess.Contracts
     {
 
     }
+    public interface IRepositorioCategoria : IGenericRepository<TB_CATEGORIA>
+    {
+
+    }
+    public interface IRepositorioMarca : IGenericRepository<TB_MARCA>
+    {
+
+    }
+    public interface IRepositorioModelo : IGenericRepository<TB_MODELO>
+    {
+
+    }
 }

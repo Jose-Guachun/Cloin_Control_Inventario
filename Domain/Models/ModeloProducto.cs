@@ -78,7 +78,6 @@ namespace Domain.Models
         [Required(ErrorMessage = "El campo TOTAL es requerido")]
         public float Total { get => total; set => total = value; }
 
-
         public DataTable ListarCategorias()
         {
             return ExecuteReader("ListarCategorias");

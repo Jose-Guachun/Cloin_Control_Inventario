@@ -297,54 +297,6 @@
   <data name="PnlBarraTop.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="&gt;&gt;BtnMinimizar.Name" xml:space="preserve">
-    <value>BtnMinimizar</value>
-  </data>
-  <data name="&gt;&gt;BtnMinimizar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnMinimizar.Parent" xml:space="preserve">
-    <value>PnlBarraTop</value>
-  </data>
-  <data name="&gt;&gt;BtnMinimizar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;BtnCerrar.Name" xml:space="preserve">
-    <value>BtnCerrar</value>
-  </data>
-  <data name="&gt;&gt;BtnCerrar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnCerrar.Parent" xml:space="preserve">
-    <value>PnlBarraTop</value>
-  </data>
-  <data name="&gt;&gt;BtnCerrar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="PnlBarraTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="PnlBarraTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="PnlBarraTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>576, 51</value>
-  </data>
-  <data name="PnlBarraTop.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;PnlBarraTop.Name" xml:space="preserve">
-    <value>PnlBarraTop</value>
-  </data>
-  <data name="&gt;&gt;PnlBarraTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PnlBarraTop.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PnlBarraTop.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="BtnMinimizar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -404,6 +356,30 @@
   </data>
   <data name="&gt;&gt;BtnCerrar.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="PnlBarraTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="PnlBarraTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="PnlBarraTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>576, 51</value>
+  </data>
+  <data name="PnlBarraTop.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;PnlBarraTop.Name" xml:space="preserve">
+    <value>PnlBarraTop</value>
+  </data>
+  <data name="&gt;&gt;PnlBarraTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PnlBarraTop.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PnlBarraTop.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="PnlMenu.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Right</value>
@@ -666,66 +642,6 @@
   <data name="PnlLista.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>PnlLista</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TxtBuscar.Name" xml:space="preserve">
-    <value>TxtBuscar</value>
-  </data>
-  <data name="&gt;&gt;TxtBuscar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TxtBuscar.Parent" xml:space="preserve">
-    <value>PnlLista</value>
-  </data>
-  <data name="&gt;&gt;TxtBuscar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;DgvCategoria.Name" xml:space="preserve">
-    <value>DgvCategoria</value>
-  </data>
-  <data name="&gt;&gt;DgvCategoria.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DgvCategoria.Parent" xml:space="preserve">
-    <value>PnlLista</value>
-  </data>
-  <data name="&gt;&gt;DgvCategoria.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="PnlLista.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 175</value>
-  </data>
-  <data name="PnlLista.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
-  </data>
-  <data name="PnlLista.Size" type="System.Drawing.Size, System.Drawing">
-    <value>435, 644</value>
-  </data>
-  <data name="PnlLista.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;PnlLista.Name" xml:space="preserve">
-    <value>PnlLista</value>
-  </data>
-  <data name="&gt;&gt;PnlLista.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PnlLista.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PnlLista.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -821,6 +737,30 @@
   </data>
   <data name="&gt;&gt;DgvCategoria.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="PnlLista.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 175</value>
+  </data>
+  <data name="PnlLista.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="PnlLista.Size" type="System.Drawing.Size, System.Drawing">
+    <value>435, 644</value>
+  </data>
+  <data name="PnlLista.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PnlLista.Name" xml:space="preserve">
+    <value>PnlLista</value>
+  </data>
+  <data name="&gt;&gt;PnlLista.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PnlLista.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PnlLista.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

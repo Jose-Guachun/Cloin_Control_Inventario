@@ -176,6 +176,7 @@ namespace Presentation
             {
                 botones();
                 limpiar();
+                producto.estado = EntityState.Vizualisar;
             }
         }
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -252,7 +253,10 @@ namespace Presentation
                 producto.estado = EntityState.Modificar;
                 Datos();
             }
-            else MessageBox.Show("Seleccione la fila a editar");
+            else
+            {
+                MessageBox.Show("Seleccione la fila a editar");
+            }
         }
 
 

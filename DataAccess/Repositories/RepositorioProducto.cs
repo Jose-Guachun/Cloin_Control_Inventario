@@ -20,8 +20,6 @@ namespace DataAccess.Repositories
         private string insert;
         private string update;
         private string delete;
-
-
         //constructor
         public RepositorioProducto()
         {
@@ -103,9 +101,7 @@ namespace DataAccess.Repositories
                 }) ; 
             }
             return listProducto;
-
         }
-
         public int Remove(int IdProducto)
         {
             parameters = new List<SqlParameter>();

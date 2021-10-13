@@ -46,9 +46,11 @@
   <ItemGroup>
     <Compile Include="Contracts\IGenericRepository.cs" />
     <Compile Include="Contracts\IRepositorioProducto.cs" />
+    <Compile Include="Entities\TB_CATEGORIA.cs" />
     <Compile Include="Entities\TB_PRODUCTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Repositorio.cs" />
+    <Compile Include="Repositories\RepositorioCategoria.cs" />
     <Compile Include="Repositories\RepositorioMaestro.cs" />
     <Compile Include="Repositories\RepositorioProducto.cs" />
   </ItemGroup>
