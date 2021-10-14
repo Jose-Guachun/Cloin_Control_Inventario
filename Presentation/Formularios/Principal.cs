@@ -166,7 +166,7 @@ namespace Presentation
             }
         }
 
-        private void AbrirFormHijo(Form FrmHijo)
+        public void AbrirFormHijo(Form FrmHijo)
         {
             if (FormHijoActual != null)
             {

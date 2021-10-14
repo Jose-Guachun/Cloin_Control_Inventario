@@ -24,7 +24,7 @@ namespace DataAccess.Repositories
         {
             selectAll = "select * from TB_CATEGORIA";
             insert = "insert into TB_CATEGORIA values( @Categoria)";
-            update = "update TB_CATEGORIA set  Categoria=@IdCategoria";
+            update = "update TB_CATEGORIA set  Categoria=@Categoria where IdCategoria=@IdCategoria";
             delete = "delete from TB_CATEGORIA WHERE IdCategoria=@IdCategoria";
         }
         //este metodo recive como parametro un metodo que es la entidad TB_PRODUCTO

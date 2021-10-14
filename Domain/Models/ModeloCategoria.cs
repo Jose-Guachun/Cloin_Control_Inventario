@@ -37,7 +37,7 @@ namespace Domain.Models
             {
                 var ModeloDatosCategoria = new TB_CATEGORIA();
                 ModeloDatosCategoria.IdCategoria = idCategoria;
-                ModeloDatosCategoria.Categoria = categoria.ToUpper() ;
+                ModeloDatosCategoria.Categoria = categoria;
                 switch (estado)
                 {
                     case EntityState.Agregar:

@@ -40,6 +40,8 @@ namespace Presentation
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             Dispose();
+            Principal pro = new Principal();
+            pro.AbrirFormHijo(new Productos());
         }
         private void BtnMinimizar_Click(object sender, EventArgs e)
         {
@@ -47,6 +49,7 @@ namespace Presentation
         }
         public void botones()
         {
+            TxtBuscar.Enabled = true;
             TplTitulo.Enabled = false;
             BtnNuevo.Enabled = true;
             BtnGuardar.Enabled = false;
@@ -54,6 +57,7 @@ namespace Presentation
             BtnEditar.Enabled = true;
             BtnEliminar.Enabled = true;
             TxtCategoria.Text = "";
+            DgvCategoria.Enabled = true;
         }
         private void ListaCategoria()
         {
@@ -69,6 +73,7 @@ namespace Presentation
         }
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
+            TxtBuscar.Enabled = false;
             TplTitulo.Enabled = true;
             BtnGuardar.Enabled = true;
             DgvCategoria.Enabled = false;
@@ -83,7 +88,7 @@ namespace Presentation
         {
             try
             {
-                categoria.Categoria = TxtCategoria.Text;
+                categoria.Categoria = TxtCategoria.Text.ToUpper();
                 bool valid = new Helps.ValidacionDatos(categoria).Validar();
 
                 if (valid == true)
@@ -108,12 +113,19 @@ namespace Presentation
         {
             if (DgvCategoria.SelectedRows.Count > 0)
             {
+                BtnEliminar.Enabled = false;
+                DgvCategoria.Enabled = false;
+                TxtBuscar.Enabled = false;
                 TplTitulo.Enabled = true;
                 BtnEditar.Enabled = true;
                 BtnCancelar.Enabled = true;
                 BtnGuardar.Enabled = true;
                 BtnEditar.Enabled = false;
                 BtnNuevo.Enabled = false;
+                categoria.estado = EntityState.Modificar;
+                categoria.IdCategoria = Convert.ToInt32(DgvCategoria.CurrentRow.Cells[0].Value);
+                TxtCategoria.Text = DgvCategoria.CurrentRow.Cells[1].Value.ToString().Trim();
+                
             }
             else
             {
@@ -123,7 +135,18 @@ namespace Presentation
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("¿Está seguro que desea eliminar el registro?", "Alerta¡¡", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (DgvCategoria.SelectedRows.Count > 0)
+                {
+                    categoria.estado = EntityState.Eliminar;
+                    categoria.IdCategoria = Convert.ToInt32(DgvCategoria.CurrentRow.Cells[0].Value);
+                    string result = categoria.Guardar();
+                    MessageBox.Show(result);
+                    ListaCategoria();
+                }
+                else MessageBox.Show("Selecciones la fila a editar");
+            }
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -131,6 +154,10 @@ namespace Presentation
             botones();
         }
 
+        private void TxtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DgvCategoria.DataSource = categoria.FindById(TxtBuscar.Text);
+        }
 
     }
 }
