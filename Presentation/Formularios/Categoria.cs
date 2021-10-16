@@ -39,9 +39,10 @@ namespace Presentation
         }
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
+            
+            Productos pr = new Productos();
+            pr.ListarCategorias();
             Dispose();
-            Principal pro = new Principal();
-            pro.AbrirFormHijo(new Productos());
         }
         private void BtnMinimizar_Click(object sender, EventArgs e)
         {

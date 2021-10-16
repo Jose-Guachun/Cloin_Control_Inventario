@@ -39,7 +39,7 @@ namespace Presentation
             DgvProductos.Columns[12].Visible = false;
 
         }
-        private void ListarCategorias()
+        public void ListarCategorias()
         {
             CboCategoria.DataSource = producto.ListarCategorias();
             CboCategoria.DisplayMember = "Categoria";
