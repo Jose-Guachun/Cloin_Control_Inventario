@@ -26,6 +26,7 @@ namespace Presentation
         private void Categoria_Load(object sender, EventArgs e)
         {
             ListaCategoria();
+            DgvCategoria.Columns[0].Visible = false;
         }
         //METODO PARA ARRASTRAR EL FORMULARIO---------------------------------------------------------------------
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -39,9 +40,8 @@ namespace Presentation
         }
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
+            ClsCalculoDatos.bandera = true;
             Dispose();
-            Principal pro = new Principal();
-            pro.AbrirFormHijo(new Productos());
         }
         private void BtnMinimizar_Click(object sender, EventArgs e)
         {

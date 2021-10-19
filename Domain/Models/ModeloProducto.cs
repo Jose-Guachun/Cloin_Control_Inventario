@@ -18,6 +18,7 @@ namespace Domain.Models
     public class ModeloProducto : RepositorioMaestro
     {
         private int idProducto;
+        private int n;
         private int idMarca;
         private int idModelo;
         private int idCategoria;
@@ -43,6 +44,7 @@ namespace Domain.Models
 
         //propiedades/modelo de vista /validar datos
         public int Id { get => idProducto; set => idProducto = value; }
+        public int N { get => n; set => n = value; }
         public int IdMarca { get => idMarca; set => idMarca = value; }
         [Required(ErrorMessage = "El campo Modelo es requerido")]
         public int IdModelo { get => idModelo; set => idModelo = value; }
@@ -77,6 +79,7 @@ namespace Domain.Models
         public float Iva { get => iva; set => iva = value; }
         [Required(ErrorMessage = "El campo TOTAL es requerido")]
         public float Total { get => total; set => total = value; }
+
 
         public DataTable ListarCategorias()
         {
@@ -189,12 +192,15 @@ namespace Domain.Models
         {
             var ModeloDatosProducto = repositorioProducto.GetAll();
             var listaProducto = new List<ModeloProducto>();
+            int cont = 0;
             foreach (TB_PRODUCTO item in ModeloDatosProducto)
             {
+                cont += 1;
                 listaProducto.Add(new ModeloProducto
                 {
 
                     idProducto = item.IdProducto,
+                    n = cont,
                     idMarca = Convert.ToInt32(Modelos(item.Modelo,true)),
                     idModelo = Convert.ToInt32(item.Modelo),
                     idCategoria= Convert.ToInt32(item.Categoria),

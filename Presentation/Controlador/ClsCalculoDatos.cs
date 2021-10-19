@@ -8,6 +8,8 @@ namespace Presentation
 {
     public class ClsCalculoDatos
     {
+        public static Boolean bandera;
+        public static Boolean bandera1;
         decimal coste;
         decimal pvp;
         decimal iva;

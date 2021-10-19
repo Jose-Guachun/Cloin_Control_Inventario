@@ -18,13 +18,16 @@ namespace Domain.Models
     public class ModeloCategoria : RepositorioMaestro
     {
         private int idCategoria;
+        private int n;
         private string categoria;
         private IRepositorioCategoria repositorioCategoria;
         public EntityState estado { private get; set; }
         
 
         public int IdCategoria { get => idCategoria; set => idCategoria = value; }
+        public int N { get => n; set => n = value; }
         public string Categoria { get => categoria; set => categoria = value; }
+
 
         public ModeloCategoria()
         {
@@ -73,11 +76,14 @@ namespace Domain.Models
         {
             var ModeloDatosCategoria = repositorioCategoria.GetAll();
             var listaCategoria = new List<ModeloCategoria>();
+            int cont=0;
             foreach (TB_CATEGORIA item in ModeloDatosCategoria)
             {
+                cont += 1;
                 listaCategoria.Add(new ModeloCategoria
                 {
                     idCategoria = item.IdCategoria,
+                    n=cont,
                     categoria = item.Categoria
                 });
             }

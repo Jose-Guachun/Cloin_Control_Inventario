@@ -57,7 +57,7 @@ namespace DataAccess.Repositories
                 listProducto.Add(new TB_CATEGORIA
                 {
                     IdCategoria = Convert.ToInt32(item[0]),
-                    Categoria = item[1].ToString()
+                    Categoria = item[1].ToString(),
                 });
             }
             return listProducto;

@@ -27,19 +27,18 @@ namespace Presentation
         }
         private void Productos_Load(object sender, EventArgs e)
         {
-            ListarCategorias();
-            ListarMarca();
             ListaProducto();
 
-            DgvProductos.Columns[1].Visible = false;
+            DgvProductos.Columns[0].Visible = false;
             DgvProductos.Columns[2].Visible = false;
             DgvProductos.Columns[3].Visible = false;
-            DgvProductos.Columns[8].Visible = false;
+            DgvProductos.Columns[4].Visible = false;
             DgvProductos.Columns[9].Visible = false;
-            DgvProductos.Columns[12].Visible = false;
+            DgvProductos.Columns[10].Visible = false;
+            DgvProductos.Columns[13].Visible = false;
 
         }
-        private void ListarCategorias()
+        public void ListarCategorias()
         {
             CboCategoria.DataSource = producto.ListarCategorias();
             CboCategoria.DisplayMember = "Categoria";
@@ -115,26 +114,26 @@ namespace Presentation
             private void Datos()
         {
             producto.Id = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
-            CboMarca.SelectedValue= DgvProductos.CurrentRow.Cells[1].Value;
-            CboModelo.SelectedValue= DgvProductos.CurrentRow.Cells[2].Value;
-            CboCategoria.SelectedValue = DgvProductos.CurrentRow.Cells[3].Value;
-            TxtCodigoSku.Text = DgvProductos.CurrentRow.Cells[7].Value.ToString().Trim();
-            TxtCodigoUpc.Text = DgvProductos.CurrentRow.Cells[8].Value.ToString().Trim();
-            TxtTitulo.Text = DgvProductos.CurrentRow.Cells[10].Value.ToString().Trim();
-            TxtCantidad.Text = DgvProductos.CurrentRow.Cells[11].Value.ToString().Trim();
-            RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
-            TxtCoste.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
-            TxtMargen.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
-            TxtDescuento.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
-            TxtPVP.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
-            TxtIVA.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
-            TxtTotal.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
+            CboMarca.SelectedValue= DgvProductos.CurrentRow.Cells[2].Value;
+            CboModelo.SelectedValue= DgvProductos.CurrentRow.Cells[3].Value;
+            CboCategoria.SelectedValue = DgvProductos.CurrentRow.Cells[4].Value;
+            TxtCodigoSku.Text = DgvProductos.CurrentRow.Cells[8].Value.ToString().Trim();
+            TxtCodigoUpc.Text = DgvProductos.CurrentRow.Cells[9].Value.ToString().Trim();
+            TxtTitulo.Text = DgvProductos.CurrentRow.Cells[11].Value.ToString().Trim();
+            TxtCantidad.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
+            RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
+            TxtCoste.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
+            TxtMargen.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
+            TxtDescuento.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
+            TxtPVP.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
+            TxtIVA.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
+            TxtTotal.Text = DgvProductos.CurrentRow.Cells[19].Value.ToString().Trim();
             ImgProducto.Image = Image.FromStream(ByteImage());
         }
 
         private MemoryStream ByteImage()
         {
-            byte[] im = (byte[])DgvProductos.CurrentRow.Cells[9].Value;
+            byte[] im = (byte[])DgvProductos.CurrentRow.Cells[10].Value;
             MemoryStream ms = new MemoryStream(im);
             return ms;
         }
@@ -181,7 +180,7 @@ namespace Presentation
         }
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-
+            ListarCategorias();
         }
 
         private void TxtBuscar_KeyPress(object sender, KeyPressEventArgs e)
@@ -278,6 +277,8 @@ namespace Presentation
 
         private void DgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            CboCategoria_DropDown(sender, e);
+            CboMarca_DropDown(sender,e);
             Datos();
         }
         private void TxtCoste_Leave(object sender, EventArgs e)
@@ -448,6 +449,25 @@ namespace Presentation
         {
             Categoria cat= new Categoria();
             cat.ShowDialog();
+        }
+
+        private void CboCategoria_DropDown(object sender, EventArgs e)
+        { 
+            if (ClsCalculoDatos.bandera || CboCategoria.SelectedValue == null)
+            {
+                ListarCategorias();
+                ClsCalculoDatos.bandera = false;
+            }
+            
+        }
+
+        private void CboMarca_DropDown(object sender, EventArgs e)
+        {
+            if (ClsCalculoDatos.bandera1 || CboMarca.SelectedValue == null)
+            { 
+                ListarMarca();
+                ClsCalculoDatos.bandera1 = false;                       
+            }
         }
     }
 }
