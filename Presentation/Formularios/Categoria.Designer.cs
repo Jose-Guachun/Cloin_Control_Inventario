@@ -33,8 +33,10 @@ namespace Presentation
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TplTitulo = new System.Windows.Forms.TableLayoutPanel();
-            this.TxtCategoria = new System.Windows.Forms.TextBox();
+            this.CboMarca = new System.Windows.Forms.ComboBox();
+            this.TxtMarca = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.LblTitleChildForm = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PnlBarraTop = new System.Windows.Forms.Panel();
@@ -49,32 +51,47 @@ namespace Presentation
             this.PnlLista = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
-            this.DgvCategoria = new System.Windows.Forms.DataGridView();
+            this.DgvDatos = new System.Windows.Forms.DataGridView();
             this.TplTitulo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.PnlBarraTop.SuspendLayout();
             this.PnlMenu.SuspendLayout();
             this.PnlLista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvCategoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // TplTitulo
             // 
             resources.ApplyResources(this.TplTitulo, "TplTitulo");
-            this.TplTitulo.Controls.Add(this.TxtCategoria, 1, 0);
-            this.TplTitulo.Controls.Add(this.label5, 0, 0);
+            this.TplTitulo.Controls.Add(this.CboMarca, 1, 0);
+            this.TplTitulo.Controls.Add(this.TxtMarca, 0, 0);
+            this.TplTitulo.Controls.Add(this.label5, 0, 1);
+            this.TplTitulo.Controls.Add(this.TxtDescripcion, 1, 1);
             this.TplTitulo.Name = "TplTitulo";
             // 
-            // TxtCategoria
+            // CboMarca
             // 
-            resources.ApplyResources(this.TxtCategoria, "TxtCategoria");
-            this.TxtCategoria.Name = "TxtCategoria";
+            resources.ApplyResources(this.CboMarca, "CboMarca");
+            this.CboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CboMarca.FormattingEnabled = true;
+            this.CboMarca.Name = "CboMarca";
+            // 
+            // TxtMarca
+            // 
+            resources.ApplyResources(this.TxtMarca, "TxtMarca");
+            this.TxtMarca.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TxtMarca.Name = "TxtMarca";
             // 
             // label5
             // 
             resources.ApplyResources(this.label5, "label5");
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Name = "label5";
+            // 
+            // TxtDescripcion
+            // 
+            resources.ApplyResources(this.TxtDescripcion, "TxtDescripcion");
+            this.TxtDescripcion.Name = "TxtDescripcion";
             // 
             // LblTitleChildForm
             // 
@@ -214,7 +231,7 @@ namespace Presentation
             this.PnlLista.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.PnlLista.Controls.Add(this.label11);
             this.PnlLista.Controls.Add(this.TxtBuscar);
-            this.PnlLista.Controls.Add(this.DgvCategoria);
+            this.PnlLista.Controls.Add(this.DgvDatos);
             this.PnlLista.Name = "PnlLista";
             // 
             // label11
@@ -232,15 +249,15 @@ namespace Presentation
             this.TxtBuscar.Name = "TxtBuscar";
             this.TxtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBuscar_KeyPress);
             // 
-            // DgvCategoria
+            // DgvDatos
             // 
-            this.DgvCategoria.AllowUserToAddRows = false;
-            this.DgvCategoria.AllowUserToDeleteRows = false;
-            resources.ApplyResources(this.DgvCategoria, "DgvCategoria");
-            this.DgvCategoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DgvCategoria.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DgvCategoria.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
-            this.DgvCategoria.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DgvDatos.AllowUserToAddRows = false;
+            this.DgvDatos.AllowUserToDeleteRows = false;
+            resources.ApplyResources(this.DgvDatos, "DgvDatos");
+            this.DgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DgvDatos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DgvDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
+            this.DgvDatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -248,8 +265,8 @@ namespace Presentation
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvCategoria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -257,14 +274,14 @@ namespace Presentation
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGreen;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvCategoria.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DgvCategoria.EnableHeadersVisualStyles = false;
-            this.DgvCategoria.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
-            this.DgvCategoria.MultiSelect = false;
-            this.DgvCategoria.Name = "DgvCategoria";
-            this.DgvCategoria.ReadOnly = true;
-            this.DgvCategoria.RowHeadersVisible = false;
-            this.DgvCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvDatos.EnableHeadersVisualStyles = false;
+            this.DgvDatos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
+            this.DgvDatos.MultiSelect = false;
+            this.DgvDatos.Name = "DgvDatos";
+            this.DgvDatos.ReadOnly = true;
+            this.DgvDatos.RowHeadersVisible = false;
+            this.DgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
             // Categoria
             // 
@@ -287,7 +304,7 @@ namespace Presentation
             this.PnlMenu.ResumeLayout(false);
             this.PnlLista.ResumeLayout(false);
             this.PnlLista.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvCategoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvDatos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -295,7 +312,7 @@ namespace Presentation
         #endregion
         private System.Windows.Forms.TableLayoutPanel TplTitulo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TxtCategoria;
+        private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.Label LblTitleChildForm;
         private System.Windows.Forms.Panel panel1;
         internal System.Windows.Forms.Panel PnlBarraTop;
@@ -310,6 +327,8 @@ namespace Presentation
         private System.Windows.Forms.Panel PnlLista;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox TxtBuscar;
-        private System.Windows.Forms.DataGridView DgvCategoria;
+        private System.Windows.Forms.DataGridView DgvDatos;
+        private System.Windows.Forms.Label TxtMarca;
+        private System.Windows.Forms.ComboBox CboMarca;
     }
 }

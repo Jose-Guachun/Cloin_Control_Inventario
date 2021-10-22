@@ -18,6 +18,8 @@ namespace DataAccess.Entities
     public class TB_MODELO
     {
         public int IdModelo { get; set; }
+        public int IdMarca { get; set; }
+        public string Marca { get; set; }
         public string Modelo { get; set; }
     }
 }

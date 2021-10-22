@@ -10,6 +10,8 @@ namespace Presentation
     {
         public static Boolean bandera;
         public static Boolean bandera1;
+        public static Boolean bandera2;
+        public static int caso=0;
         decimal coste;
         decimal pvp;
         decimal iva;

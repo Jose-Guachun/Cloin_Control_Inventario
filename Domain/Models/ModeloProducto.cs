@@ -12,6 +12,7 @@ using DataAccess.Entities;
 using DataAccess.Repositories;
 using Domain.ValueObjects;
 using System.Data;
+using System.Runtime.CompilerServices;
 
 namespace Domain.Models
 {
@@ -53,7 +54,7 @@ namespace Domain.Models
         public string Marca { get => marca; set => marca = value; }
         public string Modelo { get => modelo; set => modelo = value; }
         public string Categoria { get => categoria; set => categoria = value; }
-        [Required(ErrorMessage = "El campo codigo SKU del producto es requerido")]
+        [Required(ErrorMessage = "Llene todos los campos")]
         [StringLength(maximumLength: 8, MinimumLength = 8, ErrorMessage = "El codigo SKU no puede formarce si no selecciona una Categoria, Marca y Modelo para completar los 8 digitos")]
         public string SKU { get => codigo_SKU; set => codigo_SKU = value; }
         [Required(ErrorMessage = "El campo codigo UPC del producto es requerido")]
@@ -61,11 +62,15 @@ namespace Domain.Models
         [StringLength(maximumLength: 12, MinimumLength = 12, ErrorMessage = "El codigo UPC debe de contener 12 digitos")]
         public string Codigo_UPC { get => codigo_UPC; set => codigo_UPC = value; }
         public byte[] Img { get => img; set => img = value; }
+
+        [Required(ErrorMessage = "El campo Titulo es requerido")]
+        [StringLength(maximumLength: 200, MinimumLength = 6, ErrorMessage = "El Titulo debe de contener minimo 6 y un maximo de 200 letras")]
         public string Titulo { get => titulo; set => titulo = value; }
         [Required(ErrorMessage = "El campo Cantidad es requerido")]
         [RegularExpression("([0-9]+)", ErrorMessage = "El campo Cantidad solo debe estar conformado por numeros")]
         public int Cantidad { get => cantidad; set => cantidad = value; }
         [Required(ErrorMessage = "El campo Caracteristicas es requerido")]
+        [StringLength(maximumLength: 400, MinimumLength = 12, ErrorMessage = "Las Caracteristicas debe contener un minimo de 12 y un maximo de 400 letras.")]
         public string Caracteristicas { get => caracteristicas; set => caracteristicas = value; }
         [Required(ErrorMessage = "El campo Coste es requerido")]
         public float Coste { get => coste; set => coste = value; }
@@ -73,7 +78,7 @@ namespace Domain.Models
         public float Margen { get => margen; set => margen = value; }
         [Required(ErrorMessage = "El campo Descuento es requerido")]
         public float Descuento { get => descuento; set => descuento = value; }
-        [Required(ErrorMessage = "El campo PVO es requerido")]
+        [Required(ErrorMessage = "El campo PVP es requerido")]
         public float Pvp { get => pvp; set => pvp = value; }
         [Required(ErrorMessage = "El campo IVA es requerido")]
         public float Iva { get => iva; set => iva = value; }
@@ -109,7 +114,7 @@ namespace Domain.Models
             string modelo="0";
             foreach (DataRow item in tableResult.Rows)
             {
-                if (code)
+                if (code)                                   
                 {
                     modelo = item[0].ToString();
                 }

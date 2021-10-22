@@ -27,8 +27,9 @@ namespace Presentation
         }
         private void Productos_Load(object sender, EventArgs e)
         {
+            ListarCategorias();
+            ListarMarca();
             ListaProducto();
-
             DgvProductos.Columns[0].Visible = false;
             DgvProductos.Columns[2].Visible = false;
             DgvProductos.Columns[3].Visible = false;
@@ -36,7 +37,21 @@ namespace Presentation
             DgvProductos.Columns[9].Visible = false;
             DgvProductos.Columns[10].Visible = false;
             DgvProductos.Columns[13].Visible = false;
+        }
+        public void DgvLleno()
+        {
+            if (DgvProductos.RowCount > 0)
+            {
+                DgvProductos.Rows[0].Selected = false;
 
+                
+            }
+            else
+            {
+                BtnEliminar.Enabled = false;
+                BtnEditar.Enabled = false;
+                DgvProductos.Enabled = false;
+            }
         }
         public void ListarCategorias()
         {
@@ -62,6 +77,7 @@ namespace Presentation
             try
             {
                 DgvProductos.DataSource = producto.GetAll();
+                DgvLleno();
             }
             catch (Exception ex)
             {
@@ -93,12 +109,14 @@ namespace Presentation
             TxtCodigoUpc.Clear();
             TxtCantidad.Clear();
             TxtTitulo.Clear();
-            TxtCoste.Text = "0";
+            CboCategoria.SelectedIndex = 0;
+            CboMarca.SelectedIndex = 0;
+            ListarModelo("0");
             limpiarContable();
             RtbCaracteristicas.Clear();
+            TxtCoste.Text = "0";
             if (ImgProducto.Image != null)
             {
-                
                 ImgProducto.Image = PtbImg.Image;
             }
                 
@@ -113,22 +131,25 @@ namespace Presentation
         }
             private void Datos()
         {
-            producto.Id = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
-            CboMarca.SelectedValue= DgvProductos.CurrentRow.Cells[2].Value;
-            CboModelo.SelectedValue= DgvProductos.CurrentRow.Cells[3].Value;
-            CboCategoria.SelectedValue = DgvProductos.CurrentRow.Cells[4].Value;
-            TxtCodigoSku.Text = DgvProductos.CurrentRow.Cells[8].Value.ToString().Trim();
-            TxtCodigoUpc.Text = DgvProductos.CurrentRow.Cells[9].Value.ToString().Trim();
-            TxtTitulo.Text = DgvProductos.CurrentRow.Cells[11].Value.ToString().Trim();
-            TxtCantidad.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
-            RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
-            TxtCoste.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
-            TxtMargen.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
-            TxtDescuento.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
-            TxtPVP.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
-            TxtIVA.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
-            TxtTotal.Text = DgvProductos.CurrentRow.Cells[19].Value.ToString().Trim();
-            ImgProducto.Image = Image.FromStream(ByteImage());
+            if (DgvProductos.RowCount > 0)
+            {
+                producto.Id = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
+                CboMarca.SelectedValue = DgvProductos.CurrentRow.Cells[2].Value;
+                CboModelo.SelectedValue = DgvProductos.CurrentRow.Cells[3].Value;
+                CboCategoria.SelectedValue = DgvProductos.CurrentRow.Cells[4].Value;
+                TxtCodigoSku.Text = DgvProductos.CurrentRow.Cells[8].Value.ToString().Trim();
+                TxtCodigoUpc.Text = DgvProductos.CurrentRow.Cells[9].Value.ToString().Trim();
+                TxtTitulo.Text = DgvProductos.CurrentRow.Cells[11].Value.ToString().Trim();
+                TxtCantidad.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
+                RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
+                TxtCoste.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
+                TxtMargen.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
+                TxtDescuento.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
+                TxtPVP.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
+                TxtIVA.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
+                TxtTotal.Text = DgvProductos.CurrentRow.Cells[19].Value.ToString().Trim();
+                ImgProducto.Image = Image.FromStream(ByteImage());
+            }
         }
 
         private MemoryStream ByteImage()
@@ -175,6 +196,7 @@ namespace Presentation
             {
                 botones();
                 limpiar();
+                DgvLleno();
                 producto.estado = EntityState.Vizualisar;
             }
         }
@@ -192,38 +214,42 @@ namespace Presentation
         {
             try
             {
-                producto.IdModelo = Convert.ToInt32(CboModelo.SelectedValue);
-                producto.IdCategoria = Convert.ToInt32(CboCategoria.SelectedValue);
-                producto.SKU = calculo.SKU(CboCategoria.Text,CboMarca.Text,CboModelo.Text);
-                producto.Codigo_UPC = TxtCodigoUpc.Text;
-                producto.Titulo = TxtTitulo.Text.ToLower();
-                producto.Cantidad = Convert.ToInt32(TxtCantidad.Text);
-                producto.Coste = float.Parse(TxtCoste.Text);
-                producto.Margen = float.Parse(TxtMargen.Text);
-                producto.Pvp = float.Parse(TxtPVP.Text);
-                producto.Descuento= float.Parse(TxtDescuento.Text);
-                producto.Iva = float.Parse(TxtIVA.Text);
-                producto.Total = float.Parse(TxtTotal.Text);
-                producto.Caracteristicas = RtbCaracteristicas.Text;
-                producto.Img = ConvertirImg();
-                bool valid = new Helps.ValidacionDatos(producto).Validar();
-
-                if (valid == true)
+                if (TxtCoste.Text!="0"&& TxtTotal.Text!="0")
                 {
-                    string result = producto.Guardar();
-                    MessageBox.Show(result);
-                    producto.estado = EntityState.Vizualisar;
-                    ListaProducto();
-                    limpiar();
-                    botones();
-    
+                    producto.IdModelo = Convert.ToInt32(CboModelo.SelectedValue);
+                    producto.IdCategoria = Convert.ToInt32(CboCategoria.SelectedValue);
+                    producto.SKU = calculo.SKU(CboCategoria.Text, CboMarca.Text, CboModelo.Text);
+                    producto.Codigo_UPC = TxtCodigoUpc.Text;
+                    producto.Titulo = TxtTitulo.Text.ToLower();
+                    producto.Cantidad = Convert.ToInt32(TxtCantidad.Text);
+                    producto.Coste = float.Parse(TxtCoste.Text);
+                    producto.Margen = float.Parse(TxtMargen.Text);
+                    producto.Pvp = float.Parse(TxtPVP.Text);
+                    producto.Descuento = float.Parse(TxtDescuento.Text);
+                    producto.Iva = float.Parse(TxtIVA.Text);
+                    producto.Total = float.Parse(TxtTotal.Text);
+                    producto.Caracteristicas = RtbCaracteristicas.Text;
+                    producto.Img = ConvertirImg();
+                    bool valid = new Helps.ValidacionDatos(producto).Validar();
+                    if (valid == true)
+                    {
+                        string result = producto.Guardar();
+                        MessageBox.Show(result);
+                        producto.estado = EntityState.Vizualisar;
+                        ListaProducto();
+                        limpiar();
+                        botones();
+                    }
                 }
-
+                else
+                {
+                    MessageBox.Show("Llene todos los campos");
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                MessageBox.Show(ex+"Llene todos los campos");
+                MessageBox.Show("Llene todos los campos");
             }
 
         }
@@ -250,6 +276,8 @@ namespace Presentation
                 BtnEditar.Enabled = false;
                 BtnNuevo.Enabled = false;
                 producto.estado = EntityState.Modificar;
+                CboCategoria_DropDown(sender, e);
+                CboMarca_DropDown(sender, e);
                 Datos();
             }
             else
@@ -409,10 +437,17 @@ namespace Presentation
 
         private void CboMarca_SelectedValueChanged(object sender, EventArgs e)
         {
-            if ( CboMarca.SelectedValue.ToString()!= "System.Data.DataRowView" && CboMarca.SelectedValue!=null)
+
+            if (CboMarca.SelectedIndex != 0)
             {
                 ListarModelo(CboMarca.SelectedValue.ToString());
-            }   
+            }
+            else
+            {
+                ListarModelo("0");
+            }
+
+            
         }
 
         private void TxtTotal_Leave(object sender, EventArgs e)
@@ -444,18 +479,12 @@ namespace Presentation
             }
 
         }
-
-        private void BtnCategoria_Click(object sender, EventArgs e)
-        {
-            Categoria cat= new Categoria();
-            cat.ShowDialog();
-        }
-
         private void CboCategoria_DropDown(object sender, EventArgs e)
         { 
-            if (ClsCalculoDatos.bandera || CboCategoria.SelectedValue == null)
+            if (ClsCalculoDatos.bandera)
             {
                 ListarCategorias();
+                MessageBox.Show("funciona");
                 ClsCalculoDatos.bandera = false;
             }
             
@@ -463,11 +492,42 @@ namespace Presentation
 
         private void CboMarca_DropDown(object sender, EventArgs e)
         {
-            if (ClsCalculoDatos.bandera1 || CboMarca.SelectedValue == null)
+            if (ClsCalculoDatos.bandera1)
             { 
                 ListarMarca();
+                MessageBox.Show("funciona");
                 ClsCalculoDatos.bandera1 = false;                       
             }
         }
+        private void CboModelo_DropDown(object sender, EventArgs e)
+        {
+            if (ClsCalculoDatos.bandera2)
+            {
+                ListarModelo(CboMarca.SelectedValue.ToString());
+                MessageBox.Show("funciona");
+                ClsCalculoDatos.bandera2 = false;
+            }
+        }
+        private void BtnCategoria_Click(object sender, EventArgs e)
+        {
+            Categoria categoria = new Categoria();
+            ClsCalculoDatos.caso = 1;
+            categoria.ShowDialog();
+        }
+        private void BtnMarca_Click(object sender, EventArgs e)
+        {
+            Categoria marca = new Categoria();
+            ClsCalculoDatos.caso = 2;
+            marca.ShowDialog();
+        }
+
+        private void BtnModelo_Click(object sender, EventArgs e)
+        {
+            Categoria modelo = new Categoria();
+            ClsCalculoDatos.caso = 3;
+            modelo.ShowDialog();
+        }
+
+
     }
 }

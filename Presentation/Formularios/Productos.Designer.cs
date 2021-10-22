@@ -699,6 +699,7 @@ namespace Presentation
             this.BtnModelo.TabIndex = 14;
             this.BtnModelo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.BtnModelo.UseVisualStyleBackColor = false;
+            this.BtnModelo.Click += new System.EventHandler(this.BtnModelo_Click);
             // 
             // BtnCategoria
             // 
@@ -746,6 +747,7 @@ namespace Presentation
             this.BtnMarca.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnMarca.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnMarca.UseVisualStyleBackColor = false;
+            this.BtnMarca.Click += new System.EventHandler(this.BtnMarca_Click);
             // 
             // label14
             // 
@@ -830,6 +832,7 @@ namespace Presentation
             this.CboModelo.Name = "CboModelo";
             this.CboModelo.Size = new System.Drawing.Size(230, 28);
             this.CboModelo.TabIndex = 13;
+            this.CboModelo.DropDown += new System.EventHandler(this.CboModelo_DropDown);
             // 
             // label3
             // 
@@ -1065,7 +1068,7 @@ namespace Presentation
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
