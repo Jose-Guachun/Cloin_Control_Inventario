@@ -185,17 +185,23 @@ namespace Presentation
                         }
                         break;
                     case 3:
-                        modelo.IdMarca = Convert.ToInt32(CboMarca.SelectedValue);
-                        modelo.Modelo= TxtDescripcion.Text.ToUpper();
-                        valid = new Helps.ValidacionDatos(modelo).Validar();
-                        if (valid == true)
+                        if (CboMarca.SelectedIndex != 0)
                         {
-
-                            result = modelo.Guardar();
-                            MessageBox.Show(result);
-                            modelo.estado = EntityState.Vizualisar;
-                            ListarDatos();
-                            botones();
+                            modelo.IdMarca = Convert.ToInt32(CboMarca.SelectedValue);
+                            modelo.Modelo = TxtDescripcion.Text.ToUpper();
+                            valid = new Helps.ValidacionDatos(modelo).Validar();
+                            if (valid == true)
+                            {
+                                result = modelo.Guardar();
+                                MessageBox.Show(result);
+                                modelo.estado = EntityState.Vizualisar;
+                                ListarDatos();
+                                botones();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Seleccione la Marca que pertenece el modelo a crear");
                         }
                         break;
                 }
