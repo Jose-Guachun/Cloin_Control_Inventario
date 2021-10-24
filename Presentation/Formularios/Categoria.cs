@@ -382,8 +382,6 @@ namespace Presentation
                         break;
                 }
             }
-
-
         }
     }
 }

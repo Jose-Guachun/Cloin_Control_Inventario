@@ -508,17 +508,23 @@ namespace Presentation
             CboListar();
         }
 
-        private void CboModelo_DropDown(object sender, EventArgs e)
+        private void CboMarca_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (CboMarca.SelectedIndex != 0)
+            try
             {
-                ListarModelo(CboMarca.SelectedValue.ToString());
+                if (CboMarca.SelectedIndex != 0)
+                {
+                    ListarModelo(CboMarca.SelectedValue.ToString());
+                }
+                else
+                {
+                    ListarModelo("0");
+                }
             }
-            else
+            catch (Exception)
             {
-                ListarModelo("0");
             }
-
+            
         }
     }
 }
