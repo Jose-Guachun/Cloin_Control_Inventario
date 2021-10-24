@@ -8,9 +8,9 @@ namespace Presentation
 {
     public class ClsCalculoDatos
     {
-        public static ValueType valueCategoria = 0;
-        public static ValueType valueMarca = 0;
-        public static ValueType valueModelo = 0;
+        public static ValueType valueCategoria = null;
+        public static ValueType valueMarca = null;
+        public static ValueType valueModelo = null;
         public static int caso=0;
         decimal coste;
         decimal pvp;

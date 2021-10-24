@@ -471,9 +471,23 @@ namespace Presentation
             ListarCategorias();
             ListarMarca();
             ListarModelo(CboMarca.SelectedValue.ToString());
-            CboCategoria.SelectedValue = ClsCalculoDatos.valueCategoria;
-            CboMarca.SelectedValue = ClsCalculoDatos.valueMarca;
-            CboModelo.SelectedValue = ClsCalculoDatos.valueModelo;
+            if (ClsCalculoDatos.valueCategoria != null)
+            {
+                CboCategoria.SelectedValue = ClsCalculoDatos.valueCategoria;
+                ClsCalculoDatos.valueCategoria = null;
+            }
+            if (ClsCalculoDatos.valueMarca != null)
+            {
+                CboMarca.SelectedValue = ClsCalculoDatos.valueMarca;
+                ClsCalculoDatos.valueMarca = null;
+            }
+            if (ClsCalculoDatos.valueModelo!=null)
+            {
+                CboModelo.SelectedValue = ClsCalculoDatos.valueModelo;
+                ClsCalculoDatos.valueModelo= null;
+            }
+            
+            
         }
         private void BtnCategoria_Click(object sender, EventArgs e)
         { 

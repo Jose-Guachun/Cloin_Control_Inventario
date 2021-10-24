@@ -366,22 +366,24 @@ namespace Presentation
 
         private void BtnSeleccionar_Click(object sender, EventArgs e)
         {
-            switch (ClsCalculoDatos.caso)
+            if (DgvDatos.SelectedRows.Count > 0)
             {
-                case 1:
-                    ClsCalculoDatos.valueCategoria = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
-                    break;
-                case 2:
-                    ClsCalculoDatos.valueMarca = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
-                    break;
-                case 3:
-                    ClsCalculoDatos.valueMarca = Convert.ToInt32(DgvDatos.CurrentRow.Cells[1].Value);
-                    ClsCalculoDatos.valueModelo = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
-                    break;
+                switch (ClsCalculoDatos.caso)
+                {
+                    case 1:
+                        ClsCalculoDatos.valueCategoria = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                        break;
+                    case 2:
+                        ClsCalculoDatos.valueMarca = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                        break;
+                    case 3:
+                        ClsCalculoDatos.valueMarca = Convert.ToInt32(DgvDatos.CurrentRow.Cells[1].Value);
+                        ClsCalculoDatos.valueModelo = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                        break;
+                }
             }
 
-            
-            Dispose();
+
         }
     }
 }
