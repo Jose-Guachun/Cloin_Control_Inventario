@@ -30,8 +30,8 @@ namespace Presentation
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Categoria));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TplTitulo = new System.Windows.Forms.TableLayoutPanel();
             this.CboMarca = new System.Windows.Forms.ComboBox();
             this.TxtMarca = new System.Windows.Forms.Label();
@@ -52,12 +52,18 @@ namespace Presentation
             this.label11 = new System.Windows.Forms.Label();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.DgvDatos = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnModelo = new FontAwesome.Sharp.IconButton();
+            this.BtnMarca = new FontAwesome.Sharp.IconButton();
+            this.BtnCategoria = new FontAwesome.Sharp.IconButton();
+            this.BtnSeleccionar = new FontAwesome.Sharp.IconButton();
             this.TplTitulo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.PnlBarraTop.SuspendLayout();
             this.PnlMenu.SuspendLayout();
             this.PnlLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDatos)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // TplTitulo
@@ -92,6 +98,7 @@ namespace Presentation
             // 
             resources.ApplyResources(this.TxtDescripcion, "TxtDescripcion");
             this.TxtDescripcion.Name = "TxtDescripcion";
+            this.TxtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDescripcion_KeyPress);
             // 
             // LblTitleChildForm
             // 
@@ -258,23 +265,23 @@ namespace Presentation
             this.DgvDatos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvDatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvDatos.DefaultCellStyle = dataGridViewCellStyle4;
             this.DgvDatos.EnableHeadersVisualStyles = false;
             this.DgvDatos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvDatos.MultiSelect = false;
@@ -283,11 +290,78 @@ namespace Presentation
             this.DgvDatos.RowHeadersVisible = false;
             this.DgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel2.Controls.Add(this.BtnSeleccionar);
+            this.panel2.Controls.Add(this.BtnModelo);
+            this.panel2.Controls.Add(this.BtnMarca);
+            this.panel2.Controls.Add(this.BtnCategoria);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
+            // BtnModelo
+            // 
+            this.BtnModelo.BackColor = System.Drawing.Color.LightSeaGreen;
+            resources.ApplyResources(this.BtnModelo, "BtnModelo");
+            this.BtnModelo.FlatAppearance.BorderSize = 0;
+            this.BtnModelo.ForeColor = System.Drawing.Color.White;
+            this.BtnModelo.IconChar = FontAwesome.Sharp.IconChar.Buffer;
+            this.BtnModelo.IconColor = System.Drawing.Color.White;
+            this.BtnModelo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnModelo.IconSize = 50;
+            this.BtnModelo.Name = "BtnModelo";
+            this.BtnModelo.UseVisualStyleBackColor = false;
+            this.BtnModelo.Click += new System.EventHandler(this.BtnModelo_Click);
+            // 
+            // BtnMarca
+            // 
+            this.BtnMarca.BackColor = System.Drawing.Color.LightSeaGreen;
+            resources.ApplyResources(this.BtnMarca, "BtnMarca");
+            this.BtnMarca.FlatAppearance.BorderSize = 0;
+            this.BtnMarca.ForeColor = System.Drawing.Color.White;
+            this.BtnMarca.IconChar = FontAwesome.Sharp.IconChar.Artstation;
+            this.BtnMarca.IconColor = System.Drawing.Color.White;
+            this.BtnMarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnMarca.IconSize = 50;
+            this.BtnMarca.Name = "BtnMarca";
+            this.BtnMarca.UseVisualStyleBackColor = false;
+            this.BtnMarca.Click += new System.EventHandler(this.BtnMarca_Click);
+            // 
+            // BtnCategoria
+            // 
+            this.BtnCategoria.BackColor = System.Drawing.Color.LightSeaGreen;
+            resources.ApplyResources(this.BtnCategoria, "BtnCategoria");
+            this.BtnCategoria.FlatAppearance.BorderSize = 0;
+            this.BtnCategoria.ForeColor = System.Drawing.Color.White;
+            this.BtnCategoria.IconChar = FontAwesome.Sharp.IconChar.BezierCurve;
+            this.BtnCategoria.IconColor = System.Drawing.Color.White;
+            this.BtnCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnCategoria.IconSize = 50;
+            this.BtnCategoria.Name = "BtnCategoria";
+            this.BtnCategoria.UseVisualStyleBackColor = false;
+            this.BtnCategoria.Click += new System.EventHandler(this.BtnCategoria_Click);
+            // 
+            // BtnSeleccionar
+            // 
+            resources.ApplyResources(this.BtnSeleccionar, "BtnSeleccionar");
+            this.BtnSeleccionar.BackColor = System.Drawing.Color.Plum;
+            this.BtnSeleccionar.FlatAppearance.BorderSize = 0;
+            this.BtnSeleccionar.ForeColor = System.Drawing.Color.White;
+            this.BtnSeleccionar.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.BtnSeleccionar.IconColor = System.Drawing.Color.White;
+            this.BtnSeleccionar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnSeleccionar.IconSize = 30;
+            this.BtnSeleccionar.Name = "BtnSeleccionar";
+            this.BtnSeleccionar.UseVisualStyleBackColor = false;
+            this.BtnSeleccionar.Click += new System.EventHandler(this.BtnSeleccionar_Click);
+            // 
             // Categoria
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.PnlLista);
             this.Controls.Add(this.PnlMenu);
             this.Controls.Add(this.PnlBarraTop);
@@ -305,6 +379,7 @@ namespace Presentation
             this.PnlLista.ResumeLayout(false);
             this.PnlLista.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDatos)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -330,5 +405,10 @@ namespace Presentation
         private System.Windows.Forms.DataGridView DgvDatos;
         private System.Windows.Forms.Label TxtMarca;
         private System.Windows.Forms.ComboBox CboMarca;
+        private System.Windows.Forms.Panel panel2;
+        private FontAwesome.Sharp.IconButton BtnModelo;
+        private FontAwesome.Sharp.IconButton BtnMarca;
+        private FontAwesome.Sharp.IconButton BtnCategoria;
+        private FontAwesome.Sharp.IconButton BtnSeleccionar;
     }
 }

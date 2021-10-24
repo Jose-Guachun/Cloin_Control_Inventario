@@ -56,6 +56,12 @@
     <Compile Include="Formularios\AddDistribuidor.Designer.cs">
       <DependentUpon>AddDistribuidor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Calcular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Calcular.Designer.cs">
+      <DependentUpon>Calcular.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Carrito.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\AddDistribuidor.resx">
       <DependentUpon>AddDistribuidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Calcular.resx">
+      <DependentUpon>Calcular.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Carrito.resx">
       <DependentUpon>Carrito.cs</DependentUpon>

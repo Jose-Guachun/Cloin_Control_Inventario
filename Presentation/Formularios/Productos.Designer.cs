@@ -775,7 +775,6 @@ namespace Presentation
             this.CboCategoria.Name = "CboCategoria";
             this.CboCategoria.Size = new System.Drawing.Size(230, 28);
             this.CboCategoria.TabIndex = 9;
-            this.CboCategoria.DropDown += new System.EventHandler(this.CboCategoria_DropDown);
             // 
             // label13
             // 
@@ -803,8 +802,6 @@ namespace Presentation
             this.CboMarca.Name = "CboMarca";
             this.CboMarca.Size = new System.Drawing.Size(230, 28);
             this.CboMarca.TabIndex = 11;
-            this.CboMarca.DropDown += new System.EventHandler(this.CboMarca_DropDown);
-            this.CboMarca.SelectedValueChanged += new System.EventHandler(this.CboMarca_SelectedValueChanged);
             // 
             // label7
             // 

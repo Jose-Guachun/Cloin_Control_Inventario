@@ -26,6 +26,7 @@ namespace Domain.Models
 
         public int IdCategoria { get => idCategoria; set => idCategoria = value; }
         public int N { get => n; set => n = value; }
+        [Required(ErrorMessage = "El campo Descricpion esta vacio")]
         public string Categoria { get => categoria; set => categoria = value; }
 
 
@@ -79,20 +80,23 @@ namespace Domain.Models
             int cont=0;
             foreach (TB_CATEGORIA item in ModeloDatosCategoria)
             {
-                cont += 1;
-                listaCategoria.Add(new ModeloCategoria
+                if (item.Categoria.ToString()!=" ")
                 {
-                    idCategoria = item.IdCategoria,
-                    n=cont,
-                    categoria = item.Categoria
-                });
+                    cont += 1;
+                    listaCategoria.Add(new ModeloCategoria
+                    {
+                        idCategoria = item.IdCategoria,
+                        n = cont,
+                        categoria = item.Categoria
+                    });
+                }
             }
             return listaCategoria;
         }
 
         public IEnumerable<ModeloCategoria> FindById(string filter)
         {
-            return GetAll().FindAll(c => c.Categoria.Contains(filter.ToUpper()));
+            return GetAll().FindAll(c => c.Categoria.Contains(filter.ToUpper()) || c.n.ToString().Contains(filter));
         }
 
     }
@@ -107,6 +111,7 @@ namespace Domain.Models
 
         public int IdMarca { get => idMarca; set => idMarca = value; }
         public int N { get => n; set => n = value; }
+        [Required(ErrorMessage = "El campo Descricpion esta vacio")]
         public string Marca { get => marca; set => marca = value; }
 
 
@@ -160,19 +165,22 @@ namespace Domain.Models
             int cont = 0;
             foreach (TB_MARCA item in ModeloDatosMarca)
             {
-                cont += 1;
-                listaMarca.Add(new ModeloMarca
+                if (item.Marca.ToString()!=" ")
                 {
-                    idMarca = item.IdMarca,
-                    n = cont,
-                    marca = item.Marca
-                });
+                    cont += 1;
+                    listaMarca.Add(new ModeloMarca
+                    {
+                        idMarca = item.IdMarca,
+                        n = cont,
+                        marca = item.Marca
+                    });
+                }
             }
             return listaMarca;
         }
         public IEnumerable<ModeloMarca> FindById(string filter)
         {
-            return GetAll().FindAll(m => m.Marca.Contains(filter.ToUpper()));
+            return GetAll().FindAll(m => m.Marca.Contains(filter.ToUpper()) || m.n.ToString().Contains(filter));
         }
 
     }
@@ -189,8 +197,11 @@ namespace Domain.Models
 
         public int IdModelo { get => idModelo; set => idModelo = value; }
         public int N { get => n; set => n = value; }
+        [Required(ErrorMessage = "El campo Marca esta vacio")]
         public int IdMarca { get => idMarca; set => idMarca = value; }
+        
         public string Marca { get => marca; set => marca = value; }
+        [Required(ErrorMessage = "El campo Descricpion esta vacio")]
         public string Modelo { get => modelo; set => modelo = value; }
        
 
@@ -258,7 +269,7 @@ namespace Domain.Models
         }
         public IEnumerable<ModeloModelo> FindById(string filter)
         {
-            return GetAll().FindAll(m => m.modelo.Contains(filter.ToUpper()));
+            return GetAll().FindAll(m => m.modelo.Contains(filter.ToUpper()) || m.marca.Contains(filter.ToUpper()) || m.n.ToString().Contains(filter));
         }
 
     }

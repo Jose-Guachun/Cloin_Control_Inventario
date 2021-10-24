@@ -232,7 +232,7 @@ namespace Domain.Models
 
         public IEnumerable<ModeloProducto> FindById(string filter)
         {
-            return GetAll().FindAll(p => p.Marca.Contains(filter.ToUpper()) || p.codigo_SKU.Contains(filter.ToUpper()) || p.titulo.Contains(filter.ToLower()));
+            return GetAll().FindAll(p => p.Marca.Contains(filter.ToUpper()) || p.categoria.Contains(filter.ToUpper()) || p.Modelo.Contains(filter.ToUpper()) || p.codigo_SKU.Contains(filter.ToUpper()) || p.titulo.Contains(filter.ToLower()) || p.n.ToString().Contains(filter));
         }
 
     }

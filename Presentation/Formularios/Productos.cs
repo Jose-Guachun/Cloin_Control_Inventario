@@ -129,6 +129,10 @@ namespace Presentation
             TxtPVP.Text = "0";
             TxtTotal.Text = "0";
         }
+        public void selecCombo(string idvalue)
+        {
+            CboMarca.SelectedValue =idvalue;
+        }
             private void Datos()
         {
             if (DgvProductos.RowCount > 0)
@@ -275,9 +279,7 @@ namespace Presentation
                 BtnExaminar.Enabled = true;
                 BtnEditar.Enabled = false;
                 BtnNuevo.Enabled = false;
-                producto.estado = EntityState.Modificar;
-                CboCategoria_DropDown(sender, e);
-                CboMarca_DropDown(sender, e);
+                producto.estado = EntityState.Modificar;;
                 Datos();
             }
             else
@@ -305,8 +307,6 @@ namespace Presentation
 
         private void DgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            CboCategoria_DropDown(sender, e);
-            CboMarca_DropDown(sender,e);
             Datos();
         }
         private void TxtCoste_Leave(object sender, EventArgs e)
@@ -435,21 +435,6 @@ namespace Presentation
             ClsValidarCampos.SoloNumeros(e);
         }
 
-        private void CboMarca_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-            if (CboMarca.SelectedIndex != 0)
-            {
-                ListarModelo(CboMarca.SelectedValue.ToString());
-            }
-            else
-            {
-                ListarModelo("0");
-            }
-
-            
-        }
-
         private void TxtTotal_Leave(object sender, EventArgs e)
         { 
             TxtDescuento_Leave(sender,e);
@@ -479,55 +464,47 @@ namespace Presentation
             }
 
         }
-        private void CboCategoria_DropDown(object sender, EventArgs e)
-        { 
-            if (ClsCalculoDatos.bandera)
-            {
-                ListarCategorias();
-                MessageBox.Show("funciona");
-                ClsCalculoDatos.bandera = false;
-            }
-            
-        }
-
-        private void CboMarca_DropDown(object sender, EventArgs e)
-        {
-            if (ClsCalculoDatos.bandera1)
-            { 
-                ListarMarca();
-                MessageBox.Show("funciona");
-                ClsCalculoDatos.bandera1 = false;                       
-            }
-        }
-        private void CboModelo_DropDown(object sender, EventArgs e)
-        {
-            if (ClsCalculoDatos.bandera2)
-            {
-                ListarModelo(CboMarca.SelectedValue.ToString());
-                MessageBox.Show("funciona");
-                ClsCalculoDatos.bandera2 = false;
-            }
-        }
-        private void BtnCategoria_Click(object sender, EventArgs e)
+        private void CboListar()
         {
             Categoria categoria = new Categoria();
-            ClsCalculoDatos.caso = 1;
             categoria.ShowDialog();
+            ListarCategorias();
+            ListarMarca();
+            ListarModelo(CboMarca.SelectedValue.ToString());
+            CboCategoria.SelectedValue = ClsCalculoDatos.valueCategoria;
+            CboMarca.SelectedValue = ClsCalculoDatos.valueMarca;
+            CboModelo.SelectedValue = ClsCalculoDatos.valueModelo;
+        }
+        private void BtnCategoria_Click(object sender, EventArgs e)
+        { 
+            ClsCalculoDatos.caso = 1;
+            CboListar();
+
+
         }
         private void BtnMarca_Click(object sender, EventArgs e)
         {
-            Categoria marca = new Categoria();
             ClsCalculoDatos.caso = 2;
-            marca.ShowDialog();
+            CboListar();
         }
 
         private void BtnModelo_Click(object sender, EventArgs e)
         {
-            Categoria modelo = new Categoria();
             ClsCalculoDatos.caso = 3;
-            modelo.ShowDialog();
+            CboListar();
         }
 
+        private void CboModelo_DropDown(object sender, EventArgs e)
+        {
+            if (CboMarca.SelectedIndex != 0)
+            {
+                ListarModelo(CboMarca.SelectedValue.ToString());
+            }
+            else
+            {
+                ListarModelo("0");
+            }
 
+        }
     }
 }

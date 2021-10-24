@@ -13,6 +13,7 @@ using System.Globalization;
 using Domain.Models;
 using Domain.ValueObjects;
 using System.IO;
+using FontAwesome.Sharp;
 
 namespace Presentation
 {
@@ -22,6 +23,7 @@ namespace Presentation
         private ModeloMarca marca = new ModeloMarca();
         private ModeloModelo modelo = new ModeloModelo();
         private ModeloProducto producto = new ModeloProducto();
+        private IconButton BtnCurrent;
         public Categoria()
         {
             InitializeComponent();
@@ -31,7 +33,6 @@ namespace Presentation
             ListarDatos();
             DgvLleno();
             
-
         }
         private void DgvLleno()
         {
@@ -57,20 +58,30 @@ namespace Presentation
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        private void DesactivarBoton()
+        {
+            if (BtnCurrent != null)
+            {
+                BtnCurrent.BackColor = Color.LightSeaGreen;
+                BtnCurrent.ForeColor = Color.White;
+                BtnCurrent.IconColor = Color.White;
+            }
+        }
+        private void ActivarBoton(object BtnRemitente, Color color)
+        {
+            if (BtnRemitente != null)
+            {
+                DesactivarBoton();
+                BtnCurrent = (IconButton)BtnRemitente;
+                BtnCurrent.BackColor = Color.FromArgb(37, 36, 81);
+                BtnCurrent.ForeColor = color;
+                BtnCurrent.TextAlign = ContentAlignment.MiddleCenter;
+                BtnCurrent.IconColor = color;
+            }
+        }
+
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
-            switch (ClsCalculoDatos.caso)
-            {
-                case 1:
-                    ClsCalculoDatos.bandera = true;
-                    break;
-                case 2:
-                    ClsCalculoDatos.bandera1 = true;
-                    break;
-                case 3:
-                    ClsCalculoDatos.bandera2 = true;
-                    break;
-            }
             Dispose();
         }
         private void BtnMinimizar_Click(object sender, EventArgs e)
@@ -93,6 +104,11 @@ namespace Presentation
         {
             try
             {
+                if (DgvDatos.Columns.Count>0)
+                {
+                    DgvDatos.Columns.Clear();
+                }
+                
                 switch (ClsCalculoDatos.caso)
                 {
                     case 1:
@@ -100,6 +116,7 @@ namespace Presentation
                         CboMarca.Visible = false;
                         TxtMarca.Visible = false;
                         LblTitleChildForm.Text ="CATEGORIA";
+                        ActivarBoton(BtnCategoria, Color.FromArgb(253, 190, 27));
                         break;
 
                     case 2:
@@ -107,12 +124,16 @@ namespace Presentation
                         CboMarca.Visible = false;
                         TxtMarca.Visible = false;
                         LblTitleChildForm.Text = "MARCA";
+                        ActivarBoton(BtnMarca, Color.FromArgb(253, 190, 27));
                         break;
 
                     case 3:
                         DgvDatos.DataSource = modelo.GetAll();
+                        CboMarca.Visible = true;
+                        TxtMarca.Visible = true;
                         DgvDatos.Columns[2].Visible = false;
                         LblTitleChildForm.Text = "MODELO";
+                        ActivarBoton(BtnModelo, Color.FromArgb(253, 190, 27));
                         ListarMarca();
                         break;
                 }
@@ -228,19 +249,22 @@ namespace Presentation
                 BtnGuardar.Enabled = true;
                 BtnEditar.Enabled = false;
                 BtnNuevo.Enabled = false;
-                CboMarca.Text = DgvDatos.CurrentRow.Cells[3].Value.ToString().Trim();
-                TxtDescripcion.Text = DgvDatos.CurrentRow.Cells[4].Value.ToString().Trim();
+
                 switch (ClsCalculoDatos.caso)
                 {
                     case 1:
+                        TxtDescripcion.Text = DgvDatos.CurrentRow.Cells[2].Value.ToString().Trim();
                         categoria.estado = EntityState.Modificar;
                         categoria.IdCategoria = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
                         break;
                     case 2:
+                        TxtDescripcion.Text = DgvDatos.CurrentRow.Cells[2].Value.ToString().Trim();
                         marca.estado = EntityState.Modificar;
                         marca.IdMarca = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
                         break;
                     case 3:
+                        CboMarca.Text = DgvDatos.CurrentRow.Cells[3].Value.ToString().Trim();
+                        TxtDescripcion.Text = DgvDatos.CurrentRow.Cells[4].Value.ToString().Trim();
                         modelo.estado = EntityState.Modificar;
                         modelo.IdModelo = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
                         break;
@@ -312,6 +336,52 @@ namespace Presentation
             CboMarca.DataSource = producto.ListarMarca();
             CboMarca.DisplayMember = "Marca";
             CboMarca.ValueMember = "IdMarca";
+        }
+
+        private void BtnCategoria_Click(object sender, EventArgs e)
+        {
+            ClsCalculoDatos.caso = 1;
+            botones();
+            Categoria_Load(sender, e);
+        }
+
+        private void BtnMarca_Click(object sender, EventArgs e)
+        {
+            ClsCalculoDatos.caso = 2;
+            botones();
+            Categoria_Load(sender, e);
+        }
+
+        private void BtnModelo_Click(object sender, EventArgs e)
+        {
+            ClsCalculoDatos.caso = 3;
+            botones();
+            Categoria_Load(sender, e);
+        }
+
+        private void TxtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloLetrasNumeroEspacio(e);
+        }
+
+        private void BtnSeleccionar_Click(object sender, EventArgs e)
+        {
+            switch (ClsCalculoDatos.caso)
+            {
+                case 1:
+                    ClsCalculoDatos.valueCategoria = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                    break;
+                case 2:
+                    ClsCalculoDatos.valueMarca = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                    break;
+                case 3:
+                    ClsCalculoDatos.valueMarca = Convert.ToInt32(DgvDatos.CurrentRow.Cells[1].Value);
+                    ClsCalculoDatos.valueModelo = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                    break;
+            }
+
+            
+            Dispose();
         }
     }
 }
