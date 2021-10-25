@@ -468,9 +468,23 @@ namespace Presentation
         {
             Categoria categoria = new Categoria();
             categoria.ShowDialog();
-            ListarCategorias();
-            ListarMarca();
-            ListarModelo(CboMarca.SelectedValue.ToString());
+            if (ClsCalculoDatos.banderaCat==true)
+            {
+                ListarCategorias();
+                ClsCalculoDatos.banderaCat = false;
+
+            }
+            if (ClsCalculoDatos.banderaMa == true)
+            {
+                ListarMarca();
+                ClsCalculoDatos.banderaMa = false;
+            }
+            if (ClsCalculoDatos.banderaMa == true)
+            {
+                ListarModelo(CboMarca.SelectedValue.ToString());
+                ClsCalculoDatos.banderaMo = false;
+            }
+            
             if (ClsCalculoDatos.valueCategoria != null)
             {
                 CboCategoria.SelectedValue = ClsCalculoDatos.valueCategoria;
@@ -480,11 +494,13 @@ namespace Presentation
             {
                 CboMarca.SelectedValue = ClsCalculoDatos.valueMarca;
                 ClsCalculoDatos.valueMarca = null;
+
             }
             if (ClsCalculoDatos.valueModelo!=null)
             {
                 CboModelo.SelectedValue = ClsCalculoDatos.valueModelo;
-                ClsCalculoDatos.valueModelo= null;
+                ClsCalculoDatos.valueModelo = null;
+
             }
             
             

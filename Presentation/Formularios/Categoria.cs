@@ -188,6 +188,7 @@ namespace Presentation
                             result = categoria.Guardar();
                             MessageBox.Show(result);
                             categoria.estado = EntityState.Vizualisar;
+                            ClsCalculoDatos.banderaCat = true;
                             ListarDatos();
                             botones();
                         }
@@ -201,6 +202,7 @@ namespace Presentation
                             result = marca.Guardar();
                             MessageBox.Show(result);
                             marca.estado = EntityState.Vizualisar;
+                            ClsCalculoDatos.banderaMa= true;
                             ListarDatos();
                             botones();
                         }
@@ -216,6 +218,7 @@ namespace Presentation
                                 result = modelo.Guardar();
                                 MessageBox.Show(result);
                                 modelo.estado = EntityState.Vizualisar;
+                                ClsCalculoDatos.banderaMo = true;
                                 ListarDatos();
                                 botones();
                             }
@@ -372,16 +375,34 @@ namespace Presentation
                 {
                     case 1:
                         ClsCalculoDatos.valueCategoria = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                        PbCategoria.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+                        PbCategoria.IconColor = System.Drawing.Color.LimeGreen;
+
                         break;
                     case 2:
                         ClsCalculoDatos.valueMarca = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                        PbMarca.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+                        PbMarca.IconColor = System.Drawing.Color.LimeGreen;
                         break;
                     case 3:
-                        ClsCalculoDatos.valueMarca = Convert.ToInt32(DgvDatos.CurrentRow.Cells[1].Value);
+                        ClsCalculoDatos.valueMarca = Convert.ToInt32(DgvDatos.CurrentRow.Cells[2].Value);
                         ClsCalculoDatos.valueModelo = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                        PbMarca.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+                        PbMarca.IconColor = System.Drawing.Color.LimeGreen;
+                        PbModelo.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+                        PbModelo.IconColor = System.Drawing.Color.LimeGreen;
                         break;
                 }
             }
+            else
+            {
+                MessageBox.Show("No hay ninguna celda marcada para Seleccion, por favor seleccione una celda");
+            }
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

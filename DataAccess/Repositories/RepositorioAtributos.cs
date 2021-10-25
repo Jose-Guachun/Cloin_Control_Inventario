@@ -171,6 +171,7 @@ namespace DataAccess.Repositories
                 listModelo.Add(new TB_MODELO
                 {
                     IdModelo = Convert.ToInt32(item[0]),
+                    IdMarca = Convert.ToInt32(item[1]),
                     Marca = item[1].ToString(),
                     Modelo = item[2].ToString(),
                 });

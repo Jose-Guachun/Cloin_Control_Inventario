@@ -260,6 +260,7 @@ namespace Domain.Models
                 listaModelo.Add(new ModeloModelo
                 {
                     idModelo = item.IdModelo,
+                    idMarca =item.IdMarca,
                     n = cont,
                     marca = producto.Marcas(item.Marca).ToString(),
                     modelo = item.Modelo
