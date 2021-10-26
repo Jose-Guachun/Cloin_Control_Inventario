@@ -24,6 +24,7 @@ namespace Presentation
         private ModeloModelo modelo = new ModeloModelo();
         private ModeloProducto producto = new ModeloProducto();
         private IconButton BtnCurrent;
+        int IdDato;
         public Categoria()
         {
             InitializeComponent();
@@ -99,6 +100,7 @@ namespace Presentation
             BtnEliminar.Enabled = true;
             TxtDescripcion.Text = "";
             DgvDatos.Enabled = true;
+            BtnSeleccionar.Enabled = true;
         }
         private void ListarDatos()
         {
@@ -115,6 +117,7 @@ namespace Presentation
                         DgvDatos.DataSource = categoria.GetAll();
                         CboMarca.Visible = false;
                         TxtMarca.Visible = false;
+                        BtnSeleccionar.Visible = true;
                         LblTitleChildForm.Text ="CATEGORIA";
                         ActivarBoton(BtnCategoria, Color.FromArgb(253, 190, 27));
                         break;
@@ -123,6 +126,7 @@ namespace Presentation
                         DgvDatos.DataSource = marca.GetAll();
                         CboMarca.Visible = false;
                         TxtMarca.Visible = false;
+                        BtnSeleccionar.Visible = false;
                         LblTitleChildForm.Text = "MARCA";
                         ActivarBoton(BtnMarca, Color.FromArgb(253, 190, 27));
                         break;
@@ -131,6 +135,7 @@ namespace Presentation
                         DgvDatos.DataSource = modelo.GetAll();
                         CboMarca.Visible = true;
                         TxtMarca.Visible = true;
+                        BtnSeleccionar.Visible = true;
                         DgvDatos.Columns[2].Visible = false;
                         LblTitleChildForm.Text = "MODELO";
                         ActivarBoton(BtnModelo, Color.FromArgb(253, 190, 27));
@@ -156,6 +161,7 @@ namespace Presentation
             BtnEditar.Enabled = false;
             BtnEliminar.Enabled = false;
             BtnCancelar.Enabled = true;
+            BtnSeleccionar.Enabled = false;
             switch (ClsCalculoDatos.caso)
             {
                 case 1:
@@ -184,13 +190,10 @@ namespace Presentation
                         valid = new Helps.ValidacionDatos(categoria).Validar();
                         if (valid == true)
                         {
-
                             result = categoria.Guardar();
                             MessageBox.Show(result);
                             categoria.estado = EntityState.Vizualisar;
                             ClsCalculoDatos.banderaCat = true;
-                            ListarDatos();
-                            botones();
                         }
                         break;
                     case 2:
@@ -198,13 +201,10 @@ namespace Presentation
                         valid = new Helps.ValidacionDatos(marca).Validar();
                         if (valid == true)
                         {
-
                             result = marca.Guardar();
                             MessageBox.Show(result);
                             marca.estado = EntityState.Vizualisar;
                             ClsCalculoDatos.banderaMa= true;
-                            ListarDatos();
-                            botones();
                         }
                         break;
                     case 3:
@@ -219,8 +219,6 @@ namespace Presentation
                                 MessageBox.Show(result);
                                 modelo.estado = EntityState.Vizualisar;
                                 ClsCalculoDatos.banderaMo = true;
-                                ListarDatos();
-                                botones();
                             }
                         }
                         else
@@ -229,8 +227,8 @@ namespace Presentation
                         }
                         break;
                 }
-
-
+                ListarDatos();
+                botones();
             }
             catch (Exception ex)
             {
@@ -238,7 +236,6 @@ namespace Presentation
                 MessageBox.Show(ex + "Escriba la categoria que desea registrar");
             }
         }
-
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             if (DgvDatos.SelectedRows.Count > 0)
@@ -252,24 +249,25 @@ namespace Presentation
                 BtnGuardar.Enabled = true;
                 BtnEditar.Enabled = false;
                 BtnNuevo.Enabled = false;
-
+                BtnSeleccionar.Enabled = false;
+                IdDato = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
                 switch (ClsCalculoDatos.caso)
                 {
                     case 1:
                         TxtDescripcion.Text = DgvDatos.CurrentRow.Cells[2].Value.ToString().Trim();
                         categoria.estado = EntityState.Modificar;
-                        categoria.IdCategoria = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                        categoria.IdCategoria = IdDato;
                         break;
                     case 2:
                         TxtDescripcion.Text = DgvDatos.CurrentRow.Cells[2].Value.ToString().Trim();
                         marca.estado = EntityState.Modificar;
-                        marca.IdMarca = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                        marca.IdMarca = IdDato;
                         break;
                     case 3:
                         CboMarca.Text = DgvDatos.CurrentRow.Cells[3].Value.ToString().Trim();
                         TxtDescripcion.Text = DgvDatos.CurrentRow.Cells[4].Value.ToString().Trim();
                         modelo.estado = EntityState.Modificar;
-                        modelo.IdModelo = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                        modelo.IdModelo = IdDato;
                         break;
                 }   
             }
@@ -286,23 +284,24 @@ namespace Presentation
                 if (MessageBox.Show("¿Está seguro que desea eliminar el registro?", "Alerta¡¡", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     string result;
+                    IdDato = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
                     switch (ClsCalculoDatos.caso)
                     {
                         case 1:
                             categoria.estado = EntityState.Eliminar;
-                            categoria.IdCategoria = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                            categoria.IdCategoria = IdDato;
                             result = categoria.Guardar();
                             MessageBox.Show(result);
                             break;
                         case 2:
                             marca.estado = EntityState.Eliminar;
-                            marca.IdMarca = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                            marca.IdMarca = IdDato;
                             result = marca.Guardar();
                             MessageBox.Show(result);
                             break;
                         case 3:
                             modelo.estado = EntityState.Eliminar;
-                            modelo.IdModelo = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                            modelo.IdModelo = IdDato;
                             result = modelo.Guardar();
                             MessageBox.Show(result);
                             break;
@@ -371,22 +370,24 @@ namespace Presentation
         {
             if (DgvDatos.SelectedRows.Count > 0)
             {
+                IdDato = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
                 switch (ClsCalculoDatos.caso)
                 {
                     case 1:
-                        ClsCalculoDatos.valueCategoria = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                        ClsCalculoDatos.valueCategoria = IdDato;
+                        LblCategoria.Text = DgvDatos.CurrentRow.Cells[2].Value.ToString().Trim();
                         PbCategoria.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
                         PbCategoria.IconColor = System.Drawing.Color.LimeGreen;
 
                         break;
                     case 2:
-                        ClsCalculoDatos.valueMarca = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
-                        PbMarca.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-                        PbMarca.IconColor = System.Drawing.Color.LimeGreen;
+                        MessageBox.Show("Para seleccionar una Marca seleccionelo desde la pantalla Modelo.");
                         break;
                     case 3:
                         ClsCalculoDatos.valueMarca = Convert.ToInt32(DgvDatos.CurrentRow.Cells[2].Value);
-                        ClsCalculoDatos.valueModelo = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
+                        ClsCalculoDatos.valueModelo = IdDato;
+                        LblMarca.Text = DgvDatos.CurrentRow.Cells[3].Value.ToString().Trim();
+                        LblModelo.Text = DgvDatos.CurrentRow.Cells[4].Value.ToString().Trim();
                         PbMarca.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
                         PbMarca.IconColor = System.Drawing.Color.LimeGreen;
                         PbModelo.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;

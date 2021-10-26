@@ -30,8 +30,8 @@ namespace Presentation
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Categoria));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TplTitulo = new System.Windows.Forms.TableLayoutPanel();
             this.CboMarca = new System.Windows.Forms.ComboBox();
             this.TxtMarca = new System.Windows.Forms.Label();
@@ -58,13 +58,13 @@ namespace Presentation
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.PbModelo = new FontAwesome.Sharp.IconPictureBox();
             this.PbCategoria = new FontAwesome.Sharp.IconPictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.PbMarca = new FontAwesome.Sharp.IconPictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.BtnModelo = new FontAwesome.Sharp.IconButton();
             this.BtnMarca = new FontAwesome.Sharp.IconButton();
             this.BtnCategoria = new FontAwesome.Sharp.IconButton();
+            this.LblCategoria = new System.Windows.Forms.Label();
+            this.LblMarca = new System.Windows.Forms.Label();
+            this.LblModelo = new System.Windows.Forms.Label();
             this.TplTitulo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.PnlBarraTop.SuspendLayout();
@@ -307,23 +307,23 @@ namespace Presentation
             this.DgvDatos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvDatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvDatos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvDatos.DefaultCellStyle = dataGridViewCellStyle8;
             this.DgvDatos.EnableHeadersVisualStyles = false;
             this.DgvDatos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvDatos.MultiSelect = false;
@@ -345,12 +345,12 @@ namespace Presentation
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.PbModelo, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.PbCategoria, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.PbMarca, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.LblModelo, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.PbModelo, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.PbCategoria, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.PbMarca, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.LblCategoria, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.LblMarca, 1, 1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // PbModelo
@@ -361,7 +361,7 @@ namespace Presentation
             this.PbModelo.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.PbModelo.IconColor = System.Drawing.Color.Crimson;
             this.PbModelo.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.PbModelo.IconSize = 16;
+            this.PbModelo.IconSize = 25;
             this.PbModelo.Name = "PbModelo";
             this.PbModelo.TabStop = false;
             // 
@@ -373,19 +373,9 @@ namespace Presentation
             this.PbCategoria.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.PbCategoria.IconColor = System.Drawing.Color.Crimson;
             this.PbCategoria.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.PbCategoria.IconSize = 16;
+            this.PbCategoria.IconSize = 24;
             this.PbCategoria.Name = "PbCategoria";
             this.PbCategoria.TabStop = false;
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
             // 
             // PbMarca
             // 
@@ -395,14 +385,9 @@ namespace Presentation
             this.PbMarca.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.PbMarca.IconColor = System.Drawing.Color.Crimson;
             this.PbMarca.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.PbMarca.IconSize = 16;
+            this.PbMarca.IconSize = 24;
             this.PbMarca.Name = "PbMarca";
             this.PbMarca.TabStop = false;
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
             // 
             // BtnModelo
             // 
@@ -445,6 +430,24 @@ namespace Presentation
             this.BtnCategoria.Name = "BtnCategoria";
             this.BtnCategoria.UseVisualStyleBackColor = false;
             this.BtnCategoria.Click += new System.EventHandler(this.BtnCategoria_Click);
+            // 
+            // LblCategoria
+            // 
+            resources.ApplyResources(this.LblCategoria, "LblCategoria");
+            this.LblCategoria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LblCategoria.Name = "LblCategoria";
+            // 
+            // LblMarca
+            // 
+            resources.ApplyResources(this.LblMarca, "LblMarca");
+            this.LblMarca.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LblMarca.Name = "LblMarca";
+            // 
+            // LblModelo
+            // 
+            resources.ApplyResources(this.LblModelo, "LblModelo");
+            this.LblModelo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LblModelo.Name = "LblModelo";
             // 
             // Categoria
             // 
@@ -506,12 +509,12 @@ namespace Presentation
         private FontAwesome.Sharp.IconButton BtnCategoria;
         private FontAwesome.Sharp.IconButton BtnSeleccionar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton BtnSalir;
         private FontAwesome.Sharp.IconPictureBox PbModelo;
         private FontAwesome.Sharp.IconPictureBox PbCategoria;
-        private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconPictureBox PbMarca;
+        private System.Windows.Forms.Label LblModelo;
+        private System.Windows.Forms.Label LblCategoria;
+        private System.Windows.Forms.Label LblMarca;
     }
 }
