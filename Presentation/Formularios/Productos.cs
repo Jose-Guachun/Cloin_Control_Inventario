@@ -115,6 +115,9 @@ namespace Presentation
             limpiarContable();
             RtbCaracteristicas.Clear();
             TxtCoste.Text = "0";
+            ClsCalculoDatos.valueCategoria=null;
+            ClsCalculoDatos.valueMarca=null;
+            ClsCalculoDatos.valueModelo=null;
             if (ImgProducto.Image != null)
             {
                 ImgProducto.Image = PtbImg.Image;
@@ -472,37 +475,29 @@ namespace Presentation
             {
                 ListarCategorias();
                 ClsCalculoDatos.banderaCat = false;
-
             }
             if (ClsCalculoDatos.banderaMa == true)
             {
                 ListarMarca();
                 ClsCalculoDatos.banderaMa = false;
             }
-            if (ClsCalculoDatos.banderaMa == true)
+            if (ClsCalculoDatos.banderaMo == true)
             {
                 ListarModelo(CboMarca.SelectedValue.ToString());
-                ClsCalculoDatos.banderaMo = false;
+                ClsCalculoDatos.banderaMo = false;  
             }
-            
-            if (ClsCalculoDatos.valueCategoria != null)
+            if (ClsCalculoDatos.valueCategoria!=null)
             {
                 CboCategoria.SelectedValue = ClsCalculoDatos.valueCategoria;
-                ClsCalculoDatos.valueCategoria = null;
             }
             if (ClsCalculoDatos.valueMarca != null)
             {
                 CboMarca.SelectedValue = ClsCalculoDatos.valueMarca;
-                ClsCalculoDatos.valueMarca = null;
-
             }
-            if (ClsCalculoDatos.valueModelo!=null)
+            if (ClsCalculoDatos.valueModelo != null)
             {
                 CboModelo.SelectedValue = ClsCalculoDatos.valueModelo;
-                ClsCalculoDatos.valueModelo = null;
-
             }
-            
             
         }
         private void BtnCategoria_Click(object sender, EventArgs e)
@@ -531,23 +526,58 @@ namespace Presentation
             ClsCalculoDatos.banderaAt = false;
         }
 
+
+
+        private void CboCategoria_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CboCategoria.SelectedIndex != 0)
+                {
+                    ClsCalculoDatos.valueCategoria = Convert.ToInt32(CboCategoria.SelectedValue);
+                }
+                
+            }
+            catch (Exception)
+            {
+
+               
+            }
+
+        }
         private void CboMarca_SelectedValueChanged(object sender, EventArgs e)
         {
             try
             {
                 if (CboMarca.SelectedIndex != 0)
                 {
-                    ListarModelo(CboMarca.SelectedValue.ToString());
-                }
-                else
-                {
-                    ListarModelo("0");
+                    ClsCalculoDatos.valueMarca = Convert.ToInt32(CboMarca.SelectedValue);
+                    ListarModelo(ClsCalculoDatos.valueMarca.ToString());
+                    
                 }
             }
             catch (Exception)
             {
+                ListarModelo("0");
             }
-            
+
+        }
+
+        private void CboModelo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CboModelo.SelectedIndex != 0)
+                {
+                    ClsCalculoDatos.valueModelo = Convert.ToInt32(CboModelo.SelectedValue);
+                }
+
+            }
+            catch (Exception)
+            {
+
+
+            }
         }
     }
 }

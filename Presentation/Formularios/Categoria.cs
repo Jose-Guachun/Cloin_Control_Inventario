@@ -145,6 +145,7 @@ namespace Presentation
                 if (ClsCalculoDatos.banderaAt)
                 {
                     BtnSeleccionar.Visible = false;
+                    TlpAtributos.Visible = false;
                 }
                 DgvLleno();
 
@@ -295,19 +296,25 @@ namespace Presentation
                             categoria.estado = EntityState.Eliminar;
                             categoria.IdCategoria = IdDato;
                             result = categoria.Guardar();
+                            ClsCalculoDatos.banderaCat = true;
                             MessageBox.Show(result);
+                            
                             break;
                         case 2:
                             marca.estado = EntityState.Eliminar;
                             marca.IdMarca = IdDato;
                             result = marca.Guardar();
+                            ClsCalculoDatos.banderaMa = true;
                             MessageBox.Show(result);
+                            
                             break;
                         case 3:
                             modelo.estado = EntityState.Eliminar;
                             modelo.IdModelo = IdDato;
                             result = modelo.Guardar();
+                            ClsCalculoDatos.banderaMo = true;
                             MessageBox.Show(result);
+
                             break;
                     }
                     ListarDatos();
