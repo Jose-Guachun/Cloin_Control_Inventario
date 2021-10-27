@@ -32,6 +32,7 @@ namespace Presentation
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnlMenu = new System.Windows.Forms.Panel();
+            this.BtnAtributos = new FontAwesome.Sharp.IconButton();
             this.BtnCancelar = new FontAwesome.Sharp.IconButton();
             this.BtnEliminar = new FontAwesome.Sharp.IconButton();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
@@ -100,6 +101,7 @@ namespace Presentation
             // PnlMenu
             // 
             this.PnlMenu.BackColor = System.Drawing.Color.GhostWhite;
+            this.PnlMenu.Controls.Add(this.BtnAtributos);
             this.PnlMenu.Controls.Add(this.BtnCancelar);
             this.PnlMenu.Controls.Add(this.BtnEliminar);
             this.PnlMenu.Controls.Add(this.BtnEditar);
@@ -111,6 +113,30 @@ namespace Presentation
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(1460, 105);
             this.PnlMenu.TabIndex = 50;
+            // 
+            // BtnAtributos
+            // 
+            this.BtnAtributos.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.BtnAtributos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnAtributos.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnAtributos.FlatAppearance.BorderSize = 0;
+            this.BtnAtributos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAtributos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAtributos.ForeColor = System.Drawing.Color.White;
+            this.BtnAtributos.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
+            this.BtnAtributos.IconColor = System.Drawing.Color.White;
+            this.BtnAtributos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnAtributos.IconSize = 50;
+            this.BtnAtributos.Location = new System.Drawing.Point(640, 0);
+            this.BtnAtributos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnAtributos.Name = "BtnAtributos";
+            this.BtnAtributos.Size = new System.Drawing.Size(128, 105);
+            this.BtnAtributos.TabIndex = 6;
+            this.BtnAtributos.Text = "Atributos";
+            this.BtnAtributos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnAtributos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnAtributos.UseVisualStyleBackColor = false;
+            this.BtnAtributos.Click += new System.EventHandler(this.BtnAtributos_Click);
             // 
             // BtnCancelar
             // 
@@ -125,11 +151,11 @@ namespace Presentation
             this.BtnCancelar.IconChar = FontAwesome.Sharp.IconChar.Backspace;
             this.BtnCancelar.IconColor = System.Drawing.Color.White;
             this.BtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnCancelar.IconSize = 30;
-            this.BtnCancelar.Location = new System.Drawing.Point(447, 0);
+            this.BtnCancelar.IconSize = 50;
+            this.BtnCancelar.Location = new System.Drawing.Point(512, 0);
             this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(122, 105);
+            this.BtnCancelar.Size = new System.Drawing.Size(128, 105);
             this.BtnCancelar.TabIndex = 5;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -148,12 +174,12 @@ namespace Presentation
             this.BtnEliminar.ForeColor = System.Drawing.Color.White;
             this.BtnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.BtnEliminar.IconColor = System.Drawing.Color.White;
-            this.BtnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnEliminar.IconSize = 30;
-            this.BtnEliminar.Location = new System.Drawing.Point(336, 0);
+            this.BtnEliminar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnEliminar.IconSize = 50;
+            this.BtnEliminar.Location = new System.Drawing.Point(384, 0);
             this.BtnEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(111, 105);
+            this.BtnEliminar.Size = new System.Drawing.Size(128, 105);
             this.BtnEliminar.TabIndex = 4;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -172,12 +198,12 @@ namespace Presentation
             this.BtnEditar.ForeColor = System.Drawing.Color.White;
             this.BtnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.BtnEditar.IconColor = System.Drawing.Color.White;
-            this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnEditar.IconSize = 30;
-            this.BtnEditar.Location = new System.Drawing.Point(225, 0);
+            this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnEditar.IconSize = 50;
+            this.BtnEditar.Location = new System.Drawing.Point(256, 0);
             this.BtnEditar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(111, 105);
+            this.BtnEditar.Size = new System.Drawing.Size(128, 105);
             this.BtnEditar.TabIndex = 3;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -197,12 +223,12 @@ namespace Presentation
             this.BtnGuardar.ForeColor = System.Drawing.Color.White;
             this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnGuardar.IconSize = 30;
-            this.BtnGuardar.Location = new System.Drawing.Point(111, 0);
+            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnGuardar.IconSize = 50;
+            this.BtnGuardar.Location = new System.Drawing.Point(128, 0);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(114, 105);
+            this.BtnGuardar.Size = new System.Drawing.Size(128, 105);
             this.BtnGuardar.TabIndex = 2;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -221,12 +247,12 @@ namespace Presentation
             this.BtnNuevo.ForeColor = System.Drawing.Color.White;
             this.BtnNuevo.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
             this.BtnNuevo.IconColor = System.Drawing.Color.White;
-            this.BtnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnNuevo.IconSize = 30;
+            this.BtnNuevo.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnNuevo.IconSize = 50;
             this.BtnNuevo.Location = new System.Drawing.Point(0, 0);
             this.BtnNuevo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnNuevo.Name = "BtnNuevo";
-            this.BtnNuevo.Size = new System.Drawing.Size(111, 105);
+            this.BtnNuevo.Size = new System.Drawing.Size(128, 105);
             this.BtnNuevo.TabIndex = 1;
             this.BtnNuevo.Text = "Nuevo";
             this.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1012,7 +1038,7 @@ namespace Presentation
             this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBuscar.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.ForeColor = System.Drawing.Color.White;
-            this.BtnBuscar.IconChar = FontAwesome.Sharp.IconChar.SearchPlus;
+            this.BtnBuscar.IconChar = FontAwesome.Sharp.IconChar.Brush;
             this.BtnBuscar.IconColor = System.Drawing.Color.White;
             this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnBuscar.IconSize = 25;
@@ -1020,9 +1046,9 @@ namespace Presentation
             this.BtnBuscar.Location = new System.Drawing.Point(1234, 60);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(177, 45);
+            this.BtnBuscar.Size = new System.Drawing.Size(177, 40);
             this.BtnBuscar.TabIndex = 24;
-            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.Text = "Limpiar";
             this.BtnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnBuscar.UseVisualStyleBackColor = false;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
@@ -1172,5 +1198,6 @@ namespace Presentation
         private FontAwesome.Sharp.IconButton BtnMarca;
         private System.Windows.Forms.TableLayoutPanel TplTitulo;
         private FontAwesome.Sharp.IconButton BtnCheck;
+        private FontAwesome.Sharp.IconButton BtnAtributos;
     }
 }

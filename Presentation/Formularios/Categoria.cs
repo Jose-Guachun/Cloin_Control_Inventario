@@ -142,6 +142,10 @@ namespace Presentation
                         ListarMarca();
                         break;
                 }
+                if (ClsCalculoDatos.banderaAt)
+                {
+                    BtnSeleccionar.Visible = false;
+                }
                 DgvLleno();
 
             }

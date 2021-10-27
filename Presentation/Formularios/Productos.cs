@@ -523,6 +523,13 @@ namespace Presentation
             ClsCalculoDatos.caso = 3;
             CboListar();
         }
+        private void BtnAtributos_Click(object sender, EventArgs e)
+        {
+            ClsCalculoDatos.banderaAt = true;
+            ClsCalculoDatos.caso = 1;
+            CboListar();
+            ClsCalculoDatos.banderaAt = false;
+        }
 
         private void CboMarca_SelectedValueChanged(object sender, EventArgs e)
         {

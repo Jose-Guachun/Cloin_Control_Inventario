@@ -14,6 +14,7 @@ namespace Presentation
         public static Boolean banderaCat;
         public static Boolean banderaMa;
         public static Boolean banderaMo;
+        public static Boolean banderaAt;
         public static int caso=0;
         decimal coste;
         decimal pvp;

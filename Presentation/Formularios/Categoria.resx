@@ -369,54 +369,6 @@
   <data name="PnlBarraTop.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="&gt;&gt;BtnMinimizar.Name" xml:space="preserve">
-    <value>BtnMinimizar</value>
-  </data>
-  <data name="&gt;&gt;BtnMinimizar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnMinimizar.Parent" xml:space="preserve">
-    <value>PnlBarraTop</value>
-  </data>
-  <data name="&gt;&gt;BtnMinimizar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;BtnCerrar.Name" xml:space="preserve">
-    <value>BtnCerrar</value>
-  </data>
-  <data name="&gt;&gt;BtnCerrar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnCerrar.Parent" xml:space="preserve">
-    <value>PnlBarraTop</value>
-  </data>
-  <data name="&gt;&gt;BtnCerrar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="PnlBarraTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="PnlBarraTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="PnlBarraTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>576, 51</value>
-  </data>
-  <data name="PnlBarraTop.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;PnlBarraTop.Name" xml:space="preserve">
-    <value>PnlBarraTop</value>
-  </data>
-  <data name="&gt;&gt;PnlBarraTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PnlBarraTop.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PnlBarraTop.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="BtnMinimizar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -477,116 +429,32 @@
   <data name="&gt;&gt;BtnCerrar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="PnlMenu.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Right</value>
+  <data name="PnlBarraTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="&gt;&gt;BtnSalir.Name" xml:space="preserve">
-    <value>BtnSalir</value>
+  <data name="PnlBarraTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;BtnSalir.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="PnlBarraTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>576, 51</value>
   </data>
-  <data name="&gt;&gt;BtnSalir.Parent" xml:space="preserve">
-    <value>PnlMenu</value>
-  </data>
-  <data name="&gt;&gt;BtnSalir.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;BtnSeleccionar.Name" xml:space="preserve">
-    <value>BtnSeleccionar</value>
-  </data>
-  <data name="&gt;&gt;BtnSeleccionar.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnSeleccionar.Parent" xml:space="preserve">
-    <value>PnlMenu</value>
-  </data>
-  <data name="&gt;&gt;BtnSeleccionar.ZOrder" xml:space="preserve">
+  <data name="PnlBarraTop.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;BtnCancelar.Name" xml:space="preserve">
-    <value>BtnCancelar</value>
+  <data name="&gt;&gt;PnlBarraTop.Name" xml:space="preserve">
+    <value>PnlBarraTop</value>
   </data>
-  <data name="&gt;&gt;BtnCancelar.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnCancelar.Parent" xml:space="preserve">
-    <value>PnlMenu</value>
-  </data>
-  <data name="&gt;&gt;BtnCancelar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;BtnEliminar.Name" xml:space="preserve">
-    <value>BtnEliminar</value>
-  </data>
-  <data name="&gt;&gt;BtnEliminar.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnEliminar.Parent" xml:space="preserve">
-    <value>PnlMenu</value>
-  </data>
-  <data name="&gt;&gt;BtnEliminar.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;BtnEditar.Name" xml:space="preserve">
-    <value>BtnEditar</value>
-  </data>
-  <data name="&gt;&gt;BtnEditar.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnEditar.Parent" xml:space="preserve">
-    <value>PnlMenu</value>
-  </data>
-  <data name="&gt;&gt;BtnEditar.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;BtnGuardar.Name" xml:space="preserve">
-    <value>BtnGuardar</value>
-  </data>
-  <data name="&gt;&gt;BtnGuardar.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnGuardar.Parent" xml:space="preserve">
-    <value>PnlMenu</value>
-  </data>
-  <data name="&gt;&gt;BtnGuardar.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;BtnNuevo.Name" xml:space="preserve">
-    <value>BtnNuevo</value>
-  </data>
-  <data name="&gt;&gt;BtnNuevo.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnNuevo.Parent" xml:space="preserve">
-    <value>PnlMenu</value>
-  </data>
-  <data name="&gt;&gt;BtnNuevo.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="PnlMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>446, 155</value>
-  </data>
-  <data name="PnlMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
-  </data>
-  <data name="PnlMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 745</value>
-  </data>
-  <data name="PnlMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;PnlMenu.Name" xml:space="preserve">
-    <value>PnlMenu</value>
-  </data>
-  <data name="&gt;&gt;PnlMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;PnlBarraTop.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PnlMenu.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PnlBarraTop.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;PnlMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;PnlBarraTop.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PnlMenu.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
   </data>
   <data name="BtnSalir.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
@@ -915,68 +783,32 @@
   <data name="&gt;&gt;BtnNuevo.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="PnlLista.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="PnlMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>446, 155</value>
   </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>PnlLista</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TxtBuscar.Name" xml:space="preserve">
-    <value>TxtBuscar</value>
-  </data>
-  <data name="&gt;&gt;TxtBuscar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TxtBuscar.Parent" xml:space="preserve">
-    <value>PnlLista</value>
-  </data>
-  <data name="&gt;&gt;TxtBuscar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;DgvDatos.Name" xml:space="preserve">
-    <value>DgvDatos</value>
-  </data>
-  <data name="&gt;&gt;DgvDatos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DgvDatos.Parent" xml:space="preserve">
-    <value>PnlLista</value>
-  </data>
-  <data name="&gt;&gt;DgvDatos.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="PnlLista.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 315</value>
-  </data>
-  <data name="PnlLista.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="PnlMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
-  <data name="PnlLista.Size" type="System.Drawing.Size, System.Drawing">
-    <value>435, 585</value>
+  <data name="PnlMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 745</value>
   </data>
-  <data name="PnlLista.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="PnlMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;PnlLista.Name" xml:space="preserve">
-    <value>PnlLista</value>
+  <data name="&gt;&gt;PnlMenu.Name" xml:space="preserve">
+    <value>PnlMenu</value>
   </data>
-  <data name="&gt;&gt;PnlLista.Type" xml:space="preserve">
+  <data name="&gt;&gt;PnlMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PnlLista.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PnlMenu.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;PnlLista.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;PnlMenu.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="PnlLista.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1074,6 +906,30 @@
   <data name="&gt;&gt;DgvDatos.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="PnlLista.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 315</value>
+  </data>
+  <data name="PnlLista.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="PnlLista.Size" type="System.Drawing.Size, System.Drawing">
+    <value>435, 585</value>
+  </data>
+  <data name="PnlLista.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PnlLista.Name" xml:space="preserve">
+    <value>PnlLista</value>
+  </data>
+  <data name="&gt;&gt;PnlLista.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PnlLista.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PnlLista.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -1090,19 +946,19 @@
     <value>NoControl</value>
   </data>
   <data name="LblModelo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 68</value>
+    <value>40, 70</value>
   </data>
   <data name="LblModelo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
   <data name="LblModelo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 37</value>
+    <value>143, 35</value>
   </data>
   <data name="LblModelo.TabIndex" type="System.Int32, mscorlib">
     <value>133</value>
   </data>
   <data name="LblModelo.Text" xml:space="preserve">
-    <value>Selec.. Modelo</value>
+    <value>Modelo</value>
   </data>
   <data name="LblModelo.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -1126,13 +982,13 @@
     <value>NoControl</value>
   </data>
   <data name="PbModelo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 73</value>
+    <value>4, 75</value>
   </data>
   <data name="PbModelo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
   <data name="PbModelo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 25</value>
+    <value>28, 25</value>
   </data>
   <data name="PbModelo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -1165,7 +1021,7 @@
     <value>4, 5, 4, 5</value>
   </data>
   <data name="PbCategoria.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 24</value>
+    <value>28, 24</value>
   </data>
   <data name="PbCategoria.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -1192,13 +1048,13 @@
     <value>NoControl</value>
   </data>
   <data name="PbMarca.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 39</value>
+    <value>4, 40</value>
   </data>
   <data name="PbMarca.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
   <data name="PbMarca.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 24</value>
+    <value>28, 24</value>
   </data>
   <data name="PbMarca.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -1231,19 +1087,19 @@
     <value>NoControl</value>
   </data>
   <data name="LblCategoria.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 0</value>
+    <value>40, 0</value>
   </data>
   <data name="LblCategoria.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
   <data name="LblCategoria.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 34</value>
+    <value>143, 35</value>
   </data>
   <data name="LblCategoria.TabIndex" type="System.Int32, mscorlib">
     <value>131</value>
   </data>
   <data name="LblCategoria.Text" xml:space="preserve">
-    <value>Selec.. Categoria</value>
+    <value>Categoria</value>
   </data>
   <data name="LblCategoria.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -1273,19 +1129,19 @@
     <value>NoControl</value>
   </data>
   <data name="LblMarca.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 34</value>
+    <value>40, 35</value>
   </data>
   <data name="LblMarca.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
   <data name="LblMarca.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 34</value>
+    <value>143, 35</value>
   </data>
   <data name="LblMarca.TabIndex" type="System.Int32, mscorlib">
     <value>132</value>
   </data>
   <data name="LblMarca.Text" xml:space="preserve">
-    <value>Selec.. Marca</value>
+    <value>Marca</value>
   </data>
   <data name="LblMarca.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -1306,7 +1162,7 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>361, 0</value>
+    <value>389, 0</value>
   </data>
   <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -1315,7 +1171,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 105</value>
+    <value>187, 105</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1333,7 +1189,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="LblModelo" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="PbModelo" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="PbCategoria" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="PbMarca" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LblCategoria" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LblMarca" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,173,Absolute,20" /&gt;&lt;Rows Styles="Percent,33,33333,Percent,33,33333,Percent,33,33333" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="LblModelo" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="PbModelo" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="PbCategoria" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="PbMarca" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LblCategoria" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LblMarca" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,151,Absolute,20" /&gt;&lt;Rows Styles="Percent,33,33333,Percent,33,33333,Percent,33,33333" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="BtnModelo.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
@@ -1348,13 +1204,13 @@
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="BtnModelo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 0</value>
+    <value>259, 0</value>
   </data>
   <data name="BtnModelo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
   <data name="BtnModelo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 105</value>
+    <value>130, 105</value>
   </data>
   <data name="BtnModelo.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1399,7 +1255,7 @@
     <value>4, 5, 4, 5</value>
   </data>
   <data name="BtnMarca.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 105</value>
+    <value>131, 105</value>
   </data>
   <data name="BtnMarca.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
