@@ -87,24 +87,20 @@ namespace Presentation
         }
         public void botones()
         {
-            TplTitulo.Enabled = false;
-            BtnExaminar.Enabled = false;
-            TxtTotal.Enabled = false;
-            TlpDatos.Enabled = false;
-            TlpCaracteristicas.Enabled = false;
-            TlpTotal.Enabled = false;
+            PnlLista.Enabled = true;
+            PnlDatos.Enabled = false;
             BtnNuevo.Enabled = true;
             BtnGuardar.Enabled = false;
             BtnCancelar.Enabled = false;
             BtnEditar.Enabled = true;
             BtnEliminar.Enabled = true;
-            DgvProductos.Enabled = true;
             BtnCheck.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
             BtnCheck.BackColor = System.Drawing.Color.MediumSeaGreen;
             idDato = true;
         }
         public void limpiar()
         {
+            
             TxtCodigoSku.Clear();
             TxtCodigoUpc.Clear();
             TxtCantidad.Clear();
@@ -181,14 +177,10 @@ namespace Presentation
         }
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
-            TlpTotal.Enabled = true;
-            TlpDatos.Enabled = true;
-            TplTitulo.Enabled = true;
-            RtbCaracteristicas.Enabled = true;
-            TlpCaracteristicas.Enabled = true;
+            PnlLista.Enabled = false;
+            PnlDatos.Enabled = true;
             BtnExaminar.Enabled = true;
             BtnGuardar.Enabled = true;
-            DgvProductos.Enabled = false;
             BtnNuevo.Enabled = false;
             BtnEditar.Enabled = false;
             BtnEliminar.Enabled = false;
@@ -207,9 +199,10 @@ namespace Presentation
                 producto.estado = EntityState.Vizualisar;
             }
         }
-        private void BtnBuscar_Click(object sender, EventArgs e)
+        private void BtnLimpiar_Click(object sender, EventArgs e)
         {
-            ListarCategorias();
+            TxtBuscar.Text = "";
+            DgvProductos.DataSource = producto.FindById(TxtBuscar.Text);
         }
 
         private void TxtBuscar_KeyPress(object sender, KeyPressEventArgs e)
@@ -271,13 +264,10 @@ namespace Presentation
         {
             if (DgvProductos.SelectedRows.Count > 0)
             {
-                TlpTotal.Enabled = true;
-                TplTitulo.Enabled = true;
+                PnlLista.Enabled = false;
+                PnlDatos.Enabled = true;
                 BtnEditar.Enabled = true;
-                TlpCaracteristicas.Enabled = true;
                 BtnCancelar.Enabled = true;
-                TlpDatos.Enabled = true;
-                DgvProductos.Enabled = false;
                 BtnGuardar.Enabled = true;
                 BtnExaminar.Enabled = true;
                 BtnEditar.Enabled = false;
