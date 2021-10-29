@@ -101,7 +101,7 @@ namespace Presentation
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro de cerrar?", "Alerta¡¡", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro de cerrar?", "Salir!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
             }

@@ -230,9 +230,31 @@ namespace Domain.Models
             return listaProducto;
         }
 
-        public IEnumerable<ModeloProducto> FindById(string filter)
+        public IEnumerable<ModeloProducto> FindById(int IdTipo, string filter)
         {
-            return GetAll().FindAll(p => p.Marca.Contains(filter.ToUpper()) || p.categoria.Contains(filter.ToUpper()) || p.Modelo.Contains(filter.ToUpper()) || p.codigo_SKU.Contains(filter.ToUpper()) || p.titulo.Contains(filter.ToLower()) || p.n.ToString().Contains(filter));
+            
+            switch (IdTipo)
+            {
+                case 1:
+                    ListaProducto = GetAll().FindAll(p => p.Titulo.Contains(filter.ToLower()));
+                    break;
+                case 2:
+                    ListaProducto = GetAll().FindAll(p => p.codigo_SKU.Contains(filter.ToUpper()));
+                    break;
+                case 3:
+                    ListaProducto = GetAll().FindAll(p => p.categoria.Contains(filter.ToUpper()));
+                    break;
+                case 4:
+                    ListaProducto = GetAll().FindAll(p => p.Marca.Contains(filter.ToUpper()));
+                    break;
+                case 5:
+                    ListaProducto = GetAll().FindAll(p => p.modelo.Contains(filter.ToUpper()));
+                    break;
+                case 6:
+                    ListaProducto = GetAll().FindAll(p => p.codigo_UPC.Contains(filter.ToUpper()));
+                    break;
+            }
+            return ListaProducto;
         }
 
     }

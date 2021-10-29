@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Threading.Tasks;
 
 //referencias
+using FontAwesome.Sharp;
 using System.Globalization;
 using Domain.Models;
 using Domain.ValueObjects;
@@ -21,6 +22,8 @@ namespace Presentation
         private ModeloProducto producto = new ModeloProducto();
         private ClsCalculoDatos calculo = new ClsCalculoDatos();
         private bool idDato= true;
+        private int idTipo = 1;
+        private IconButton BtnCurrent;
         public Productos()
         {
             InitializeComponent();
@@ -30,6 +33,7 @@ namespace Presentation
             ListarCategorias();
             ListarMarca();
             ListaProducto();
+            BtnTitulo_Click(sender,e);
             DgvProductos.Columns[0].Visible = false;
             DgvProductos.Columns[2].Visible = false;
             DgvProductos.Columns[3].Visible = false;
@@ -58,6 +62,27 @@ namespace Presentation
             CboCategoria.DataSource = producto.ListarCategorias();
             CboCategoria.DisplayMember = "Categoria";
             CboCategoria.ValueMember = "IdCategoria";
+        }
+        private void DesactivarBoton()
+        {
+            if (BtnCurrent != null)
+            {
+                BtnCurrent.BackColor = Color.SteelBlue;
+                BtnCurrent.ForeColor = Color.White;
+                BtnCurrent.IconColor = Color.White;
+            }
+        }
+        private void ActivarBoton(object BtnRemitente, Color color)
+        {
+            if (BtnRemitente != null)
+            {
+                DesactivarBoton();
+                BtnCurrent = (IconButton)BtnRemitente;
+                BtnCurrent.BackColor = Color.FromArgb(37, 36, 81);
+                BtnCurrent.ForeColor = color;
+                BtnCurrent.TextAlign = ContentAlignment.MiddleCenter;
+                BtnCurrent.IconColor = color;
+            }
         }
 
         private void ListarMarca()
@@ -132,7 +157,7 @@ namespace Presentation
         {
             CboMarca.SelectedValue =idvalue;
         }
-            private void Datos()
+        private void Datos()
         {
             if (DgvProductos.RowCount > 0)
             {
@@ -191,7 +216,7 @@ namespace Presentation
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro de cancelar, se perdera todos los datos ingresados?", "Alerta¡¡", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro de cancelar, se perdera todos los datos ingresados?", "Alerta¡¡", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 botones();
                 limpiar();
@@ -202,12 +227,13 @@ namespace Presentation
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             TxtBuscar.Text = "";
-            DgvProductos.DataSource = producto.FindById(TxtBuscar.Text);
+            DgvProductos.DataSource = producto.FindById(idTipo, TxtBuscar.Text);
+
         }
 
         private void TxtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            DgvProductos.DataSource = producto.FindById(TxtBuscar.Text);
+            DgvProductos.DataSource = producto.FindById(idTipo, TxtBuscar.Text);
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -234,7 +260,7 @@ namespace Presentation
                     if (valid == true)
                     {
                         string result = producto.Guardar();
-                        MessageBox.Show(result);
+                        MessageBox.Show(result, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         producto.estado = EntityState.Vizualisar;
                         ListaProducto();
                         limpiar();
@@ -243,13 +269,13 @@ namespace Presentation
                 }
                 else
                 {
-                    MessageBox.Show("Llene todos los campos");
+                    MessageBox.Show("Llene todos los campos", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception)
             {
 
-                MessageBox.Show("Llene todos los campos");
+                MessageBox.Show("Llene todos los campos", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }
@@ -277,27 +303,28 @@ namespace Presentation
             }
             else
             {
-                MessageBox.Show("Seleccione la fila a editar");
+                MessageBox.Show("Selecciones la fila a Editar", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
-
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro que desea eliminar el registro?", "Alerta¡¡", MessageBoxButtons.YesNo) == DialogResult.Yes)
+
+            if (DgvProductos.SelectedRows.Count > 0)
             {
-                if (DgvProductos.SelectedRows.Count > 0)
+                if (MessageBox.Show("¿Está seguro que desea eliminar el registro?", "Alerta¡¡", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     producto.estado = EntityState.Eliminar;
                     producto.Id = Convert.ToInt32(DgvProductos.CurrentRow.Cells[0].Value);
                     string result = producto.Guardar();
-                    MessageBox.Show(result);
+                    MessageBox.Show(result,"Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ListaProducto();
                 }
-                else MessageBox.Show("Selecciones la fila a editar");
+            }
+            else
+            {
+                MessageBox.Show("Selecciones la fila a Eliminar", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
         private void DgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Datos();
@@ -313,7 +340,6 @@ namespace Presentation
                 TxtCoste.Text = "0";
             }
         }
-
         private void TxtMargen_Leave(object sender, EventArgs e)
         {
             if (TxtMargen.Text != "" && TxtDescuento.Text != "")
@@ -328,7 +354,6 @@ namespace Presentation
             }
 
         }
-
         private void TxtDescuento_Leave(object sender, EventArgs e)
         {
 
@@ -516,8 +541,6 @@ namespace Presentation
             ClsCalculoDatos.banderaAt = false;
         }
 
-
-
         private void CboCategoria_SelectedValueChanged(object sender, EventArgs e)
         {
             try
@@ -568,6 +591,42 @@ namespace Presentation
 
 
             }
+        }
+
+        private void BtnTitulo_Click(object sender, EventArgs e)
+        {
+            ActivarBoton(BtnTitulo, Color.FromArgb(253, 190, 27));
+            idTipo = 1;
+        }
+
+        private void BtnCodSku_Click(object sender, EventArgs e)
+        {
+            ActivarBoton(BtnCodSku, Color.FromArgb(253, 190, 27));
+            idTipo = 2;
+        }
+
+        private void BtnCat_Click(object sender, EventArgs e)
+        {
+            ActivarBoton(BtnCat, Color.FromArgb(253, 190, 27));
+            idTipo = 3;
+        }
+
+        private void BtnMa_Click(object sender, EventArgs e)
+        {
+            ActivarBoton(BtnMa, Color.FromArgb(253, 190, 27));
+            idTipo = 4;
+        }
+
+        private void BtnMo_Click(object sender, EventArgs e)
+        {
+            ActivarBoton(BtnMo, Color.FromArgb(253, 190, 27));
+            idTipo = 5;
+        }
+
+        private void BtnCodBarra_Click(object sender, EventArgs e)
+        {
+            ActivarBoton(BtnCodBarra, Color.FromArgb(253, 190, 27));
+            idTipo = 6;
         }
     }
 }
