@@ -145,7 +145,6 @@ namespace Presentation
                 if (ClsCalculoDatos.banderaAt)
                 {
                     BtnSeleccionar.Visible = false;
-                    TlpAtributos.Visible = false;
                 }
                 DgvLleno();
 
@@ -186,65 +185,59 @@ namespace Presentation
         {
             try
             {
-                if (TxtDescripcion.Text!="")
+                bool valid;
+                string result;
+                switch (ClsCalculoDatos.caso)
                 {
-                    bool valid;
-                    string result;
-                    switch (ClsCalculoDatos.caso)
-                    {
-                        case 1:
-                            categoria.Categoria = TxtDescripcion.Text.ToUpper();
-                            valid = new Helps.ValidacionDatos(categoria).Validar();
+                    case 1:
+                        categoria.Categoria = TxtDescripcion.Text.ToUpper();
+                        valid = new Helps.ValidacionDatos(categoria).Validar();
+                        if (valid == true)
+                        {
+                            result = categoria.Guardar();
+                            MessageBox.Show(result);
+                            categoria.estado = EntityState.Vizualisar;
+                            ClsCalculoDatos.banderaCat = true;
+                        }
+                        break;
+                    case 2:
+                        marca.Marca = TxtDescripcion.Text.ToUpper();
+                        valid = new Helps.ValidacionDatos(marca).Validar();
+                        if (valid == true)
+                        {
+                            result = marca.Guardar();
+                            MessageBox.Show(result);
+                            marca.estado = EntityState.Vizualisar;
+                            ClsCalculoDatos.banderaMa= true;
+                        }
+                        break;
+                    case 3:
+                        if (CboMarca.SelectedIndex != 0)
+                        {
+                            modelo.IdMarca = Convert.ToInt32(CboMarca.SelectedValue);
+                            modelo.Modelo = TxtDescripcion.Text.ToUpper();
+                            valid = new Helps.ValidacionDatos(modelo).Validar();
                             if (valid == true)
                             {
-                                result = categoria.Guardar();
-                                categoria.estado = EntityState.Vizualisar;
-                                ClsCalculoDatos.banderaCat = true;
-                                MessageBox.Show(result, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                result = modelo.Guardar();
+                                MessageBox.Show(result);
+                                modelo.estado = EntityState.Vizualisar;
+                                ClsCalculoDatos.banderaMo = true;
                             }
-                            break;
-                        case 2:
-                            marca.Marca = TxtDescripcion.Text.ToUpper();
-                            valid = new Helps.ValidacionDatos(marca).Validar();
-                            if (valid == true)
-                            {
-                                result = marca.Guardar();
-                                marca.estado = EntityState.Vizualisar;
-                                ClsCalculoDatos.banderaMa = true;
-                                MessageBox.Show(result, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            break;
-                        case 3:
-                            if (CboMarca.SelectedIndex != 0)
-                            {
-                                modelo.IdMarca = Convert.ToInt32(CboMarca.SelectedValue);
-                                modelo.Modelo = TxtDescripcion.Text.ToUpper();
-                                valid = new Helps.ValidacionDatos(modelo).Validar();
-                                if (valid == true)
-                                {
-                                    result = modelo.Guardar();
-                                    modelo.estado = EntityState.Vizualisar;
-                                    ClsCalculoDatos.banderaMo = true;
-                                    MessageBox.Show(result, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Seleccione la Marca que pertenece el modelo a crear", "Marca", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            }
-                            break;
-                    }
-                    ListarDatos();
-                    botones();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Seleccione la Marca que pertenece el modelo a crear");
+                        }
+                        break;
                 }
-                else
-                {
-                    MessageBox.Show("El campo descripción esta vacío", "Alerta!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                ListarDatos();
+                botones();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Llene todos los Campos", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MessageBox.Show(ex + "Escriba la categoria que desea registrar");
             }
         }
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -284,7 +277,7 @@ namespace Presentation
             }
             else
             {
-                MessageBox.Show("Seleccione la fila a Editar", "Alerta!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione la fila a editar");
             }
         }
 
@@ -292,9 +285,9 @@ namespace Presentation
         {
             if (DgvDatos.SelectedRows.Count > 0)   
             {
-                if (MessageBox.Show("¿Está seguro que desea eliminar el registro?", "Alerta¡¡", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("¿Está seguro que desea eliminar el registro?", "Alerta¡¡", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    string result="";
+                    string result;
                     IdDato = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
                     switch (ClsCalculoDatos.caso)
                     {
@@ -302,26 +295,25 @@ namespace Presentation
                             categoria.estado = EntityState.Eliminar;
                             categoria.IdCategoria = IdDato;
                             result = categoria.Guardar();
-                            ClsCalculoDatos.banderaCat = true;
+                            MessageBox.Show(result);
                             break;
                         case 2:
                             marca.estado = EntityState.Eliminar;
                             marca.IdMarca = IdDato;
                             result = marca.Guardar();
-                            ClsCalculoDatos.banderaMa = true;
+                            MessageBox.Show(result);
                             break;
                         case 3:
                             modelo.estado = EntityState.Eliminar;
                             modelo.IdModelo = IdDato;
                             result = modelo.Guardar();
-                            ClsCalculoDatos.banderaMo = true;
+                            MessageBox.Show(result);
                             break;
                     }
-                    MessageBox.Show(result, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ListarDatos();
                 }
             }
-            else MessageBox.Show("Seleccione una fila a Eliminar", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            else MessageBox.Show("Seleccione una fila a Eliminar");
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -409,7 +401,7 @@ namespace Presentation
             }
             else
             {
-                MessageBox.Show("No hay ninguna celda marcada para Seleccion, por favor seleccione una celda", "Selección", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No hay ninguna celda marcada para Seleccion, por favor seleccione una celda");
             }
         }
 

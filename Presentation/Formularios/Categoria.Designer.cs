@@ -55,7 +55,7 @@ namespace Presentation
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.DgvDatos = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.TlpAtributos = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.LblModelo = new System.Windows.Forms.Label();
             this.PbModelo = new FontAwesome.Sharp.IconPictureBox();
             this.PbCategoria = new FontAwesome.Sharp.IconPictureBox();
@@ -72,7 +72,7 @@ namespace Presentation
             this.PnlLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDatos)).BeginInit();
             this.panel2.SuspendLayout();
-            this.TlpAtributos.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbModelo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbCategoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbMarca)).BeginInit();
@@ -185,7 +185,7 @@ namespace Presentation
             this.BtnSalir.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
             this.BtnSalir.IconColor = System.Drawing.Color.White;
             this.BtnSalir.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnSalir.IconSize = 30;
+            this.BtnSalir.IconSize = 35;
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.UseVisualStyleBackColor = false;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
@@ -199,7 +199,7 @@ namespace Presentation
             this.BtnSeleccionar.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
             this.BtnSeleccionar.IconColor = System.Drawing.Color.White;
             this.BtnSeleccionar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnSeleccionar.IconSize = 30;
+            this.BtnSeleccionar.IconSize = 35;
             this.BtnSeleccionar.Name = "BtnSeleccionar";
             this.BtnSeleccionar.UseVisualStyleBackColor = false;
             this.BtnSeleccionar.Click += new System.EventHandler(this.BtnSeleccionar_Click);
@@ -213,7 +213,7 @@ namespace Presentation
             this.BtnCancelar.IconChar = FontAwesome.Sharp.IconChar.Backspace;
             this.BtnCancelar.IconColor = System.Drawing.Color.White;
             this.BtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnCancelar.IconSize = 30;
+            this.BtnCancelar.IconSize = 35;
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -227,7 +227,7 @@ namespace Presentation
             this.BtnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.BtnEliminar.IconColor = System.Drawing.Color.White;
             this.BtnEliminar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnEliminar.IconSize = 30;
+            this.BtnEliminar.IconSize = 35;
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
@@ -241,7 +241,7 @@ namespace Presentation
             this.BtnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.BtnEditar.IconColor = System.Drawing.Color.White;
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnEditar.IconSize = 30;
+            this.BtnEditar.IconSize = 35;
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.UseVisualStyleBackColor = false;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
@@ -255,7 +255,7 @@ namespace Presentation
             this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnGuardar.IconSize = 30;
+            this.BtnGuardar.IconSize = 35;
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
@@ -269,7 +269,7 @@ namespace Presentation
             this.BtnNuevo.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
             this.BtnNuevo.IconColor = System.Drawing.Color.White;
             this.BtnNuevo.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnNuevo.IconSize = 30;
+            this.BtnNuevo.IconSize = 35;
             this.BtnNuevo.Name = "BtnNuevo";
             this.BtnNuevo.UseVisualStyleBackColor = false;
             this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
@@ -335,23 +335,23 @@ namespace Presentation
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel2.Controls.Add(this.TlpAtributos);
+            this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Controls.Add(this.BtnModelo);
             this.panel2.Controls.Add(this.BtnMarca);
             this.panel2.Controls.Add(this.BtnCategoria);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
-            // TlpAtributos
+            // tableLayoutPanel1
             // 
-            resources.ApplyResources(this.TlpAtributos, "TlpAtributos");
-            this.TlpAtributos.Controls.Add(this.LblModelo, 1, 2);
-            this.TlpAtributos.Controls.Add(this.PbModelo, 0, 2);
-            this.TlpAtributos.Controls.Add(this.PbCategoria, 0, 0);
-            this.TlpAtributos.Controls.Add(this.PbMarca, 0, 1);
-            this.TlpAtributos.Controls.Add(this.LblCategoria, 1, 0);
-            this.TlpAtributos.Controls.Add(this.LblMarca, 1, 1);
-            this.TlpAtributos.Name = "TlpAtributos";
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.LblModelo, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.PbModelo, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.PbCategoria, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.PbMarca, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.LblCategoria, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.LblMarca, 1, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // LblModelo
             // 
@@ -367,7 +367,7 @@ namespace Presentation
             this.PbModelo.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.PbModelo.IconColor = System.Drawing.Color.Crimson;
             this.PbModelo.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.PbModelo.IconSize = 16;
+            this.PbModelo.IconSize = 25;
             this.PbModelo.Name = "PbModelo";
             this.PbModelo.TabStop = false;
             // 
@@ -379,7 +379,7 @@ namespace Presentation
             this.PbCategoria.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.PbCategoria.IconColor = System.Drawing.Color.Crimson;
             this.PbCategoria.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.PbCategoria.IconSize = 16;
+            this.PbCategoria.IconSize = 24;
             this.PbCategoria.Name = "PbCategoria";
             this.PbCategoria.TabStop = false;
             // 
@@ -391,7 +391,7 @@ namespace Presentation
             this.PbMarca.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.PbMarca.IconColor = System.Drawing.Color.Crimson;
             this.PbMarca.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.PbMarca.IconSize = 16;
+            this.PbMarca.IconSize = 24;
             this.PbMarca.Name = "PbMarca";
             this.PbMarca.TabStop = false;
             // 
@@ -473,8 +473,8 @@ namespace Presentation
             this.PnlLista.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDatos)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.TlpAtributos.ResumeLayout(false);
-            this.TlpAtributos.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbModelo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbCategoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbMarca)).EndInit();
@@ -508,7 +508,7 @@ namespace Presentation
         private FontAwesome.Sharp.IconButton BtnMarca;
         private FontAwesome.Sharp.IconButton BtnCategoria;
         private FontAwesome.Sharp.IconButton BtnSeleccionar;
-        private System.Windows.Forms.TableLayoutPanel TlpAtributos;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private FontAwesome.Sharp.IconButton BtnSalir;
         private FontAwesome.Sharp.IconPictureBox PbModelo;
         private FontAwesome.Sharp.IconPictureBox PbCategoria;

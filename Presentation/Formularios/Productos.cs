@@ -230,10 +230,14 @@ namespace Presentation
             DgvProductos.DataSource = producto.FindById(idTipo, TxtBuscar.Text);
 
         }
+        private void Buscar()
+        {
+            DgvProductos.DataSource = producto.FindById(idTipo, TxtBuscar.Text);
+        }
 
         private void TxtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            DgvProductos.DataSource = producto.FindById(idTipo, TxtBuscar.Text);
+            Buscar();
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -269,7 +273,7 @@ namespace Presentation
                 }
                 else
                 {
-                    MessageBox.Show("Llene todos los campos", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Los campos Coste y Total no pueden quedar en 0", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception)
@@ -466,6 +470,7 @@ namespace Presentation
                 limpiarContable();
                 TxtTotal.Enabled = true;
                 TxtMargen.Enabled = false;
+                TxtMargen.Text = "0";
                 BtnCheck.IconChar = FontAwesome.Sharp.IconChar.UndoAlt;
                 BtnCheck.BackColor = System.Drawing.Color.Firebrick;
             }
@@ -474,9 +479,9 @@ namespace Presentation
                 idDato = true;
                 TxtTotal.Text = "0";
                 TxtMargen.Enabled = true;
+                TxtMargen.Text = "20";
                 TxtDescuento_Leave(sender, e);
                 TxtTotal.Enabled = false;
-                
                 BtnCheck.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
                 BtnCheck.BackColor = System.Drawing.Color.MediumSeaGreen;
             }
@@ -597,36 +602,44 @@ namespace Presentation
         {
             ActivarBoton(BtnTitulo, Color.FromArgb(253, 190, 27));
             idTipo = 1;
+            BtnLimpiar_Click(sender,e);
         }
 
         private void BtnCodSku_Click(object sender, EventArgs e)
         {
             ActivarBoton(BtnCodSku, Color.FromArgb(253, 190, 27));
             idTipo = 2;
+            BtnLimpiar_Click(sender, e);
         }
 
         private void BtnCat_Click(object sender, EventArgs e)
         {
             ActivarBoton(BtnCat, Color.FromArgb(253, 190, 27));
             idTipo = 3;
+            BtnLimpiar_Click(sender, e);
         }
 
         private void BtnMa_Click(object sender, EventArgs e)
         {
             ActivarBoton(BtnMa, Color.FromArgb(253, 190, 27));
             idTipo = 4;
+            BtnLimpiar_Click(sender, e);
+        
         }
 
         private void BtnMo_Click(object sender, EventArgs e)
         {
             ActivarBoton(BtnMo, Color.FromArgb(253, 190, 27));
             idTipo = 5;
+            BtnLimpiar_Click(sender, e);
         }
 
         private void BtnCodBarra_Click(object sender, EventArgs e)
         {
             ActivarBoton(BtnCodBarra, Color.FromArgb(253, 190, 27));
             idTipo = 6;
+            BtnLimpiar_Click(sender, e);
         }
+
     }
 }

@@ -70,7 +70,7 @@ namespace Presentation
                 }
                 else
                 {
-                    MessageBox.Show("El descuento debe de ser menor que el Margen de ganancia");
+                    MessageBox.Show("El descuento debe de ser menor que el Margen de ganancia"," Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     descuento = 0;
                     PVP(margen, descuento, coste);
                 }
@@ -88,7 +88,7 @@ namespace Presentation
                     pvp = 0;
                     iva = 0;
                     total = 0;
-                    MessageBox.Show("El precio de venta al publico tiene que ser mayor que el coste de compra por favor introdusca un Total de venta mayor ");
+                    MessageBox.Show("El precio de venta al publico tiene que ser mayor que el coste de compra, por favor ingrese un Total valido.", " Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 
             }
