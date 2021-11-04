@@ -55,7 +55,7 @@ namespace Presentation
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.DgvDatos = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.TbpSeleccion = new System.Windows.Forms.TableLayoutPanel();
             this.LblModelo = new System.Windows.Forms.Label();
             this.PbModelo = new FontAwesome.Sharp.IconPictureBox();
             this.PbCategoria = new FontAwesome.Sharp.IconPictureBox();
@@ -72,7 +72,7 @@ namespace Presentation
             this.PnlLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDatos)).BeginInit();
             this.panel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.TbpSeleccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbModelo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbCategoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbMarca)).BeginInit();
@@ -335,23 +335,23 @@ namespace Presentation
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel2.Controls.Add(this.tableLayoutPanel1);
+            this.panel2.Controls.Add(this.TbpSeleccion);
             this.panel2.Controls.Add(this.BtnModelo);
             this.panel2.Controls.Add(this.BtnMarca);
             this.panel2.Controls.Add(this.BtnCategoria);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
-            // tableLayoutPanel1
+            // TbpSeleccion
             // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.LblModelo, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.PbModelo, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.PbCategoria, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.PbMarca, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.LblCategoria, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.LblMarca, 1, 1);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            resources.ApplyResources(this.TbpSeleccion, "TbpSeleccion");
+            this.TbpSeleccion.Controls.Add(this.LblModelo, 1, 2);
+            this.TbpSeleccion.Controls.Add(this.PbModelo, 0, 2);
+            this.TbpSeleccion.Controls.Add(this.PbCategoria, 0, 0);
+            this.TbpSeleccion.Controls.Add(this.PbMarca, 0, 1);
+            this.TbpSeleccion.Controls.Add(this.LblCategoria, 1, 0);
+            this.TbpSeleccion.Controls.Add(this.LblMarca, 1, 1);
+            this.TbpSeleccion.Name = "TbpSeleccion";
             // 
             // LblModelo
             // 
@@ -367,7 +367,7 @@ namespace Presentation
             this.PbModelo.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.PbModelo.IconColor = System.Drawing.Color.Crimson;
             this.PbModelo.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.PbModelo.IconSize = 25;
+            this.PbModelo.IconSize = 16;
             this.PbModelo.Name = "PbModelo";
             this.PbModelo.TabStop = false;
             // 
@@ -379,7 +379,7 @@ namespace Presentation
             this.PbCategoria.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.PbCategoria.IconColor = System.Drawing.Color.Crimson;
             this.PbCategoria.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.PbCategoria.IconSize = 24;
+            this.PbCategoria.IconSize = 16;
             this.PbCategoria.Name = "PbCategoria";
             this.PbCategoria.TabStop = false;
             // 
@@ -391,7 +391,7 @@ namespace Presentation
             this.PbMarca.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.PbMarca.IconColor = System.Drawing.Color.Crimson;
             this.PbMarca.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.PbMarca.IconSize = 24;
+            this.PbMarca.IconSize = 16;
             this.PbMarca.Name = "PbMarca";
             this.PbMarca.TabStop = false;
             // 
@@ -473,8 +473,8 @@ namespace Presentation
             this.PnlLista.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDatos)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.TbpSeleccion.ResumeLayout(false);
+            this.TbpSeleccion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbModelo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbCategoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbMarca)).EndInit();
@@ -508,7 +508,7 @@ namespace Presentation
         private FontAwesome.Sharp.IconButton BtnMarca;
         private FontAwesome.Sharp.IconButton BtnCategoria;
         private FontAwesome.Sharp.IconButton BtnSeleccionar;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel TbpSeleccion;
         private FontAwesome.Sharp.IconButton BtnSalir;
         private FontAwesome.Sharp.IconPictureBox PbModelo;
         private FontAwesome.Sharp.IconPictureBox PbCategoria;

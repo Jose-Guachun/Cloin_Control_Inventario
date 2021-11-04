@@ -37,6 +37,7 @@ namespace Presentation
         }
         private void DgvLleno()
         {
+            CboMarca.SelectedValue = -1;
             if (DgvDatos.RowCount > 0)
             {
                 DgvDatos.Rows[0].Selected = false;
@@ -145,6 +146,7 @@ namespace Presentation
                 if (ClsCalculoDatos.banderaAt)
                 {
                     BtnSeleccionar.Visible = false;
+                    TbpSeleccion.Visible = false;
                 }
                 DgvLleno();
 
@@ -212,7 +214,7 @@ namespace Presentation
                         }
                         break;
                     case 3:
-                        if (CboMarca.SelectedIndex != 0)
+                        if (CboMarca.SelectedIndex != -1)
                         {
                             modelo.IdMarca = Convert.ToInt32(CboMarca.SelectedValue);
                             modelo.Modelo = TxtDescripcion.Text.ToUpper();
@@ -296,18 +298,21 @@ namespace Presentation
                             categoria.IdCategoria = IdDato;
                             result = categoria.Guardar();
                             MessageBox.Show(result);
+                            ClsCalculoDatos.banderaCat = true;
                             break;
                         case 2:
                             marca.estado = EntityState.Eliminar;
                             marca.IdMarca = IdDato;
                             result = marca.Guardar();
                             MessageBox.Show(result);
+                            ClsCalculoDatos.banderaMa = true;
                             break;
                         case 3:
                             modelo.estado = EntityState.Eliminar;
                             modelo.IdModelo = IdDato;
                             result = modelo.Guardar();
                             MessageBox.Show(result);
+                            ClsCalculoDatos.banderaMo = true;
                             break;
                     }
                     ListarDatos();

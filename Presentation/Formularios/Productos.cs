@@ -33,6 +33,7 @@ namespace Presentation
             ListarCategorias();
             ListarMarca();
             ListaProducto();
+            Combo();
             BtnTitulo_Click(sender,e);
             DgvProductos.Columns[0].Visible = false;
             DgvProductos.Columns[2].Visible = false;
@@ -42,13 +43,17 @@ namespace Presentation
             DgvProductos.Columns[10].Visible = false;
             DgvProductos.Columns[13].Visible = false;
         }
-        public void DgvLleno()
+        private void Combo()
         {
-            if (DgvProductos.RowCount > 0)
+            CboCategoria.SelectedValue = -1;
+            CboMarca.SelectedValue = -1;
+            CboModelo.SelectedValue = -1;
+        }
+        private void DgvLleno()
+        {
+            if (DgvProductos.RowCount != 0)
             {
-                DgvProductos.Rows[0].Selected = false;
-
-                
+                DgvProductos.Rows[0].Selected = false; 
             }
             else
             {
@@ -57,11 +62,35 @@ namespace Presentation
                 DgvProductos.Enabled = false;
             }
         }
-        public void ListarCategorias()
+        private void ListaProducto()
         {
-            CboCategoria.DataSource = producto.ListarCategorias();
-            CboCategoria.DisplayMember = "Categoria";
-            CboCategoria.ValueMember = "IdCategoria";
+            try
+            {
+                DgvProductos.DataSource = producto.GetAll();
+                DgvLleno();
+            }
+            catch (Exception )
+            {
+            }
+
+        }
+        private void ListarCategorias()
+        {
+                CboCategoria.DataSource = producto.ListarCategorias();
+                CboCategoria.DisplayMember = "Categoria";
+                CboCategoria.ValueMember = "IdCategoria";
+        }
+        private void ListarMarca()
+        {
+            CboMarca.DataSource = producto.ListarMarca();
+            CboMarca.DisplayMember = "Marca";
+            CboMarca.ValueMember = "IdMarca";               
+        }
+        private void ListarModelo(string marca)
+        {
+            CboModelo.DataSource = producto.ListarModelo(marca);
+            CboModelo.DisplayMember = "Modelo";
+            CboModelo.ValueMember = "IdModelo";
         }
         private void DesactivarBoton()
         {
@@ -72,6 +101,7 @@ namespace Presentation
                 BtnCurrent.IconColor = Color.White;
             }
         }
+
         private void ActivarBoton(object BtnRemitente, Color color)
         {
             if (BtnRemitente != null)
@@ -85,31 +115,6 @@ namespace Presentation
             }
         }
 
-        private void ListarMarca()
-        {
-            CboMarca.DataSource = producto.ListarMarca();
-            CboMarca.DisplayMember = "Marca";
-            CboMarca.ValueMember = "IdMarca";
-        }
-        private void ListarModelo(string marca)
-        {
-             CboModelo.DataSource = producto.ListarModelo(marca);
-             CboModelo.DisplayMember = "Modelo";
-             CboModelo.ValueMember = "IdModelo";
-        }
-        private void ListaProducto()
-        {
-            try
-            {
-                DgvProductos.DataSource = producto.GetAll();
-                DgvLleno();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-        }
         public void botones()
         {
             PnlLista.Enabled = true;
@@ -125,13 +130,10 @@ namespace Presentation
         }
         public void limpiar()
         {
-            
             TxtCodigoSku.Clear();
             TxtCodigoUpc.Clear();
             TxtCantidad.Clear();
             TxtTitulo.Clear();
-            CboCategoria.SelectedIndex = 0;
-            CboMarca.SelectedIndex = 0;
             ListarModelo("0");
             limpiarContable();
             RtbCaracteristicas.Clear();
@@ -143,7 +145,15 @@ namespace Presentation
             {
                 ImgProducto.Image = PtbImg.Image;
             }
-                
+            if (CboCategoria.Items.Count != 0)
+            {
+                CboCategoria.SelectedValue= -1;
+            }
+            if (CboMarca.Items.Count != 0)
+            {
+                CboMarca.SelectedValue = -1;
+            }
+
         }
         public void limpiarContable()
         {
@@ -302,7 +312,7 @@ namespace Presentation
                 BtnExaminar.Enabled = true;
                 BtnEditar.Enabled = false;
                 BtnNuevo.Enabled = false;
-                producto.estado = EntityState.Modificar;;
+                producto.estado = EntityState.Modificar;
                 Datos();
             }
             else
@@ -501,22 +511,41 @@ namespace Presentation
                 ListarMarca();
                 ClsCalculoDatos.banderaMa = false;
             }
-            if (ClsCalculoDatos.banderaMo == true)
+            if (ClsCalculoDatos.banderaMo == true && ClsCalculoDatos.valueMarca!=null)
             {
-                ListarModelo(CboMarca.SelectedValue.ToString());
+                try
+                {
+                    ListarModelo(CboMarca.SelectedValue.ToString());
+                }
+                catch (Exception)
+                {
+                    ListarModelo("0");
+                }
                 ClsCalculoDatos.banderaMo = false;  
             }
             if (ClsCalculoDatos.valueCategoria!=null)
             {
                 CboCategoria.SelectedValue = ClsCalculoDatos.valueCategoria;
+            }else
+            {
+                CboCategoria.SelectedValue = -1;
             }
             if (ClsCalculoDatos.valueMarca != null)
             {
+                
                 CboMarca.SelectedValue = ClsCalculoDatos.valueMarca;
+            }
+            else
+            {
+                CboMarca.SelectedValue = -1;
             }
             if (ClsCalculoDatos.valueModelo != null)
             {
                 CboModelo.SelectedValue = ClsCalculoDatos.valueModelo;
+            }
+            else
+            {
+                CboModelo.SelectedValue = -1;
             }
             
         }
@@ -548,36 +577,27 @@ namespace Presentation
 
         private void CboCategoria_SelectedValueChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (CboCategoria.SelectedIndex != 0)
+                if (CboCategoria.Items.Count!=0 && CboCategoria.SelectedIndex != 0)
                 {
                     ClsCalculoDatos.valueCategoria = Convert.ToInt32(CboCategoria.SelectedValue);
                 }
-                
-            }
-            catch (Exception)
-            {
-
-               
-            }
-
         }
         private void CboMarca_SelectedValueChanged(object sender, EventArgs e)
         {
             try
             {
-                if (CboMarca.SelectedIndex != 0)
+                if (CboMarca.Items.Count != 0 && CboMarca.SelectedIndex != 0)
                 {
                     ClsCalculoDatos.valueMarca = Convert.ToInt32(CboMarca.SelectedValue);
                     ListarModelo(ClsCalculoDatos.valueMarca.ToString());
-                    
+                    CboModelo.SelectedValue = -1;
                 }
             }
             catch (Exception)
             {
+
                 ListarModelo("0");
-            }
+            } 
 
         }
 
@@ -585,7 +605,7 @@ namespace Presentation
         {
             try
             {
-                if (CboModelo.SelectedIndex != 0)
+                if (CboModelo.SelectedIndex != -1)
                 {
                     ClsCalculoDatos.valueModelo = Convert.ToInt32(CboModelo.SelectedValue);
                 }
