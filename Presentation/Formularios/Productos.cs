@@ -14,6 +14,7 @@ using System.Globalization;
 using Domain.Models;
 using Domain.ValueObjects;
 using System.IO;
+using Presentation.Formularios;
 
 namespace Presentation
 {
@@ -661,5 +662,10 @@ namespace Presentation
             BtnLimpiar_Click(sender, e);
         }
 
+        private void BtnCoste_Click(object sender, EventArgs e)
+        {
+            Calcular calculo = new Calcular();
+            calculo.ShowDialog();
+        }
     }
 }
