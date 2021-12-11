@@ -16,7 +16,6 @@ namespace Presentation
         public static Boolean banderaMo;
         public static Boolean banderaAt;
         public static int caso=0;
-        decimal coste;
         decimal pvp;
         decimal iva;
         decimal total;
@@ -25,19 +24,6 @@ namespace Presentation
         string marca;
         string modelo;
 
-        public decimal Coste(decimal precio)
-        {
-            if (precio.ToString() != "")
-            {
-                decimal iva = precio * 12 / 100;
-                coste = precio + iva;
-                return decimal.Round(coste, 2);
-            }
-            else
-            {
-                return 0;
-            }
-        }
         public void PVP(decimal margen, decimal descuento, decimal coste)
         {
             pvp = coste / (1 - (margen / 100));

@@ -42,6 +42,5 @@ namespace Presentation.Formularios
             WindowState = FormWindowState.Minimized;
         }
 
-
     }
 }
