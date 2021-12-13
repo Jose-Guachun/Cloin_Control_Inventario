@@ -11,6 +11,8 @@ namespace Presentation
     public class ClsCalculoCoste
     {
         public static String cost;
+        public static Boolean PIVa;
+        public static Boolean FIVa;
         decimal coste;
         decimal precio;
         int cantidad;
@@ -52,16 +54,22 @@ namespace Presentation
 
             if (precio!=0)
             {
-                decimal PrecIva = (precio * 12 / 100) + precio;
+                if (!ClsCalculoCoste.PIVa)
+                {
+                    precio = (precio * 12 / 100) + precio;
+                }
                 if (cantidad != 0)
                 {
-                    decimal costFlete = (flete * 12 / 100) + flete;
-                    decimal gastoUnitario = (costFlete + gasto1 + gasto2 + gasto3) / cantidad;
-                    coste = PrecIva + gastoUnitario;
+                    if (!ClsCalculoCoste.FIVa)
+                    {
+                        flete = (flete * 12 / 100) + flete;
+                    }
+                    decimal gastoUnitario = (flete + gasto1 + gasto2 + gasto3) / cantidad;
+                    coste = precio + gastoUnitario;
                 }
                 else
                 {
-                    coste = PrecIva;
+                    coste = precio;
                 }
             }
             else

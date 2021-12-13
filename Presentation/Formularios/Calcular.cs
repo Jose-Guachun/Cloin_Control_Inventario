@@ -8,21 +8,26 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+using FontAwesome.Sharp;
+
 namespace Presentation
 {
     public partial class Calcular : Form
     {
         private ClsCamposVacios vacio= new ClsCamposVacios();
         private ClsCalculoCoste calculo = new ClsCalculoCoste();
+        private IconButton BtnCurrent;
         public Calcular()
         {
             InitializeComponent();
         }
+
         //METODO PARA ARRASTRAR EL FORMULARIO---------------------------------------------------------------------
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
         private void PnlBarraTop_MouseDown_1(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -43,7 +48,24 @@ namespace Presentation
         {
             WindowState = FormWindowState.Minimized;
         }
-
+        private void ActivarBoton(object BtnRemitente)
+        {
+            if (BtnRemitente != null)
+            {
+                BtnCurrent = (IconButton)BtnRemitente;
+                BtnCurrent.IconChar = FontAwesome.Sharp.IconChar.Plus;
+                BtnCurrent.BackColor = System.Drawing.Color.MediumSeaGreen;
+            }
+        }
+        private void DesactivarBoton(object BtnRemitente)
+        {
+            if (BtnRemitente != null)
+            {
+                BtnCurrent = (IconButton)BtnRemitente;
+                BtnCurrent.IconChar = FontAwesome.Sharp.IconChar.Line;
+                BtnCurrent.BackColor = System.Drawing.Color.Firebrick;
+            }
+        }
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
                 
@@ -74,7 +96,47 @@ namespace Presentation
             TxtGasto1.Clear();
             TxtGasto2.Clear();
             TxtGasto3.Clear();
-            TxtBuscar.Clear();
+        }
+
+        private void BtnAddIva_Click(object sender, EventArgs e)
+        {
+            if (ClsCalculoCoste.PIVa)
+            {
+                lblPrecio.Text = "Precio sin iva";
+                ClsCalculoCoste.PIVa = false;
+                BtnAddIva.IconChar = FontAwesome.Sharp.IconChar.Plus;
+                BtnAddIva.BackColor = System.Drawing.Color.SeaGreen;
+                
+            }
+            else
+            {
+                lblPrecio.Text = "Precio con iva";
+                ClsCalculoCoste.PIVa = true;
+                BtnAddIva.IconChar = FontAwesome.Sharp.IconChar.GripHorizontal;
+                BtnAddIva.BackColor = System.Drawing.Color.Firebrick;
+            }
+
+            
+
+        }
+
+        private void BtnAddIvaF_Click(object sender, EventArgs e)
+        {
+            if (ClsCalculoCoste.FIVa)
+            {
+                lblFlete.Text = "Flete sin iva";
+                ClsCalculoCoste.FIVa = false;
+                BtnAddIvaF.IconChar = FontAwesome.Sharp.IconChar.Plus;
+                BtnAddIvaF.BackColor = System.Drawing.Color.SeaGreen;
+
+            }
+            else
+            {
+                lblFlete.Text = "Flete con iva";
+                ClsCalculoCoste.FIVa = true;
+                BtnAddIvaF.IconChar = FontAwesome.Sharp.IconChar.GripHorizontal;
+                BtnAddIvaF.BackColor = System.Drawing.Color.Firebrick;
+            }
         }
     }
 }

@@ -29,8 +29,8 @@ namespace Presentation
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnlBarraTop = new System.Windows.Forms.Panel();
             this.BtnMinimizar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
@@ -49,6 +49,7 @@ namespace Presentation
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.BtnSeleccionar = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnAddIva = new FontAwesome.Sharp.IconButton();
             this.TxtGasto3 = new System.Windows.Forms.TextBox();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.TxtGasto2 = new System.Windows.Forms.TextBox();
@@ -61,6 +62,7 @@ namespace Presentation
             this.lblGasto1 = new System.Windows.Forms.Label();
             this.lblGasto2 = new System.Windows.Forms.Label();
             this.lblGasto3 = new System.Windows.Forms.Label();
+            this.BtnAddIvaF = new FontAwesome.Sharp.IconButton();
             this.DgvCompras = new System.Windows.Forms.DataGridView();
             this.BtnAgregar = new FontAwesome.Sharp.IconButton();
             this.label11 = new System.Windows.Forms.Label();
@@ -407,7 +409,8 @@ namespace Presentation
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.72464F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.27536F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.Controls.Add(this.BtnAddIva, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.TxtGasto3, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.lblCantidad, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.TxtGasto2, 1, 4);
@@ -420,6 +423,7 @@ namespace Presentation
             this.tableLayoutPanel1.Controls.Add(this.lblGasto1, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblGasto2, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblGasto3, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.BtnAddIvaF, 2, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 105);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 10;
@@ -437,16 +441,42 @@ namespace Presentation
             this.tableLayoutPanel1.Size = new System.Drawing.Size(192, 276);
             this.tableLayoutPanel1.TabIndex = 120;
             // 
+            // BtnAddIva
+            // 
+            this.BtnAddIva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnAddIva.BackColor = System.Drawing.Color.SeaGreen;
+            this.BtnAddIva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnAddIva.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.BtnAddIva.FlatAppearance.BorderSize = 0;
+            this.BtnAddIva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddIva.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAddIva.ForeColor = System.Drawing.Color.White;
+            this.BtnAddIva.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.BtnAddIva.IconColor = System.Drawing.Color.White;
+            this.BtnAddIva.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnAddIva.IconSize = 18;
+            this.BtnAddIva.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnAddIva.Location = new System.Drawing.Point(161, 30);
+            this.BtnAddIva.Name = "BtnAddIva";
+            this.BtnAddIva.Size = new System.Drawing.Size(28, 21);
+            this.BtnAddIva.TabIndex = 128;
+            this.BtnAddIva.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.BtnAddIva.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnAddIva.UseVisualStyleBackColor = false;
+            this.BtnAddIva.Click += new System.EventHandler(this.BtnAddIva_Click);
+            // 
             // TxtGasto3
             // 
             this.TxtGasto3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtGasto3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtGasto3.Location = new System.Drawing.Point(80, 137);
+            this.TxtGasto3.Location = new System.Drawing.Point(82, 137);
             this.TxtGasto3.Margin = new System.Windows.Forms.Padding(2);
             this.TxtGasto3.Name = "TxtGasto3";
-            this.TxtGasto3.Size = new System.Drawing.Size(71, 26);
+            this.TxtGasto3.Size = new System.Drawing.Size(74, 26);
             this.TxtGasto3.TabIndex = 9;
             this.TxtGasto3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -459,7 +489,7 @@ namespace Presentation
             this.lblCantidad.Location = new System.Drawing.Point(2, 0);
             this.lblCantidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(74, 27);
+            this.lblCantidad.Size = new System.Drawing.Size(76, 27);
             this.lblCantidad.TabIndex = 7;
             this.lblCantidad.Text = "Cantidad";
             this.lblCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -470,10 +500,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtGasto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtGasto2.Location = new System.Drawing.Point(80, 110);
+            this.TxtGasto2.Location = new System.Drawing.Point(82, 110);
             this.TxtGasto2.Margin = new System.Windows.Forms.Padding(2);
             this.TxtGasto2.Name = "TxtGasto2";
-            this.TxtGasto2.Size = new System.Drawing.Size(71, 26);
+            this.TxtGasto2.Size = new System.Drawing.Size(74, 26);
             this.TxtGasto2.TabIndex = 8;
             this.TxtGasto2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -483,10 +513,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtGasto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtGasto1.Location = new System.Drawing.Point(80, 83);
+            this.TxtGasto1.Location = new System.Drawing.Point(82, 83);
             this.TxtGasto1.Margin = new System.Windows.Forms.Padding(2);
             this.TxtGasto1.Name = "TxtGasto1";
-            this.TxtGasto1.Size = new System.Drawing.Size(71, 26);
+            this.TxtGasto1.Size = new System.Drawing.Size(74, 26);
             this.TxtGasto1.TabIndex = 7;
             this.TxtGasto1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -499,9 +529,9 @@ namespace Presentation
             this.lblFlete.Location = new System.Drawing.Point(2, 54);
             this.lblFlete.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFlete.Name = "lblFlete";
-            this.lblFlete.Size = new System.Drawing.Size(74, 27);
+            this.lblFlete.Size = new System.Drawing.Size(76, 27);
             this.lblFlete.TabIndex = 3;
-            this.lblFlete.Text = "Flete";
+            this.lblFlete.Text = "Flete sin iva";
             this.lblFlete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TxtFlete
@@ -510,10 +540,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtFlete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFlete.Location = new System.Drawing.Point(80, 56);
+            this.TxtFlete.Location = new System.Drawing.Point(82, 56);
             this.TxtFlete.Margin = new System.Windows.Forms.Padding(2);
             this.TxtFlete.Name = "TxtFlete";
-            this.TxtFlete.Size = new System.Drawing.Size(71, 26);
+            this.TxtFlete.Size = new System.Drawing.Size(74, 26);
             this.TxtFlete.TabIndex = 6;
             this.TxtFlete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -526,9 +556,9 @@ namespace Presentation
             this.lblPrecio.Location = new System.Drawing.Point(2, 27);
             this.lblPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(74, 27);
+            this.lblPrecio.Size = new System.Drawing.Size(76, 27);
             this.lblPrecio.TabIndex = 0;
-            this.lblPrecio.Text = "Precio";
+            this.lblPrecio.Text = "Precio sin iva";
             this.lblPrecio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TxtPrecio
@@ -537,10 +567,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPrecio.Location = new System.Drawing.Point(80, 29);
+            this.TxtPrecio.Location = new System.Drawing.Point(82, 29);
             this.TxtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.TxtPrecio.Name = "TxtPrecio";
-            this.TxtPrecio.Size = new System.Drawing.Size(71, 26);
+            this.TxtPrecio.Size = new System.Drawing.Size(74, 26);
             this.TxtPrecio.TabIndex = 5;
             this.TxtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -550,10 +580,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCantidad.Location = new System.Drawing.Point(80, 2);
+            this.TxtCantidad.Location = new System.Drawing.Point(82, 2);
             this.TxtCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(71, 26);
+            this.TxtCantidad.Size = new System.Drawing.Size(74, 26);
             this.TxtCantidad.TabIndex = 4;
             this.TxtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -566,7 +596,7 @@ namespace Presentation
             this.lblGasto1.Location = new System.Drawing.Point(2, 81);
             this.lblGasto1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGasto1.Name = "lblGasto1";
-            this.lblGasto1.Size = new System.Drawing.Size(74, 27);
+            this.lblGasto1.Size = new System.Drawing.Size(76, 27);
             this.lblGasto1.TabIndex = 127;
             this.lblGasto1.Text = "Gasto #1";
             this.lblGasto1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -580,7 +610,7 @@ namespace Presentation
             this.lblGasto2.Location = new System.Drawing.Point(2, 108);
             this.lblGasto2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGasto2.Name = "lblGasto2";
-            this.lblGasto2.Size = new System.Drawing.Size(74, 27);
+            this.lblGasto2.Size = new System.Drawing.Size(76, 27);
             this.lblGasto2.TabIndex = 128;
             this.lblGasto2.Text = "Gasto #2";
             this.lblGasto2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -594,10 +624,36 @@ namespace Presentation
             this.lblGasto3.Location = new System.Drawing.Point(2, 135);
             this.lblGasto3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGasto3.Name = "lblGasto3";
-            this.lblGasto3.Size = new System.Drawing.Size(74, 27);
+            this.lblGasto3.Size = new System.Drawing.Size(76, 27);
             this.lblGasto3.TabIndex = 129;
             this.lblGasto3.Text = "Gasto #3";
             this.lblGasto3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // BtnAddIvaF
+            // 
+            this.BtnAddIvaF.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnAddIvaF.BackColor = System.Drawing.Color.SeaGreen;
+            this.BtnAddIvaF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnAddIvaF.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.BtnAddIvaF.FlatAppearance.BorderSize = 0;
+            this.BtnAddIvaF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddIvaF.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAddIvaF.ForeColor = System.Drawing.Color.White;
+            this.BtnAddIvaF.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.BtnAddIvaF.IconColor = System.Drawing.Color.White;
+            this.BtnAddIvaF.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnAddIvaF.IconSize = 18;
+            this.BtnAddIvaF.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnAddIvaF.Location = new System.Drawing.Point(161, 57);
+            this.BtnAddIvaF.Name = "BtnAddIvaF";
+            this.BtnAddIvaF.Size = new System.Drawing.Size(28, 21);
+            this.BtnAddIvaF.TabIndex = 130;
+            this.BtnAddIvaF.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.BtnAddIvaF.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnAddIvaF.UseVisualStyleBackColor = false;
+            this.BtnAddIvaF.Click += new System.EventHandler(this.BtnAddIvaF_Click);
             // 
             // DgvCompras
             // 
@@ -610,23 +666,23 @@ namespace Presentation
             this.DgvCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvCompras.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvCompras.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvCompras.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvCompras.DefaultCellStyle = dataGridViewCellStyle4;
             this.DgvCompras.EnableHeadersVisualStyles = false;
             this.DgvCompras.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvCompras.Location = new System.Drawing.Point(221, 134);
@@ -745,5 +801,7 @@ namespace Presentation
         private System.Windows.Forms.Label lblGasto1;
         private System.Windows.Forms.TextBox TxtGasto2;
         private FontAwesome.Sharp.IconButton BtnAnclar;
+        private FontAwesome.Sharp.IconButton BtnAddIva;
+        private FontAwesome.Sharp.IconButton BtnAddIvaF;
     }
 }
