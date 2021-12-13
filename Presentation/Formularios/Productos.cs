@@ -284,7 +284,7 @@ namespace Presentation
                 }
                 else
                 {
-                    MessageBox.Show("Los campos Coste y Total no pueden quedar en 0", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("LLene todos lo campos", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception)

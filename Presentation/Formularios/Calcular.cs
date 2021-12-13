@@ -42,5 +42,17 @@ namespace Presentation.Formularios
             WindowState = FormWindowState.Minimized;
         }
 
+        private void BtnCalcular_Click(object sender, EventArgs e)
+        {
+                List<string> listCalculo = new List<string>()
+                {
+                    TxtCantidad.Text,
+                    TxtPrecio.Text,
+                    TxtFlete.Text,
+                    TxtGasto1.Text,
+                    TxtGasto2.Text,
+                    TxtGasto3.Text,
+                };
+        }
     }
 }

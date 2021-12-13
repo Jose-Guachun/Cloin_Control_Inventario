@@ -39,44 +39,42 @@ namespace Presentation.Formularios
             this.BtnImportado = new FontAwesome.Sharp.IconButton();
             this.BtnNacional = new FontAwesome.Sharp.IconButton();
             this.PnlLista = new System.Windows.Forms.Panel();
+            this.BtnAnclar = new FontAwesome.Sharp.IconButton();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.LblCoste = new System.Windows.Forms.Label();
+            this.BtnEnviar = new FontAwesome.Sharp.IconButton();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.BtnSeleccionar = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.label9 = new System.Windows.Forms.Label();
+            this.TxtGasto3 = new System.Windows.Forms.TextBox();
+            this.BtnCalcular = new FontAwesome.Sharp.IconButton();
+            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtGasto2 = new System.Windows.Forms.TextBox();
+            this.TxtGasto1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TxtFlete = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.DgvProductos = new System.Windows.Forms.DataGridView();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.TxtPrecio = new System.Windows.Forms.TextBox();
+            this.TxtCantidad = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.DgvCompras = new System.Windows.Forms.DataGridView();
+            this.BtnAgregar = new FontAwesome.Sharp.IconButton();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.PnlBarraTop.SuspendLayout();
             this.panel2.SuspendLayout();
             this.PnlLista.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCompras)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlBarraTop
@@ -159,10 +157,10 @@ namespace Presentation.Formularios
             this.BtnModelo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnModelo.IconSize = 50;
             this.BtnModelo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnModelo.Location = new System.Drawing.Point(258, 0);
+            this.BtnModelo.Location = new System.Drawing.Point(312, 0);
             this.BtnModelo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnModelo.Name = "BtnModelo";
-            this.BtnModelo.Size = new System.Drawing.Size(130, 105);
+            this.BtnModelo.Size = new System.Drawing.Size(157, 105);
             this.BtnModelo.TabIndex = 3;
             this.BtnModelo.Text = "Otros";
             this.BtnModelo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -183,10 +181,10 @@ namespace Presentation.Formularios
             this.BtnImportado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnImportado.IconSize = 50;
             this.BtnImportado.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnImportado.Location = new System.Drawing.Point(128, 0);
+            this.BtnImportado.Location = new System.Drawing.Point(155, 0);
             this.BtnImportado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnImportado.Name = "BtnImportado";
-            this.BtnImportado.Size = new System.Drawing.Size(130, 105);
+            this.BtnImportado.Size = new System.Drawing.Size(157, 105);
             this.BtnImportado.TabIndex = 2;
             this.BtnImportado.Text = "Importacion";
             this.BtnImportado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -210,7 +208,7 @@ namespace Presentation.Formularios
             this.BtnNacional.Location = new System.Drawing.Point(0, 0);
             this.BtnNacional.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnNacional.Name = "BtnNacional";
-            this.BtnNacional.Size = new System.Drawing.Size(128, 105);
+            this.BtnNacional.Size = new System.Drawing.Size(155, 105);
             this.BtnNacional.TabIndex = 1;
             this.BtnNacional.Text = "Nacional";
             this.BtnNacional.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -220,15 +218,16 @@ namespace Presentation.Formularios
             // PnlLista
             // 
             this.PnlLista.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PnlLista.Controls.Add(this.BtnAnclar);
             this.PnlLista.Controls.Add(this.label8);
             this.PnlLista.Controls.Add(this.label7);
-            this.PnlLista.Controls.Add(this.label2);
-            this.PnlLista.Controls.Add(this.iconButton3);
+            this.PnlLista.Controls.Add(this.LblCoste);
+            this.PnlLista.Controls.Add(this.BtnEnviar);
             this.PnlLista.Controls.Add(this.TxtBuscar);
-            this.PnlLista.Controls.Add(this.iconButton2);
+            this.PnlLista.Controls.Add(this.BtnSeleccionar);
             this.PnlLista.Controls.Add(this.tableLayoutPanel1);
-            this.PnlLista.Controls.Add(this.DgvProductos);
-            this.PnlLista.Controls.Add(this.iconButton1);
+            this.PnlLista.Controls.Add(this.DgvCompras);
+            this.PnlLista.Controls.Add(this.BtnAgregar);
             this.PnlLista.Controls.Add(this.label11);
             this.PnlLista.Controls.Add(this.label6);
             this.PnlLista.Dock = System.Windows.Forms.DockStyle.Left;
@@ -237,6 +236,30 @@ namespace Presentation.Formularios
             this.PnlLista.Name = "PnlLista";
             this.PnlLista.Size = new System.Drawing.Size(790, 782);
             this.PnlLista.TabIndex = 53;
+            // 
+            // BtnAnclar
+            // 
+            this.BtnAnclar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnAnclar.BackColor = System.Drawing.Color.Crimson;
+            this.BtnAnclar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnAnclar.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.BtnAnclar.FlatAppearance.BorderSize = 0;
+            this.BtnAnclar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAnclar.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAnclar.ForeColor = System.Drawing.Color.White;
+            this.BtnAnclar.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.BtnAnclar.IconColor = System.Drawing.Color.White;
+            this.BtnAnclar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnAnclar.IconSize = 20;
+            this.BtnAnclar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnAnclar.Location = new System.Drawing.Point(620, 318);
+            this.BtnAnclar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnAnclar.Name = "BtnAnclar";
+            this.BtnAnclar.Size = new System.Drawing.Size(153, 45);
+            this.BtnAnclar.TabIndex = 127;
+            this.BtnAnclar.Text = "Anclar";
+            this.BtnAnclar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnAnclar.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -264,39 +287,39 @@ namespace Presentation.Formularios
             this.label7.TabIndex = 125;
             this.label7.Text = "COMPRA";
             // 
-            // label2
+            // LblCoste
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(162, 697);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 33);
-            this.label2.TabIndex = 124;
-            this.label2.Text = "0.00";
+            this.LblCoste.AutoSize = true;
+            this.LblCoste.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCoste.Location = new System.Drawing.Point(162, 697);
+            this.LblCoste.Name = "LblCoste";
+            this.LblCoste.Size = new System.Drawing.Size(71, 33);
+            this.LblCoste.TabIndex = 124;
+            this.LblCoste.Text = "0.00";
             // 
-            // iconButton3
+            // BtnEnviar
             // 
-            this.iconButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.iconButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton3.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.Color.White;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
-            this.iconButton3.IconColor = System.Drawing.Color.White;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton3.IconSize = 20;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton3.Location = new System.Drawing.Point(616, 683);
-            this.iconButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(152, 51);
-            this.iconButton3.TabIndex = 123;
-            this.iconButton3.Text = "ENVIAR";
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButton3.UseVisualStyleBackColor = false;
+            this.BtnEnviar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnEnviar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BtnEnviar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnEnviar.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.BtnEnviar.FlatAppearance.BorderSize = 0;
+            this.BtnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEnviar.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEnviar.ForeColor = System.Drawing.Color.White;
+            this.BtnEnviar.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
+            this.BtnEnviar.IconColor = System.Drawing.Color.White;
+            this.BtnEnviar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnEnviar.IconSize = 20;
+            this.BtnEnviar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnEnviar.Location = new System.Drawing.Point(616, 683);
+            this.BtnEnviar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnEnviar.Name = "BtnEnviar";
+            this.BtnEnviar.Size = new System.Drawing.Size(152, 51);
+            this.BtnEnviar.TabIndex = 123;
+            this.BtnEnviar.Text = "ENVIAR";
+            this.BtnEnviar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnEnviar.UseVisualStyleBackColor = false;
             // 
             // TxtBuscar
             // 
@@ -312,29 +335,29 @@ namespace Presentation.Formularios
             this.TxtBuscar.Size = new System.Drawing.Size(280, 32);
             this.TxtBuscar.TabIndex = 122;
             // 
-            // iconButton2
+            // BtnSeleccionar
             // 
-            this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.iconButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton2.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.Color.White;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleLeft;
-            this.iconButton2.IconColor = System.Drawing.Color.White;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton2.IconSize = 20;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton2.Location = new System.Drawing.Point(621, 198);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(153, 52);
-            this.iconButton2.TabIndex = 121;
-            this.iconButton2.Text = "Seleccionar";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = false;
+            this.BtnSeleccionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnSeleccionar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSeleccionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnSeleccionar.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.BtnSeleccionar.FlatAppearance.BorderSize = 0;
+            this.BtnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSeleccionar.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSeleccionar.ForeColor = System.Drawing.Color.White;
+            this.BtnSeleccionar.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleLeft;
+            this.BtnSeleccionar.IconColor = System.Drawing.Color.White;
+            this.BtnSeleccionar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnSeleccionar.IconSize = 20;
+            this.BtnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnSeleccionar.Location = new System.Drawing.Point(621, 198);
+            this.BtnSeleccionar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnSeleccionar.Name = "BtnSeleccionar";
+            this.BtnSeleccionar.Size = new System.Drawing.Size(153, 52);
+            this.BtnSeleccionar.TabIndex = 121;
+            this.BtnSeleccionar.Text = "Seleccionar";
+            this.BtnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnSeleccionar.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
@@ -343,26 +366,23 @@ namespace Presentation.Formularios
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.textBox10, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.textBox9, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox8, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.iconButton5, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.iconButton4, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.TxtGasto3, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.BtnCalcular, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.BtnLimpiar, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.textBox6, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label14, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox7, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.TxtGasto2, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.TxtGasto1, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox5, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.TxtFlete, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.TxtPrecio, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.TxtCantidad, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label13, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label14, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 9);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(34, 162);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -391,7 +411,7 @@ namespace Presentation.Formularios
             this.textBox10.Location = new System.Drawing.Point(146, 304);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(137, 35);
-            this.textBox10.TabIndex = 132;
+            this.textBox10.TabIndex = 11;
             // 
             // textBox9
             // 
@@ -402,79 +422,67 @@ namespace Presentation.Formularios
             this.textBox9.Location = new System.Drawing.Point(146, 261);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(137, 35);
-            this.textBox9.TabIndex = 131;
+            this.textBox9.TabIndex = 10;
             // 
-            // textBox8
+            // TxtGasto3
             // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TxtGasto3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(146, 218);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(137, 35);
-            this.textBox8.TabIndex = 130;
+            this.TxtGasto3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtGasto3.Location = new System.Drawing.Point(146, 218);
+            this.TxtGasto3.Name = "TxtGasto3";
+            this.TxtGasto3.Size = new System.Drawing.Size(137, 35);
+            this.TxtGasto3.TabIndex = 9;
             // 
-            // iconButton5
+            // BtnCalcular
             // 
-            this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton5.BackColor = System.Drawing.Color.Purple;
-            this.iconButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton5.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.ForeColor = System.Drawing.Color.White;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Calculator;
-            this.iconButton5.IconColor = System.Drawing.Color.White;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton5.IconSize = 20;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton5.Location = new System.Drawing.Point(4, 435);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(135, 42);
-            this.iconButton5.TabIndex = 120;
-            this.iconButton5.Text = "CALCULAR";
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = false;
+            this.BtnCalcular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCalcular.BackColor = System.Drawing.Color.Purple;
+            this.BtnCalcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnCalcular.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.BtnCalcular.FlatAppearance.BorderSize = 0;
+            this.BtnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCalcular.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCalcular.ForeColor = System.Drawing.Color.White;
+            this.BtnCalcular.IconChar = FontAwesome.Sharp.IconChar.Calculator;
+            this.BtnCalcular.IconColor = System.Drawing.Color.White;
+            this.BtnCalcular.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnCalcular.IconSize = 20;
+            this.BtnCalcular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnCalcular.Location = new System.Drawing.Point(4, 435);
+            this.BtnCalcular.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnCalcular.Name = "BtnCalcular";
+            this.BtnCalcular.Size = new System.Drawing.Size(135, 42);
+            this.BtnCalcular.TabIndex = 120;
+            this.BtnCalcular.Text = "CALCULAR";
+            this.BtnCalcular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnCalcular.UseVisualStyleBackColor = false;
+            this.BtnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
-            // iconButton4
+            // BtnLimpiar
             // 
-            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton4.BackColor = System.Drawing.Color.Crimson;
-            this.iconButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton4.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.ForeColor = System.Drawing.Color.White;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Brush;
-            this.iconButton4.IconColor = System.Drawing.Color.White;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton4.IconSize = 20;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton4.Location = new System.Drawing.Point(147, 435);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(135, 42);
-            this.iconButton4.TabIndex = 119;
-            this.iconButton4.Text = "LIMPIAR";
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 387);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 43);
-            this.label9.TabIndex = 121;
-            this.label9.Text = "Precio Unitario:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnLimpiar.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.BtnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.BtnLimpiar.FlatAppearance.BorderSize = 0;
+            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLimpiar.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Brush;
+            this.BtnLimpiar.IconColor = System.Drawing.Color.White;
+            this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnLimpiar.IconSize = 20;
+            this.BtnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnLimpiar.Location = new System.Drawing.Point(147, 435);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(135, 42);
+            this.BtnLimpiar.TabIndex = 119;
+            this.BtnLimpiar.Text = "LIMPIAR";
+            this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnLimpiar.UseVisualStyleBackColor = false;
             // 
             // textBox3
             // 
@@ -485,7 +493,7 @@ namespace Presentation.Formularios
             this.textBox3.Location = new System.Drawing.Point(146, 390);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(137, 35);
-            this.textBox3.TabIndex = 122;
+            this.textBox3.TabIndex = 13;
             // 
             // textBox6
             // 
@@ -496,72 +504,7 @@ namespace Presentation.Formularios
             this.textBox6.Location = new System.Drawing.Point(146, 347);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(137, 35);
-            this.textBox6.TabIndex = 124;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 344);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(137, 43);
-            this.label10.TabIndex = 123;
-            this.label10.Text = "Gasto Unitario:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 301);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(137, 43);
-            this.label15.TabIndex = 129;
-            this.label15.Text = "Gasto #3:";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 258);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(137, 43);
-            this.label14.TabIndex = 128;
-            this.label14.Text = "Gasto #2:";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 215);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(137, 43);
-            this.label13.TabIndex = 127;
-            this.label13.Text = "Gasto #1:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 172);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(137, 43);
-            this.label12.TabIndex = 125;
-            this.label12.Text = "Total";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.textBox6.TabIndex = 12;
             // 
             // label5
             // 
@@ -576,40 +519,27 @@ namespace Presentation.Formularios
             this.label5.Text = "Cantidad:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox7
+            // TxtGasto2
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TxtGasto2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(146, 175);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(137, 35);
-            this.textBox7.TabIndex = 126;
+            this.TxtGasto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtGasto2.Location = new System.Drawing.Point(146, 175);
+            this.TxtGasto2.Name = "TxtGasto2";
+            this.TxtGasto2.Size = new System.Drawing.Size(137, 35);
+            this.TxtGasto2.TabIndex = 8;
             // 
-            // label4
+            // TxtGasto1
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TxtGasto1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 129);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 43);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Impuesto:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(146, 132);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 35);
-            this.textBox1.TabIndex = 2;
+            this.TxtGasto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtGasto1.Location = new System.Drawing.Point(146, 132);
+            this.TxtGasto1.Name = "TxtGasto1";
+            this.TxtGasto1.Size = new System.Drawing.Size(137, 35);
+            this.TxtGasto1.TabIndex = 7;
             // 
             // label3
             // 
@@ -624,16 +554,16 @@ namespace Presentation.Formularios
             this.label3.Text = "Flete:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox5
+            // TxtFlete
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TxtFlete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(146, 89);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(137, 35);
-            this.textBox5.TabIndex = 10;
+            this.TxtFlete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtFlete.Location = new System.Drawing.Point(146, 89);
+            this.TxtFlete.Name = "TxtFlete";
+            this.TxtFlete.Size = new System.Drawing.Size(137, 35);
+            this.TxtFlete.TabIndex = 6;
             // 
             // label1
             // 
@@ -645,42 +575,94 @@ namespace Presentation.Formularios
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 43);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Subtotal Compra:";
+            this.label1.Text = "Precio :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox4
+            // TxtPrecio
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TxtPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(146, 46);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(137, 35);
-            this.textBox4.TabIndex = 9;
+            this.TxtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPrecio.Location = new System.Drawing.Point(146, 46);
+            this.TxtPrecio.Name = "TxtPrecio";
+            this.TxtPrecio.Size = new System.Drawing.Size(137, 35);
+            this.TxtPrecio.TabIndex = 5;
             // 
-            // textBox2
+            // TxtCantidad
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TxtCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(146, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 35);
-            this.textBox2.TabIndex = 4;
+            this.TxtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCantidad.Location = new System.Drawing.Point(146, 3);
+            this.TxtCantidad.Name = "TxtCantidad";
+            this.TxtCantidad.Size = new System.Drawing.Size(137, 35);
+            this.TxtCantidad.TabIndex = 4;
             // 
-            // DgvProductos
+            // label13
             // 
-            this.DgvProductos.AllowUserToAddRows = false;
-            this.DgvProductos.AllowUserToDeleteRows = false;
-            this.DgvProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DgvProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
-            this.DgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(3, 129);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(137, 43);
+            this.label13.TabIndex = 127;
+            this.label13.Text = "Gasto #1:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 172);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(137, 43);
+            this.label14.TabIndex = 128;
+            this.label14.Text = "Gasto #2:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 215);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(137, 43);
+            this.label15.TabIndex = 129;
+            this.label15.Text = "Gasto #3:";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 387);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(137, 43);
+            this.label10.TabIndex = 123;
+            this.label10.Text = "Gasto Unitario:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // DgvCompras
+            // 
+            this.DgvCompras.AllowUserToAddRows = false;
+            this.DgvCompras.AllowUserToDeleteRows = false;
+            this.DgvCompras.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DgvCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DgvCompras.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
+            this.DgvCompras.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSlateBlue;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -688,8 +670,8 @@ namespace Presentation.Formularios
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -697,43 +679,43 @@ namespace Presentation.Formularios
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvProductos.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DgvProductos.EnableHeadersVisualStyles = false;
-            this.DgvProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
-            this.DgvProductos.Location = new System.Drawing.Point(332, 198);
-            this.DgvProductos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.DgvProductos.MultiSelect = false;
-            this.DgvProductos.Name = "DgvProductos";
-            this.DgvProductos.ReadOnly = true;
-            this.DgvProductos.RowHeadersVisible = false;
-            this.DgvProductos.RowHeadersWidth = 62;
-            this.DgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvProductos.Size = new System.Drawing.Size(280, 444);
-            this.DgvProductos.TabIndex = 119;
+            this.DgvCompras.DefaultCellStyle = dataGridViewCellStyle4;
+            this.DgvCompras.EnableHeadersVisualStyles = false;
+            this.DgvCompras.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
+            this.DgvCompras.Location = new System.Drawing.Point(332, 198);
+            this.DgvCompras.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DgvCompras.MultiSelect = false;
+            this.DgvCompras.Name = "DgvCompras";
+            this.DgvCompras.ReadOnly = true;
+            this.DgvCompras.RowHeadersVisible = false;
+            this.DgvCompras.RowHeadersWidth = 62;
+            this.DgvCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvCompras.Size = new System.Drawing.Size(280, 444);
+            this.DgvCompras.TabIndex = 119;
             // 
-            // iconButton1
+            // BtnAgregar
             // 
-            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.SeaGreen;
-            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton1.IconSize = 20;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.Location = new System.Drawing.Point(621, 260);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(153, 45);
-            this.iconButton1.TabIndex = 118;
-            this.iconButton1.Text = "Agregar";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnAgregar.BackColor = System.Drawing.Color.SeaGreen;
+            this.BtnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.BtnAgregar.FlatAppearance.BorderSize = 0;
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregar.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.ForeColor = System.Drawing.Color.White;
+            this.BtnAgregar.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.BtnAgregar.IconColor = System.Drawing.Color.White;
+            this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnAgregar.IconSize = 20;
+            this.BtnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnAgregar.Location = new System.Drawing.Point(621, 260);
+            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(153, 45);
+            this.BtnAgregar.TabIndex = 118;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnAgregar.UseVisualStyleBackColor = false;
             // 
             // label11
             // 
@@ -776,7 +758,7 @@ namespace Presentation.Formularios
             this.PnlLista.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCompras)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -792,37 +774,35 @@ namespace Presentation.Formularios
         private FontAwesome.Sharp.IconButton BtnNacional;
         private System.Windows.Forms.Panel PnlLista;
         private System.Windows.Forms.Label label11;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private FontAwesome.Sharp.IconButton BtnAgregar;
+        private System.Windows.Forms.TextBox TxtPrecio;
+        private System.Windows.Forms.TextBox TxtCantidad;
+        private System.Windows.Forms.TextBox TxtGasto1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private System.Windows.Forms.TextBox TxtFlete;
+        private FontAwesome.Sharp.IconButton BtnSeleccionar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView DgvProductos;
+        private System.Windows.Forms.DataGridView DgvCompras;
         private System.Windows.Forms.TextBox TxtBuscar;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconButton BtnEnviar;
+        private System.Windows.Forms.Label LblCoste;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private System.Windows.Forms.Label label9;
+        private FontAwesome.Sharp.IconButton BtnCalcular;
+        private FontAwesome.Sharp.IconButton BtnLimpiar;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox TxtGasto3;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox TxtGasto2;
+        private FontAwesome.Sharp.IconButton BtnAnclar;
     }
 }
