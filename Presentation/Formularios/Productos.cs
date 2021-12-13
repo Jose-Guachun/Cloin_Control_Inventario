@@ -14,7 +14,7 @@ using System.Globalization;
 using Domain.Models;
 using Domain.ValueObjects;
 using System.IO;
-using Presentation.Formularios;
+
 
 namespace Presentation
 {
@@ -666,6 +666,8 @@ namespace Presentation
         {
             Calcular calculo = new Calcular();
             calculo.ShowDialog();
+            TxtCoste.Text = ClsCalculoCoste.cost;
+            TxtCoste_Leave(sender,e);
         }
     }
 }

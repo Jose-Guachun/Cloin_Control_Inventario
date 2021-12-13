@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Presentation</RootNamespace>
     <AssemblyName>Presentation</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -126,6 +126,7 @@
     <Compile Include="Formularios\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helps\ClsCamposVacios.cs" />
     <Compile Include="Helps\ClsValidarCampos.cs" />
     <Compile Include="Helps\ValidacionDatos.cs" />
     <Compile Include="Program.cs" />

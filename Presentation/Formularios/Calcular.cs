@@ -8,10 +8,12 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace Presentation.Formularios
+namespace Presentation
 {
     public partial class Calcular : Form
     {
+        private ClsCamposVacios vacio= new ClsCamposVacios();
+        private ClsCalculoCoste calculo = new ClsCalculoCoste();
         public Calcular()
         {
             InitializeComponent();
@@ -44,15 +46,35 @@ namespace Presentation.Formularios
 
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
+                
                 List<string> listCalculo = new List<string>()
                 {
-                    TxtCantidad.Text,
-                    TxtPrecio.Text,
-                    TxtFlete.Text,
-                    TxtGasto1.Text,
-                    TxtGasto2.Text,
-                    TxtGasto3.Text,
+                    vacio.CampoVacio(lblCantidad.Text,TxtCantidad.Text),
+                    vacio.CampoVacio(lblPrecio.Text,TxtPrecio.Text),
+                    vacio.CampoVacio(lblFlete.Text,TxtFlete.Text),
+                    vacio.CampoVacio(lblGasto1.Text,TxtGasto1.Text),
+                    vacio.CampoVacio(lblGasto2.Text,TxtGasto2.Text),
+                    vacio.CampoVacio(lblGasto3.Text,TxtGasto3.Text),
                 };
+            LblCoste.Text = calculo.Coste(listCalculo).ToString();
+
+        }
+
+        private void BtnEnviar_Click(object sender, EventArgs e)
+        {
+            ClsCalculoCoste.cost = LblCoste.Text;
+            Dispose();
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            TxtCantidad.Clear();
+            TxtFlete.Clear();
+            TxtPrecio.Clear();
+            TxtGasto1.Clear();
+            TxtGasto2.Clear();
+            TxtGasto3.Clear();
+            TxtBuscar.Clear();
         }
     }
 }
