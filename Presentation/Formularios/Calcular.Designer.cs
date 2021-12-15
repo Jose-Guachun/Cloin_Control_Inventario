@@ -82,9 +82,8 @@ namespace Presentation
             this.PnlBarraTop.Controls.Add(this.BtnCerrar);
             this.PnlBarraTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlBarraTop.Location = new System.Drawing.Point(0, 0);
-            this.PnlBarraTop.Margin = new System.Windows.Forms.Padding(2);
             this.PnlBarraTop.Name = "PnlBarraTop";
-            this.PnlBarraTop.Size = new System.Drawing.Size(527, 33);
+            this.PnlBarraTop.Size = new System.Drawing.Size(790, 51);
             this.PnlBarraTop.TabIndex = 2;
             this.PnlBarraTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PnlBarraTop_MouseDown_1);
             // 
@@ -101,10 +100,9 @@ namespace Presentation
             this.BtnMinimizar.ForeColor = System.Drawing.Color.Transparent;
             this.BtnMinimizar.Image = global::Presentation.Properties.Resources.Minimize;
             this.BtnMinimizar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnMinimizar.Location = new System.Drawing.Point(469, 0);
-            this.BtnMinimizar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnMinimizar.Location = new System.Drawing.Point(702, 0);
             this.BtnMinimizar.Name = "BtnMinimizar";
-            this.BtnMinimizar.Size = new System.Drawing.Size(29, 33);
+            this.BtnMinimizar.Size = new System.Drawing.Size(44, 51);
             this.BtnMinimizar.TabIndex = 1;
             this.BtnMinimizar.UseVisualStyleBackColor = false;
             this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
@@ -122,10 +120,9 @@ namespace Presentation
             this.BtnCerrar.ForeColor = System.Drawing.Color.Transparent;
             this.BtnCerrar.Image = global::Presentation.Properties.Resources.Close;
             this.BtnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnCerrar.Location = new System.Drawing.Point(498, 0);
-            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnCerrar.Location = new System.Drawing.Point(746, 0);
             this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(29, 33);
+            this.BtnCerrar.Size = new System.Drawing.Size(44, 51);
             this.BtnCerrar.TabIndex = 2;
             this.BtnCerrar.UseVisualStyleBackColor = false;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
@@ -137,9 +134,10 @@ namespace Presentation
             this.panel2.Controls.Add(this.BtnImportado);
             this.panel2.Controls.Add(this.BtnNacional);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 33);
+            this.panel2.Location = new System.Drawing.Point(0, 51);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(527, 68);
+            this.panel2.Size = new System.Drawing.Size(790, 105);
             this.panel2.TabIndex = 52;
             // 
             // BtnModelo
@@ -156,9 +154,10 @@ namespace Presentation
             this.BtnModelo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnModelo.IconSize = 50;
             this.BtnModelo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnModelo.Location = new System.Drawing.Point(208, 0);
+            this.BtnModelo.Location = new System.Drawing.Point(312, 0);
+            this.BtnModelo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnModelo.Name = "BtnModelo";
-            this.BtnModelo.Size = new System.Drawing.Size(105, 68);
+            this.BtnModelo.Size = new System.Drawing.Size(158, 105);
             this.BtnModelo.TabIndex = 3;
             this.BtnModelo.Text = "Otros";
             this.BtnModelo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -179,9 +178,10 @@ namespace Presentation
             this.BtnImportado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnImportado.IconSize = 50;
             this.BtnImportado.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnImportado.Location = new System.Drawing.Point(103, 0);
+            this.BtnImportado.Location = new System.Drawing.Point(154, 0);
+            this.BtnImportado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnImportado.Name = "BtnImportado";
-            this.BtnImportado.Size = new System.Drawing.Size(105, 68);
+            this.BtnImportado.Size = new System.Drawing.Size(158, 105);
             this.BtnImportado.TabIndex = 2;
             this.BtnImportado.Text = "Importacion";
             this.BtnImportado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -203,8 +203,9 @@ namespace Presentation
             this.BtnNacional.IconSize = 50;
             this.BtnNacional.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.BtnNacional.Location = new System.Drawing.Point(0, 0);
+            this.BtnNacional.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnNacional.Name = "BtnNacional";
-            this.BtnNacional.Size = new System.Drawing.Size(103, 68);
+            this.BtnNacional.Size = new System.Drawing.Size(154, 105);
             this.BtnNacional.TabIndex = 1;
             this.BtnNacional.Text = "Nacional";
             this.BtnNacional.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -229,9 +230,10 @@ namespace Presentation
             this.PnlLista.Controls.Add(this.label11);
             this.PnlLista.Controls.Add(this.label6);
             this.PnlLista.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PnlLista.Location = new System.Drawing.Point(0, 101);
+            this.PnlLista.Location = new System.Drawing.Point(0, 156);
+            this.PnlLista.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PnlLista.Name = "PnlLista";
-            this.PnlLista.Size = new System.Drawing.Size(527, 509);
+            this.PnlLista.Size = new System.Drawing.Size(790, 782);
             this.PnlLista.TabIndex = 53;
             // 
             // BtnAnclar
@@ -249,13 +251,15 @@ namespace Presentation
             this.BtnAnclar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnAnclar.IconSize = 20;
             this.BtnAnclar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnAnclar.Location = new System.Drawing.Point(413, 212);
+            this.BtnAnclar.Location = new System.Drawing.Point(620, 326);
+            this.BtnAnclar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnAnclar.Name = "BtnAnclar";
-            this.BtnAnclar.Size = new System.Drawing.Size(102, 29);
+            this.BtnAnclar.Size = new System.Drawing.Size(153, 45);
             this.BtnAnclar.TabIndex = 127;
             this.BtnAnclar.Text = "Anclar";
             this.BtnAnclar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnAnclar.UseVisualStyleBackColor = false;
+            this.BtnAnclar.Click += new System.EventHandler(this.BtnAnclar_Click);
             // 
             // BtnLimpiar
             // 
@@ -274,9 +278,10 @@ namespace Presentation
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnLimpiar.IconSize = 20;
             this.BtnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnLimpiar.Location = new System.Drawing.Point(123, 387);
+            this.BtnLimpiar.Location = new System.Drawing.Point(184, 595);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(93, 32);
+            this.BtnLimpiar.Size = new System.Drawing.Size(140, 48);
             this.BtnLimpiar.TabIndex = 119;
             this.BtnLimpiar.Text = "Limpiar";
             this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -300,9 +305,10 @@ namespace Presentation
             this.BtnCalcular.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnCalcular.IconSize = 20;
             this.BtnCalcular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnCalcular.Location = new System.Drawing.Point(23, 387);
+            this.BtnCalcular.Location = new System.Drawing.Point(34, 595);
+            this.BtnCalcular.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnCalcular.Name = "BtnCalcular";
-            this.BtnCalcular.Size = new System.Drawing.Size(94, 32);
+            this.BtnCalcular.Size = new System.Drawing.Size(141, 48);
             this.BtnCalcular.TabIndex = 120;
             this.BtnCalcular.Text = "Calcular";
             this.BtnCalcular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -315,9 +321,10 @@ namespace Presentation
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label8.Location = new System.Drawing.Point(58, 70);
+            this.label8.Location = new System.Drawing.Point(87, 108);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(127, 19);
+            this.label8.Size = new System.Drawing.Size(193, 29);
             this.label8.TabIndex = 126;
             this.label8.Text = "DATOS COMPRA";
             // 
@@ -327,9 +334,10 @@ namespace Presentation
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label7.Location = new System.Drawing.Point(290, 70);
+            this.label7.Location = new System.Drawing.Point(435, 108);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 19);
+            this.label7.Size = new System.Drawing.Size(111, 29);
             this.label7.TabIndex = 125;
             this.label7.Text = "COMPRA";
             // 
@@ -337,10 +345,9 @@ namespace Presentation
             // 
             this.LblCoste.AutoSize = true;
             this.LblCoste.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCoste.Location = new System.Drawing.Point(108, 453);
-            this.LblCoste.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblCoste.Location = new System.Drawing.Point(162, 697);
             this.LblCoste.Name = "LblCoste";
-            this.LblCoste.Size = new System.Drawing.Size(45, 24);
+            this.LblCoste.Size = new System.Drawing.Size(71, 33);
             this.LblCoste.TabIndex = 124;
             this.LblCoste.Text = "0.00";
             // 
@@ -359,9 +366,10 @@ namespace Presentation
             this.BtnEnviar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnEnviar.IconSize = 20;
             this.BtnEnviar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnEnviar.Location = new System.Drawing.Point(411, 444);
+            this.BtnEnviar.Location = new System.Drawing.Point(616, 683);
+            this.BtnEnviar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnEnviar.Name = "BtnEnviar";
-            this.BtnEnviar.Size = new System.Drawing.Size(101, 33);
+            this.BtnEnviar.Size = new System.Drawing.Size(152, 51);
             this.BtnEnviar.TabIndex = 123;
             this.BtnEnviar.Text = "ENVIAR";
             this.BtnEnviar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -375,10 +383,11 @@ namespace Presentation
             this.TxtBuscar.BackColor = System.Drawing.Color.White;
             this.TxtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtBuscar.Font = new System.Drawing.Font("Ebrima", 9F);
-            this.TxtBuscar.Location = new System.Drawing.Point(221, 107);
+            this.TxtBuscar.Location = new System.Drawing.Point(332, 165);
+            this.TxtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtBuscar.MaxLength = 200;
             this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(187, 24);
+            this.TxtBuscar.Size = new System.Drawing.Size(280, 32);
             this.TxtBuscar.TabIndex = 122;
             // 
             // BtnSeleccionar
@@ -396,9 +405,10 @@ namespace Presentation
             this.BtnSeleccionar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnSeleccionar.IconSize = 20;
             this.BtnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnSeleccionar.Location = new System.Drawing.Point(414, 134);
+            this.BtnSeleccionar.Location = new System.Drawing.Point(621, 206);
+            this.BtnSeleccionar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnSeleccionar.Name = "BtnSeleccionar";
-            this.BtnSeleccionar.Size = new System.Drawing.Size(102, 34);
+            this.BtnSeleccionar.Size = new System.Drawing.Size(153, 52);
             this.BtnSeleccionar.TabIndex = 121;
             this.BtnSeleccionar.Text = "Seleccionar";
             this.BtnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -409,7 +419,7 @@ namespace Presentation
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.72464F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.27536F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.tableLayoutPanel1.Controls.Add(this.BtnAddIva, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.TxtGasto3, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.lblCantidad, 0, 0);
@@ -424,7 +434,8 @@ namespace Presentation
             this.tableLayoutPanel1.Controls.Add(this.lblGasto2, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblGasto3, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.BtnAddIvaF, 2, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 105);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(34, 162);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 10;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
@@ -437,8 +448,8 @@ namespace Presentation
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(192, 276);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(288, 425);
             this.tableLayoutPanel1.TabIndex = 120;
             // 
             // BtnAddIva
@@ -458,9 +469,10 @@ namespace Presentation
             this.BtnAddIva.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnAddIva.IconSize = 18;
             this.BtnAddIva.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnAddIva.Location = new System.Drawing.Point(161, 30);
+            this.BtnAddIva.Location = new System.Drawing.Point(240, 47);
+            this.BtnAddIva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnAddIva.Name = "BtnAddIva";
-            this.BtnAddIva.Size = new System.Drawing.Size(28, 21);
+            this.BtnAddIva.Size = new System.Drawing.Size(44, 32);
             this.BtnAddIva.TabIndex = 128;
             this.BtnAddIva.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BtnAddIva.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -473,10 +485,9 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtGasto3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtGasto3.Location = new System.Drawing.Point(82, 137);
-            this.TxtGasto3.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtGasto3.Location = new System.Drawing.Point(123, 213);
             this.TxtGasto3.Name = "TxtGasto3";
-            this.TxtGasto3.Size = new System.Drawing.Size(74, 26);
+            this.TxtGasto3.Size = new System.Drawing.Size(110, 35);
             this.TxtGasto3.TabIndex = 9;
             this.TxtGasto3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -486,10 +497,9 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(2, 0);
-            this.lblCantidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCantidad.Location = new System.Drawing.Point(3, 0);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(76, 27);
+            this.lblCantidad.Size = new System.Drawing.Size(114, 42);
             this.lblCantidad.TabIndex = 7;
             this.lblCantidad.Text = "Cantidad";
             this.lblCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -500,10 +510,9 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtGasto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtGasto2.Location = new System.Drawing.Point(82, 110);
-            this.TxtGasto2.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtGasto2.Location = new System.Drawing.Point(123, 171);
             this.TxtGasto2.Name = "TxtGasto2";
-            this.TxtGasto2.Size = new System.Drawing.Size(74, 26);
+            this.TxtGasto2.Size = new System.Drawing.Size(110, 35);
             this.TxtGasto2.TabIndex = 8;
             this.TxtGasto2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -513,10 +522,9 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtGasto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtGasto1.Location = new System.Drawing.Point(82, 83);
-            this.TxtGasto1.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtGasto1.Location = new System.Drawing.Point(123, 129);
             this.TxtGasto1.Name = "TxtGasto1";
-            this.TxtGasto1.Size = new System.Drawing.Size(74, 26);
+            this.TxtGasto1.Size = new System.Drawing.Size(110, 35);
             this.TxtGasto1.TabIndex = 7;
             this.TxtGasto1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -526,10 +534,9 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFlete.AutoSize = true;
-            this.lblFlete.Location = new System.Drawing.Point(2, 54);
-            this.lblFlete.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFlete.Location = new System.Drawing.Point(3, 84);
             this.lblFlete.Name = "lblFlete";
-            this.lblFlete.Size = new System.Drawing.Size(76, 27);
+            this.lblFlete.Size = new System.Drawing.Size(114, 42);
             this.lblFlete.TabIndex = 3;
             this.lblFlete.Text = "Flete sin iva";
             this.lblFlete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -540,10 +547,9 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtFlete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFlete.Location = new System.Drawing.Point(82, 56);
-            this.TxtFlete.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtFlete.Location = new System.Drawing.Point(123, 87);
             this.TxtFlete.Name = "TxtFlete";
-            this.TxtFlete.Size = new System.Drawing.Size(74, 26);
+            this.TxtFlete.Size = new System.Drawing.Size(110, 35);
             this.TxtFlete.TabIndex = 6;
             this.TxtFlete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -553,10 +559,9 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(2, 27);
-            this.lblPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrecio.Location = new System.Drawing.Point(3, 42);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(76, 27);
+            this.lblPrecio.Size = new System.Drawing.Size(114, 42);
             this.lblPrecio.TabIndex = 0;
             this.lblPrecio.Text = "Precio sin iva";
             this.lblPrecio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -567,10 +572,9 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPrecio.Location = new System.Drawing.Point(82, 29);
-            this.TxtPrecio.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtPrecio.Location = new System.Drawing.Point(123, 45);
             this.TxtPrecio.Name = "TxtPrecio";
-            this.TxtPrecio.Size = new System.Drawing.Size(74, 26);
+            this.TxtPrecio.Size = new System.Drawing.Size(110, 35);
             this.TxtPrecio.TabIndex = 5;
             this.TxtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -580,10 +584,9 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCantidad.Location = new System.Drawing.Point(82, 2);
-            this.TxtCantidad.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtCantidad.Location = new System.Drawing.Point(123, 3);
             this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(74, 26);
+            this.TxtCantidad.Size = new System.Drawing.Size(110, 35);
             this.TxtCantidad.TabIndex = 4;
             this.TxtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -593,10 +596,9 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGasto1.AutoSize = true;
-            this.lblGasto1.Location = new System.Drawing.Point(2, 81);
-            this.lblGasto1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGasto1.Location = new System.Drawing.Point(3, 126);
             this.lblGasto1.Name = "lblGasto1";
-            this.lblGasto1.Size = new System.Drawing.Size(76, 27);
+            this.lblGasto1.Size = new System.Drawing.Size(114, 42);
             this.lblGasto1.TabIndex = 127;
             this.lblGasto1.Text = "Gasto #1";
             this.lblGasto1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -607,10 +609,9 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGasto2.AutoSize = true;
-            this.lblGasto2.Location = new System.Drawing.Point(2, 108);
-            this.lblGasto2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGasto2.Location = new System.Drawing.Point(3, 168);
             this.lblGasto2.Name = "lblGasto2";
-            this.lblGasto2.Size = new System.Drawing.Size(76, 27);
+            this.lblGasto2.Size = new System.Drawing.Size(114, 42);
             this.lblGasto2.TabIndex = 128;
             this.lblGasto2.Text = "Gasto #2";
             this.lblGasto2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -621,10 +622,9 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGasto3.AutoSize = true;
-            this.lblGasto3.Location = new System.Drawing.Point(2, 135);
-            this.lblGasto3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGasto3.Location = new System.Drawing.Point(3, 210);
             this.lblGasto3.Name = "lblGasto3";
-            this.lblGasto3.Size = new System.Drawing.Size(76, 27);
+            this.lblGasto3.Size = new System.Drawing.Size(114, 42);
             this.lblGasto3.TabIndex = 129;
             this.lblGasto3.Text = "Gasto #3";
             this.lblGasto3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -646,9 +646,10 @@ namespace Presentation
             this.BtnAddIvaF.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnAddIvaF.IconSize = 18;
             this.BtnAddIvaF.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnAddIvaF.Location = new System.Drawing.Point(161, 57);
+            this.BtnAddIvaF.Location = new System.Drawing.Point(240, 89);
+            this.BtnAddIvaF.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnAddIvaF.Name = "BtnAddIvaF";
-            this.BtnAddIvaF.Size = new System.Drawing.Size(28, 21);
+            this.BtnAddIvaF.Size = new System.Drawing.Size(44, 32);
             this.BtnAddIvaF.TabIndex = 130;
             this.BtnAddIvaF.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BtnAddIvaF.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -685,14 +686,15 @@ namespace Presentation
             this.DgvCompras.DefaultCellStyle = dataGridViewCellStyle4;
             this.DgvCompras.EnableHeadersVisualStyles = false;
             this.DgvCompras.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
-            this.DgvCompras.Location = new System.Drawing.Point(221, 134);
+            this.DgvCompras.Location = new System.Drawing.Point(332, 206);
+            this.DgvCompras.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DgvCompras.MultiSelect = false;
             this.DgvCompras.Name = "DgvCompras";
             this.DgvCompras.ReadOnly = true;
             this.DgvCompras.RowHeadersVisible = false;
             this.DgvCompras.RowHeadersWidth = 62;
             this.DgvCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvCompras.Size = new System.Drawing.Size(187, 285);
+            this.DgvCompras.Size = new System.Drawing.Size(280, 437);
             this.DgvCompras.TabIndex = 119;
             // 
             // BtnAgregar
@@ -710,9 +712,10 @@ namespace Presentation
             this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnAgregar.IconSize = 20;
             this.BtnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnAgregar.Location = new System.Drawing.Point(414, 174);
+            this.BtnAgregar.Location = new System.Drawing.Point(621, 268);
+            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(102, 29);
+            this.BtnAgregar.Size = new System.Drawing.Size(153, 45);
             this.BtnAgregar.TabIndex = 118;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -724,9 +727,10 @@ namespace Presentation
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label11.Location = new System.Drawing.Point(176, 21);
+            this.label11.Location = new System.Drawing.Point(264, 32);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(169, 23);
+            this.label11.Size = new System.Drawing.Size(259, 37);
             this.label11.TabIndex = 116;
             this.label11.Text = "CALCULAR COSTE";
             // 
@@ -734,23 +738,21 @@ namespace Presentation
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 453);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(36, 697);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 24);
+            this.label6.Size = new System.Drawing.Size(123, 33);
             this.label6.TabIndex = 8;
             this.label6.Text = "COSTE:";
             // 
             // Calcular
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 610);
+            this.ClientSize = new System.Drawing.Size(790, 938);
             this.Controls.Add(this.PnlLista);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.PnlBarraTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Calcular";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calcular";

@@ -48,24 +48,6 @@ namespace Presentation
         {
             WindowState = FormWindowState.Minimized;
         }
-        private void ActivarBoton(object BtnRemitente)
-        {
-            if (BtnRemitente != null)
-            {
-                BtnCurrent = (IconButton)BtnRemitente;
-                BtnCurrent.IconChar = FontAwesome.Sharp.IconChar.Plus;
-                BtnCurrent.BackColor = System.Drawing.Color.MediumSeaGreen;
-            }
-        }
-        private void DesactivarBoton(object BtnRemitente)
-        {
-            if (BtnRemitente != null)
-            {
-                BtnCurrent = (IconButton)BtnRemitente;
-                BtnCurrent.IconChar = FontAwesome.Sharp.IconChar.Line;
-                BtnCurrent.BackColor = System.Drawing.Color.Firebrick;
-            }
-        }
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
                 
@@ -96,6 +78,7 @@ namespace Presentation
             TxtGasto1.Clear();
             TxtGasto2.Clear();
             TxtGasto3.Clear();
+            LblCoste.Text = "0,00";
         }
 
         private void BtnAddIva_Click(object sender, EventArgs e)
@@ -137,6 +120,11 @@ namespace Presentation
                 BtnAddIvaF.IconChar = FontAwesome.Sharp.IconChar.GripHorizontal;
                 BtnAddIvaF.BackColor = System.Drawing.Color.Firebrick;
             }
+        }
+
+        private void BtnAnclar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

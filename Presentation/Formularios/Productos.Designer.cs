@@ -29,8 +29,8 @@ namespace Presentation
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnlMenu = new System.Windows.Forms.Panel();
             this.BtnAtributos = new FontAwesome.Sharp.IconButton();
             this.BtnCancelar = new FontAwesome.Sharp.IconButton();
@@ -118,8 +118,9 @@ namespace Presentation
             this.PnlMenu.Controls.Add(this.BtnNuevo);
             this.PnlMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.PnlMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PnlMenu.Name = "PnlMenu";
-            this.PnlMenu.Size = new System.Drawing.Size(973, 68);
+            this.PnlMenu.Size = new System.Drawing.Size(1460, 105);
             this.PnlMenu.TabIndex = 50;
             // 
             // BtnAtributos
@@ -135,9 +136,10 @@ namespace Presentation
             this.BtnAtributos.IconColor = System.Drawing.Color.White;
             this.BtnAtributos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnAtributos.IconSize = 30;
-            this.BtnAtributos.Location = new System.Drawing.Point(425, 0);
+            this.BtnAtributos.Location = new System.Drawing.Point(640, 0);
+            this.BtnAtributos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnAtributos.Name = "BtnAtributos";
-            this.BtnAtributos.Size = new System.Drawing.Size(85, 68);
+            this.BtnAtributos.Size = new System.Drawing.Size(128, 105);
             this.BtnAtributos.TabIndex = 6;
             this.BtnAtributos.Text = "Atributos";
             this.BtnAtributos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -159,9 +161,10 @@ namespace Presentation
             this.BtnCancelar.IconColor = System.Drawing.Color.White;
             this.BtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCancelar.IconSize = 30;
-            this.BtnCancelar.Location = new System.Drawing.Point(340, 0);
+            this.BtnCancelar.Location = new System.Drawing.Point(512, 0);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(85, 68);
+            this.BtnCancelar.Size = new System.Drawing.Size(128, 105);
             this.BtnCancelar.TabIndex = 5;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -182,9 +185,10 @@ namespace Presentation
             this.BtnEliminar.IconColor = System.Drawing.Color.White;
             this.BtnEliminar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnEliminar.IconSize = 30;
-            this.BtnEliminar.Location = new System.Drawing.Point(255, 0);
+            this.BtnEliminar.Location = new System.Drawing.Point(384, 0);
+            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(85, 68);
+            this.BtnEliminar.Size = new System.Drawing.Size(128, 105);
             this.BtnEliminar.TabIndex = 4;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -205,9 +209,10 @@ namespace Presentation
             this.BtnEditar.IconColor = System.Drawing.Color.White;
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnEditar.IconSize = 30;
-            this.BtnEditar.Location = new System.Drawing.Point(170, 0);
+            this.BtnEditar.Location = new System.Drawing.Point(256, 0);
+            this.BtnEditar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(85, 68);
+            this.BtnEditar.Size = new System.Drawing.Size(128, 105);
             this.BtnEditar.TabIndex = 3;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -229,9 +234,10 @@ namespace Presentation
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnGuardar.IconSize = 30;
-            this.BtnGuardar.Location = new System.Drawing.Point(85, 0);
+            this.BtnGuardar.Location = new System.Drawing.Point(128, 0);
+            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(85, 68);
+            this.BtnGuardar.Size = new System.Drawing.Size(128, 105);
             this.BtnGuardar.TabIndex = 2;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -253,8 +259,9 @@ namespace Presentation
             this.BtnNuevo.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnNuevo.IconSize = 30;
             this.BtnNuevo.Location = new System.Drawing.Point(0, 0);
+            this.BtnNuevo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnNuevo.Name = "BtnNuevo";
-            this.BtnNuevo.Size = new System.Drawing.Size(85, 68);
+            this.BtnNuevo.Size = new System.Drawing.Size(128, 105);
             this.BtnNuevo.TabIndex = 1;
             this.BtnNuevo.Text = "Nuevo";
             this.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -277,9 +284,10 @@ namespace Presentation
             this.PnlDatos.Controls.Add(this.ImgProducto);
             this.PnlDatos.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlDatos.Enabled = false;
-            this.PnlDatos.Location = new System.Drawing.Point(0, 68);
+            this.PnlDatos.Location = new System.Drawing.Point(0, 105);
+            this.PnlDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PnlDatos.Name = "PnlDatos";
-            this.PnlDatos.Size = new System.Drawing.Size(973, 248);
+            this.PnlDatos.Size = new System.Drawing.Size(1460, 382);
             this.PnlDatos.TabIndex = 51;
             // 
             // TplTitulo
@@ -287,15 +295,16 @@ namespace Presentation
             this.TplTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TplTitulo.ColumnCount = 2;
-            this.TplTitulo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.TplTitulo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.TplTitulo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TplTitulo.Controls.Add(this.label5, 0, 0);
             this.TplTitulo.Controls.Add(this.TxtTitulo, 1, 0);
-            this.TplTitulo.Location = new System.Drawing.Point(34, 52);
+            this.TplTitulo.Location = new System.Drawing.Point(51, 80);
+            this.TplTitulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TplTitulo.Name = "TplTitulo";
             this.TplTitulo.RowCount = 1;
             this.TplTitulo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TplTitulo.Size = new System.Drawing.Size(468, 27);
+            this.TplTitulo.Size = new System.Drawing.Size(702, 42);
             this.TplTitulo.TabIndex = 101;
             // 
             // label5
@@ -304,9 +313,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Location = new System.Drawing.Point(4, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 27);
+            this.label5.Size = new System.Drawing.Size(47, 42);
             this.label5.TabIndex = 130;
             this.label5.Text = "Titulo";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -316,10 +326,11 @@ namespace Presentation
             this.TxtTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTitulo.Location = new System.Drawing.Point(61, 3);
+            this.TxtTitulo.Location = new System.Drawing.Point(91, 5);
+            this.TxtTitulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtTitulo.MaxLength = 200;
             this.TxtTitulo.Name = "TxtTitulo";
-            this.TxtTitulo.Size = new System.Drawing.Size(404, 20);
+            this.TxtTitulo.Size = new System.Drawing.Size(607, 26);
             this.TxtTitulo.TabIndex = 6;
             this.TxtTitulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTitulo_KeyPress);
             // 
@@ -330,10 +341,11 @@ namespace Presentation
             this.PtbImg.IconChar = FontAwesome.Sharp.IconChar.Image;
             this.PtbImg.IconColor = System.Drawing.SystemColors.ActiveCaption;
             this.PtbImg.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.PtbImg.IconSize = 150;
-            this.PtbImg.Location = new System.Drawing.Point(791, 46);
+            this.PtbImg.IconSize = 225;
+            this.PtbImg.Location = new System.Drawing.Point(1186, 71);
+            this.PtbImg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PtbImg.Name = "PtbImg";
-            this.PtbImg.Size = new System.Drawing.Size(150, 150);
+            this.PtbImg.Size = new System.Drawing.Size(225, 231);
             this.PtbImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PtbImg.TabIndex = 115;
             this.PtbImg.TabStop = false;
@@ -348,16 +360,17 @@ namespace Presentation
             this.TlpTotal.ColumnCount = 3;
             this.TlpTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.TlpTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TlpTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.TlpTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.TlpTotal.Controls.Add(this.BtnCheck, 2, 0);
             this.TlpTotal.Controls.Add(this.TxtTotal, 1, 0);
             this.TlpTotal.Controls.Add(this.label9, 0, 0);
             this.TlpTotal.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.TlpTotal.Location = new System.Drawing.Point(508, 51);
+            this.TlpTotal.Location = new System.Drawing.Point(762, 78);
+            this.TlpTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TlpTotal.Name = "TlpTotal";
             this.TlpTotal.RowCount = 1;
             this.TlpTotal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TlpTotal.Size = new System.Drawing.Size(269, 28);
+            this.TlpTotal.Size = new System.Drawing.Size(404, 43);
             this.TlpTotal.TabIndex = 103;
             // 
             // BtnCheck
@@ -374,10 +387,10 @@ namespace Presentation
             this.BtnCheck.IconColor = System.Drawing.Color.White;
             this.BtnCheck.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCheck.IconSize = 15;
-            this.BtnCheck.Location = new System.Drawing.Point(243, 5);
-            this.BtnCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnCheck.Location = new System.Drawing.Point(365, 8);
+            this.BtnCheck.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.BtnCheck.Name = "BtnCheck";
-            this.BtnCheck.Size = new System.Drawing.Size(22, 18);
+            this.BtnCheck.Size = new System.Drawing.Size(33, 27);
             this.BtnCheck.TabIndex = 116;
             this.BtnCheck.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCheck.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -391,10 +404,11 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtTotal.Enabled = false;
             this.TxtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(56, 3);
+            this.TxtTotal.Location = new System.Drawing.Point(76, 5);
+            this.TxtTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtTotal.MaxLength = 8;
             this.TxtTotal.Name = "TxtTotal";
-            this.TxtTotal.Size = new System.Drawing.Size(180, 20);
+            this.TxtTotal.Size = new System.Drawing.Size(279, 26);
             this.TxtTotal.TabIndex = 22;
             this.TxtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTotal_KeyPress);
@@ -407,9 +421,10 @@ namespace Presentation
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Location = new System.Drawing.Point(4, 0);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 28);
+            this.label9.Size = new System.Drawing.Size(64, 43);
             this.label9.TabIndex = 17;
             this.label9.Text = "TOTAL";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -420,15 +435,16 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TlpCaracteristicas.ColumnCount = 1;
             this.TlpCaracteristicas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TlpCaracteristicas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.TlpCaracteristicas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.TlpCaracteristicas.Controls.Add(this.label10, 0, 0);
             this.TlpCaracteristicas.Controls.Add(this.RtbCaracteristicas, 0, 1);
-            this.TlpCaracteristicas.Location = new System.Drawing.Point(505, 79);
+            this.TlpCaracteristicas.Location = new System.Drawing.Point(758, 122);
+            this.TlpCaracteristicas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TlpCaracteristicas.Name = "TlpCaracteristicas";
             this.TlpCaracteristicas.RowCount = 2;
             this.TlpCaracteristicas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.80124F));
             this.TlpCaracteristicas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.19876F));
-            this.TlpCaracteristicas.Size = new System.Drawing.Size(272, 160);
+            this.TlpCaracteristicas.Size = new System.Drawing.Size(408, 246);
             this.TlpCaracteristicas.TabIndex = 104;
             // 
             // label10
@@ -437,9 +453,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(3, 0);
+            this.label10.Location = new System.Drawing.Point(4, 0);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 18);
+            this.label10.Size = new System.Drawing.Size(114, 29);
             this.label10.TabIndex = 16;
             this.label10.Text = "Caracteristicas";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -449,10 +466,11 @@ namespace Presentation
             this.RtbCaracteristicas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RtbCaracteristicas.Location = new System.Drawing.Point(3, 21);
+            this.RtbCaracteristicas.Location = new System.Drawing.Point(4, 34);
+            this.RtbCaracteristicas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RtbCaracteristicas.MaxLength = 400;
             this.RtbCaracteristicas.Name = "RtbCaracteristicas";
-            this.RtbCaracteristicas.Size = new System.Drawing.Size(266, 136);
+            this.RtbCaracteristicas.Size = new System.Drawing.Size(400, 207);
             this.RtbCaracteristicas.TabIndex = 20;
             this.RtbCaracteristicas.Text = "";
             this.RtbCaracteristicas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RtbCaracteristicas_KeyPress);
@@ -462,9 +480,10 @@ namespace Presentation
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(788, 23);
+            this.label1.Location = new System.Drawing.Point(1182, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.Size = new System.Drawing.Size(42, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "SKU";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -474,10 +493,11 @@ namespace Presentation
             this.TxtCodigoSku.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtCodigoSku.Enabled = false;
             this.TxtCodigoSku.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCodigoSku.Location = new System.Drawing.Point(825, 20);
+            this.TxtCodigoSku.Location = new System.Drawing.Point(1238, 31);
+            this.TxtCodigoSku.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtCodigoSku.MaxLength = 8;
             this.TxtCodigoSku.Name = "TxtCodigoSku";
-            this.TxtCodigoSku.Size = new System.Drawing.Size(114, 20);
+            this.TxtCodigoSku.Size = new System.Drawing.Size(169, 26);
             this.TxtCodigoSku.TabIndex = 106;
             this.TxtCodigoSku.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigo_KeyPress);
             // 
@@ -488,7 +508,7 @@ namespace Presentation
             this.TlpDatos.ColumnCount = 5;
             this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TlpDatos.Controls.Add(this.BtnCoste, 2, 4);
@@ -516,7 +536,8 @@ namespace Presentation
             this.TlpDatos.Controls.Add(this.TxtMargen, 4, 1);
             this.TlpDatos.Controls.Add(this.Descuento, 3, 2);
             this.TlpDatos.Controls.Add(this.TxtDescuento, 4, 2);
-            this.TlpDatos.Location = new System.Drawing.Point(34, 79);
+            this.TlpDatos.Location = new System.Drawing.Point(51, 122);
+            this.TlpDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TlpDatos.Name = "TlpDatos";
             this.TlpDatos.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TlpDatos.RowCount = 5;
@@ -525,7 +546,7 @@ namespace Presentation
             this.TlpDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.TlpDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.TlpDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TlpDatos.Size = new System.Drawing.Size(468, 160);
+            this.TlpDatos.Size = new System.Drawing.Size(702, 246);
             this.TlpDatos.TabIndex = 102;
             // 
             // BtnCoste
@@ -542,9 +563,10 @@ namespace Presentation
             this.BtnCoste.IconColor = System.Drawing.Color.White;
             this.BtnCoste.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCoste.IconSize = 15;
-            this.BtnCoste.Location = new System.Drawing.Point(218, 131);
+            this.BtnCoste.Location = new System.Drawing.Point(328, 201);
+            this.BtnCoste.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnCoste.Name = "BtnCoste";
-            this.BtnCoste.Size = new System.Drawing.Size(24, 20);
+            this.BtnCoste.Size = new System.Drawing.Size(37, 31);
             this.BtnCoste.TabIndex = 16;
             this.BtnCoste.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCoste.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -558,9 +580,10 @@ namespace Presentation
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label12.Location = new System.Drawing.Point(248, 96);
+            this.label12.Location = new System.Drawing.Point(373, 147);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 32);
+            this.label12.Size = new System.Drawing.Size(40, 49);
             this.label12.TabIndex = 14;
             this.label12.Text = "PVP";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -571,10 +594,11 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtIVA.Enabled = false;
             this.TxtIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIVA.Location = new System.Drawing.Point(313, 131);
+            this.TxtIVA.Location = new System.Drawing.Point(468, 201);
+            this.TxtIVA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtIVA.MaxLength = 8;
             this.TxtIVA.Name = "TxtIVA";
-            this.TxtIVA.Size = new System.Drawing.Size(152, 20);
+            this.TxtIVA.Size = new System.Drawing.Size(230, 26);
             this.TxtIVA.TabIndex = 21;
             this.TxtIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtIVA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIVA_KeyPress);
@@ -586,9 +610,10 @@ namespace Presentation
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(248, 128);
+            this.label8.Location = new System.Drawing.Point(373, 196);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(24, 32);
+            this.label8.Size = new System.Drawing.Size(36, 50);
             this.label8.TabIndex = 18;
             this.label8.Text = "IVA";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -599,10 +624,11 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtPVP.Enabled = false;
             this.TxtPVP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPVP.Location = new System.Drawing.Point(313, 99);
+            this.TxtPVP.Location = new System.Drawing.Point(468, 152);
+            this.TxtPVP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtPVP.MaxLength = 8;
             this.TxtPVP.Name = "TxtPVP";
-            this.TxtPVP.Size = new System.Drawing.Size(152, 20);
+            this.TxtPVP.Size = new System.Drawing.Size(230, 26);
             this.TxtPVP.TabIndex = 20;
             this.TxtPVP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtPVP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPVP_KeyPress);
@@ -613,10 +639,11 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtCodigoUpc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCodigoUpc.Location = new System.Drawing.Point(61, 3);
+            this.TxtCodigoUpc.Location = new System.Drawing.Point(90, 5);
+            this.TxtCodigoUpc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtCodigoUpc.MaxLength = 12;
             this.TxtCodigoUpc.Name = "TxtCodigoUpc";
-            this.TxtCodigoUpc.Size = new System.Drawing.Size(151, 20);
+            this.TxtCodigoUpc.Size = new System.Drawing.Size(230, 26);
             this.TxtCodigoUpc.TabIndex = 7;
             this.TxtCodigoUpc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigoUpc_KeyPress);
             // 
@@ -626,9 +653,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label16.Location = new System.Drawing.Point(3, 0);
+            this.label16.Location = new System.Drawing.Point(4, 0);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(29, 32);
+            this.label16.Size = new System.Drawing.Size(42, 49);
             this.label16.TabIndex = 121;
             this.label16.Text = "UPC";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -638,10 +666,11 @@ namespace Presentation
             this.TxtCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCantidad.Location = new System.Drawing.Point(313, 3);
+            this.TxtCantidad.Location = new System.Drawing.Point(468, 5);
+            this.TxtCantidad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtCantidad.MaxLength = 4;
             this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(152, 20);
+            this.TxtCantidad.Size = new System.Drawing.Size(230, 26);
             this.TxtCantidad.TabIndex = 17;
             this.TxtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantidad_KeyPress);
             // 
@@ -651,9 +680,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(248, 0);
+            this.label2.Location = new System.Drawing.Point(373, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 32);
+            this.label2.Size = new System.Drawing.Size(73, 49);
             this.label2.TabIndex = 2;
             this.label2.Text = "Cantidad";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -672,10 +702,10 @@ namespace Presentation
             this.BtnUPC.IconColor = System.Drawing.Color.White;
             this.BtnUPC.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnUPC.IconSize = 15;
-            this.BtnUPC.Location = new System.Drawing.Point(219, 5);
-            this.BtnUPC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnUPC.Location = new System.Drawing.Point(330, 8);
+            this.BtnUPC.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.BtnUPC.Name = "BtnUPC";
-            this.BtnUPC.Size = new System.Drawing.Size(22, 21);
+            this.BtnUPC.Size = new System.Drawing.Size(33, 32);
             this.BtnUPC.TabIndex = 8;
             this.BtnUPC.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnUPC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -695,10 +725,10 @@ namespace Presentation
             this.BtnModelo.IconColor = System.Drawing.Color.White;
             this.BtnModelo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnModelo.IconSize = 15;
-            this.BtnModelo.Location = new System.Drawing.Point(219, 101);
-            this.BtnModelo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnModelo.Location = new System.Drawing.Point(330, 155);
+            this.BtnModelo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.BtnModelo.Name = "BtnModelo";
-            this.BtnModelo.Size = new System.Drawing.Size(22, 21);
+            this.BtnModelo.Size = new System.Drawing.Size(33, 32);
             this.BtnModelo.TabIndex = 14;
             this.BtnModelo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.BtnModelo.UseVisualStyleBackColor = false;
@@ -718,10 +748,10 @@ namespace Presentation
             this.BtnCategoria.IconColor = System.Drawing.Color.White;
             this.BtnCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCategoria.IconSize = 15;
-            this.BtnCategoria.Location = new System.Drawing.Point(219, 37);
-            this.BtnCategoria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnCategoria.Location = new System.Drawing.Point(330, 57);
+            this.BtnCategoria.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.BtnCategoria.Name = "BtnCategoria";
-            this.BtnCategoria.Size = new System.Drawing.Size(22, 21);
+            this.BtnCategoria.Size = new System.Drawing.Size(33, 32);
             this.BtnCategoria.TabIndex = 10;
             this.BtnCategoria.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -742,10 +772,10 @@ namespace Presentation
             this.BtnMarca.IconColor = System.Drawing.Color.White;
             this.BtnMarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnMarca.IconSize = 15;
-            this.BtnMarca.Location = new System.Drawing.Point(219, 69);
-            this.BtnMarca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnMarca.Location = new System.Drawing.Point(330, 106);
+            this.BtnMarca.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.BtnMarca.Name = "BtnMarca";
-            this.BtnMarca.Size = new System.Drawing.Size(22, 20);
+            this.BtnMarca.Size = new System.Drawing.Size(33, 31);
             this.BtnMarca.TabIndex = 12;
             this.BtnMarca.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnMarca.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -758,9 +788,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label14.Location = new System.Drawing.Point(3, 32);
+            this.label14.Location = new System.Drawing.Point(4, 49);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 32);
+            this.label14.Size = new System.Drawing.Size(78, 49);
             this.label14.TabIndex = 31;
             this.label14.Text = "Categoria";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -772,9 +803,10 @@ namespace Presentation
             this.CboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CboCategoria.FormattingEnabled = true;
-            this.CboCategoria.Location = new System.Drawing.Point(61, 35);
+            this.CboCategoria.Location = new System.Drawing.Point(90, 54);
+            this.CboCategoria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CboCategoria.Name = "CboCategoria";
-            this.CboCategoria.Size = new System.Drawing.Size(151, 21);
+            this.CboCategoria.Size = new System.Drawing.Size(230, 28);
             this.CboCategoria.TabIndex = 9;
             this.CboCategoria.SelectedValueChanged += new System.EventHandler(this.CboCategoria_SelectedValueChanged);
             // 
@@ -784,9 +816,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label13.Location = new System.Drawing.Point(3, 64);
+            this.label13.Location = new System.Drawing.Point(4, 98);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 32);
+            this.label13.Size = new System.Drawing.Size(53, 49);
             this.label13.TabIndex = 27;
             this.label13.Text = "Marca";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -798,9 +831,10 @@ namespace Presentation
             this.CboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CboMarca.FormattingEnabled = true;
-            this.CboMarca.Location = new System.Drawing.Point(61, 67);
+            this.CboMarca.Location = new System.Drawing.Point(90, 103);
+            this.CboMarca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CboMarca.Name = "CboMarca";
-            this.CboMarca.Size = new System.Drawing.Size(151, 21);
+            this.CboMarca.Size = new System.Drawing.Size(230, 28);
             this.CboMarca.TabIndex = 11;
             this.CboMarca.SelectedValueChanged += new System.EventHandler(this.CboMarca_SelectedValueChanged);
             // 
@@ -810,9 +844,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(3, 96);
+            this.label7.Location = new System.Drawing.Point(4, 147);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 32);
+            this.label7.Size = new System.Drawing.Size(61, 49);
             this.label7.TabIndex = 34;
             this.label7.Text = "Modelo";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -824,9 +859,10 @@ namespace Presentation
             this.CboModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CboModelo.FormattingEnabled = true;
-            this.CboModelo.Location = new System.Drawing.Point(61, 99);
+            this.CboModelo.Location = new System.Drawing.Point(90, 152);
+            this.CboModelo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CboModelo.Name = "CboModelo";
-            this.CboModelo.Size = new System.Drawing.Size(151, 21);
+            this.CboModelo.Size = new System.Drawing.Size(230, 28);
             this.CboModelo.TabIndex = 13;
             this.CboModelo.SelectedValueChanged += new System.EventHandler(this.CboModelo_SelectedValueChanged);
             // 
@@ -836,9 +872,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(3, 128);
+            this.label3.Location = new System.Drawing.Point(4, 196);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 32);
+            this.label3.Size = new System.Drawing.Size(51, 50);
             this.label3.TabIndex = 3;
             this.label3.Text = "Coste";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -849,10 +886,11 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtCoste.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCoste.Location = new System.Drawing.Point(61, 131);
+            this.TxtCoste.Location = new System.Drawing.Point(90, 201);
+            this.TxtCoste.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtCoste.MaxLength = 8;
             this.TxtCoste.Name = "TxtCoste";
-            this.TxtCoste.Size = new System.Drawing.Size(151, 20);
+            this.TxtCoste.Size = new System.Drawing.Size(230, 26);
             this.TxtCoste.TabIndex = 15;
             this.TxtCoste.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCoste_KeyPress);
             this.TxtCoste.Leave += new System.EventHandler(this.TxtCoste_Leave);
@@ -863,9 +901,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(248, 32);
+            this.label6.Location = new System.Drawing.Point(373, 49);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 32);
+            this.label6.Size = new System.Drawing.Size(63, 49);
             this.label6.TabIndex = 13;
             this.label6.Text = "Margen";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -875,10 +914,11 @@ namespace Presentation
             this.TxtMargen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtMargen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMargen.Location = new System.Drawing.Point(313, 35);
+            this.TxtMargen.Location = new System.Drawing.Point(468, 54);
+            this.TxtMargen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtMargen.MaxLength = 2;
             this.TxtMargen.Name = "TxtMargen";
-            this.TxtMargen.Size = new System.Drawing.Size(152, 20);
+            this.TxtMargen.Size = new System.Drawing.Size(230, 26);
             this.TxtMargen.TabIndex = 18;
             this.TxtMargen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtMargen_KeyPress);
             this.TxtMargen.Leave += new System.EventHandler(this.TxtMargen_Leave);
@@ -889,9 +929,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left)));
             this.Descuento.AutoSize = true;
             this.Descuento.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Descuento.Location = new System.Drawing.Point(248, 64);
+            this.Descuento.Location = new System.Drawing.Point(373, 98);
+            this.Descuento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Descuento.Name = "Descuento";
-            this.Descuento.Size = new System.Drawing.Size(59, 32);
+            this.Descuento.Size = new System.Drawing.Size(87, 49);
             this.Descuento.TabIndex = 120;
             this.Descuento.Text = "Descuento";
             this.Descuento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -901,10 +942,11 @@ namespace Presentation
             this.TxtDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDescuento.Location = new System.Drawing.Point(313, 67);
+            this.TxtDescuento.Location = new System.Drawing.Point(468, 103);
+            this.TxtDescuento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtDescuento.MaxLength = 2;
             this.TxtDescuento.Name = "TxtDescuento";
-            this.TxtDescuento.Size = new System.Drawing.Size(152, 20);
+            this.TxtDescuento.Size = new System.Drawing.Size(230, 26);
             this.TxtDescuento.TabIndex = 19;
             this.TxtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDescuento_KeyPress);
             this.TxtDescuento.Leave += new System.EventHandler(this.TxtDescuento_Leave);
@@ -915,9 +957,10 @@ namespace Presentation
             this.LblTitleChildForm.BackColor = System.Drawing.Color.Transparent;
             this.LblTitleChildForm.Font = new System.Drawing.Font("Microsoft Tai Le", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTitleChildForm.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.LblTitleChildForm.Location = new System.Drawing.Point(30, 13);
+            this.LblTitleChildForm.Location = new System.Drawing.Point(45, 20);
+            this.LblTitleChildForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblTitleChildForm.Name = "LblTitleChildForm";
-            this.LblTitleChildForm.Size = new System.Drawing.Size(165, 22);
+            this.LblTitleChildForm.Size = new System.Drawing.Size(248, 33);
             this.LblTitleChildForm.TabIndex = 115;
             this.LblTitleChildForm.Text = "Datos del producto";
             // 
@@ -935,9 +978,10 @@ namespace Presentation
             this.BtnExaminar.IconColor = System.Drawing.Color.White;
             this.BtnExaminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnExaminar.IconSize = 30;
-            this.BtnExaminar.Location = new System.Drawing.Point(791, 201);
+            this.BtnExaminar.Location = new System.Drawing.Point(1186, 309);
+            this.BtnExaminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnExaminar.Name = "BtnExaminar";
-            this.BtnExaminar.Size = new System.Drawing.Size(149, 38);
+            this.BtnExaminar.Size = new System.Drawing.Size(224, 58);
             this.BtnExaminar.TabIndex = 105;
             this.BtnExaminar.Text = "Examinar";
             this.BtnExaminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -955,10 +999,11 @@ namespace Presentation
             this.ImgProducto.IconChar = FontAwesome.Sharp.IconChar.Image;
             this.ImgProducto.IconColor = System.Drawing.SystemColors.ActiveCaption;
             this.ImgProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ImgProducto.IconSize = 150;
-            this.ImgProducto.Location = new System.Drawing.Point(791, 46);
+            this.ImgProducto.IconSize = 224;
+            this.ImgProducto.Location = new System.Drawing.Point(1186, 71);
+            this.ImgProducto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ImgProducto.Name = "ImgProducto";
-            this.ImgProducto.Size = new System.Drawing.Size(150, 150);
+            this.ImgProducto.Size = new System.Drawing.Size(224, 230);
             this.ImgProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ImgProducto.TabIndex = 1;
             this.ImgProducto.TabStop = false;
@@ -974,9 +1019,10 @@ namespace Presentation
             this.PnlLista.Controls.Add(this.TxtBuscar);
             this.PnlLista.Controls.Add(this.DgvProductos);
             this.PnlLista.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlLista.Location = new System.Drawing.Point(0, 316);
+            this.PnlLista.Location = new System.Drawing.Point(0, 487);
+            this.PnlLista.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PnlLista.Name = "PnlLista";
-            this.PnlLista.Size = new System.Drawing.Size(973, 286);
+            this.PnlLista.Size = new System.Drawing.Size(1460, 439);
             this.PnlLista.TabIndex = 52;
             // 
             // tableLayoutPanel1
@@ -996,11 +1042,12 @@ namespace Presentation
             this.tableLayoutPanel1.Controls.Add(this.BtnMa, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.LblBusqueda, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.BtnCat, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(25, 23);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(38, 35);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(792, 32);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1188, 49);
             this.tableLayoutPanel1.TabIndex = 119;
             // 
             // BtnCodSku
@@ -1019,9 +1066,10 @@ namespace Presentation
             this.BtnCodSku.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCodSku.IconSize = 15;
             this.BtnCodSku.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.BtnCodSku.Location = new System.Drawing.Point(229, 3);
+            this.BtnCodSku.Location = new System.Drawing.Point(342, 5);
+            this.BtnCodSku.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnCodSku.Name = "BtnCodSku";
-            this.BtnCodSku.Size = new System.Drawing.Size(107, 26);
+            this.BtnCodSku.Size = new System.Drawing.Size(161, 39);
             this.BtnCodSku.TabIndex = 123;
             this.BtnCodSku.Text = "Cod Sku";
             this.BtnCodSku.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1044,9 +1092,10 @@ namespace Presentation
             this.BtnTitulo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnTitulo.IconSize = 15;
             this.BtnTitulo.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.BtnTitulo.Location = new System.Drawing.Point(116, 3);
+            this.BtnTitulo.Location = new System.Drawing.Point(173, 5);
+            this.BtnTitulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnTitulo.Name = "BtnTitulo";
-            this.BtnTitulo.Size = new System.Drawing.Size(107, 26);
+            this.BtnTitulo.Size = new System.Drawing.Size(161, 39);
             this.BtnTitulo.TabIndex = 122;
             this.BtnTitulo.Text = "Titulo";
             this.BtnTitulo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1069,9 +1118,10 @@ namespace Presentation
             this.BtnCodBarra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCodBarra.IconSize = 15;
             this.BtnCodBarra.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.BtnCodBarra.Location = new System.Drawing.Point(681, 3);
+            this.BtnCodBarra.Location = new System.Drawing.Point(1018, 5);
+            this.BtnCodBarra.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnCodBarra.Name = "BtnCodBarra";
-            this.BtnCodBarra.Size = new System.Drawing.Size(108, 26);
+            this.BtnCodBarra.Size = new System.Drawing.Size(166, 39);
             this.BtnCodBarra.TabIndex = 121;
             this.BtnCodBarra.Text = "Cod Barra";
             this.BtnCodBarra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1094,9 +1144,10 @@ namespace Presentation
             this.BtnMo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnMo.IconSize = 15;
             this.BtnMo.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.BtnMo.Location = new System.Drawing.Point(568, 3);
+            this.BtnMo.Location = new System.Drawing.Point(849, 5);
+            this.BtnMo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnMo.Name = "BtnMo";
-            this.BtnMo.Size = new System.Drawing.Size(107, 26);
+            this.BtnMo.Size = new System.Drawing.Size(161, 39);
             this.BtnMo.TabIndex = 120;
             this.BtnMo.Text = "Modelo";
             this.BtnMo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1119,9 +1170,10 @@ namespace Presentation
             this.BtnMa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnMa.IconSize = 15;
             this.BtnMa.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.BtnMa.Location = new System.Drawing.Point(455, 3);
+            this.BtnMa.Location = new System.Drawing.Point(680, 5);
+            this.BtnMa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnMa.Name = "BtnMa";
-            this.BtnMa.Size = new System.Drawing.Size(107, 26);
+            this.BtnMa.Size = new System.Drawing.Size(161, 39);
             this.BtnMa.TabIndex = 119;
             this.BtnMa.Text = "Marca";
             this.BtnMa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1134,9 +1186,10 @@ namespace Presentation
             this.LblBusqueda.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LblBusqueda.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblBusqueda.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblBusqueda.Location = new System.Drawing.Point(3, 0);
+            this.LblBusqueda.Location = new System.Drawing.Point(4, 0);
+            this.LblBusqueda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblBusqueda.Name = "LblBusqueda";
-            this.LblBusqueda.Size = new System.Drawing.Size(107, 32);
+            this.LblBusqueda.Size = new System.Drawing.Size(161, 49);
             this.LblBusqueda.TabIndex = 118;
             this.LblBusqueda.Text = "Busqueda por :";
             this.LblBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1157,9 +1210,10 @@ namespace Presentation
             this.BtnCat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCat.IconSize = 15;
             this.BtnCat.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.BtnCat.Location = new System.Drawing.Point(342, 3);
+            this.BtnCat.Location = new System.Drawing.Point(511, 5);
+            this.BtnCat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnCat.Name = "BtnCat";
-            this.BtnCat.Size = new System.Drawing.Size(107, 26);
+            this.BtnCat.Size = new System.Drawing.Size(161, 39);
             this.BtnCat.TabIndex = 117;
             this.BtnCat.Text = "Categoria";
             this.BtnCat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1172,9 +1226,10 @@ namespace Presentation
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Tai Le", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label11.Location = new System.Drawing.Point(30, -2);
+            this.label11.Location = new System.Drawing.Point(45, -3);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(158, 22);
+            this.label11.Size = new System.Drawing.Size(237, 33);
             this.label11.TabIndex = 116;
             this.label11.Text = "Lista de productos";
             // 
@@ -1193,9 +1248,10 @@ namespace Presentation
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 25;
             this.BtnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnLimpiar.Location = new System.Drawing.Point(837, 57);
+            this.BtnLimpiar.Location = new System.Drawing.Point(1256, 88);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(104, 28);
+            this.BtnLimpiar.Size = new System.Drawing.Size(156, 43);
             this.BtnLimpiar.TabIndex = 24;
             this.BtnLimpiar.Text = "Limpiar";
             this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1209,10 +1265,11 @@ namespace Presentation
             this.TxtBuscar.BackColor = System.Drawing.Color.White;
             this.TxtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtBuscar.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBuscar.Location = new System.Drawing.Point(34, 57);
+            this.TxtBuscar.Location = new System.Drawing.Point(51, 88);
+            this.TxtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtBuscar.MaxLength = 200;
             this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(797, 28);
+            this.TxtBuscar.Size = new System.Drawing.Size(1194, 38);
             this.TxtBuscar.TabIndex = 23;
             this.TxtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBuscar_KeyPress);
             // 
@@ -1227,45 +1284,47 @@ namespace Presentation
             this.DgvProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvProductos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvProductos.EnableHeadersVisualStyles = false;
             this.DgvProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
-            this.DgvProductos.Location = new System.Drawing.Point(34, 88);
+            this.DgvProductos.Location = new System.Drawing.Point(51, 135);
+            this.DgvProductos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DgvProductos.MultiSelect = false;
             this.DgvProductos.Name = "DgvProductos";
             this.DgvProductos.ReadOnly = true;
             this.DgvProductos.RowHeadersVisible = false;
             this.DgvProductos.RowHeadersWidth = 62;
             this.DgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvProductos.Size = new System.Drawing.Size(907, 189);
+            this.DgvProductos.Size = new System.Drawing.Size(1360, 290);
             this.DgvProductos.TabIndex = 25;
             this.DgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductos_CellDoubleClick);
             // 
             // Productos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 602);
+            this.ClientSize = new System.Drawing.Size(1460, 926);
             this.Controls.Add(this.PnlLista);
             this.Controls.Add(this.PnlDatos);
             this.Controls.Add(this.PnlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Productos";
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.Productos_Load);

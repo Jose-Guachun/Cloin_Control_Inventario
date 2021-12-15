@@ -67,6 +67,11 @@ namespace Presentation
                     decimal gastoUnitario = (flete + gasto1 + gasto2 + gasto3) / cantidad;
                     coste = precio + gastoUnitario;
                 }
+                else if(flete!=0)
+                {
+                    MessageBox.Show("No se puede calcular el coste con flete, si cantidad es 0, el coste visible mostrara solo con precio, y gastos incluidos.", "Flete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    coste = precio;
+                }
                 else
                 {
                     coste = precio;
