@@ -207,7 +207,7 @@ namespace Domain.Models
                     idProducto = item.IdProducto,
                     n = cont,
                     idMarca = Convert.ToInt32(Modelos(item.Modelo,true)),
-                    idModelo = Convert.ToInt32(item.Modelo),
+                    idModelo =Convert.ToInt32(item.Modelo),
                     idCategoria= Convert.ToInt32(item.Categoria),
                     marca=Marcas(Modelos(item.Modelo, true)).ToString(),
                     modelo = Modelos(item.Modelo,false).ToString(), 

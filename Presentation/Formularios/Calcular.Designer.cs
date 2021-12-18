@@ -29,8 +29,8 @@ namespace Presentation
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnlBarraTop = new System.Windows.Forms.Panel();
             this.BtnMinimizar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
@@ -251,10 +251,10 @@ namespace Presentation
             this.BtnAnclar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnAnclar.IconSize = 20;
             this.BtnAnclar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnAnclar.Location = new System.Drawing.Point(620, 326);
+            this.BtnAnclar.Location = new System.Drawing.Point(620, 317);
             this.BtnAnclar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnAnclar.Name = "BtnAnclar";
-            this.BtnAnclar.Size = new System.Drawing.Size(153, 45);
+            this.BtnAnclar.Size = new System.Drawing.Size(133, 45);
             this.BtnAnclar.TabIndex = 127;
             this.BtnAnclar.Text = "Anclar";
             this.BtnAnclar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -405,12 +405,12 @@ namespace Presentation
             this.BtnSeleccionar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnSeleccionar.IconSize = 20;
             this.BtnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnSeleccionar.Location = new System.Drawing.Point(621, 206);
+            this.BtnSeleccionar.Location = new System.Drawing.Point(621, 207);
             this.BtnSeleccionar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnSeleccionar.Name = "BtnSeleccionar";
-            this.BtnSeleccionar.Size = new System.Drawing.Size(153, 52);
+            this.BtnSeleccionar.Size = new System.Drawing.Size(132, 45);
             this.BtnSeleccionar.TabIndex = 121;
-            this.BtnSeleccionar.Text = "Seleccionar";
+            this.BtnSeleccionar.Text = "Seleccion";
             this.BtnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnSeleccionar.UseVisualStyleBackColor = false;
             // 
@@ -419,7 +419,7 @@ namespace Presentation
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.72464F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.27536F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.tableLayoutPanel1.Controls.Add(this.BtnAddIva, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.TxtGasto3, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.lblCantidad, 0, 0);
@@ -469,10 +469,10 @@ namespace Presentation
             this.BtnAddIva.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnAddIva.IconSize = 18;
             this.BtnAddIva.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnAddIva.Location = new System.Drawing.Point(240, 47);
+            this.BtnAddIva.Location = new System.Drawing.Point(234, 47);
             this.BtnAddIva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnAddIva.Name = "BtnAddIva";
-            this.BtnAddIva.Size = new System.Drawing.Size(44, 32);
+            this.BtnAddIva.Size = new System.Drawing.Size(50, 32);
             this.BtnAddIva.TabIndex = 128;
             this.BtnAddIva.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BtnAddIva.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -485,11 +485,13 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtGasto3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtGasto3.Location = new System.Drawing.Point(123, 213);
+            this.TxtGasto3.Location = new System.Drawing.Point(120, 213);
+            this.TxtGasto3.MaxLength = 10;
             this.TxtGasto3.Name = "TxtGasto3";
-            this.TxtGasto3.Size = new System.Drawing.Size(110, 35);
+            this.TxtGasto3.Size = new System.Drawing.Size(107, 35);
             this.TxtGasto3.TabIndex = 9;
             this.TxtGasto3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtGasto3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDecimales_KeyPress);
             // 
             // lblCantidad
             // 
@@ -499,7 +501,7 @@ namespace Presentation
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Location = new System.Drawing.Point(3, 0);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(114, 42);
+            this.lblCantidad.Size = new System.Drawing.Size(111, 42);
             this.lblCantidad.TabIndex = 7;
             this.lblCantidad.Text = "Cantidad";
             this.lblCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -510,11 +512,13 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtGasto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtGasto2.Location = new System.Drawing.Point(123, 171);
+            this.TxtGasto2.Location = new System.Drawing.Point(120, 171);
+            this.TxtGasto2.MaxLength = 10;
             this.TxtGasto2.Name = "TxtGasto2";
-            this.TxtGasto2.Size = new System.Drawing.Size(110, 35);
+            this.TxtGasto2.Size = new System.Drawing.Size(107, 35);
             this.TxtGasto2.TabIndex = 8;
             this.TxtGasto2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtGasto2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDecimales_KeyPress);
             // 
             // TxtGasto1
             // 
@@ -522,11 +526,13 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtGasto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtGasto1.Location = new System.Drawing.Point(123, 129);
+            this.TxtGasto1.Location = new System.Drawing.Point(120, 129);
+            this.TxtGasto1.MaxLength = 10;
             this.TxtGasto1.Name = "TxtGasto1";
-            this.TxtGasto1.Size = new System.Drawing.Size(110, 35);
+            this.TxtGasto1.Size = new System.Drawing.Size(107, 35);
             this.TxtGasto1.TabIndex = 7;
             this.TxtGasto1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtGasto1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDecimales_KeyPress);
             // 
             // lblFlete
             // 
@@ -536,7 +542,7 @@ namespace Presentation
             this.lblFlete.AutoSize = true;
             this.lblFlete.Location = new System.Drawing.Point(3, 84);
             this.lblFlete.Name = "lblFlete";
-            this.lblFlete.Size = new System.Drawing.Size(114, 42);
+            this.lblFlete.Size = new System.Drawing.Size(111, 42);
             this.lblFlete.TabIndex = 3;
             this.lblFlete.Text = "Flete sin iva";
             this.lblFlete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -547,11 +553,13 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtFlete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFlete.Location = new System.Drawing.Point(123, 87);
+            this.TxtFlete.Location = new System.Drawing.Point(120, 87);
+            this.TxtFlete.MaxLength = 10;
             this.TxtFlete.Name = "TxtFlete";
-            this.TxtFlete.Size = new System.Drawing.Size(110, 35);
+            this.TxtFlete.Size = new System.Drawing.Size(107, 35);
             this.TxtFlete.TabIndex = 6;
             this.TxtFlete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtFlete.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDecimales_KeyPress);
             // 
             // lblPrecio
             // 
@@ -561,7 +569,7 @@ namespace Presentation
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Location = new System.Drawing.Point(3, 42);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(114, 42);
+            this.lblPrecio.Size = new System.Drawing.Size(111, 42);
             this.lblPrecio.TabIndex = 0;
             this.lblPrecio.Text = "Precio sin iva";
             this.lblPrecio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -572,11 +580,13 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPrecio.Location = new System.Drawing.Point(123, 45);
+            this.TxtPrecio.Location = new System.Drawing.Point(120, 45);
+            this.TxtPrecio.MaxLength = 10;
             this.TxtPrecio.Name = "TxtPrecio";
-            this.TxtPrecio.Size = new System.Drawing.Size(110, 35);
+            this.TxtPrecio.Size = new System.Drawing.Size(107, 35);
             this.TxtPrecio.TabIndex = 5;
             this.TxtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDecimales_KeyPress);
             // 
             // TxtCantidad
             // 
@@ -584,11 +594,13 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCantidad.Location = new System.Drawing.Point(123, 3);
+            this.TxtCantidad.Location = new System.Drawing.Point(120, 3);
+            this.TxtCantidad.MaxLength = 5;
             this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(110, 35);
+            this.TxtCantidad.Size = new System.Drawing.Size(107, 35);
             this.TxtCantidad.TabIndex = 4;
             this.TxtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantidad_KeyPress);
             // 
             // lblGasto1
             // 
@@ -598,7 +610,7 @@ namespace Presentation
             this.lblGasto1.AutoSize = true;
             this.lblGasto1.Location = new System.Drawing.Point(3, 126);
             this.lblGasto1.Name = "lblGasto1";
-            this.lblGasto1.Size = new System.Drawing.Size(114, 42);
+            this.lblGasto1.Size = new System.Drawing.Size(111, 42);
             this.lblGasto1.TabIndex = 127;
             this.lblGasto1.Text = "Gasto #1";
             this.lblGasto1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -611,7 +623,7 @@ namespace Presentation
             this.lblGasto2.AutoSize = true;
             this.lblGasto2.Location = new System.Drawing.Point(3, 168);
             this.lblGasto2.Name = "lblGasto2";
-            this.lblGasto2.Size = new System.Drawing.Size(114, 42);
+            this.lblGasto2.Size = new System.Drawing.Size(111, 42);
             this.lblGasto2.TabIndex = 128;
             this.lblGasto2.Text = "Gasto #2";
             this.lblGasto2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -624,7 +636,7 @@ namespace Presentation
             this.lblGasto3.AutoSize = true;
             this.lblGasto3.Location = new System.Drawing.Point(3, 210);
             this.lblGasto3.Name = "lblGasto3";
-            this.lblGasto3.Size = new System.Drawing.Size(114, 42);
+            this.lblGasto3.Size = new System.Drawing.Size(111, 42);
             this.lblGasto3.TabIndex = 129;
             this.lblGasto3.Text = "Gasto #3";
             this.lblGasto3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -646,10 +658,10 @@ namespace Presentation
             this.BtnAddIvaF.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnAddIvaF.IconSize = 18;
             this.BtnAddIvaF.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnAddIvaF.Location = new System.Drawing.Point(240, 89);
+            this.BtnAddIvaF.Location = new System.Drawing.Point(234, 89);
             this.BtnAddIvaF.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnAddIvaF.Name = "BtnAddIvaF";
-            this.BtnAddIvaF.Size = new System.Drawing.Size(44, 32);
+            this.BtnAddIvaF.Size = new System.Drawing.Size(50, 32);
             this.BtnAddIvaF.TabIndex = 130;
             this.BtnAddIvaF.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BtnAddIvaF.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -667,23 +679,23 @@ namespace Presentation
             this.DgvCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvCompras.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvCompras.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvCompras.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvCompras.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvCompras.EnableHeadersVisualStyles = false;
             this.DgvCompras.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvCompras.Location = new System.Drawing.Point(332, 206);
@@ -712,10 +724,10 @@ namespace Presentation
             this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnAgregar.IconSize = 20;
             this.BtnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnAgregar.Location = new System.Drawing.Point(621, 268);
+            this.BtnAgregar.Location = new System.Drawing.Point(621, 262);
             this.BtnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(153, 45);
+            this.BtnAgregar.Size = new System.Drawing.Size(132, 45);
             this.BtnAgregar.TabIndex = 118;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

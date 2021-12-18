@@ -16,7 +16,6 @@ namespace Presentation
     {
         private ClsCamposVacios vacio= new ClsCamposVacios();
         private ClsCalculoCoste calculo = new ClsCalculoCoste();
-        private IconButton BtnCurrent;
         public Calcular()
         {
             InitializeComponent();
@@ -125,6 +124,16 @@ namespace Presentation
         private void BtnAnclar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void TxtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloNumeros(e);
+        }
+
+        private void TxtDecimales_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloNumerosDecimales(sender,e);
         }
     }
 }
