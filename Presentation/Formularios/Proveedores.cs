@@ -111,14 +111,22 @@ namespace Presentation
                 proveedor.Descripcion=RtbDescripcion.Text;
                 bool valid = new Helps.ValidacionDatos(proveedor).Validar();
                 if (valid == true)
+                {
+                    string result = proveedor.Guardar();
+                    if (result != null)
                     {
-                        string result = proveedor.Guardar();
-                        MessageBox.Show(result, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(result, "Guardar Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         proveedor.estado = EntityState.Vizualisar;
                         ListaProveedor();
                         limpiar();
                         botones();
                     }
+                    else
+                    {
+                        MessageBox.Show("Llene todos los campos", "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }   
+                       
+                }
             }
             catch (Exception)
             {
@@ -190,6 +198,41 @@ namespace Presentation
             {
                 MessageBox.Show("Selecciones la fila a Eliminar", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloLetras(e);
+        }
+
+        private void TxtNomOperador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloLetrasConEspacio(e);
+        }
+
+        private void TxtDoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloNumeros(e);
+        }
+
+        private void TxtPais_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloLetrasConEspacio(e);
+        }
+
+        private void TxtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloLetrasNumeroEspacio(e);
+        }
+
+        private void TxtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloNumeros(e);
+        }
+
+        private void TxtCelular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidarCampos.SoloNumeros(e);
         }
     }
 }

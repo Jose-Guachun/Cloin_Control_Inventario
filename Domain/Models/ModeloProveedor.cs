@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
+
 using DataAccess.Repositories;
 using DataAccess.Entities;
 using DataAccess.Contracts;
@@ -33,6 +36,7 @@ namespace Domain.Models
 
         public int IdProveedor { get => idProveedor; set => idProveedor = value; }
         public int N { get => n; set => n = value; }
+        [Required(ErrorMessage = "El campo Tipo es requerido")]
         public int IdTipoDoc { get => idTipoDoc; set => idTipoDoc = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Tipo { get => tipo; set => tipo = value; }
@@ -42,6 +46,9 @@ namespace Domain.Models
         public string Telefono { get => telefono; set => telefono = value; }
         public string Operador { get => operador; set => operador = value; }
         public string Celular { get => celular; set => celular = value; }
+        [Display(Name = "Email address")]
+        [Required(ErrorMessage = "El campo Email es requerido.")]
+        [EmailAddress(ErrorMessage = "Email Invalido")]
         public string Email { get => email; set => email = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
 
@@ -94,10 +101,17 @@ namespace Domain.Models
                 System.Data.SqlClient.SqlException sqlEx = ex as System.Data.SqlClient.SqlException;
                 if (sqlEx != null && sqlEx.Number == 2627)
                 {
-                    mensaje = "Llene todos lo campos";
+                    mensaje = null;
+                }
+                else if (sqlEx != null && sqlEx.Number == 547)
+                {
+                    mensaje = null;
                 }
                 else
+                {
                     mensaje = ex.ToString();
+                }
+                    
             }
             return mensaje;
 

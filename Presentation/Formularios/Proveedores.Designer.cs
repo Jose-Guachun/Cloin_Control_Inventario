@@ -370,6 +370,7 @@ namespace Presentation
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(249, 26);
             this.TxtNombre.TabIndex = 6;
+            this.TxtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // label12
             // 
@@ -388,6 +389,7 @@ namespace Presentation
             // 
             // CboTipoDoc
             // 
+            this.CboTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboTipoDoc.FormattingEnabled = true;
             this.CboTipoDoc.Location = new System.Drawing.Point(137, 57);
             this.CboTipoDoc.Name = "CboTipoDoc";
@@ -420,6 +422,7 @@ namespace Presentation
             this.TxtDoc.Name = "TxtDoc";
             this.TxtDoc.Size = new System.Drawing.Size(249, 26);
             this.TxtDoc.TabIndex = 8;
+            this.TxtDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDoc_KeyPress);
             // 
             // label16
             // 
@@ -447,6 +450,7 @@ namespace Presentation
             this.TxtPais.Name = "TxtPais";
             this.TxtPais.Size = new System.Drawing.Size(249, 26);
             this.TxtPais.TabIndex = 9;
+            this.TxtPais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPais_KeyPress);
             // 
             // label13
             // 
@@ -474,6 +478,7 @@ namespace Presentation
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(249, 26);
             this.TxtDireccion.TabIndex = 10;
+            this.TxtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDireccion_KeyPress);
             // 
             // label7
             // 
@@ -500,6 +505,7 @@ namespace Presentation
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(249, 26);
             this.TxtTelefono.TabIndex = 11;
+            this.TxtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTelefono_KeyPress);
             // 
             // label3
             // 
@@ -526,6 +532,7 @@ namespace Presentation
             this.TxtNomOperador.Name = "TxtNomOperador";
             this.TxtNomOperador.Size = new System.Drawing.Size(249, 26);
             this.TxtNomOperador.TabIndex = 12;
+            this.TxtNomOperador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNomOperador_KeyPress);
             // 
             // label2
             // 
@@ -552,6 +559,7 @@ namespace Presentation
             this.TxtCelular.Name = "TxtCelular";
             this.TxtCelular.Size = new System.Drawing.Size(249, 26);
             this.TxtCelular.TabIndex = 13;
+            this.TxtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCelular_KeyPress);
             // 
             // label6
             // 
