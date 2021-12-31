@@ -32,12 +32,12 @@ namespace Domain.Models
         private string titulo;
         private int cantidad;
         private string caracteristicas;
-        private float  coste;
-        private float  margen;
-        private float descuento;
-        private float  pvp;
-        private float iva;
-        private float  total;
+        private decimal coste;
+        private decimal margen;
+        private decimal pvp;
+        private decimal descuento;
+        private decimal iva;
+        private decimal total;
 
         private IRepositorioProducto repositorioProducto;
         public EntityState estado { private get; set; }
@@ -73,17 +73,17 @@ namespace Domain.Models
         [StringLength(maximumLength: 400, MinimumLength = 12, ErrorMessage = "Las Caracteristicas debe contener un minimo de 12 y un maximo de 400 letras.")]
         public string Caracteristicas { get => caracteristicas; set => caracteristicas = value; }
         [Required(ErrorMessage = "El campo Coste es requerido")]
-        public float Coste { get => coste; set => coste = value; }
+        public decimal Coste { get => coste; set => coste = value; }
         [Required(ErrorMessage = "El campo Margen es requerido")]
-        public float Margen { get => margen; set => margen = value; }
+        public decimal Margen { get => margen; set => margen = value; }
         [Required(ErrorMessage = "El campo Descuento es requerido")]
-        public float Descuento { get => descuento; set => descuento = value; }
+        public decimal Descuento { get => descuento; set => descuento = value; }
         [Required(ErrorMessage = "El campo PVP es requerido")]
-        public float Pvp { get => pvp; set => pvp = value; }
+        public decimal Pvp { get => pvp; set => pvp = value; }
         [Required(ErrorMessage = "El campo IVA es requerido")]
-        public float Iva { get => iva; set => iva = value; }
+        public decimal Iva { get => iva; set => iva = value; }
         [Required(ErrorMessage = "El campo TOTAL es requerido")]
-        public float Total { get => total; set => total = value; }
+        public decimal Total { get => total; set => total = value; }
 
 
         public DataTable ListarCategorias()

@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Controlador\ClsCalculoCoste.cs" />
     <Compile Include="Controlador\ClsCalculoDatos.cs" />
+    <Compile Include="Controlador\RepositorioProducto.cs" />
     <Compile Include="Formularios\AddDistribuidor.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -48,13 +48,16 @@
   <ItemGroup>
     <Compile Include="Contracts\IGenericRepository.cs" />
     <Compile Include="Contracts\IRepositorioProducto.cs" />
+    <Compile Include="Contracts\IRepositorioProveedor.cs" />
     <Compile Include="Entities\TB_ATRIBUTOS.cs" />
     <Compile Include="Entities\TB_PRODUCTO.cs" />
+    <Compile Include="Entities\TB_PROVEEDOR.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Repositorio.cs" />
     <Compile Include="Repositories\RepositorioAtributos.cs" />
     <Compile Include="Repositories\RepositorioMaestro.cs" />
     <Compile Include="Repositories\RepositorioProducto.cs" />
+    <Compile Include="Repositories\RepositorioProveedor.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

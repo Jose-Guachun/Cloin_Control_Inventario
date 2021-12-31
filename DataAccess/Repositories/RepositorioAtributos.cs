@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 
 namespace DataAccess.Repositories
 {
+    //CATEGORIA
     public class RepositorioCategoria : RepositorioMaestro, IRepositorioCategoria
     {
         private string selectAll;
@@ -70,6 +71,8 @@ namespace DataAccess.Repositories
             return ExecuteNonQuery(delete);
         }
     }
+
+    //MARCA
     public class RepositorioMarca : RepositorioMaestro, IRepositorioMarca
     {
         private string selectAll;
@@ -126,6 +129,8 @@ namespace DataAccess.Repositories
             return ExecuteNonQuery(delete);
         }
     }
+
+    //MODELO
     public class RepositorioModelo : RepositorioMaestro, IRepositorioModelo
     {
         private string selectAll;
