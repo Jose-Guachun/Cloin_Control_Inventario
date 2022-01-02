@@ -501,7 +501,7 @@ namespace Presentation
             this.TxtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtTelefono.Location = new System.Drawing.Point(138, 275);
             this.TxtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TxtTelefono.MaxLength = 4;
+            this.TxtTelefono.MaxLength = 13;
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(249, 26);
             this.TxtTelefono.TabIndex = 11;

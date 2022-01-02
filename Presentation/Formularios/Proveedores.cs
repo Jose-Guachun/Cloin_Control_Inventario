@@ -23,7 +23,7 @@ namespace Presentation
             CboTipoDoc.SelectedValue = -1;
             DgvProveedor.Columns[0].Visible = false;
             DgvProveedor.Columns[2].Visible = false;
-            DgvProveedor.Columns[11].Visible = false;
+            DgvProveedor.Columns[12].Visible = false;
         }
         private void DgvLleno()
         {
