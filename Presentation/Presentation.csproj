@@ -61,17 +61,17 @@
     <Compile Include="Formularios\AddDistribuidor.Designer.cs">
       <DependentUpon>AddDistribuidor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Caja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Caja.Designer.cs">
+      <DependentUpon>Caja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Calcular.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Calcular.Designer.cs">
       <DependentUpon>Calcular.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Carrito.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Carrito.Designer.cs">
-      <DependentUpon>Carrito.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Categoria.cs">
       <SubType>Form</SubType>
@@ -135,11 +135,11 @@
     <EmbeddedResource Include="Formularios\AddDistribuidor.resx">
       <DependentUpon>AddDistribuidor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Caja.resx">
+      <DependentUpon>Caja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Calcular.resx">
       <DependentUpon>Calcular.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Carrito.resx">
-      <DependentUpon>Carrito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Categoria.es-EC.resx">
       <DependentUpon>Categoria.cs</DependentUpon>

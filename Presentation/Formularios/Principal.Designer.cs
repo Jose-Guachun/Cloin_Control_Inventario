@@ -41,12 +41,13 @@ namespace Presentation
             this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnMinimizar = new System.Windows.Forms.Button();
             this.PanelMenu = new System.Windows.Forms.Panel();
-            this.BtnClientes = new FontAwesome.Sharp.IconButton();
             this.BtnEmpleados = new FontAwesome.Sharp.IconButton();
-            this.BtnProveedor = new FontAwesome.Sharp.IconButton();
+            this.BtnClientes = new FontAwesome.Sharp.IconButton();
+            this.BtnProveedores = new FontAwesome.Sharp.IconButton();
+            this.BtnCaja = new FontAwesome.Sharp.IconButton();
             this.BtnCompras = new FontAwesome.Sharp.IconButton();
             this.BtnProductos = new FontAwesome.Sharp.IconButton();
-            this.BtnCarrito = new FontAwesome.Sharp.IconButton();
+            this.BtnVentas = new FontAwesome.Sharp.IconButton();
             this.BtnInicio = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.PtLogo = new System.Windows.Forms.PictureBox();
@@ -55,7 +56,6 @@ namespace Presentation
             this.LblE_mail = new System.Windows.Forms.Label();
             this.LblTipo = new System.Windows.Forms.Label();
             this.LblNombre = new System.Windows.Forms.Label();
-            this.BtnVentas = new FontAwesome.Sharp.IconButton();
             this.PnlPrincipal.SuspendLayout();
             this.PnlEscritorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -237,13 +237,13 @@ namespace Presentation
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
-            this.PanelMenu.Controls.Add(this.BtnClientes);
             this.PanelMenu.Controls.Add(this.BtnEmpleados);
-            this.PanelMenu.Controls.Add(this.BtnProveedor);
+            this.PanelMenu.Controls.Add(this.BtnClientes);
+            this.PanelMenu.Controls.Add(this.BtnProveedores);
+            this.PanelMenu.Controls.Add(this.BtnCaja);
             this.PanelMenu.Controls.Add(this.BtnCompras);
-            this.PanelMenu.Controls.Add(this.BtnVentas);
             this.PanelMenu.Controls.Add(this.BtnProductos);
-            this.PanelMenu.Controls.Add(this.BtnCarrito);
+            this.PanelMenu.Controls.Add(this.BtnVentas);
             this.PanelMenu.Controls.Add(this.BtnInicio);
             this.PanelMenu.Controls.Add(this.panel3);
             this.PanelMenu.Controls.Add(this.PanelInfo);
@@ -253,30 +253,6 @@ namespace Presentation
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(345, 1100);
             this.PanelMenu.TabIndex = 1;
-            // 
-            // BtnClientes
-            // 
-            this.BtnClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnClientes.FlatAppearance.BorderSize = 0;
-            this.BtnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnClientes.ForeColor = System.Drawing.Color.Silver;
-            this.BtnClientes.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
-            this.BtnClientes.IconColor = System.Drawing.Color.White;
-            this.BtnClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnClientes.IconSize = 32;
-            this.BtnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnClientes.Location = new System.Drawing.Point(0, 626);
-            this.BtnClientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BtnClientes.Name = "BtnClientes";
-            this.BtnClientes.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
-            this.BtnClientes.Size = new System.Drawing.Size(345, 62);
-            this.BtnClientes.TabIndex = 16;
-            this.BtnClientes.Text = "Clientes";
-            this.BtnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnClientes.UseVisualStyleBackColor = true;
-            this.BtnClientes.Click += new System.EventHandler(this.BtnClientes_Click);
             // 
             // BtnEmpleados
             // 
@@ -290,41 +266,87 @@ namespace Presentation
             this.BtnEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEmpleados.IconSize = 32;
             this.BtnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEmpleados.Location = new System.Drawing.Point(0, 564);
+            this.BtnEmpleados.Location = new System.Drawing.Point(0, 626);
             this.BtnEmpleados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnEmpleados.Name = "BtnEmpleados";
             this.BtnEmpleados.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
             this.BtnEmpleados.Size = new System.Drawing.Size(345, 62);
-            this.BtnEmpleados.TabIndex = 15;
+            this.BtnEmpleados.TabIndex = 45;
             this.BtnEmpleados.Text = "Empleados";
             this.BtnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnEmpleados.UseVisualStyleBackColor = true;
-            this.BtnEmpleados.Click += new System.EventHandler(this.BtnEmpleados_Click);
             // 
-            // BtnProveedor
+            // BtnClientes
             // 
-            this.BtnProveedor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnProveedor.FlatAppearance.BorderSize = 0;
-            this.BtnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnProveedor.ForeColor = System.Drawing.Color.Silver;
-            this.BtnProveedor.IconChar = FontAwesome.Sharp.IconChar.Building;
-            this.BtnProveedor.IconColor = System.Drawing.Color.White;
-            this.BtnProveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnProveedor.IconSize = 32;
-            this.BtnProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnProveedor.Location = new System.Drawing.Point(0, 502);
-            this.BtnProveedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BtnProveedor.Name = "BtnProveedor";
-            this.BtnProveedor.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
-            this.BtnProveedor.Size = new System.Drawing.Size(345, 62);
-            this.BtnProveedor.TabIndex = 14;
-            this.BtnProveedor.Text = "Proveedores";
-            this.BtnProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnProveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnProveedor.UseVisualStyleBackColor = true;
-            this.BtnProveedor.Click += new System.EventHandler(this.BtnProveedores_Click);
+            this.BtnClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnClientes.FlatAppearance.BorderSize = 0;
+            this.BtnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnClientes.ForeColor = System.Drawing.Color.Silver;
+            this.BtnClientes.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.BtnClientes.IconColor = System.Drawing.Color.White;
+            this.BtnClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnClientes.IconSize = 32;
+            this.BtnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnClientes.Location = new System.Drawing.Point(0, 564);
+            this.BtnClientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnClientes.Name = "BtnClientes";
+            this.BtnClientes.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
+            this.BtnClientes.Size = new System.Drawing.Size(345, 62);
+            this.BtnClientes.TabIndex = 44;
+            this.BtnClientes.Text = "Clientes";
+            this.BtnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnClientes.UseVisualStyleBackColor = true;
+            // 
+            // BtnProveedores
+            // 
+            this.BtnProveedores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnProveedores.FlatAppearance.BorderSize = 0;
+            this.BtnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProveedores.ForeColor = System.Drawing.Color.Silver;
+            this.BtnProveedores.IconChar = FontAwesome.Sharp.IconChar.Building;
+            this.BtnProveedores.IconColor = System.Drawing.Color.White;
+            this.BtnProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnProveedores.IconSize = 32;
+            this.BtnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnProveedores.Location = new System.Drawing.Point(0, 502);
+            this.BtnProveedores.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnProveedores.Name = "BtnProveedores";
+            this.BtnProveedores.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
+            this.BtnProveedores.Size = new System.Drawing.Size(345, 62);
+            this.BtnProveedores.TabIndex = 42;
+            this.BtnProveedores.Text = "Proveedores";
+            this.BtnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnProveedores.UseVisualStyleBackColor = true;
+            this.BtnProveedores.Click += new System.EventHandler(this.BtnProveedores_Click);
+            // 
+            // BtnCaja
+            // 
+            this.BtnCaja.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnCaja.FlatAppearance.BorderSize = 0;
+            this.BtnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCaja.ForeColor = System.Drawing.Color.Silver;
+            this.BtnCaja.IconChar = FontAwesome.Sharp.IconChar.CashRegister;
+            this.BtnCaja.IconColor = System.Drawing.Color.White;
+            this.BtnCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnCaja.IconSize = 32;
+            this.BtnCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCaja.Location = new System.Drawing.Point(0, 440);
+            this.BtnCaja.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnCaja.Name = "BtnCaja";
+            this.BtnCaja.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
+            this.BtnCaja.Size = new System.Drawing.Size(345, 62);
+            this.BtnCaja.TabIndex = 41;
+            this.BtnCaja.Text = "Caja";
+            this.BtnCaja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnCaja.UseVisualStyleBackColor = true;
+            this.BtnCaja.Click += new System.EventHandler(this.BtnCaja_Click);
             // 
             // BtnCompras
             // 
@@ -338,7 +360,7 @@ namespace Presentation
             this.BtnCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCompras.IconSize = 32;
             this.BtnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCompras.Location = new System.Drawing.Point(0, 440);
+            this.BtnCompras.Location = new System.Drawing.Point(0, 378);
             this.BtnCompras.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnCompras.Name = "BtnCompras";
             this.BtnCompras.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
@@ -374,29 +396,29 @@ namespace Presentation
             this.BtnProductos.UseVisualStyleBackColor = true;
             this.BtnProductos.Click += new System.EventHandler(this.BtnProductos_Click);
             // 
-            // BtnCarrito
+            // BtnVentas
             // 
-            this.BtnCarrito.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnCarrito.FlatAppearance.BorderSize = 0;
-            this.BtnCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCarrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCarrito.ForeColor = System.Drawing.Color.Silver;
-            this.BtnCarrito.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-            this.BtnCarrito.IconColor = System.Drawing.Color.White;
-            this.BtnCarrito.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnCarrito.IconSize = 32;
-            this.BtnCarrito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCarrito.Location = new System.Drawing.Point(0, 254);
-            this.BtnCarrito.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BtnCarrito.Name = "BtnCarrito";
-            this.BtnCarrito.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
-            this.BtnCarrito.Size = new System.Drawing.Size(345, 62);
-            this.BtnCarrito.TabIndex = 10;
-            this.BtnCarrito.Text = "Ventas";
-            this.BtnCarrito.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCarrito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnCarrito.UseVisualStyleBackColor = true;
-            this.BtnCarrito.Click += new System.EventHandler(this.BtnCarrito_Click);
+            this.BtnVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnVentas.FlatAppearance.BorderSize = 0;
+            this.BtnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVentas.ForeColor = System.Drawing.Color.Silver;
+            this.BtnVentas.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
+            this.BtnVentas.IconColor = System.Drawing.Color.White;
+            this.BtnVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnVentas.IconSize = 32;
+            this.BtnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnVentas.Location = new System.Drawing.Point(0, 254);
+            this.BtnVentas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnVentas.Name = "BtnVentas";
+            this.BtnVentas.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
+            this.BtnVentas.Size = new System.Drawing.Size(345, 62);
+            this.BtnVentas.TabIndex = 10;
+            this.BtnVentas.Text = "Ventas";
+            this.BtnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnVentas.UseVisualStyleBackColor = true;
+            this.BtnVentas.Click += new System.EventHandler(this.BtnCarrito_Click);
             // 
             // BtnInicio
             // 
@@ -517,30 +539,6 @@ namespace Presentation
             this.LblNombre.TabIndex = 1;
             this.LblNombre.Text = "Nombres";
             // 
-            // BtnVentas
-            // 
-            this.BtnVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnVentas.FlatAppearance.BorderSize = 0;
-            this.BtnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnVentas.ForeColor = System.Drawing.Color.Silver;
-            this.BtnVentas.IconChar = FontAwesome.Sharp.IconChar.CashRegister;
-            this.BtnVentas.IconColor = System.Drawing.Color.White;
-            this.BtnVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnVentas.IconSize = 32;
-            this.BtnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnVentas.Location = new System.Drawing.Point(0, 378);
-            this.BtnVentas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BtnVentas.Name = "BtnVentas";
-            this.BtnVentas.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
-            this.BtnVentas.Size = new System.Drawing.Size(345, 62);
-            this.BtnVentas.TabIndex = 12;
-            this.BtnVentas.Text = "Cuadre Caja";
-            this.BtnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnVentas.UseVisualStyleBackColor = true;
-            this.BtnVentas.Click += new System.EventHandler(this.BtnVentas_Click);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -588,19 +586,19 @@ namespace Presentation
         private System.Windows.Forms.Label LblTitleChildForm;
         internal System.Windows.Forms.Button BtnSalir;
         internal System.Windows.Forms.Button BtnMinimizar;
-        private FontAwesome.Sharp.IconButton BtnClientes;
-        private FontAwesome.Sharp.IconButton BtnEmpleados;
         private FontAwesome.Sharp.IconButton BtnCompras;
         private FontAwesome.Sharp.IconButton BtnProductos;
-        private FontAwesome.Sharp.IconButton BtnCarrito;
-        private FontAwesome.Sharp.IconButton BtnProveedor;
+        private FontAwesome.Sharp.IconButton BtnVentas;
         private FontAwesome.Sharp.IconButton BtnInicio;
         private System.Windows.Forms.Panel PnlEscritorio;
         private FontAwesome.Sharp.IconPictureBox IconEstado;
         private System.Windows.Forms.PictureBox PtLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private FontAwesome.Sharp.IconButton BtnVentas;
+        private FontAwesome.Sharp.IconButton BtnEmpleados;
+        private FontAwesome.Sharp.IconButton BtnClientes;
+        private FontAwesome.Sharp.IconButton BtnProveedores;
+        private FontAwesome.Sharp.IconButton BtnCaja;
     }
 }
 

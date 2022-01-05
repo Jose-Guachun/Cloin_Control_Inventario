@@ -587,7 +587,7 @@ namespace Presentation
         {
             try
             {
-                if (CboMarca.Items.Count != 0 && CboMarca.SelectedIndex != 0)
+                if (CboMarca.Items.Count != 0 && CboMarca.SelectedIndex != -1)
                 {
                     ClsCalculoDatos.valueMarca = Convert.ToInt32(CboMarca.SelectedValue);
                     ListarModelo(ClsCalculoDatos.valueMarca.ToString());

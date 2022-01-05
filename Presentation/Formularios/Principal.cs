@@ -183,28 +183,17 @@ namespace Presentation
             LblTitleChildForm.Text = FrmHijo.Text;
         }
 
-        private void BtnProveedores_Click(object sender, EventArgs e)
-        {
-            ActivarBoton(sender, RGBColors.color8);
-            AbrirFormHijo(new Proveedores());
-        }
 
         private void BtnCarrito_Click(object sender, EventArgs e)
         {
             ActivarBoton(sender, RGBColors.color2);
-            AbrirFormHijo(new Carrito());
+            AbrirFormHijo(new Ventas());
         }
 
         private void BtnProductos_Click(object sender, EventArgs e)
         {
             ActivarBoton(sender, RGBColors.color3);
             AbrirFormHijo(new Productos());
-        }
-
-        private void BtnVentas_Click(object sender, EventArgs e)
-        {
-            ActivarBoton(sender, RGBColors.color4);
-            AbrirFormHijo(new Ventas());
         }
 
         private void BtnCompras_Click(object sender, EventArgs e)
@@ -223,6 +212,18 @@ namespace Presentation
         {
             ActivarBoton(sender, RGBColors.color7);
             AbrirFormHijo(new Clientes());
+        }
+
+        private void BtnProveedores_Click(object sender, EventArgs e)
+        {
+            ActivarBoton(sender, RGBColors.color8);
+            AbrirFormHijo(new Proveedores());
+        }
+
+        private void BtnCaja_Click(object sender, EventArgs e)
+        {
+            ActivarBoton(sender, RGBColors.color4);
+            AbrirFormHijo(new Caja());
         }
     }
 }
