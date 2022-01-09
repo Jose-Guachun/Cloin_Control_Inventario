@@ -11,12 +11,12 @@ namespace Presentation
         public static ValueType valueCategoria=null;
         public static ValueType valueMarca=null;
         public static ValueType valueModelo=null;
-        public static Boolean banderaCat;
-        public static Boolean banderaMa;
-        public static Boolean banderaMo;
         public static Boolean banderaAt;
+        public static Boolean edit=false;
         public static int caso=0;
         decimal pvp;
+        decimal marge;
+        decimal utilidad;
         decimal iva;
         decimal total;
         decimal desc;
@@ -57,7 +57,7 @@ namespace Presentation
                 else
                 {
                     MessageBox.Show("El descuento debe de ser menor que el Margen de ganancia"," Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    descuento = 0;
+                    descuento = 00;
                     PVP(margen, descuento, coste);
                 }
             }
@@ -68,22 +68,29 @@ namespace Presentation
                 {
                     IVA();
                     total = Total;
+                    
+
                 }
                 else
                 {
-                    pvp = 0;
-                    iva = 0;
-                    total = 0;
+                    pvp = 00;
+                    iva = 00;
+                    total = 00;
                     MessageBox.Show("El precio de venta al publico tiene que ser mayor que el coste de compra, por favor ingrese un Total valido.", " Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 
+                
             }
+            utilidad = pvp - coste;
+            marge = decimal.Round((utilidad / pvp)*100,0);
             List<string> listCalculo = new List<string>()
         {
             descuento.ToString(),
             pvp.ToString(),
             iva.ToString(),
             total.ToString(),
+            utilidad.ToString(),
+            marge.ToString(),
 
          };
             return listCalculo;

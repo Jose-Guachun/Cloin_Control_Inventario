@@ -367,7 +367,7 @@ namespace Presentation
             this.PbModelo.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.PbModelo.IconColor = System.Drawing.Color.Crimson;
             this.PbModelo.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.PbModelo.IconSize = 25;
+            this.PbModelo.IconSize = 16;
             this.PbModelo.Name = "PbModelo";
             this.PbModelo.TabStop = false;
             // 
@@ -379,7 +379,7 @@ namespace Presentation
             this.PbCategoria.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.PbCategoria.IconColor = System.Drawing.Color.Crimson;
             this.PbCategoria.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.PbCategoria.IconSize = 25;
+            this.PbCategoria.IconSize = 16;
             this.PbCategoria.Name = "PbCategoria";
             this.PbCategoria.TabStop = false;
             // 
@@ -391,7 +391,7 @@ namespace Presentation
             this.PbMarca.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.PbMarca.IconColor = System.Drawing.Color.Crimson;
             this.PbMarca.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.PbMarca.IconSize = 25;
+            this.PbMarca.IconSize = 16;
             this.PbMarca.Name = "PbMarca";
             this.PbMarca.TabStop = false;
             // 

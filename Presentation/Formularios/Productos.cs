@@ -138,7 +138,7 @@ namespace Presentation
             ListarModelo("0");
             limpiarContable();
             RtbCaracteristicas.Clear();
-            TxtCoste.Text = "0";
+            TxtCoste.Text = "00";
             ClsCalculoDatos.valueCategoria=null;
             ClsCalculoDatos.valueMarca=null;
             ClsCalculoDatos.valueModelo=null;
@@ -158,11 +158,12 @@ namespace Presentation
         }
         public void limpiarContable()
         {
-            TxtDescuento.Text = "0";
-            TxtIVA.Text = "0";
-            TxtMargen.Text = "20";
-            TxtPVP.Text = "0";
-            TxtTotal.Text = "0";
+            TxtUtilidad.Text="00";
+            MTXTDescuento.Text = "00";
+            TxtIVA.Text = "00";
+            MTXTMargen.Text = "20";
+            TxtPVP.Text = "00";
+            TxtTotal.Text = "00";
         }
         public void selecCombo(string idvalue)
         {
@@ -182,11 +183,12 @@ namespace Presentation
                 TxtCantidad.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
                 RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
                 TxtCoste.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
-                TxtMargen.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
-                TxtDescuento.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
-                TxtPVP.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
-                TxtIVA.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
-                TxtTotal.Text = DgvProductos.CurrentRow.Cells[19].Value.ToString().Trim();
+                MTXTMargen.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
+                MTXTDescuento.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
+                TxtUtilidad.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
+                TxtPVP.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
+                TxtIVA.Text = DgvProductos.CurrentRow.Cells[19].Value.ToString().Trim();
+                TxtTotal.Text = DgvProductos.CurrentRow.Cells[20].Value.ToString().Trim();
                 ImgProducto.Image = Image.FromStream(ByteImage());
             }
         }
@@ -264,9 +266,10 @@ namespace Presentation
                     producto.Titulo = TxtTitulo.Text.ToLower();
                     producto.Cantidad = Convert.ToInt32(TxtCantidad.Text);
                     producto.Coste = decimal.Parse(TxtCoste.Text);
-                    producto.Margen = decimal.Parse(TxtMargen.Text);
+                    producto.Margen = Convert.ToInt32(MTXTMargen.Text.Substring(0,2));
                     producto.Pvp = decimal.Parse(TxtPVP.Text);
-                    producto.Descuento = decimal.Parse(TxtDescuento.Text);
+                    producto.Descuento = Convert.ToInt32(MTXTDescuento.Text.Substring(0, 2));
+                    producto.Utilidad = decimal.Parse(TxtUtilidad.Text);
                     producto.Iva = decimal.Parse(TxtIVA.Text);
                     producto.Total = decimal.Parse(TxtTotal.Text);
                     producto.Caracteristicas = RtbCaracteristicas.Text;
@@ -275,11 +278,19 @@ namespace Presentation
                     if (valid == true)
                     {
                         string result = producto.Guardar();
-                        MessageBox.Show(result, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        producto.estado = EntityState.Vizualisar;
-                        ListaProducto();
-                        limpiar();
-                        botones();
+                        if (ModeloProducto.ban != false)
+                        {
+                            MessageBox.Show(result, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            producto.estado = EntityState.Vizualisar;
+                            ListaProducto();
+                            limpiar();
+                            botones();
+                        }
+                        else
+                        {
+                            ModeloProducto.ban = true; 
+                            MessageBox.Show(result, "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 else
@@ -346,67 +357,17 @@ namespace Presentation
         }
         private void TxtCoste_Leave(object sender, EventArgs e)
         {
-            if (TxtCoste.Text!= "" && TxtMargen.Text != "")
+            if (TxtCoste.Text!= "" && MTXTMargen.Text !=null)
             {
-                    TxtMargen_Leave(sender, e);
+                    MTXTMargen_Leave(sender, e);
             }
             else
             {
-                TxtCoste.Text = "0";
+                TxtCoste.Text = "00";
             }
         }
-        private void TxtMargen_Leave(object sender, EventArgs e)
-        {
-            if (TxtMargen.Text != "" && TxtDescuento.Text != "")
-            { 
-               TxtDescuento_Leave(sender, e);
 
-            }
-            else
-            {
-                TxtMargen.Text = "20";
-                TxtMargen_Leave(sender, e);
-            }
 
-        }
-        private void TxtDescuento_Leave(object sender, EventArgs e)
-        {
-
-            if (TxtDescuento.Text!="" && TxtMargen.Text !="")
-            {
-                decimal coste = Convert.ToDecimal(TxtCoste.Text);
-                decimal margen = Convert.ToDecimal(TxtMargen.Text);
-                decimal descuento = Convert.ToDecimal(TxtDescuento.Text);
-                decimal total = Convert.ToDecimal(TxtTotal.Text);
-                
-                int cont=0;    
-                    foreach (var item in calculo.ListaCalculo(margen, descuento,coste,total,idDato))
-                    {
-                        if (cont == 0)
-                        {
-                            TxtDescuento.Text = item;
-                        }
-                        if (cont == 1)
-                        {
-                            TxtPVP.Text = item;
-                        }
-                        if (cont==2)
-                        {
-                            TxtIVA.Text = item;
-                        }
-                        if (cont==3)
-                        {
-                            TxtTotal.Text = item;
-                        }
-                        cont++;     
-                    }
-            }
-            else if (TxtDescuento.Text == "")
-            {
-                TxtDescuento.Text = "0";
-                TxtDescuento_Leave(sender, e);
-            }
-        }
 
         private void TxtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -470,7 +431,7 @@ namespace Presentation
 
         private void TxtTotal_Leave(object sender, EventArgs e)
         { 
-            TxtDescuento_Leave(sender,e);
+            MTXTDescuento_Leave(sender,e);
         }
 
         private void BtnCheck_Click(object sender, EventArgs e)
@@ -480,18 +441,18 @@ namespace Presentation
                 idDato = false;
                 limpiarContable();
                 TxtTotal.Enabled = true;
-                TxtMargen.Enabled = false;
-                TxtMargen.Text = "0";
+                MTXTMargen.Enabled = false;
+                MTXTMargen.Text = "0";
                 BtnCheck.IconChar = FontAwesome.Sharp.IconChar.UndoAlt;
                 BtnCheck.BackColor = System.Drawing.Color.Firebrick;
             }
             else
             {
                 idDato = true;
-                TxtTotal.Text = "0";
-                TxtMargen.Enabled = true;
-                TxtMargen.Text = "20";
-                TxtDescuento_Leave(sender, e);
+                TxtTotal.Text = "00";
+                MTXTMargen.Enabled = true;
+                MTXTMargen.Text = "20";
+                MTXTDescuento_Leave(sender, e);
                 TxtTotal.Enabled = false;
                 BtnCheck.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
                 BtnCheck.BackColor = System.Drawing.Color.MediumSeaGreen;
@@ -502,17 +463,24 @@ namespace Presentation
         {
             Categoria categoria = new Categoria();
             categoria.ShowDialog();
-            if (ClsCalculoDatos.banderaCat==true)
+
+            if (ClsCalculoDatos.edit == true && ModeloCategoria.banderaCat == true || ModeloMarca.banderaMa == true || ModeloModelo.banderaMo == true)
+            {
+                ListaProducto();
+            }
+
+            if (ModeloCategoria.banderaCat==true)
             {
                 ListarCategorias();
-                ClsCalculoDatos.banderaCat = false;
+                ModeloCategoria.banderaCat = false;
             }
-            if (ClsCalculoDatos.banderaMa == true)
+            if (ModeloMarca.banderaMa == true)
             {
                 ListarMarca();
-                ClsCalculoDatos.banderaMa = false;
+                ModeloMarca.banderaMa = false;
             }
-            if (ClsCalculoDatos.banderaMo == true && ClsCalculoDatos.valueMarca!=null)
+
+            if (ModeloModelo.banderaMo == true && ClsCalculoDatos.valueMarca!=null)
             {
                 try
                 {
@@ -522,7 +490,7 @@ namespace Presentation
                 {
                     ListarModelo("0");
                 }
-                ClsCalculoDatos.banderaMo = false;  
+                ModeloModelo.banderaMo = false;  
             }
             if (ClsCalculoDatos.valueCategoria!=null)
             {
@@ -548,6 +516,7 @@ namespace Presentation
             {
                 CboModelo.SelectedValue = -1;
             }
+
             
         }
         private void BtnCategoria_Click(object sender, EventArgs e)
@@ -578,7 +547,7 @@ namespace Presentation
 
         private void CboCategoria_SelectedValueChanged(object sender, EventArgs e)
         {
-                if (CboCategoria.Items.Count!=0 && CboCategoria.SelectedIndex != 0)
+                if (CboCategoria.Items.Count!= 0 && CboCategoria.SelectedIndex != 0)
                 {
                     ClsCalculoDatos.valueCategoria = Convert.ToInt32(CboCategoria.SelectedValue);
                 }
@@ -668,6 +637,67 @@ namespace Presentation
             calculo.ShowDialog();
             TxtCoste.Text = ClsCalculoCoste.cost;
             TxtCoste_Leave(sender,e);
+        }
+
+        private void MTXTMargen_Leave(object sender, EventArgs e)
+        {
+            if (MTXTMargen!=null && MTXTDescuento.Text != null)
+            {
+                MTXTDescuento_Leave(sender, e);
+
+            }
+            else
+            {
+                MTXTMargen.Text = "20";
+                MTXTMargen_Leave(sender, e);
+            }
+        }
+
+        private void MTXTDescuento_Leave(object sender, EventArgs e)
+        {
+
+            if (MTXTDescuento.Text != null && MTXTMargen.Text != null)
+            {
+                decimal coste = Convert.ToDecimal(TxtCoste.Text);
+                decimal margen = Convert.ToDecimal(MTXTMargen.Text.Substring(0,2));
+                decimal descuento = Convert.ToDecimal(MTXTDescuento.Text.Substring(0,2));
+                decimal total = Convert.ToDecimal(TxtTotal.Text);
+
+                int cont = 0;
+                foreach (var item in calculo.ListaCalculo(margen, descuento, coste, total, idDato))
+                {
+                    if (cont == 0)
+                    {
+                        MTXTDescuento.Text = item;
+                    }
+                    if (cont == 1)
+                    {
+                        TxtPVP.Text = item;
+                    }
+                    if (cont == 2)
+                    {
+                        TxtIVA.Text = item;
+                    }
+                    if (cont == 3)
+                    {
+                        TxtTotal.Text = item;
+                    }
+                    if (cont == 4)
+                    {
+                        TxtUtilidad.Text = item;
+                    }
+                    if (cont == 5 && idDato==false)
+                    {
+                        MTXTMargen.Text = item;
+                    }
+                    cont++;
+                }
+            }
+            else if (MTXTDescuento.Text == null)
+            {
+                MTXTDescuento.Text = "00";
+                MTXTDescuento_Leave(sender, e);
+            }
         }
     }
 }

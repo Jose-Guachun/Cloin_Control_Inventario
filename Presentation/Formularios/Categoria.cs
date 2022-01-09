@@ -188,7 +188,7 @@ namespace Presentation
             try
             {
                 bool valid;
-                string result;
+                string result="";
                 switch (ClsCalculoDatos.caso)
                 {
                     case 1:
@@ -196,10 +196,7 @@ namespace Presentation
                         valid = new Helps.ValidacionDatos(categoria).Validar();
                         if (valid == true)
                         {
-                            result = categoria.Guardar();
-                            MessageBox.Show(result);
-                            categoria.estado = EntityState.Vizualisar;
-                            ClsCalculoDatos.banderaCat = true;
+                            result = categoria.Guardar(); 
                         }
                         break;
                     case 2:
@@ -208,9 +205,7 @@ namespace Presentation
                         if (valid == true)
                         {
                             result = marca.Guardar();
-                            MessageBox.Show(result);
-                            marca.estado = EntityState.Vizualisar;
-                            ClsCalculoDatos.banderaMa= true;
+
                         }
                         break;
                     case 3:
@@ -222,24 +217,33 @@ namespace Presentation
                             if (valid == true)
                             {
                                 result = modelo.Guardar();
-                                MessageBox.Show(result);
-                                modelo.estado = EntityState.Vizualisar;
-                                ClsCalculoDatos.banderaMo = true;
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Seleccione la Marca que pertenece el modelo a crear");
+                            MessageBox.Show("Seleccione la Marca que pertenece el modelo a crear", "Seleccion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         break;
                 }
-                ListarDatos();
-                botones();
+                if (ModeloCategoria.banderaCat==true || ModeloMarca.banderaMa==true || ModeloModelo.banderaMo==true)
+                {
+                    MessageBox.Show(result, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ListarDatos();
+                    botones();
+                    categoria.estado = EntityState.Vizualisar;
+                    marca.estado = EntityState.Vizualisar;
+                    modelo.estado = EntityState.Vizualisar;
+                }
+                else
+                {
+                    MessageBox.Show(result, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex + "Escriba la categoria que desea registrar");
+                MessageBox.Show(ex + "Sucedio un error inesperado");
             }
         }
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -256,6 +260,7 @@ namespace Presentation
                 BtnEditar.Enabled = false;
                 BtnNuevo.Enabled = false;
                 BtnSeleccionar.Enabled = false;
+                ClsCalculoDatos.edit = true;
                 IdDato = Convert.ToInt32(DgvDatos.CurrentRow.Cells[0].Value);
                 switch (ClsCalculoDatos.caso)
                 {
@@ -298,21 +303,21 @@ namespace Presentation
                             categoria.IdCategoria = IdDato;
                             result = categoria.Guardar();
                             MessageBox.Show(result);
-                            ClsCalculoDatos.banderaCat = true;
+                            ModeloCategoria.banderaCat = true;
                             break;
                         case 2:
                             marca.estado = EntityState.Eliminar;
                             marca.IdMarca = IdDato;
                             result = marca.Guardar();
                             MessageBox.Show(result);
-                            ClsCalculoDatos.banderaMa = true;
+                            ModeloMarca.banderaMa = true;
                             break;
                         case 3:
                             modelo.estado = EntityState.Eliminar;
                             modelo.IdModelo = IdDato;
                             result = modelo.Guardar();
                             MessageBox.Show(result);
-                            ClsCalculoDatos.banderaMo = true;
+                            ModeloModelo.banderaMo = true;
                             break;
                     }
                     ListarDatos();

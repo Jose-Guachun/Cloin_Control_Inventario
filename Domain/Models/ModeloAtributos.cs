@@ -17,6 +17,7 @@ namespace Domain.Models
 {
     public class ModeloCategoria : RepositorioMaestro
     {
+        public static Boolean banderaCat;
         private int idCategoria;
         private int n;
         private string categoria;
@@ -58,7 +59,7 @@ namespace Domain.Models
                         mensaje = "Se a Eliminado correctamente";
                         break;
                 }
-
+                banderaCat = true;
             }
             catch (Exception ex)
             {
@@ -69,6 +70,7 @@ namespace Domain.Models
                 }
                 else
                     mensaje = ex.ToString();
+                    banderaCat = false;
             }
             return mensaje;
 
@@ -102,10 +104,12 @@ namespace Domain.Models
     }
     public class ModeloMarca : RepositorioMaestro
     {
+        public static Boolean banderaMa;
         private int idMarca;
         private int n;
         private string marca;
         private IRepositorioMarca repositorioMarca;
+
         public EntityState estado { private get; set; }
 
 
@@ -143,6 +147,7 @@ namespace Domain.Models
                         mensaje = "Se a Eliminado correctamente";
                         break;
                 }
+                banderaMa = true;
 
             }
             catch (Exception ex)
@@ -154,6 +159,7 @@ namespace Domain.Models
                 }
                 else
                     mensaje = ex.ToString();
+                banderaMa= false;
             }
             return mensaje;
 
@@ -186,6 +192,7 @@ namespace Domain.Models
     }
     public class ModeloModelo : RepositorioMaestro
     {
+        public static Boolean banderaMo;
         private int idModelo;
         private int n;
         private int idMarca;
@@ -234,7 +241,7 @@ namespace Domain.Models
                         mensaje = "Se a Eliminado correctamente";
                         break;
                 }
-
+                banderaMo = true;
             }
             catch (Exception ex)
             {
@@ -245,6 +252,7 @@ namespace Domain.Models
                 }
                 else
                     mensaje = ex.ToString();
+                banderaMo = false;
             }
             return mensaje;
 

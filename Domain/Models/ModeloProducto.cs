@@ -18,14 +18,15 @@ namespace Domain.Models
 {
     public class ModeloProducto : RepositorioMaestro
     {
+        public static Boolean ban=true;
         private int idProducto;
         private int n;
         private int idMarca;
         private int idModelo;
         private int idCategoria;
+        private string categoria;
         private string marca;
         private string modelo;
-        private string categoria;
         private string codigo_SKU;
         private string codigo_UPC;
         private byte[] img;
@@ -33,9 +34,10 @@ namespace Domain.Models
         private int cantidad;
         private string caracteristicas;
         private decimal coste;
-        private decimal margen;
+        private int margen;
+        private int descuento;
+        private decimal utilidad;
         private decimal pvp;
-        private decimal descuento;
         private decimal iva;
         private decimal total;
 
@@ -51,9 +53,9 @@ namespace Domain.Models
         public int IdModelo { get => idModelo; set => idModelo = value; }
         [Required(ErrorMessage = "El campo Categoria es requerido")]
         public int IdCategoria { get => idCategoria; set => idCategoria = value; }
+        public string Categoria { get => categoria; set => categoria = value; }
         public string Marca { get => marca; set => marca = value; }
         public string Modelo { get => modelo; set => modelo = value; }
-        public string Categoria { get => categoria; set => categoria = value; }
         [Required(ErrorMessage = "Llene todos los campos")]
         [StringLength(maximumLength: 8, MinimumLength = 8, ErrorMessage = "El codigo SKU no puede formarce si no selecciona una Categoria, Marca y Modelo para completar los 8 digitos")]
         public string SKU { get => codigo_SKU; set => codigo_SKU = value; }
@@ -75,9 +77,10 @@ namespace Domain.Models
         [Required(ErrorMessage = "El campo Coste es requerido")]
         public decimal Coste { get => coste; set => coste = value; }
         [Required(ErrorMessage = "El campo Margen es requerido")]
-        public decimal Margen { get => margen; set => margen = value; }
+        public int Margen { get => margen; set => margen = value; }
         [Required(ErrorMessage = "El campo Descuento es requerido")]
-        public decimal Descuento { get => descuento; set => descuento = value; }
+        public int Descuento { get => descuento; set => descuento = value; }
+        public decimal Utilidad { get => utilidad; set => utilidad = value; }
         [Required(ErrorMessage = "El campo PVP es requerido")]
         public decimal Pvp { get => pvp; set => pvp = value; }
         [Required(ErrorMessage = "El campo IVA es requerido")]
@@ -158,6 +161,7 @@ namespace Domain.Models
                 ModeloDatosProducto.Coste = coste;
                 ModeloDatosProducto.Margen = margen;
                 ModeloDatosProducto.Descuento = descuento;
+                ModeloDatosProducto.Utilidad = utilidad;
                 ModeloDatosProducto.PVP = pvp;
                 ModeloDatosProducto.IVA = iva;
                 ModeloDatosProducto.Total = total;
@@ -185,9 +189,16 @@ namespace Domain.Models
                 if (sqlEx != null && sqlEx.Number == 2627)
                 {
                     mensaje = "Modelo o Codigo UPC ya esta registrado en otro producto";
+                } else if (sqlEx != null && sqlEx.Number == 547)
+                {
+                    mensaje = "Los campos Categoria, Marca, Modelo no pueden quedar sin seleccionar";
                 }
                 else
+                {
                     mensaje = ex.ToString();
+                }
+                ban = false;
+
             }
             return mensaje;
 
@@ -206,12 +217,12 @@ namespace Domain.Models
 
                     idProducto = item.IdProducto,
                     n = cont,
-                    idMarca = Convert.ToInt32(Modelos(item.Modelo,true)),
-                    idModelo =Convert.ToInt32(item.Modelo),
-                    idCategoria= Convert.ToInt32(item.Categoria),
-                    marca=Marcas(Modelos(item.Modelo, true)).ToString(),
-                    modelo = Modelos(item.Modelo,false).ToString(), 
-                    categoria=Categorias(item.Categoria).ToString(),
+                    idMarca = item.IdMarca, 
+                    idModelo =item.IdModelo,
+                    idCategoria= item.IdCategoria,
+                    categoria = item.Categoria,
+                    marca =item.Marca,
+                    modelo = item.Modelo, 
                     codigo_SKU=item.Codigo_SKU,
                     codigo_UPC = item.Codigo_UPC,
                     img =item.Img,
@@ -221,6 +232,7 @@ namespace Domain.Models
                     coste=item.Coste,
                     margen =item.Margen,
                     descuento = item.Descuento,
+                    utilidad = item.Utilidad,
                     pvp = item.PVP,
                     iva = item.IVA,
                     total = item.Total

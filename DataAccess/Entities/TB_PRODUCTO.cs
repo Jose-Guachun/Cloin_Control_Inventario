@@ -21,8 +21,9 @@ namespace DataAccess.Entities
         public int Cantidad { get; set; }
         public string Caracteristicas { get; set; }
         public decimal Coste { get; set; }
-        public decimal Margen { get; set; }
-        public decimal Descuento { get; set; }
+        public int Margen { get; set; }
+        public int Descuento { get; set; }
+        public decimal Utilidad { get; set; }
         public decimal PVP { get; set; }
         public decimal IVA { get; set; }
         public decimal Total { get; set; }
