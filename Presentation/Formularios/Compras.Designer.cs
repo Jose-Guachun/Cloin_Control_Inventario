@@ -29,8 +29,8 @@ namespace Presentation
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnlLista = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnRuc = new FontAwesome.Sharp.IconButton();
@@ -42,23 +42,30 @@ namespace Presentation
             this.DgvProveedor = new System.Windows.Forms.DataGridView();
             this.PnlDatos = new System.Windows.Forms.Panel();
             this.TlpDatos = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.BtnExaminar = new FontAwesome.Sharp.IconButton();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.CboTipoDoc = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.TxtPais = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.TxtDireccion = new System.Windows.Forms.TextBox();
+            this.CboTipoDoc = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.TxtTelefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtNomOperador = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtCelular = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.TxtEmail = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.BtnCategoria = new FontAwesome.Sharp.IconButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.TxtDireccion = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.LblTitleChildForm = new System.Windows.Forms.Label();
             this.PnlMenu = new System.Windows.Forms.Panel();
             this.BtnCancelar = new FontAwesome.Sharp.IconButton();
@@ -66,20 +73,13 @@ namespace Presentation
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
             this.BtnNuevo = new FontAwesome.Sharp.IconButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.BtnUPC = new FontAwesome.Sharp.IconButton();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.BtnExaminar = new FontAwesome.Sharp.IconButton();
             this.PnlLista.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProveedor)).BeginInit();
             this.PnlDatos.SuspendLayout();
             this.TlpDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.PnlMenu.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlLista
@@ -93,9 +93,9 @@ namespace Presentation
             this.PnlLista.Controls.Add(this.BtnLimpiar);
             this.PnlLista.Controls.Add(this.TxtBuscar);
             this.PnlLista.Controls.Add(this.DgvProveedor);
-            this.PnlLista.Location = new System.Drawing.Point(318, 66);
+            this.PnlLista.Location = new System.Drawing.Point(359, 66);
             this.PnlLista.Name = "PnlLista";
-            this.PnlLista.Size = new System.Drawing.Size(716, 534);
+            this.PnlLista.Size = new System.Drawing.Size(675, 534);
             this.PnlLista.TabIndex = 58;
             // 
             // tableLayoutPanel1
@@ -202,7 +202,7 @@ namespace Presentation
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 25;
             this.BtnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnLimpiar.Location = new System.Drawing.Point(579, 87);
+            this.BtnLimpiar.Location = new System.Drawing.Point(538, 87);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(104, 28);
             this.BtnLimpiar.TabIndex = 19;
@@ -220,7 +220,7 @@ namespace Presentation
             this.TxtBuscar.Location = new System.Drawing.Point(34, 90);
             this.TxtBuscar.MaxLength = 200;
             this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(539, 28);
+            this.TxtBuscar.Size = new System.Drawing.Size(498, 28);
             this.TxtBuscar.TabIndex = 18;
             // 
             // DgvProveedor
@@ -234,23 +234,23 @@ namespace Presentation
             this.DgvProveedor.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvProveedor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvProveedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvProveedor.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvProveedor.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvProveedor.EnableHeadersVisualStyles = false;
             this.DgvProveedor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.DgvProveedor.Location = new System.Drawing.Point(34, 120);
@@ -260,7 +260,7 @@ namespace Presentation
             this.DgvProveedor.RowHeadersVisible = false;
             this.DgvProveedor.RowHeadersWidth = 62;
             this.DgvProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvProveedor.Size = new System.Drawing.Size(649, 396);
+            this.DgvProveedor.Size = new System.Drawing.Size(608, 396);
             this.DgvProveedor.TabIndex = 20;
             // 
             // PnlDatos
@@ -273,28 +273,26 @@ namespace Presentation
             this.PnlDatos.Enabled = false;
             this.PnlDatos.Location = new System.Drawing.Point(0, 66);
             this.PnlDatos.Name = "PnlDatos";
-            this.PnlDatos.Size = new System.Drawing.Size(318, 534);
+            this.PnlDatos.Size = new System.Drawing.Size(359, 534);
             this.PnlDatos.TabIndex = 57;
             // 
             // TlpDatos
             // 
             this.TlpDatos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TlpDatos.ColumnCount = 2;
+            this.TlpDatos.ColumnCount = 3;
             this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.TlpDatos.Controls.Add(this.numericUpDown1, 1, 5);
+            this.TlpDatos.Controls.Add(this.BtnExaminar, 1, 0);
             this.TlpDatos.Controls.Add(this.richTextBox2, 1, 9);
-            this.TlpDatos.Controls.Add(this.dateTimePicker1, 1, 2);
             this.TlpDatos.Controls.Add(this.label12, 0, 1);
+            this.TlpDatos.Controls.Add(this.dateTimePicker1, 1, 4);
             this.TlpDatos.Controls.Add(this.label8, 0, 9);
+            this.TlpDatos.Controls.Add(this.label16, 0, 2);
             this.TlpDatos.Controls.Add(this.CboTipoDoc, 1, 1);
-            this.TlpDatos.Controls.Add(this.label1, 0, 2);
-            this.TlpDatos.Controls.Add(this.label16, 0, 3);
-            this.TlpDatos.Controls.Add(this.TxtPais, 1, 3);
-            this.TlpDatos.Controls.Add(this.label13, 0, 4);
-            this.TlpDatos.Controls.Add(this.TxtDireccion, 1, 4);
             this.TlpDatos.Controls.Add(this.label7, 0, 5);
-            this.TlpDatos.Controls.Add(this.TxtTelefono, 1, 5);
             this.TlpDatos.Controls.Add(this.label3, 0, 6);
             this.TlpDatos.Controls.Add(this.TxtNomOperador, 1, 6);
             this.TlpDatos.Controls.Add(this.label2, 0, 7);
@@ -303,8 +301,13 @@ namespace Presentation
             this.TlpDatos.Controls.Add(this.TxtEmail, 1, 8);
             this.TlpDatos.Controls.Add(this.label4, 0, 10);
             this.TlpDatos.Controls.Add(this.label5, 0, 0);
-            this.TlpDatos.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.TlpDatos.Controls.Add(this.richTextBox1, 1, 10);
+            this.TlpDatos.Controls.Add(this.BtnCategoria, 2, 1);
+            this.TlpDatos.Controls.Add(this.comboBox1, 1, 2);
+            this.TlpDatos.Controls.Add(this.TxtDireccion, 1, 3);
+            this.TlpDatos.Controls.Add(this.label13, 0, 3);
+            this.TlpDatos.Controls.Add(this.label1, 0, 4);
+            this.TlpDatos.Controls.Add(this.iconButton1, 2, 2);
             this.TlpDatos.Location = new System.Drawing.Point(25, 55);
             this.TlpDatos.Name = "TlpDatos";
             this.TlpDatos.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -320,35 +323,55 @@ namespace Presentation
             this.TlpDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.26294F));
             this.TlpDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.33734F));
             this.TlpDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.33734F));
-            this.TlpDatos.Size = new System.Drawing.Size(290, 448);
+            this.TlpDatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.TlpDatos.Size = new System.Drawing.Size(328, 448);
             this.TlpDatos.TabIndex = 102;
             // 
-            // label5
+            // numericUpDown1
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 41);
-            this.label5.TabIndex = 121;
-            this.label5.Text = "Archivo";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericUpDown1.Location = new System.Drawing.Point(79, 156);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(216, 20);
+            this.numericUpDown1.TabIndex = 120;
             // 
-            // label8
+            // BtnExaminar
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(3, 265);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 91);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Descripcion";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnExaminar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnExaminar.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.BtnExaminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnExaminar.Enabled = false;
+            this.BtnExaminar.FlatAppearance.BorderSize = 0;
+            this.BtnExaminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnExaminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExaminar.ForeColor = System.Drawing.Color.White;
+            this.BtnExaminar.IconChar = FontAwesome.Sharp.IconChar.Store;
+            this.BtnExaminar.IconColor = System.Drawing.Color.White;
+            this.BtnExaminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnExaminar.IconSize = 20;
+            this.BtnExaminar.Location = new System.Drawing.Point(79, 3);
+            this.BtnExaminar.Name = "BtnExaminar";
+            this.BtnExaminar.Size = new System.Drawing.Size(216, 35);
+            this.BtnExaminar.TabIndex = 121;
+            this.BtnExaminar.Text = "Seleccionar Productos";
+            this.BtnExaminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnExaminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnExaminar.UseVisualStyleBackColor = false;
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox2.Location = new System.Drawing.Point(79, 268);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(216, 85);
+            this.richTextBox2.TabIndex = 126;
+            this.richTextBox2.Text = "";
             // 
             // label12
             // 
@@ -364,6 +387,43 @@ namespace Presentation
             this.label12.Text = "Proveedor";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(79, 128);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(216, 20);
+            this.dateTimePicker1.TabIndex = 120;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label8.Location = new System.Drawing.Point(3, 265);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 91);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Descripcion";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label16.Location = new System.Drawing.Point(3, 69);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(28, 28);
+            this.label16.TabIndex = 121;
+            this.label16.Text = "Tipo";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // CboTipoDoc
             // 
             this.CboTipoDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -374,71 +434,8 @@ namespace Presentation
             this.CboTipoDoc.Location = new System.Drawing.Point(78, 43);
             this.CboTipoDoc.Margin = new System.Windows.Forms.Padding(2);
             this.CboTipoDoc.Name = "CboTipoDoc";
-            this.CboTipoDoc.Size = new System.Drawing.Size(210, 21);
+            this.CboTipoDoc.Size = new System.Drawing.Size(218, 21);
             this.CboTipoDoc.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(3, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 28);
-            this.label1.TabIndex = 122;
-            this.label1.Text = "Fecha";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label16.Location = new System.Drawing.Point(3, 97);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(28, 28);
-            this.label16.TabIndex = 121;
-            this.label16.Text = "Tipo";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // TxtPais
-            // 
-            this.TxtPais.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPais.Location = new System.Drawing.Point(79, 100);
-            this.TxtPais.MaxLength = 60;
-            this.TxtPais.Name = "TxtPais";
-            this.TxtPais.Size = new System.Drawing.Size(208, 20);
-            this.TxtPais.TabIndex = 9;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label13.Location = new System.Drawing.Point(3, 125);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 28);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "Comprobante";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // TxtDireccion
-            // 
-            this.TxtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDireccion.Location = new System.Drawing.Point(79, 128);
-            this.TxtDireccion.MaxLength = 200;
-            this.TxtDireccion.Name = "TxtDireccion";
-            this.TxtDireccion.Size = new System.Drawing.Size(208, 20);
-            this.TxtDireccion.TabIndex = 10;
             // 
             // label7
             // 
@@ -452,17 +449,6 @@ namespace Presentation
             this.label7.TabIndex = 34;
             this.label7.Text = "Cantidad";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // TxtTelefono
-            // 
-            this.TxtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTelefono.Location = new System.Drawing.Point(79, 156);
-            this.TxtTelefono.MaxLength = 13;
-            this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.Size = new System.Drawing.Size(208, 20);
-            this.TxtTelefono.TabIndex = 11;
             // 
             // label3
             // 
@@ -485,7 +471,7 @@ namespace Presentation
             this.TxtNomOperador.Location = new System.Drawing.Point(79, 184);
             this.TxtNomOperador.MaxLength = 60;
             this.TxtNomOperador.Name = "TxtNomOperador";
-            this.TxtNomOperador.Size = new System.Drawing.Size(208, 20);
+            this.TxtNomOperador.Size = new System.Drawing.Size(216, 20);
             this.TxtNomOperador.TabIndex = 12;
             // 
             // label2
@@ -496,9 +482,9 @@ namespace Presentation
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(3, 209);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 28);
+            this.label2.Size = new System.Drawing.Size(64, 28);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Flete";
+            this.label2.Text = "Flete sin Iva";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // TxtCelular
@@ -509,7 +495,7 @@ namespace Presentation
             this.TxtCelular.Location = new System.Drawing.Point(79, 212);
             this.TxtCelular.MaxLength = 13;
             this.TxtCelular.Name = "TxtCelular";
-            this.TxtCelular.Size = new System.Drawing.Size(208, 20);
+            this.TxtCelular.Size = new System.Drawing.Size(216, 20);
             this.TxtCelular.TabIndex = 13;
             // 
             // label6
@@ -533,8 +519,142 @@ namespace Presentation
             this.TxtEmail.Location = new System.Drawing.Point(79, 240);
             this.TxtEmail.MaxLength = 60;
             this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(208, 20);
+            this.TxtEmail.Size = new System.Drawing.Size(216, 20);
             this.TxtEmail.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(3, 356);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 92);
+            this.label4.TabIndex = 123;
+            this.label4.Text = "Observacion";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 41);
+            this.label5.TabIndex = 121;
+            this.label5.Text = "Archivo";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox1.Location = new System.Drawing.Point(79, 359);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(216, 86);
+            this.richTextBox1.TabIndex = 125;
+            this.richTextBox1.Text = "";
+            // 
+            // BtnCategoria
+            // 
+            this.BtnCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCategoria.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.BtnCategoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnCategoria.FlatAppearance.BorderSize = 0;
+            this.BtnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCategoria.ForeColor = System.Drawing.Color.White;
+            this.BtnCategoria.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.BtnCategoria.IconColor = System.Drawing.Color.White;
+            this.BtnCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnCategoria.IconSize = 15;
+            this.BtnCategoria.Location = new System.Drawing.Point(302, 46);
+            this.BtnCategoria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnCategoria.Name = "BtnCategoria";
+            this.BtnCategoria.Size = new System.Drawing.Size(22, 18);
+            this.BtnCategoria.TabIndex = 127;
+            this.BtnCategoria.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnCategoria.UseVisualStyleBackColor = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(78, 71);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(218, 21);
+            this.comboBox1.TabIndex = 120;
+            // 
+            // TxtDireccion
+            // 
+            this.TxtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDireccion.Location = new System.Drawing.Point(79, 100);
+            this.TxtDireccion.MaxLength = 200;
+            this.TxtDireccion.Name = "TxtDireccion";
+            this.TxtDireccion.Size = new System.Drawing.Size(216, 20);
+            this.TxtDireccion.TabIndex = 10;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label13.Location = new System.Drawing.Point(3, 97);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 28);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Comprobante";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(3, 125);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 28);
+            this.label1.TabIndex = 122;
+            this.label1.Text = "Fecha";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 15;
+            this.iconButton1.Location = new System.Drawing.Point(302, 74);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(22, 18);
+            this.iconButton1.TabIndex = 128;
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconButton1.UseVisualStyleBackColor = false;
             // 
             // LblTitleChildForm
             // 
@@ -673,115 +793,7 @@ namespace Presentation
             this.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnNuevo.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(79, 72);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 120;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(3, 356);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 92);
-            this.label4.TabIndex = 123;
-            this.label4.Text = "Observacion";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.21154F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.78846F));
-            this.tableLayoutPanel2.Controls.Add(this.BtnExaminar, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.BtnUPC, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(79, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(208, 35);
-            this.tableLayoutPanel2.TabIndex = 124;
-            // 
-            // BtnUPC
-            // 
-            this.BtnUPC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnUPC.BackColor = System.Drawing.Color.Transparent;
-            this.BtnUPC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnUPC.FlatAppearance.BorderSize = 0;
-            this.BtnUPC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnUPC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUPC.ForeColor = System.Drawing.Color.Black;
-            this.BtnUPC.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
-            this.BtnUPC.IconColor = System.Drawing.Color.Crimson;
-            this.BtnUPC.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnUPC.IconSize = 20;
-            this.BtnUPC.Location = new System.Drawing.Point(4, 5);
-            this.BtnUPC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BtnUPC.Name = "BtnUPC";
-            this.BtnUPC.Size = new System.Drawing.Size(163, 25);
-            this.BtnUPC.TabIndex = 120;
-            this.BtnUPC.Text = "Sin Archivo";
-            this.BtnUPC.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnUPC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnUPC.UseVisualStyleBackColor = false;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(79, 359);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(208, 86);
-            this.richTextBox1.TabIndex = 125;
-            this.richTextBox1.Text = "";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox2.Location = new System.Drawing.Point(79, 268);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(208, 85);
-            this.richTextBox2.TabIndex = 126;
-            this.richTextBox2.Text = "";
-            // 
-            // BtnExaminar
-            // 
-            this.BtnExaminar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnExaminar.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.BtnExaminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnExaminar.Enabled = false;
-            this.BtnExaminar.FlatAppearance.BorderSize = 0;
-            this.BtnExaminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnExaminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnExaminar.ForeColor = System.Drawing.Color.White;
-            this.BtnExaminar.IconChar = FontAwesome.Sharp.IconChar.Download;
-            this.BtnExaminar.IconColor = System.Drawing.Color.White;
-            this.BtnExaminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnExaminar.IconSize = 15;
-            this.BtnExaminar.Location = new System.Drawing.Point(174, 3);
-            this.BtnExaminar.Name = "BtnExaminar";
-            this.BtnExaminar.Size = new System.Drawing.Size(31, 29);
-            this.BtnExaminar.TabIndex = 121;
-            this.BtnExaminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnExaminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnExaminar.UseVisualStyleBackColor = false;
+            this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
             // 
             // Compras
             // 
@@ -803,8 +815,8 @@ namespace Presentation
             this.PnlDatos.PerformLayout();
             this.TlpDatos.ResumeLayout(false);
             this.TlpDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.PnlMenu.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -822,17 +834,14 @@ namespace Presentation
         private System.Windows.Forms.DataGridView DgvProveedor;
         private System.Windows.Forms.Panel PnlDatos;
         private System.Windows.Forms.TableLayoutPanel TlpDatos;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox CboTipoDoc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox TxtPais;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox TxtDireccion;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox TxtTelefono;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtNomOperador;
         private System.Windows.Forms.Label label2;
@@ -846,12 +855,15 @@ namespace Presentation
         private FontAwesome.Sharp.IconButton BtnEditar;
         private FontAwesome.Sharp.IconButton BtnGuardar;
         private FontAwesome.Sharp.IconButton BtnNuevo;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.RichTextBox richTextBox2;
-        private FontAwesome.Sharp.IconButton BtnUPC;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private FontAwesome.Sharp.IconButton BtnExaminar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private FontAwesome.Sharp.IconButton BtnCategoria;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

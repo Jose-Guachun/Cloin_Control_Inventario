@@ -15,5 +15,10 @@ namespace Presentation
         {
             InitializeComponent();
         }
+
+        private void BtnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

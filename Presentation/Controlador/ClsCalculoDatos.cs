@@ -69,6 +69,7 @@ namespace Presentation
                     IVA();
                     total = Total;
                     
+                   
 
                 }
                 else
@@ -81,8 +82,16 @@ namespace Presentation
                 
                 
             }
-            utilidad = pvp - coste;
-            marge = decimal.Round((utilidad / pvp)*100,0);
+            if (pvp > coste)
+            {
+                utilidad = pvp - coste;
+            }
+            
+            if (utilidad>0)
+            {
+                marge = decimal.Round((utilidad / pvp) * 100, 0);
+            }
+
             List<string> listCalculo = new List<string>()
         {
             descuento.ToString(),
