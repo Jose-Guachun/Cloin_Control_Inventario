@@ -24,73 +24,87 @@ namespace Presentation
         string marca;
         string modelo;
 
-        public void PVP(decimal margen, decimal descuento, decimal coste)
+        public void PVP(int caso, decimal margen, decimal descuento, decimal coste)
         {
             pvp = coste / (1 - (margen / 100));
             desc = pvp * (descuento / 100);
             pvp = decimal.Round(pvp - desc, 2);
-            IVA();
-            if (descuento == 0)
+
+            if (caso>0)
             {
-                total = decimal.Round(pvp + iva);
-                pvp = decimal.Round(total / decimal.Parse("1,12"), 2);
                 IVA();
+                if (descuento == 0)
+                {
+                    total = decimal.Round(pvp + iva);
+                    pvp = decimal.Round(total / decimal.Parse("1,12"), 2);
+                    IVA();
+                }
+                else
+                {
+                    total = decimal.Round(pvp + iva, 2);
+                }
             }
             else
             {
-                total = decimal.Round(pvp + iva, 2);
+                pvp=decimal.Round(pvp);
             }
+
         }
         public void IVA()
         {
             iva = (pvp * decimal.Parse("0,12"));
             iva = decimal.Round(iva, 2);
         }
-        public List<string> ListaCalculo(decimal margen, decimal descuento, decimal coste, decimal Total, bool idDato)
+        public List<string> ListaCalculo(int caso,decimal margen, decimal descuento, decimal coste,decimal pvp1, decimal Total, bool idDato)
         {
             if (idDato)
             {
                 if (descuento < margen)
                 {
-                    PVP(margen, descuento, coste);
+                    PVP(caso, margen, descuento, coste);
                 }
                 else
                 {
-                    MessageBox.Show("El descuento debe de ser menor que el Margen de ganancia"," Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El descuento debe de ser menor que el Margen de ganancia", " Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     descuento = 00;
-                    PVP(margen, descuento, coste);
+                    PVP(caso, margen, descuento, coste);
                 }
             }
             else
             {
-                pvp = decimal.Round(Total / decimal.Parse("1,12"), 2);
-                if (pvp>coste)
+                if (caso>0)
                 {
-                    IVA();
-                    total = Total;
-                    
-                   
-
+                    pvp = decimal.Round(Total / decimal.Parse("1,12"), 2);
+                    if (pvp > coste)
+                    {
+                        IVA();
+                        total = Total;
+                    }
+                    else
+                    {
+                        pvp = 00;
+                        iva = 00;
+                        total = 00;
+                        MessageBox.Show("El precio de venta al publico tiene que ser mayor que el coste de compra, por favor ingrese un Total valido.", " Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    pvp = 00;
-                    iva = 00;
-                    total = 00;
-                    MessageBox.Show("El precio de venta al publico tiene que ser mayor que el coste de compra, por favor ingrese un Total valido.", " Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    pvp = pvp1;
                 }
-                
-                
             }
+
+
             if (pvp > coste)
             {
                 utilidad = pvp - coste;
+                if (utilidad > 0)
+                {
+                    marge = decimal.Round((utilidad / pvp) * 100, 0);
+                }
             }
             
-            if (utilidad>0)
-            {
-                marge = decimal.Round((utilidad / pvp) * 100, 0);
-            }
+
 
             List<string> listCalculo = new List<string>()
         {

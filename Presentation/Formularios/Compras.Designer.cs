@@ -42,27 +42,27 @@ namespace Presentation
             this.DgvProveedor = new System.Windows.Forms.DataGridView();
             this.PnlDatos = new System.Windows.Forms.Panel();
             this.TlpDatos = new System.Windows.Forms.TableLayoutPanel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.NudCantidad = new System.Windows.Forms.NumericUpDown();
             this.BtnExaminar = new FontAwesome.Sharp.IconButton();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.RtbDescripcion = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.CboTipoDoc = new System.Windows.Forms.ComboBox();
+            this.CboProveedor = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.TxtNomOperador = new System.Windows.Forms.TextBox();
+            this.TxtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.TxtCelular = new System.Windows.Forms.TextBox();
+            this.TxtFlete = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.TxtEmail = new System.Windows.Forms.TextBox();
+            this.TxtGastos = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.RtbObservacion = new System.Windows.Forms.RichTextBox();
             this.BtnCategoria = new FontAwesome.Sharp.IconButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.TxtDireccion = new System.Windows.Forms.TextBox();
+            this.CboTipo = new System.Windows.Forms.ComboBox();
+            this.TxtComprobante = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -78,7 +78,7 @@ namespace Presentation
             ((System.ComponentModel.ISupportInitialize)(this.DgvProveedor)).BeginInit();
             this.PnlDatos.SuspendLayout();
             this.TlpDatos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudCantidad)).BeginInit();
             this.PnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -284,27 +284,27 @@ namespace Presentation
             this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.TlpDatos.Controls.Add(this.numericUpDown1, 1, 5);
+            this.TlpDatos.Controls.Add(this.NudCantidad, 1, 5);
             this.TlpDatos.Controls.Add(this.BtnExaminar, 1, 0);
-            this.TlpDatos.Controls.Add(this.richTextBox2, 1, 9);
+            this.TlpDatos.Controls.Add(this.RtbDescripcion, 1, 9);
             this.TlpDatos.Controls.Add(this.label12, 0, 1);
-            this.TlpDatos.Controls.Add(this.dateTimePicker1, 1, 4);
+            this.TlpDatos.Controls.Add(this.DtpFecha, 1, 4);
             this.TlpDatos.Controls.Add(this.label8, 0, 9);
             this.TlpDatos.Controls.Add(this.label16, 0, 2);
-            this.TlpDatos.Controls.Add(this.CboTipoDoc, 1, 1);
+            this.TlpDatos.Controls.Add(this.CboProveedor, 1, 1);
             this.TlpDatos.Controls.Add(this.label7, 0, 5);
             this.TlpDatos.Controls.Add(this.label3, 0, 6);
-            this.TlpDatos.Controls.Add(this.TxtNomOperador, 1, 6);
+            this.TlpDatos.Controls.Add(this.TxtTotal, 1, 6);
             this.TlpDatos.Controls.Add(this.label2, 0, 7);
-            this.TlpDatos.Controls.Add(this.TxtCelular, 1, 7);
+            this.TlpDatos.Controls.Add(this.TxtFlete, 1, 7);
             this.TlpDatos.Controls.Add(this.label6, 0, 8);
-            this.TlpDatos.Controls.Add(this.TxtEmail, 1, 8);
+            this.TlpDatos.Controls.Add(this.TxtGastos, 1, 8);
             this.TlpDatos.Controls.Add(this.label4, 0, 10);
             this.TlpDatos.Controls.Add(this.label5, 0, 0);
-            this.TlpDatos.Controls.Add(this.richTextBox1, 1, 10);
+            this.TlpDatos.Controls.Add(this.RtbObservacion, 1, 10);
             this.TlpDatos.Controls.Add(this.BtnCategoria, 2, 1);
-            this.TlpDatos.Controls.Add(this.comboBox1, 1, 2);
-            this.TlpDatos.Controls.Add(this.TxtDireccion, 1, 3);
+            this.TlpDatos.Controls.Add(this.CboTipo, 1, 2);
+            this.TlpDatos.Controls.Add(this.TxtComprobante, 1, 3);
             this.TlpDatos.Controls.Add(this.label13, 0, 3);
             this.TlpDatos.Controls.Add(this.label1, 0, 4);
             this.TlpDatos.Controls.Add(this.iconButton1, 2, 2);
@@ -327,15 +327,15 @@ namespace Presentation
             this.TlpDatos.Size = new System.Drawing.Size(328, 448);
             this.TlpDatos.TabIndex = 102;
             // 
-            // numericUpDown1
+            // NudCantidad
             // 
-            this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.NudCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDown1.Location = new System.Drawing.Point(79, 156);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(216, 20);
-            this.numericUpDown1.TabIndex = 120;
+            this.NudCantidad.Location = new System.Drawing.Point(79, 156);
+            this.NudCantidad.Name = "NudCantidad";
+            this.NudCantidad.Size = new System.Drawing.Size(216, 20);
+            this.NudCantidad.TabIndex = 120;
             // 
             // BtnExaminar
             // 
@@ -344,7 +344,6 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnExaminar.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.BtnExaminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnExaminar.Enabled = false;
             this.BtnExaminar.FlatAppearance.BorderSize = 0;
             this.BtnExaminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExaminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -362,16 +361,16 @@ namespace Presentation
             this.BtnExaminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnExaminar.UseVisualStyleBackColor = false;
             // 
-            // richTextBox2
+            // RtbDescripcion
             // 
-            this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.RtbDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox2.Location = new System.Drawing.Point(79, 268);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(216, 85);
-            this.richTextBox2.TabIndex = 126;
-            this.richTextBox2.Text = "";
+            this.RtbDescripcion.Location = new System.Drawing.Point(79, 268);
+            this.RtbDescripcion.Name = "RtbDescripcion";
+            this.RtbDescripcion.Size = new System.Drawing.Size(216, 85);
+            this.RtbDescripcion.TabIndex = 126;
+            this.RtbDescripcion.Text = "";
             // 
             // label12
             // 
@@ -387,15 +386,15 @@ namespace Presentation
             this.label12.Text = "Proveedor";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // dateTimePicker1
+            // DtpFecha
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DtpFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(79, 128);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(216, 20);
-            this.dateTimePicker1.TabIndex = 120;
+            this.DtpFecha.Location = new System.Drawing.Point(79, 128);
+            this.DtpFecha.Name = "DtpFecha";
+            this.DtpFecha.Size = new System.Drawing.Size(216, 20);
+            this.DtpFecha.TabIndex = 120;
             // 
             // label8
             // 
@@ -424,18 +423,18 @@ namespace Presentation
             this.label16.Text = "Tipo";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // CboTipoDoc
+            // CboProveedor
             // 
-            this.CboTipoDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.CboProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CboTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CboTipoDoc.FormattingEnabled = true;
-            this.CboTipoDoc.Location = new System.Drawing.Point(78, 43);
-            this.CboTipoDoc.Margin = new System.Windows.Forms.Padding(2);
-            this.CboTipoDoc.Name = "CboTipoDoc";
-            this.CboTipoDoc.Size = new System.Drawing.Size(218, 21);
-            this.CboTipoDoc.TabIndex = 7;
+            this.CboProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CboProveedor.FormattingEnabled = true;
+            this.CboProveedor.Location = new System.Drawing.Point(78, 43);
+            this.CboProveedor.Margin = new System.Windows.Forms.Padding(2);
+            this.CboProveedor.Name = "CboProveedor";
+            this.CboProveedor.Size = new System.Drawing.Size(218, 21);
+            this.CboProveedor.TabIndex = 7;
             // 
             // label7
             // 
@@ -463,16 +462,16 @@ namespace Presentation
             this.label3.Text = "Total";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // TxtNomOperador
+            // TxtTotal
             // 
-            this.TxtNomOperador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TxtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtNomOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNomOperador.Location = new System.Drawing.Point(79, 184);
-            this.TxtNomOperador.MaxLength = 60;
-            this.TxtNomOperador.Name = "TxtNomOperador";
-            this.TxtNomOperador.Size = new System.Drawing.Size(216, 20);
-            this.TxtNomOperador.TabIndex = 12;
+            this.TxtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTotal.Location = new System.Drawing.Point(79, 184);
+            this.TxtTotal.MaxLength = 60;
+            this.TxtTotal.Name = "TxtTotal";
+            this.TxtTotal.Size = new System.Drawing.Size(216, 20);
+            this.TxtTotal.TabIndex = 12;
             // 
             // label2
             // 
@@ -487,16 +486,16 @@ namespace Presentation
             this.label2.Text = "Flete sin Iva";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // TxtCelular
+            // TxtFlete
             // 
-            this.TxtCelular.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TxtFlete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCelular.Location = new System.Drawing.Point(79, 212);
-            this.TxtCelular.MaxLength = 13;
-            this.TxtCelular.Name = "TxtCelular";
-            this.TxtCelular.Size = new System.Drawing.Size(216, 20);
-            this.TxtCelular.TabIndex = 13;
+            this.TxtFlete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtFlete.Location = new System.Drawing.Point(79, 212);
+            this.TxtFlete.MaxLength = 13;
+            this.TxtFlete.Name = "TxtFlete";
+            this.TxtFlete.Size = new System.Drawing.Size(216, 20);
+            this.TxtFlete.TabIndex = 13;
             // 
             // label6
             // 
@@ -511,16 +510,16 @@ namespace Presentation
             this.label6.Text = "Gastos";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // TxtEmail
+            // TxtGastos
             // 
-            this.TxtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TxtGastos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtEmail.Location = new System.Drawing.Point(79, 240);
-            this.TxtEmail.MaxLength = 60;
-            this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(216, 20);
-            this.TxtEmail.TabIndex = 14;
+            this.TxtGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtGastos.Location = new System.Drawing.Point(79, 240);
+            this.TxtGastos.MaxLength = 60;
+            this.TxtGastos.Name = "TxtGastos";
+            this.TxtGastos.Size = new System.Drawing.Size(216, 20);
+            this.TxtGastos.TabIndex = 14;
             // 
             // label4
             // 
@@ -548,16 +547,16 @@ namespace Presentation
             this.label5.Text = "Archivo";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // richTextBox1
+            // RtbObservacion
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.RtbObservacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(79, 359);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(216, 86);
-            this.richTextBox1.TabIndex = 125;
-            this.richTextBox1.Text = "";
+            this.RtbObservacion.Location = new System.Drawing.Point(79, 359);
+            this.RtbObservacion.Name = "RtbObservacion";
+            this.RtbObservacion.Size = new System.Drawing.Size(216, 86);
+            this.RtbObservacion.TabIndex = 125;
+            this.RtbObservacion.Text = "";
             // 
             // BtnCategoria
             // 
@@ -582,30 +581,30 @@ namespace Presentation
             this.BtnCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnCategoria.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // CboTipo
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.CboTipo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(78, 71);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(218, 21);
-            this.comboBox1.TabIndex = 120;
+            this.CboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CboTipo.FormattingEnabled = true;
+            this.CboTipo.Location = new System.Drawing.Point(78, 71);
+            this.CboTipo.Margin = new System.Windows.Forms.Padding(2);
+            this.CboTipo.Name = "CboTipo";
+            this.CboTipo.Size = new System.Drawing.Size(218, 21);
+            this.CboTipo.TabIndex = 120;
             // 
-            // TxtDireccion
+            // TxtComprobante
             // 
-            this.TxtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TxtComprobante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDireccion.Location = new System.Drawing.Point(79, 100);
-            this.TxtDireccion.MaxLength = 200;
-            this.TxtDireccion.Name = "TxtDireccion";
-            this.TxtDireccion.Size = new System.Drawing.Size(216, 20);
-            this.TxtDireccion.TabIndex = 10;
+            this.TxtComprobante.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtComprobante.Location = new System.Drawing.Point(79, 100);
+            this.TxtComprobante.MaxLength = 200;
+            this.TxtComprobante.Name = "TxtComprobante";
+            this.TxtComprobante.Size = new System.Drawing.Size(216, 20);
+            this.TxtComprobante.TabIndex = 10;
             // 
             // label13
             // 
@@ -704,6 +703,7 @@ namespace Presentation
             this.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // BtnEliminar
             // 
@@ -815,7 +815,7 @@ namespace Presentation
             this.PnlDatos.PerformLayout();
             this.TlpDatos.ResumeLayout(false);
             this.TlpDatos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudCantidad)).EndInit();
             this.PnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -836,18 +836,18 @@ namespace Presentation
         private System.Windows.Forms.TableLayoutPanel TlpDatos;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox CboTipoDoc;
+        private System.Windows.Forms.ComboBox CboProveedor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox TxtDireccion;
+        private System.Windows.Forms.TextBox TxtComprobante;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TxtNomOperador;
+        private System.Windows.Forms.TextBox TxtTotal;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtCelular;
+        private System.Windows.Forms.TextBox TxtFlete;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TxtEmail;
+        private System.Windows.Forms.TextBox TxtGastos;
         private System.Windows.Forms.Label LblTitleChildForm;
         private System.Windows.Forms.Panel PnlMenu;
         private FontAwesome.Sharp.IconButton BtnCancelar;
@@ -855,15 +855,15 @@ namespace Presentation
         private FontAwesome.Sharp.IconButton BtnEditar;
         private FontAwesome.Sharp.IconButton BtnGuardar;
         private FontAwesome.Sharp.IconButton BtnNuevo;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.DateTimePicker DtpFecha;
+        private System.Windows.Forms.RichTextBox RtbDescripcion;
         private FontAwesome.Sharp.IconButton BtnExaminar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CboTipo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox RtbObservacion;
         private FontAwesome.Sharp.IconButton BtnCategoria;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown NudCantidad;
     }
 }

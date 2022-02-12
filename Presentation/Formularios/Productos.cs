@@ -23,6 +23,7 @@ namespace Presentation
         private ModeloProducto producto = new ModeloProducto();
         private ClsCalculoDatos calculo = new ClsCalculoDatos();
         private bool idDato= true;
+        private int idNum = 0;
         private int idTipo = 1;
         private IconButton BtnCurrent;
         public Productos()
@@ -36,13 +37,12 @@ namespace Presentation
             ListaProducto();
             Combo();
             BtnTitulo_Click(sender,e);
+            BtnPVP_Click(sender, e);
             DgvProductos.Columns[0].Visible = false;
             DgvProductos.Columns[2].Visible = false;
             DgvProductos.Columns[3].Visible = false;
             DgvProductos.Columns[4].Visible = false;
-            DgvProductos.Columns[9].Visible = false;
-            DgvProductos.Columns[10].Visible = false;
-            DgvProductos.Columns[13].Visible = false;
+            DgvProductos.Columns[12].Visible = false;
         }
         private void Combo()
         {
@@ -97,7 +97,7 @@ namespace Presentation
         {
             if (BtnCurrent != null)
             {
-                BtnCurrent.BackColor = Color.SteelBlue;
+                BtnCurrent.BackColor = Color.SlateGray;
                 BtnCurrent.ForeColor = Color.White;
                 BtnCurrent.IconColor = Color.White;
             }
@@ -109,7 +109,7 @@ namespace Presentation
             {
                 DesactivarBoton();
                 BtnCurrent = (IconButton)BtnRemitente;
-                BtnCurrent.BackColor = Color.FromArgb(37, 36, 81);
+                BtnCurrent.BackColor = Color.DodgerBlue;
                 BtnCurrent.ForeColor = color;
                 BtnCurrent.TextAlign = ContentAlignment.MiddleCenter;
                 BtnCurrent.IconColor = color;
@@ -133,7 +133,7 @@ namespace Presentation
         {
             TxtCodigoSku.Clear();
             TxtCodigoUpc.Clear();
-            TxtCantidad.Clear();
+            NupCantidad.Text = "0";
             TxtTitulo.Clear();
             ListarModelo("0");
             limpiarContable();
@@ -142,10 +142,6 @@ namespace Presentation
             ClsCalculoDatos.valueCategoria=null;
             ClsCalculoDatos.valueMarca=null;
             ClsCalculoDatos.valueModelo=null;
-            if (ImgProducto.Image != null)
-            {
-                ImgProducto.Image = PtbImg.Image;
-            }
             if (CboCategoria.Items.Count != 0)
             {
                 CboCategoria.SelectedValue= -1;
@@ -179,45 +175,23 @@ namespace Presentation
                 CboCategoria.SelectedValue = DgvProductos.CurrentRow.Cells[4].Value;
                 TxtCodigoSku.Text = DgvProductos.CurrentRow.Cells[8].Value.ToString().Trim();
                 TxtCodigoUpc.Text = DgvProductos.CurrentRow.Cells[9].Value.ToString().Trim();
-                TxtTitulo.Text = DgvProductos.CurrentRow.Cells[11].Value.ToString().Trim();
-                TxtCantidad.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
-                RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
-                TxtCoste.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
-                MTXTMargen.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
-                MTXTDescuento.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
-                TxtUtilidad.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
-                TxtPVP.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
-                TxtIVA.Text = DgvProductos.CurrentRow.Cells[19].Value.ToString().Trim();
-                TxtTotal.Text = DgvProductos.CurrentRow.Cells[20].Value.ToString().Trim();
-                ImgProducto.Image = Image.FromStream(ByteImage());
-            }
-        }
-
-        private MemoryStream ByteImage()
-        {
-            byte[] im = (byte[])DgvProductos.CurrentRow.Cells[10].Value;
-            MemoryStream ms = new MemoryStream(im);
-            return ms;
-        }
-        private void BtnExaminar_Click_1(object sender, EventArgs e)
-        {
-            OpenFileDialog getImage = new OpenFileDialog();
-            getImage.InitialDirectory = "C:\\";
-            getImage.Filter = "Archivos de Imagen (*.jpg)(*.jpeg)|*.jpg;*jpeg|PNG (*.png)|*.png";
-            if (getImage.ShowDialog() == DialogResult.OK)
-            {
-                ImgProducto.ImageLocation = getImage.FileName;
-            }
-            else
-            {
-                MessageBox.Show("No se selecciono imagen", "sin seleccion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TxtTitulo.Text = DgvProductos.CurrentRow.Cells[10].Value.ToString().Trim();
+                NupCantidad.Text = DgvProductos.CurrentRow.Cells[11].Value.ToString().Trim();
+                RtbCaracteristicas.Text = DgvProductos.CurrentRow.Cells[12].Value.ToString().Trim();
+                TxtCoste.Text = DgvProductos.CurrentRow.Cells[13].Value.ToString().Trim();
+                MTXTMargen.Text = DgvProductos.CurrentRow.Cells[14].Value.ToString().Trim();
+                MTXTDescuento.Text = DgvProductos.CurrentRow.Cells[15].Value.ToString().Trim();
+                TxtUtilidad.Text = DgvProductos.CurrentRow.Cells[16].Value.ToString().Trim();
+                TxtPVP.Text = DgvProductos.CurrentRow.Cells[17].Value.ToString().Trim();
+                TxtIVA.Text = DgvProductos.CurrentRow.Cells[18].Value.ToString().Trim();
+                TxtTotal.Text = DgvProductos.CurrentRow.Cells[19].Value.ToString().Trim();
             }
         }
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
             PnlLista.Enabled = false;
             PnlDatos.Enabled = true;
-            BtnExaminar.Enabled = true;
+            BtnPVP.Enabled = true;
             BtnGuardar.Enabled = true;
             BtnNuevo.Enabled = false;
             BtnEditar.Enabled = false;
@@ -257,23 +231,31 @@ namespace Presentation
         {
             try
             {
-                if (TxtCoste.Text!="0"&& TxtTotal.Text!="0")
+                if (Convert.ToInt32(TxtCoste.Text) != 0)
                 {
                     producto.IdModelo = Convert.ToInt32(CboModelo.SelectedValue);
                     producto.IdCategoria = Convert.ToInt32(CboCategoria.SelectedValue);
                     producto.SKU = calculo.SKU(CboCategoria.Text, CboMarca.Text, CboModelo.Text);
-                    producto.Codigo_UPC = TxtCodigoUpc.Text;
+                    producto.UPC= TxtCodigoUpc.Text;
                     producto.Titulo = TxtTitulo.Text.ToLower();
-                    producto.Cantidad = Convert.ToInt32(TxtCantidad.Text);
+                    producto.Cantidad = Convert.ToInt32(NupCantidad.Text);
                     producto.Coste = decimal.Parse(TxtCoste.Text);
                     producto.Margen = Convert.ToInt32(MTXTMargen.Text.Substring(0,2));
                     producto.Pvp = decimal.Parse(TxtPVP.Text);
                     producto.Descuento = Convert.ToInt32(MTXTDescuento.Text.Substring(0, 2));
                     producto.Utilidad = decimal.Parse(TxtUtilidad.Text);
-                    producto.Iva = decimal.Parse(TxtIVA.Text);
-                    producto.Total = decimal.Parse(TxtTotal.Text);
+                    if (idNum > 0 && TxtTotal.Text != "0")
+                    {
+                        producto.Iva = decimal.Parse(TxtIVA.Text);
+                        producto.Total = decimal.Parse(TxtTotal.Text);
+                    }
+                    else
+                    {
+                        producto.Iva = 0;
+                        producto.Total=0;
+                    }
+
                     producto.Caracteristicas = RtbCaracteristicas.Text;
-                    producto.Img = ConvertirImg();
                     bool valid = new Helps.ValidacionDatos(producto).Validar();
                     if (valid == true)
                     {
@@ -305,12 +287,6 @@ namespace Presentation
             }
 
         }
-        private byte[] ConvertirImg()
-        {
-            System.IO.MemoryStream ms = new System.IO.MemoryStream();
-            ImgProducto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            return ms.GetBuffer();
-        }
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
@@ -321,7 +297,7 @@ namespace Presentation
                 BtnEditar.Enabled = true;
                 BtnCancelar.Enabled = true;
                 BtnGuardar.Enabled = true;
-                BtnExaminar.Enabled = true;
+                BtnPVP.Enabled = true;
                 BtnEditar.Enabled = false;
                 BtnNuevo.Enabled = false;
                 producto.estado = EntityState.Modificar;
@@ -436,27 +412,7 @@ namespace Presentation
 
         private void BtnCheck_Click(object sender, EventArgs e)
         {
-            if (idDato)
-            {
-                idDato = false;
-                limpiarContable();
-                TxtTotal.Enabled = true;
-                MTXTMargen.Enabled = false;
-                MTXTMargen.Text = "0";
-                BtnCheck.IconChar = FontAwesome.Sharp.IconChar.UndoAlt;
-                BtnCheck.BackColor = System.Drawing.Color.Firebrick;
-            }
-            else
-            {
-                idDato = true;
-                TxtTotal.Text = "00";
-                MTXTMargen.Enabled = true;
-                MTXTMargen.Text = "20";
-                MTXTDescuento_Leave(sender, e);
-                TxtTotal.Enabled = false;
-                BtnCheck.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
-                BtnCheck.BackColor = System.Drawing.Color.MediumSeaGreen;
-            }
+            activated(TxtTotal, BtnCheck, sender, e);
 
         }
         private void CboListar()
@@ -590,28 +546,28 @@ namespace Presentation
 
         private void BtnTitulo_Click(object sender, EventArgs e)
         {
-            ActivarBoton(BtnTitulo, Color.FromArgb(253, 190, 27));
+            ActivarBoton(BtnTitulo, Color.White);
             idTipo = 1;
             BtnLimpiar_Click(sender,e);
         }
 
         private void BtnCodSku_Click(object sender, EventArgs e)
         {
-            ActivarBoton(BtnCodSku, Color.FromArgb(253, 190, 27));
+            ActivarBoton(BtnCodSku, Color.White);
             idTipo = 2;
             BtnLimpiar_Click(sender, e);
         }
 
         private void BtnCat_Click(object sender, EventArgs e)
         {
-            ActivarBoton(BtnCat, Color.FromArgb(253, 190, 27));
+            ActivarBoton(BtnCat, Color.White);
             idTipo = 3;
             BtnLimpiar_Click(sender, e);
         }
 
         private void BtnMa_Click(object sender, EventArgs e)
         {
-            ActivarBoton(BtnMa, Color.FromArgb(253, 190, 27));
+            ActivarBoton(BtnMa, Color.White);
             idTipo = 4;
             BtnLimpiar_Click(sender, e);
         
@@ -619,14 +575,14 @@ namespace Presentation
 
         private void BtnMo_Click(object sender, EventArgs e)
         {
-            ActivarBoton(BtnMo, Color.FromArgb(253, 190, 27));
+            ActivarBoton(BtnMo, Color.White);
             idTipo = 5;
             BtnLimpiar_Click(sender, e);
         }
 
         private void BtnCodBarra_Click(object sender, EventArgs e)
         {
-            ActivarBoton(BtnCodBarra, Color.FromArgb(253, 190, 27));
+            ActivarBoton(BtnCodBarra, Color.White);
             idTipo = 6;
             BtnLimpiar_Click(sender, e);
         }
@@ -659,12 +615,13 @@ namespace Presentation
             if (MTXTDescuento.Text != null && MTXTMargen.Text != null)
             {
                 decimal coste = Convert.ToDecimal(TxtCoste.Text);
+                decimal pvp1 = Convert.ToDecimal(TxtPVP.Text);
                 decimal margen = Convert.ToDecimal(MTXTMargen.Text.Substring(0,2));
                 decimal descuento = Convert.ToDecimal(MTXTDescuento.Text.Substring(0,2));
                 decimal total = Convert.ToDecimal(TxtTotal.Text);
 
                 int cont = 0;
-                foreach (var item in calculo.ListaCalculo(margen, descuento, coste, total, idDato))
+                foreach (var item in calculo.ListaCalculo(idNum,margen, descuento, coste,pvp1, total, idDato))
                 {
                     if (cont == 0)
                     {
@@ -698,6 +655,88 @@ namespace Presentation
                 MTXTDescuento.Text = "00";
                 MTXTDescuento_Leave(sender, e);
             }
+        }
+        private void activated(TextBox txt, IconButton boton, object sender, EventArgs e)
+        {
+            if (idDato)
+            {
+                idDato = false;
+                limpiarContable();
+                txt.Enabled = true;
+                MTXTMargen.Enabled = false;
+                MTXTMargen.Text = "00";
+                boton.IconChar = FontAwesome.Sharp.IconChar.UndoAlt;
+                boton.BackColor = System.Drawing.Color.Firebrick;
+            }
+            else
+            {
+                idDato = true;
+                txt.Text = "00";
+                MTXTMargen.Enabled = true;
+                MTXTMargen.Text = "20";
+                MTXTDescuento_Leave(sender, e);
+                txt.Enabled = false;
+                boton.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
+                boton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            }
+        }
+        private void BtnCheckPvp_Click(object sender, EventArgs e)
+        {
+            activated(TxtPVP, BtnCheckPvp, sender, e);
+        }
+
+        private void BtnPVP_Click(object sender, EventArgs e)
+        {
+            BtnPVP.BackColor = Color.DodgerBlue;
+            BtnIvaTotal.BackColor = Color.SlateGray;
+            idNum = 0;
+            LblIva.Visible=false;
+            LblTotal.Visible=false;
+            TxtIVA.Visible = false;
+            TxtTotal.Visible = false;
+            TxtTotal.Enabled = false;
+            TxtIVA.Enabled = false;
+            BtnCheck.Enabled = false;
+            BtnCheck.Visible = false;
+            BtnCheckPvp.Enabled = true;
+            BtnCheckPvp.Visible = true;
+            if (!idDato)
+            {
+                BtnCheck_Click(sender, e);
+            }
+            if (Convert.ToDecimal(TxtPVP.Text)!=0)
+            {
+                MTXTDescuento_Leave(sender, e);
+            }
+        }
+
+        private void BtnIvaTotal_Click(object sender, EventArgs e)
+        {
+            BtnIvaTotal.BackColor = Color.DodgerBlue;
+            BtnPVP.BackColor = Color.SlateGray;
+            idNum = 1;
+            LblIva.Visible = true;
+            LblTotal.Visible = true;
+            TxtIVA.Visible = true;
+            TxtTotal.Visible = true;
+            BtnCheck.Enabled = true;
+            BtnCheck.Visible = true;
+            BtnCheckPvp.Enabled = false;
+            BtnCheckPvp.Visible = false;
+            if (!idDato)
+            {
+                BtnCheckPvp_Click(sender, e);
+            }
+            if (Convert.ToDecimal(TxtPVP.Text) != 0)
+            {
+                MTXTDescuento_Leave(sender, e);
+            }
+
+        }
+
+        private void TxtPVP_Leave(object sender, EventArgs e)
+        {
+            MTXTDescuento_Leave(sender, e);
         }
     }
 }

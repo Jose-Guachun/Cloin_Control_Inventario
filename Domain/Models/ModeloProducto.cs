@@ -29,7 +29,6 @@ namespace Domain.Models
         private string modelo;
         private string codigo_SKU;
         private string codigo_UPC;
-        private byte[] img;
         private string titulo;
         private int cantidad;
         private string caracteristicas;
@@ -62,17 +61,17 @@ namespace Domain.Models
         [Required(ErrorMessage = "El campo codigo UPC del producto es requerido")]
         [RegularExpression("([0-9]+)", ErrorMessage = "El campo Codigo UPC solo debe estar conformado por numeros")]
         [StringLength(maximumLength: 12, MinimumLength = 12, ErrorMessage = "El codigo UPC debe de contener 12 digitos")]
-        public string Codigo_UPC { get => codigo_UPC; set => codigo_UPC = value; }
-        public byte[] Img { get => img; set => img = value; }
+        public string UPC { get => codigo_UPC; set => codigo_UPC = value; }
 
         [Required(ErrorMessage = "El campo Titulo es requerido")]
         [StringLength(maximumLength: 200, MinimumLength = 6, ErrorMessage = "El Titulo debe de contener minimo 6 y un maximo de 200 letras")]
         public string Titulo { get => titulo; set => titulo = value; }
+
         [Required(ErrorMessage = "El campo Cantidad es requerido")]
         [RegularExpression("([0-9]+)", ErrorMessage = "El campo Cantidad solo debe estar conformado por numeros")]
         public int Cantidad { get => cantidad; set => cantidad = value; }
-        [Required(ErrorMessage = "El campo Caracteristicas es requerido")]
-        [StringLength(maximumLength: 400, MinimumLength = 12, ErrorMessage = "Las Caracteristicas debe contener un minimo de 12 y un maximo de 400 letras.")]
+
+        
         public string Caracteristicas { get => caracteristicas; set => caracteristicas = value; }
         [Required(ErrorMessage = "El campo Coste es requerido")]
         public decimal Coste { get => coste; set => coste = value; }
@@ -154,7 +153,6 @@ namespace Domain.Models
                 ModeloDatosProducto.IdCategoria = idCategoria;
                 ModeloDatosProducto.Codigo_SKU = codigo_SKU;
                 ModeloDatosProducto.Codigo_UPC = codigo_UPC;
-                ModeloDatosProducto.Img = img;
                 ModeloDatosProducto.Titulo = titulo;
                 ModeloDatosProducto.Cantidad = cantidad;
                 ModeloDatosProducto.Caracteristicas = caracteristicas;
@@ -225,7 +223,6 @@ namespace Domain.Models
                     modelo = item.Modelo, 
                     codigo_SKU=item.Codigo_SKU,
                     codigo_UPC = item.Codigo_UPC,
-                    img =item.Img,
                     titulo=item.Titulo,
                     cantidad = item.Cantidad,
                     caracteristicas =item.Caracteristicas,
@@ -248,7 +245,7 @@ namespace Domain.Models
             switch (IdTipo)
             {
                 case 1:
-                    ListaProducto = GetAll().FindAll(p => p.Titulo.Contains(filter.ToLower()));
+                    ListaProducto = GetAll().FindAll(p => p.Titulo.Contains(filter.ToUpper()));
                     break;
                 case 2:
                     ListaProducto = GetAll().FindAll(p => p.codigo_SKU.Contains(filter.ToUpper()));

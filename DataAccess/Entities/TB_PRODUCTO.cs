@@ -16,7 +16,6 @@ namespace DataAccess.Entities
         public string Categoria{ get; set; }
         public string Codigo_SKU { get; set; }
         public string Codigo_UPC { get; set; }
-        public byte[] Img { get; set; }
         public string Titulo { get; set; }
         public int Cantidad { get; set; }
         public string Caracteristicas { get; set; }

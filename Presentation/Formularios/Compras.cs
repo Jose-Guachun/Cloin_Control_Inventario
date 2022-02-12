@@ -15,10 +15,54 @@ namespace Presentation
         {
             InitializeComponent();
         }
-
-        private void BtnNuevo_Click(object sender, EventArgs e)
+        public void limpiar()
         {
+            TxtBuscar.Clear();
+            RtbObservacion.Clear();
+            NudCantidad.Text = "0";
+            TxtGastos.Clear();
+            TxtFlete.Clear();
+            TxtTotal.Clear();
+            TxtComprobante.Clear();
+            RtbDescripcion.Clear();
+            DtpFecha.DataBindings.Clear();
+            CboProveedor.SelectedValue = -1;
+            CboTipo.SelectedValue = -1;
+
 
         }
+        public void botones()
+        {
+            PnlLista.Enabled = true;
+            PnlDatos.Enabled = false;
+            BtnNuevo.Enabled = true;
+            BtnGuardar.Enabled = false;
+            BtnCancelar.Enabled = false;
+            BtnEditar.Enabled = true;
+            BtnEliminar.Enabled = true;
+        }
+        private void BtnNuevo_Click(object sender, EventArgs e)
+        {
+            PnlLista.Enabled = false;
+            PnlDatos.Enabled = true;
+            BtnGuardar.Enabled = true;
+            BtnNuevo.Enabled = false;
+            BtnEditar.Enabled = false;
+            BtnEliminar.Enabled = false;
+            BtnCancelar.Enabled = true;
+            //compras.estado = EntityState.Agregar;
+            limpiar();
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro de cancelar, se perdera todos los datos ingresados?", "Alerta¡¡", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                PnlDatos.Enabled = false;
+                limpiar();
+                botones();
+            }
+        }
+
     }
 }
